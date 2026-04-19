@@ -142,6 +142,22 @@ def main() -> None:
     if anz_2010.sum() == 12:
         df.loc[anz_2010, "Month"] = list(range(1, 13))
         print("[00] Fixed Anzalduas 2010: reassigned 12 rows to months 1–12")
+        # Order-validation guard: the reassignment assumes rows arrived in Jan–Dec
+        # order. If two adjacent months share the same nonzero POV value, that
+        # assumption is almost certainly violated (real monthly POV traffic at
+        # Anzalduas varies month-to-month; exact duplicates are implausible).
+        pov_series = (
+            df.loc[anz_2010].sort_values("Month")["POVs"].fillna(0).astype(int).tolist()
+        )
+        for i in range(len(pov_series) - 1):
+            a, b = pov_series[i], pov_series[i + 1]
+            if a != 0 and a == b:
+                raise SystemExit(
+                    f"[00] Anzalduas 2010 order check FAILED: months "
+                    f"{i + 1} and {i + 2} have identical POV value {a:,} — "
+                    f"rows likely not in calendar order. POV series: {pov_series}"
+                )
+        print("[00] Anzalduas 2010 order check passed")
     else:
         print(f"[00] WARNING: Anzalduas 2010 has {anz_2010.sum()} rows (expected 12) — skipped fix")
 

@@ -54,11 +54,13 @@ Dependencies: `pip install -r 02-Data-Staging/Scripts/requirements.txt`
 | `03-Processed-Data/csv/monthly_crossings_2008_2025.csv` | 34,090 | Year × Month × Crossing × Mode |
 | `03-Processed-Data/csv/yearly_crossings_2008_2025.csv` | 2,850 | Year × Crossing × Mode |
 
-28/28 invariant checks passing.
+35/36 invariant checks passing (1 known failure: ELP 2025 May vs June POVs identical — pending CBP El Paso field office confirmation).
 
 ## Canonical crossing names
 
 Authoritative source: `01-Raw-Data/TX-MX-Border-Crossings-Coordinates.csv` (34 rows). Six legacy spellings from the 2013–2024 baseline are renamed in `01_load_baseline.py > CROSSING_RENAME_MAP`. The `crossing_crosswalk.json` maps 2025 raw labels to canonical names.
+
+**Canonical sort order:** Always use the `Order` column in `TX-MX-Border-Crossings-Coordinates.csv` as the display and sort order for bridges, Regions, and POEs throughout the pipeline and WebApp. This order runs north-to-south along the Texas–Mexico border (El Paso → Laredo → Rio Grande Valley). Never apply alphabetical or arbitrary sort to these dimensions — always defer to the CSV `Order` field.
 
 **El Paso Railroad Bridges rule:** CBP reports BNSF + Union Pacific rail crossings as one combined row. Keep it single-row in processed data; split to two map pins only in the WebApp map layer.
 

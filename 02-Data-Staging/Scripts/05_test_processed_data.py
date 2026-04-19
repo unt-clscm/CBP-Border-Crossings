@@ -305,6 +305,75 @@ def test_yearly_consistency(t: TestRunner, monthly: pd.DataFrame) -> None:
             f"total discrepancy: {mismatches:,}")
 
 
+def test_2025_top10_have_all_months(t: TestRunner, df: pd.DataFrame) -> None:
+    print("[12] 2025 coverage for top-10 crossings")
+    y25 = df[df["Year"] == 2025]
+    totals = y25.groupby("Crossing")["Northbound Crossing"].sum().sort_values(ascending=False)
+    top10 = totals.head(10).index.tolist()
+    missing: list[str] = []
+    for crossing in top10:
+        months = set(y25[y25["Crossing"] == crossing]["Month"].unique())
+        if months != EXPECTED_MONTHS:
+            missing.append(f"{crossing}: missing {sorted(EXPECTED_MONTHS - months)}")
+    t.check("2025 top-10 crossings each have all 12 months",
+            len(missing) == 0,
+            "; ".join(missing))
+
+
+def test_pre_opening_absence(t: TestRunner, df: pd.DataFrame) -> None:
+    print("[13] Pre-opening absence")
+    # (crossing, opening_year, opening_month) — strictly before this point, no rows
+    opening_dates = [
+        ("Anzalduas International Bridge",        2010,  1),
+        ("El Paso Railroad Bridges",              2010,  1),
+        ("Donna-Rio Bravo International Bridge",  2010, 12),
+        ("Marcelino Serna Bridge",                2011,  1),
+        ("Boquillas",                             2014,  9),
+    ]
+    for crossing, yr, mo in opening_dates:
+        sub = df[df["Crossing"] == crossing]
+        before = sub[(sub["Year"] < yr) | ((sub["Year"] == yr) & (sub["Month"] < mo))]
+        t.check(f"{crossing} absent before opening date",
+                len(before) == 0,
+                f"{len(before)} rows before {yr}-{mo:02d}")
+
+
+def test_elp_may_june_2025_differ(t: TestRunner, df: pd.DataFrame) -> None:
+    print("[14] September PDF May/June 2025 El Paso POVs differ")
+    sub = df[(df["Region"] == "El Paso")
+             & (df["Modes"] == "Passenger Vehicles")
+             & (df["Year"] == 2025)]
+    may_total = sub[sub["Month"] == 5]["Northbound Crossing"].sum()
+    jun_total = sub[sub["Month"] == 6]["Northbound Crossing"].sum()
+    may_rows = len(sub[sub["Month"] == 5])
+    jun_rows = len(sub[sub["Month"] == 6])
+    if may_rows == 0 or jun_rows == 0:
+        t.check("ELP 2025 May vs June POVs are not identical (PDF page duplication check)",
+                False,
+                f"missing month(s): May rows={may_rows}, Jun rows={jun_rows}")
+        return
+    t.check("ELP 2025 May vs June POVs are not identical (PDF page duplication check)",
+            int(may_total) != int(jun_total),
+            f"May={int(may_total):,} Jun={int(jun_total):,} — identical totals suggest "
+            f"the known September-PDF duplicate-page error was not corrected")
+
+
+def test_2025_railcars_only_on_rail_crossings(t: TestRunner, df: pd.DataFrame) -> None:
+    print("[15] 2025 Railcars redirect integrity")
+    rail_crossings = {
+        "El Paso Railroad Bridges",
+        "Canadian Pacific Kansas City Laredo Railroad Bridge",
+        "West Rail Bridge",
+        "Union Pacific Eagle Pass Railroad Bridge",
+    }
+    y25 = df[(df["Year"] == 2025) & (df["Modes"] == "Railcars")
+             & (df["Northbound Crossing"] > 0)]
+    stray = set(y25["Crossing"].unique()) - rail_crossings
+    t.check("2025 non-zero Railcars appear only on the 4 rail crossings",
+            len(stray) == 0,
+            f"non-zero Railcars on non-rail crossing(s): {sorted(stray)}")
+
+
 def main() -> int:
     t = TestRunner()
     print("=" * 60)
@@ -324,6 +393,10 @@ def main() -> int:
     test_no_duplicate_month_rows(t, df)
     test_lrd_rvg_cross_source(t, df)
     test_yearly_consistency(t, df)
+    test_2025_top10_have_all_months(t, df)
+    test_pre_opening_absence(t, df)
+    test_elp_may_june_2025_differ(t, df)
+    test_2025_railcars_only_on_rail_crossings(t, df)
 
     return t.summary()
 

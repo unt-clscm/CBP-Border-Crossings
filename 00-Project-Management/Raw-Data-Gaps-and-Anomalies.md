@@ -29,6 +29,8 @@ All 12 monthly rows for Anzalduas Bridge in 2010 were assigned `Month = 1` in th
 
 **Action taken:** Rows reassigned to months 1–12 in sequential order by `00_load_master.py`. A warning is printed if the expected 12 rows are not found. See script line: `df.loc[anz_2010, "Month"] = list(range(1, 13))`.
 
+The fix assumes rows arrive in Excel row order (Jan–Dec); an adjacent-month duplicate-POV guard was added in `00_load_master.py` to detect if this assumption is violated.
+
 ### 1.3 DCL (Dedicated Commuter Lane) rows
 
 The Master workbook includes separate DCL rows for Paso del Norte and Ysleta:

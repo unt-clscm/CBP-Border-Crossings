@@ -32,14 +32,19 @@ Every path below marked *BTS-path* refers to `BTS-TransBorder/WebApp/` in the si
 
 ## Data contract
 
-Two JSON files shipped to `WebApp/public/data/` (both small, no lazy loading needed):
+Three JSON files shipped to `WebApp/public/data/` (all small, no lazy loading needed):
 
-### 1. `nb_crossings_2013_2025.json`
-- **Source:** `03-Processed-Data/json/nb_crossings_2013_2025.json` (copy verbatim).
-- **Shape:** 2145 rows × 7 cols (`ID`, `Year`, `Region`, `POE`, `Crossing`, `Modes`, `Northbound Crossing`). <500 KB.
-- **Used by:** every page.
+### 1. `monthly_crossings_2008_2025.json`
+- **Source:** `03-Processed-Data/json/monthly_crossings_2008_2025.json` (copy verbatim).
+- **Shape:** 34,090 rows × 8 cols (`ID`, `Year`, `Month`, `Region`, `POE`, `Crossing`, `Modes`, `Northbound Crossing`). Monthly grain, 2008–2025.
+- **Used by:** pages that need month-level detail (ByCrossing time series, ByMode stacked series, any seasonal view).
 
-### 2. `crossings_coordinates.json`
+### 2. `yearly_crossings_2008_2025.json`
+- **Source:** `03-Processed-Data/json/yearly_crossings_2008_2025.json` (copy verbatim).
+- **Shape:** 2,850 rows × 7 cols (`ID`, `Year`, `Region`, `POE`, `Crossing`, `Modes`, `Northbound Crossing`). Yearly grain, 2008–2025.
+- **Used by:** Overview headline numbers and any page showing annual totals (cheaper than re-summing the monthly file).
+
+### 3. `crossings_coordinates.json`
 - **Source:** converted from `01-Raw-Data/TX-MX-Border-Crossings-Coordinates.csv` (34 rows).
 - **Shape per record:**
   ```json
@@ -87,7 +92,7 @@ BTS already has Leaflet wired up. **Reuse, don't rebuild.**
 - **Reuse:** `src/components/maps/PortMap.jsx` as the template for `src/components/maps/CrossingsMap.jsx`. PortMap already does exactly what we need: CircleMarker pins from a coordinate JSON, sized by a scalar value, grouped/colored by a categorical field, with portal-based tooltips.
 - **Reuse:** `src/components/maps/mapHelpers.jsx` (ScrollWheelGuard, MapResizeHandler, ResetZoomButton, TooltipSync) — no changes.
 - **Reuse:** `src/styles/leaflet-overrides.css` — no changes.
-- **Reuse:** `src/hooks/usePortMapData.js` as the template for `src/hooks/useCrossingsMapData.js`. Replace `buildMapPorts()` with `buildMapCrossings()` that returns one marker per coordinate-CSV row (34 markers), each carrying the joined data row from `nb_crossings_2013_2025.json` via `data_crossing_name`.
+- **Reuse:** `src/hooks/usePortMapData.js` as the template for `src/hooks/useCrossingsMapData.js`. Replace `buildMapPorts()` with `buildMapCrossings()` that returns one marker per coordinate-CSV row (34 markers), each carrying the joined data row from `yearly_crossings_2008_2025.json` via `data_crossing_name`.
 
 ### Two-pin rule for El Paso Railroad Bridges
 The coordinates CSV has two rail-bridge rows (BNSF + Union Pacific) but CBP data has one combined row. `buildMapCrossings()` handles this implicitly because both coordinate records carry `data_crossing_name = "El Paso Railroad Bridges"` — both pins pull the same data. Pin popup must:
@@ -112,7 +117,8 @@ Shape:
 {
   status: "idle" | "loading" | "ready" | "error",
   error: null | string,
-  rows: [],              // nb_crossings_2013_2025.json
+  monthly: [],           // monthly_crossings_2008_2025.json (34,090 rows × 8 cols)
+  yearly: [],            // yearly_crossings_2008_2025.json  ( 2,850 rows × 7 cols)
   coords: [],            // crossings_coordinates.json
   // Derived indexes, cached:
   byCrossing: {},        // { [data_crossing_name]: [row, row, ...] }
@@ -159,7 +165,7 @@ Use BTS-path `src/styles/globals.css` as-is. The brand color palette (TxDOT blue
 
 ## Export / interaction
 
-- **CSV export** per chart — reuse BTS-path `src/lib/downloadCsv.js` + `downloadColumns.js`. Define column configs for `nb_crossings_2013_2025` (just the 7 cols).
+- **CSV export** per chart — reuse BTS-path `src/lib/downloadCsv.js` + `downloadColumns.js`. Define column configs for the monthly file (8 cols) and yearly file (7 cols).
 - **PNG export** per chart — reuse BTS-path `src/lib/exportPng.js`, no changes.
 - **Fullscreen** per chart — reuse BTS-path `src/components/ui/ChartCard.jsx` + `FullscreenChart.jsx`, no changes.
 - **URL state** — keep the hash router. Support `?year=`, `?mode=`, `?crossing=`, `?region=` query params on ByCrossing/ByMode/ByRegion so views are link-shareable.

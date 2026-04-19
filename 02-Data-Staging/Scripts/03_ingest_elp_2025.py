@@ -359,6 +359,8 @@ def main() -> None:
 
     # Update unmapped log — append/replace only the ELP section
     unmapped_file = DOCS / "unmapped_2025.md"
+    if unmapped_file.exists() and "LRD + RVG" not in unmapped_file.read_text(encoding="utf-8"):
+        print("[03] WARNING: unmapped_2025.md has no LRD section — run 02_ingest_lrd_rvg_2025.py first")
     elp_section = "## El Paso PDFs (03_ingest_elp_2025.py)\n" + (
         "\n".join(f"- {x}" for x in unmapped) if unmapped else "- (none)"
     ) + "\n"
