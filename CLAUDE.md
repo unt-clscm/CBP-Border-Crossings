@@ -22,13 +22,13 @@ CBP-Border-Corssings/
 │   ├── ELP-2025/*.pdf           (3 PDF traffic summaries)
 │   └── TX-MX-Border-Crossings-Coordinates.csv   ← authoritative crossing name list
 ├── 02-Data-Staging/
-│   ├── Scripts/                 Numbered pipeline: 00–05
+│   ├── Scripts/                 Numbered pipeline: 00–06
 │   ├── config/                  vocab.json, crossing_crosswalk.json
 │   ├── cleaned/                 Intermediate CSVs
 │   └── docs/                    Validation notes (elp_pdf_notes.md, etc.)
 ├── 03-Processed-Data/
 │   ├── csv/                     monthly_crossings_2008_2025.csv, yearly_crossings_2008_2025.csv
-│   └── json/                    Same files as JSON
+│   └── json/                    Same files as JSON + crossings_coordinates.json (34 rows)
 └── WebApp/                      Vite + React dashboard (Phase 2)
 ```
 
@@ -43,6 +43,7 @@ python 02_ingest_lrd_rvg_2025.py
 python 03_ingest_elp_2025.py
 python 04_merge_and_validate.py # produces final outputs in 03-Processed-Data/
 python 05_test_processed_data.py
+python 06_emit_coords_json.py   # coords CSV → crossings_coordinates.json (+ WebApp mirror)
 ```
 
 Dependencies: `pip install -r 02-Data-Staging/Scripts/requirements.txt`
@@ -83,7 +84,7 @@ Five canonical modes: `Commercial Trucks`, `Buses`, `Pedestrians/ Bicyclists`, `
 
 ## WebApp notes (Phase 2)
 
-Clone the BTS-TransBorder WebApp scaffold at `../BTS-TransBorder/WebApp/`. The CBP app is narrower: one dataset, no commodity/HS-code dimension. Most work is deletion of BTS-specific pages/charts, not new construction. Data contract: two JSON files in `WebApp/public/data/` — `nb_crossings_2013_2025.json` and `crossings_coordinates.json`.
+Clone the BTS-TransBorder WebApp scaffold at `../BTS-TransBorder/WebApp/`. The CBP app is narrower: one dataset, no commodity/HS-code dimension. Most work is deletion of BTS-specific pages/charts, not new construction. Data contract: three JSON files in `WebApp/public/data/` — `monthly_crossings_2008_2025.json` (34,090 × 8, monthly grain), `yearly_crossings_2008_2025.json` (2,850 × 7, yearly grain), and `crossings_coordinates.json` (34 rows).
 
 ## Known data issues
 

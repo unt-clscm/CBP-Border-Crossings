@@ -152,7 +152,7 @@ The following crossing/mode combinations have one or more months reporting zero 
 
 ## Part 3 — YoY Outlier Report: 2024 → 2025 Monthly Breakdown
 
-Outliers defined as |Δ| ≥ 50% on a ≥ 1,000 annual base. All six confirmed on updated pipeline (28/28 invariant checks passing, 2026-04-19). Full 12-month detail below.
+Outliers defined as |Δ| ≥ 50% on a ≥ 1,000 annual base. All six confirmed on updated pipeline (35/36 invariant checks passing, 2026-04-19; 1 known failure: ELP 2025 May vs June POVs identical — pending CBP El Paso field office confirmation). Full 12-month detail below.
 
 ### 3.1 Donna-Rio Bravo International Bridge — Pedestrians/Bicyclists (+336.8%)
 **Annual: 2,315 → 10,112 (+7,797)**

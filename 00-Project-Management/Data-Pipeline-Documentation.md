@@ -8,7 +8,7 @@
 
 ## Overview
 
-The pipeline ingests three CBP data sources, normalizes them to a common schema, and produces monthly and yearly long-format tables covering all 33 Texas-Mexico border crossings from 2008 through 2025.
+The pipeline ingests three CBP data sources, normalizes them to a common schema, and produces monthly and yearly long-format tables. The authoritative coordinates CSV lists 34 Texas-Mexico border crossings; the processed-data `Crossing` column has 33 distinct values because CBP reports the two El Paso rail bridges (BNSF + Union Pacific) as a single combined row. Coverage is 2008 through 2025.
 
 ```
 01-Raw-Data/                          → cleaned intermediates → 03-Processed-Data/
@@ -16,6 +16,8 @@ The pipeline ingests three CBP data sources, normalizes them to a common schema,
   LRD-RVG-2025.xlsx             ─┼──▶ 00_load_master.py ──▶ monthly_crossings_2008_2025.csv
   ELP-2025/*.pdf                ─┘                           yearly_crossings_2008_2025.csv
   NB-Crossings-2013-2024.xlsx   ────▶ 01_load_baseline.py ──▶ vocab.json (config only)
+  TX-MX-Border-Crossings-       ────▶ 06_emit_coords_json.py ──▶ crossings_coordinates.json
+    Coordinates.csv                                              (+ WebApp mirror)
 ```
 
 ---
@@ -46,6 +48,7 @@ All scripts live in `02-Data-Staging/Scripts/`. Run from the project root.
                                yearly_crossings_2008_2025.csv
 04_merge_and_validate.py     → JSON exports + validation_report.md
 05_test_processed_data.py    → pass/fail (exit 0 or 1)
+06_emit_coords_json.py       → crossings_coordinates.json (+ WebApp mirror)
 ```
 
 ### Script summaries
@@ -57,7 +60,8 @@ All scripts live in `02-Data-Staging/Scripts/`. Run from the project root.
 | `03_ingest_elp_2025.py` | `ELP-2025/*.pdf`, `crossing_crosswalk.json` | `cleaned/elp_2025.csv`, `docs/unmapped_2025.md`, `docs/elp_pdf_notes.md` | Parse 2025 El Paso PDFs into long format |
 | `00_load_master.py` | Master xlsx, `cleaned/elp_2025.csv`, `cleaned/lrd_rvg_2025.csv` | `monthly_crossings_2008_2025.csv`, `yearly_crossings_2008_2025.csv` | Transform Master wide→long; append 2025; emit both outputs |
 | `04_merge_and_validate.py` | `monthly_crossings_2008_2025.csv`, `yearly_crossings_2008_2025.csv` | JSON exports, `docs/validation_report.md` | Export JSON; hard-fail on structural errors; write report |
-| `05_test_processed_data.py` | Both CSV/JSON outputs, coordinates CSV, `vocab.json`, `LRD-RVG-2025.xlsx` | Exit code 0/1 | 28-check regression suite |
+| `05_test_processed_data.py` | Both CSV/JSON outputs, coordinates CSV, `vocab.json`, `LRD-RVG-2025.xlsx` | Exit code 0/1 | 36-check regression suite (35 passing; 1 known failure: ELP 2025 May/June POVs identical) |
+| `06_emit_coords_json.py` | `TX-MX-Border-Crossings-Coordinates.csv` | `03-Processed-Data/json/crossings_coordinates.json`, `WebApp/public/data/crossings_coordinates.json` | Emit 34-row coordinates JSON with `data_crossing_name` join key (BNSF + UP both map to `El Paso Railroad Bridges`) |
 
 ---
 

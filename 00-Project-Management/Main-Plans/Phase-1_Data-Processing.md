@@ -1,6 +1,6 @@
 # Phase 1 — Data Processing
 
-**Status:** complete — 34,090 monthly rows + 2,850 yearly rows (2008–2025), 28/28 invariant checks passing.
+**Status:** complete — 34,090 monthly rows + 2,850 yearly rows (2008–2025), 35/36 invariant checks passing (1 known failure: ELP 2025 May/June POVs identical — pending CBP El Paso field office confirmation).
 
 **Goal:** produce two long-format tables with monthly and yearly granularity, extending the original 2013–2024 NB-crossings baseline back to 2008 (via the CBP Master workbook) and forward to 2025 (via the Laredo/RVG spreadsheet and El Paso PDFs), with crossing names aligned to the project's authoritative coordinates CSV.
 
@@ -12,6 +12,8 @@
 | `03-Processed-Data/csv/yearly_crossings_2008_2025.csv` | 2,850 | Year × Crossing × Mode |
 | `03-Processed-Data/json/monthly_crossings_2008_2025.json` | 34,090 | same |
 | `03-Processed-Data/json/yearly_crossings_2008_2025.json` | 2,850 | same |
+| `03-Processed-Data/json/crossings_coordinates.json` | 34 | One row per crossing (coordinates + join key) |
+| `WebApp/public/data/crossings_coordinates.json` | 34 | WebApp mirror of the above |
 
 **Monthly schema** (one row per Year × Month × Crossing × Mode):
 
@@ -116,7 +118,7 @@ Script: `02-Data-Staging/Scripts/04_merge_and_validate.py`
 ### 05 — Test invariants
 Script: `02-Data-Staging/Scripts/05_test_processed_data.py`
 
-Standalone pass/fail regression suite — exit 0 on all-pass, 1 on any failure. **28 checks, all passing.**
+Standalone pass/fail regression suite — exit 0 on all-pass, 1 on any failure. **36 checks, 35 passing.** One known failure: ELP 2025 May vs June POVs are identical (`1,124,274` both months), flagging the suspected September-PDF duplicate-page error — pending CBP El Paso field office confirmation.
 
 1. File presence (monthly/yearly CSV/JSON, coordinates CSV, vocab.json).
 2. Monthly CSV ↔ JSON and yearly CSV ↔ JSON row-count parity.
@@ -129,6 +131,18 @@ Standalone pass/fail regression suite — exit 0 on all-pass, 1 on any failure. 
 9. No duplicate (Year, Month, Crossing, Modes) rows in monthly file.
 10. Cross-source check: 2025 Laredo+Pharr Commercial Trucks equals raw sum from LRD-RVG workbook.
 11. Yearly totals exactly match the sum of monthly totals for every (Year, Crossing, Mode).
+12. 2025 coverage: top-10 crossings each have all 12 months present.
+13. Pre-opening absence: crossings with known opening dates (Anzalduas, El Paso Railroad Bridges, Donna-Rio Bravo, Marcelino Serna, Boquillas) are absent before their opening year.
+14. September PDF May/June 2025 El Paso POVs differ (guards the known duplicate-page error — currently **failing** as expected).
+15. 2025 Railcars redirect integrity: non-zero Railcar volume appears only on the 4 designated rail crossings.
+
+### 06 — Emit coordinates JSON for the WebApp
+Script: `02-Data-Staging/Scripts/06_emit_coords_json.py`
+
+- Read `01-Raw-Data/TX-MX-Border-Crossings-Coordinates.csv` (34 rows).
+- Emit one JSON record per crossing with fields: `order`, `crossing_name`, `code`, `region`, `county`, `txdot_district`, `port_of_entry`, `city`, `address` (single-line normalized), `lat`, `lon`, `data_crossing_name`.
+- `data_crossing_name` is the join key used by the WebApp to merge coordinate rows with CBP monthly/yearly totals. It equals `crossing_name` for 32 of 34 rows; the two El Paso rail bridges (`BNSF Railroad Rail Bridge`, `Union Pacific Railroad Rail Bridge`) both carry `data_crossing_name = "El Paso Railroad Bridges"` so they join to the single combined CBP row.
+- Write `03-Processed-Data/json/crossings_coordinates.json` and mirror to `WebApp/public/data/crossings_coordinates.json` when the WebApp directory exists.
 
 ## Resolved decisions (for historical reference)
 
@@ -152,6 +166,7 @@ python 02-Data-Staging/Scripts/03_ingest_elp_2025.py
 python 02-Data-Staging/Scripts/00_load_master.py
 python 02-Data-Staging/Scripts/04_merge_and_validate.py
 python 02-Data-Staging/Scripts/05_test_processed_data.py
+python 02-Data-Staging/Scripts/06_emit_coords_json.py
 ```
 
 Dependencies (`02-Data-Staging/Scripts/requirements.txt`): pandas, openpyxl, pdfplumber.
