@@ -60,8 +60,7 @@ def main() -> None:
             f"CROSSING_RENAME_MAP references crossings not present in baseline: {unknown_sources}"
         )
     df["Crossing"] = df["Crossing"].replace(CROSSING_RENAME_MAP)
-    # Re-derive ID column to reflect the renamed Crossing values.
-    # Baseline ID formula: "{Year}{Crossing}{mode_id}" (see 04_merge_and_validate.py).
+    # Re-derive ID using the slug format: "{YYYY}-{SLUG}-{ModeAbbr}"
     MODE_ID = {
         "Commercial Trucks": "Trucks",
         "Buses": "Buses",
@@ -69,9 +68,50 @@ def main() -> None:
         "Passenger Vehicles": "POVs",
         "Railcars": "Railcars",
     }
+    CROSSING_SLUG = {
+        "Anzalduas International Bridge":                    "ANZA",
+        "Boquillas":                                         "BOQU",
+        "Bridge of the Americas":                            "BRID",
+        "Brownsville & Matamoros Express Bridge":            "BROW",
+        "Camino Real International Bridge":                  "CAMI",
+        "Canadian Pacific Kansas City Laredo Railroad Bridge":"CANA",
+        "Colombia Solidarity Bridge":                        "COLO",
+        "Del Rio International Bridge":                      "DELR",
+        "Donna-Rio Bravo International Bridge":              "DONN",
+        "Eagle Pass International Bridge":                   "EAGL",
+        "El Paso Railroad Bridges":                          "ELPA",
+        "Fort Hancock-El Porvenir Bridge":                   "FORT",
+        "Free Trade International Bridge (Los Indios)":      "FREE",
+        "Gateway International Bridge":                      "GATE",
+        "Gateway to the Americas Bridge":                    "GTAB",
+        "Good Neighbor Bridge":                              "GOOD",
+        "Juárez-Lincoln International Bridge":               "JUAR",
+        "Lake Amistad Dam Crossing":                         "LAKA",
+        "Lake Falcon Dam International Crossing":            "LAKF",
+        "Los Ebanos Ferry":                                  "LOSE",
+        "Marcelino Serna Bridge":                            "MARC",
+        "McAllen-Hidalgo International Bridge":              "MCAL",
+        "Paso del Norte Bridge":                             "PASO",
+        "Pharr International Bridge":                        "PHAR",
+        "Presidio-Ojinaga International Bridge":             "PRES",
+        "Progreso International Bridge":                     "PROG",
+        "Roma-Ciudad Miguel Alemán International Bridge":    "ROMA",
+        "South Orient Railroad Bridge":                      "SOUT",
+        "Starr-Camargo Bridge":                              "STAR",
+        "Union Pacific Eagle Pass Railroad Bridge":          "UNIO",
+        "Veterans International Bridge at Los Tomates":      "VETE",
+        "West Rail Bridge":                                  "WEST",
+        "World Trade Bridge":                                "WORL",
+        "Ysleta Bridge":                                     "YSLE",
+    }
+    unmapped = set(df["Crossing"].unique()) - set(CROSSING_SLUG)
+    if unmapped:
+        raise SystemExit(f"[01] No crossing slug for: {unmapped}")
     df["ID"] = (
         df["Year"].astype(str)
-        + df["Crossing"].astype(str)
+        + "-"
+        + df["Crossing"].map(CROSSING_SLUG)
+        + "-"
         + df["Modes"].map(MODE_ID).fillna(df["Modes"])
     )
     assert df["ID"].is_unique, "ID non-unique after rename + rebuild"

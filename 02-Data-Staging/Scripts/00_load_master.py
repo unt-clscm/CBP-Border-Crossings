@@ -5,6 +5,7 @@ append 2025 data from the dedicated ELP and LRD-RVG cleaned sources.
 
 Output: 03-Processed-Data/csv/monthly_crossings_2008_2025.csv
 Columns: ID, Year, Month, Region, POE, Crossing, Modes, Northbound Crossing
+ID format: "{YYYY}-{MM}-{CROSSING_SLUG}-{ModeAbbr}"  e.g. "2008-01-BRID-Buses"
 
 Notes:
 - Santa Teresa (NM) is dropped — not a Texas crossing.
@@ -85,6 +86,43 @@ MODE_ID = {
     "Railcars":               "Railcars",
 }
 
+CROSSING_SLUG = {
+    "Anzalduas International Bridge":                    "ANZA",
+    "Boquillas":                                         "BOQU",
+    "Bridge of the Americas":                            "BRID",
+    "Brownsville & Matamoros Express Bridge":            "BROW",
+    "Camino Real International Bridge":                  "CAMI",
+    "Canadian Pacific Kansas City Laredo Railroad Bridge":"CANA",
+    "Colombia Solidarity Bridge":                        "COLO",
+    "Del Rio International Bridge":                      "DELR",
+    "Donna-Rio Bravo International Bridge":              "DONN",
+    "Eagle Pass International Bridge":                   "EAGL",
+    "El Paso Railroad Bridges":                          "ELPA",
+    "Fort Hancock-El Porvenir Bridge":                   "FORT",
+    "Free Trade International Bridge (Los Indios)":      "FREE",
+    "Gateway International Bridge":                      "GATE",
+    "Gateway to the Americas Bridge":                    "GTAB",
+    "Good Neighbor Bridge":                              "GOOD",
+    "Juárez-Lincoln International Bridge":               "JUAR",
+    "Lake Amistad Dam Crossing":                         "LAKA",
+    "Lake Falcon Dam International Crossing":            "LAKF",
+    "Los Ebanos Ferry":                                  "LOSE",
+    "Marcelino Serna Bridge":                            "MARC",
+    "McAllen-Hidalgo International Bridge":              "MCAL",
+    "Paso del Norte Bridge":                             "PASO",
+    "Pharr International Bridge":                        "PHAR",
+    "Presidio-Ojinaga International Bridge":             "PRES",
+    "Progreso International Bridge":                     "PROG",
+    "Roma-Ciudad Miguel Alemán International Bridge":    "ROMA",
+    "South Orient Railroad Bridge":                      "SOUT",
+    "Starr-Camargo Bridge":                              "STAR",
+    "Union Pacific Eagle Pass Railroad Bridge":          "UNIO",
+    "Veterans International Bridge at Los Tomates":      "VETE",
+    "West Rail Bridge":                                  "WEST",
+    "World Trade Bridge":                                "WORL",
+    "Ysleta Bridge":                                     "YSLE",
+}
+
 
 def main() -> None:
     print(f"[00] Reading {RAW}")
@@ -149,11 +187,18 @@ def main() -> None:
     # Fill nulls with 0
     long["Northbound Crossing"] = long["Northbound Crossing"].fillna(0).astype(int)
 
-    # Build ID: "{Year}{Month:02d}{Crossing}{ModeID}"
+    unmapped_slugs = set(long["Crossing"].unique()) - set(CROSSING_SLUG)
+    if unmapped_slugs:
+        raise SystemExit(f"[00] No crossing slug for: {unmapped_slugs}")
+
+    # Build ID: "{YYYY}-{MM}-{SLUG}-{ModeAbbr}"  e.g. "2008-01-BRID-Buses"
     long["ID"] = (
         long["Year"].astype(str)
+        + "-"
         + long["Month"].astype(str).str.zfill(2)
-        + long["Crossing"]
+        + "-"
+        + long["Crossing"].map(CROSSING_SLUG)
+        + "-"
         + long["Modes"].map(MODE_ID).fillna(long["Modes"])
     )
 
@@ -176,8 +221,11 @@ def main() -> None:
         df25["Northbound Crossing"] = df25["Northbound Crossing"].fillna(0).astype(int)
         df25["ID"] = (
             df25["Year"].astype(str)
+            + "-"
             + df25["Month"].astype(str).str.zfill(2)
-            + df25["Crossing"]
+            + "-"
+            + df25["Crossing"].map(CROSSING_SLUG).fillna(df25["Crossing"])
+            + "-"
             + df25["Modes"].map(MODE_ID).fillna(df25["Modes"])
         )
         return df25
@@ -202,7 +250,9 @@ def main() -> None:
     )
     yearly["ID"] = (
         yearly["Year"].astype(str)
-        + yearly["Crossing"]
+        + "-"
+        + yearly["Crossing"].map(CROSSING_SLUG)
+        + "-"
         + yearly["Modes"].map(MODE_ID).fillna(yearly["Modes"])
     )
     yearly = yearly[["ID", "Year", "Region", "POE", "Crossing", "Modes", "Northbound Crossing"]].sort_values(
