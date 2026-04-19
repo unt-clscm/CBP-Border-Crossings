@@ -56,6 +56,10 @@ All 2024-active combinations have a 2025 row.
 - POEs with any non-zero 2025 value:      12
 - Non-zero (Crossing, Mode, Month) rows:  903
 
+## Known data issues
+
+- **ELP 2025 May vs June Passenger Vehicles identical (`1,124,274` both months).** The September El Paso field office PDF reports identical totals on the May and June pages across every El Paso crossing — suspected source-report duplicate-page error. Totals are kept as-is pending CBP El Paso field office confirmation. Guarded by invariant test 14 in `05_test_processed_data.py`, which currently fails by design. See [`elp_pdf_notes.md`](./elp_pdf_notes.md) (§ Known quirks).
+
 ## See also
 - [`unmapped_2025.md`](./unmapped_2025.md)
 - [`elp_pdf_notes.md`](./elp_pdf_notes.md)

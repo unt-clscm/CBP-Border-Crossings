@@ -29,7 +29,7 @@ npm run dev
 ```
 CBP-Border-Corssings/
 ├── 00-Project-Management/       Phase plans, data requests
-├── 01-Raw-Data/                 Frozen inputs (NB-Crossings-2013-2024.xlsx,
+├── 01-Raw-Data/                 Frozen inputs (NB-Yearly-Crossings-2013-2024.xlsx,
 │                                LRD-RVG-2025.xlsx, ELP-2025/*.pdf)
 ├── 02-Data-Staging/             Scripts, cleaned intermediates, config
 ├── 03-Processed-Data/           Final CSV + JSON (monthly/yearly 2008–2025 + crossings_coordinates)
@@ -38,7 +38,7 @@ CBP-Border-Corssings/
 
 ## Data sources
 
-- **2013–2024:** pre-aggregated CBP northbound crossings (`NB-Crossings-2013-2024.xlsx`)
+- **2013–2024:** pre-aggregated CBP northbound crossings (`NB-Yearly-Crossings-2013-2024.xlsx`)
 - **2025 — Laredo + Rio Grande Valley field offices:** `LRD-RVG-2025.xlsx` (monthly by bridge)
 - **2025 — El Paso field office:** 3 PDF traffic summary reports in `01-Raw-Data/ELP-2025/`
 

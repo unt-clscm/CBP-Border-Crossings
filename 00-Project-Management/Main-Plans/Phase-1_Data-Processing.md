@@ -19,7 +19,7 @@
 
 | Column | Example |
 |--------|---------|
-| `ID` | `202501Del Rio International BridgeTrucks` — formula: `str(Year) + MM + Crossing + mode_id_abbrev` |
+| `ID` | `2025-01-DELR-Trucks` — formula: `YYYY-MM-SLUG-ModeAbbr` (slug from `CROSSING_SLUG` in `00_load_master.py`; mode abbrev from `MODE_ID`) |
 | `Year` | `2025` |
 | `Month` | `1` (1–12) |
 | `Region` | `Laredo` (CBP field office: `El Paso` / `Laredo` / `Pharr`) |
@@ -71,10 +71,10 @@ Script: `02-Data-Staging/Scripts/00_load_master.py`
   - Paso del Norte and Ysleta each have a main-bridge row and a DCL (Dedicated Commuter Lane) row per month in the source; these are summed into a single row per month before melting.
 - Melt 5 mode columns (Trucks, Buses, POVs, Pedestrians, Railcars) wide → long.
 - Apply `CROSSING_MAP` (34 entries) and `REGION_MAP` to canonicalize names.
-- Build `ID = str(Year) + MM + Crossing + mode_abbrev`.
+- Build `ID = YYYY-MM-SLUG-ModeAbbr` (e.g. `2008-01-BRID-Buses`).
 - Append 2025 from `02-Data-Staging/cleaned/elp_2025.csv` and `lrd_rvg_2025.csv`.
 - Emit `03-Processed-Data/csv/monthly_crossings_2008_2025.csv` (34,090 rows).
-- Emit `03-Processed-Data/csv/yearly_crossings_2008_2025.csv` (2,850 rows) — grouped sum of monthly, yearly `ID = str(Year) + Crossing + mode_abbrev`.
+- Emit `03-Processed-Data/csv/yearly_crossings_2008_2025.csv` (2,850 rows) — grouped sum of monthly, yearly `ID = YYYY-SLUG-ModeAbbr`.
 
 ### 01 — Load + normalize 2013–2024 baseline (vocab only)
 Script: `02-Data-Staging/Scripts/01_load_baseline.py`
@@ -127,7 +127,7 @@ Standalone pass/fail regression suite — exit 0 on all-pass, 1 on any failure. 
 5. Exactly 5 canonical modes.
 6. Vocabulary conformance: Region and Modes match `vocab.json`.
 7. Coordinates-CSV name alignment: every `Crossing` in coordinates CSV (exception: `El Paso Railroad Bridges`); BNSF and UP rail bridges absent as expected (combined).
-8. ID formula: monthly `ID == str(Year) + MM + Crossing + mode_abbrev`; yearly `ID == str(Year) + Crossing + mode_abbrev`; both unique.
+8. ID formula: monthly `ID == YYYY-MM-SLUG-ModeAbbr`; yearly `ID == YYYY-SLUG-ModeAbbr`; both unique.
 9. No duplicate (Year, Month, Crossing, Modes) rows in monthly file.
 10. Cross-source check: 2025 Laredo+Pharr Commercial Trucks equals raw sum from LRD-RVG workbook.
 11. Yearly totals exactly match the sum of monthly totals for every (Year, Crossing, Mode).
