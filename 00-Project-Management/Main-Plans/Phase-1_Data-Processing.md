@@ -132,7 +132,7 @@ Standalone pass/fail regression suite — exit 0 on all-pass, 1 on any failure. 
 
 ## Resolved decisions (for historical reference)
 
-- **Source for 2008–2024:** `2008-2024 Master_CBP Border Crossings.xlsx` (total-flow NB+SB). The column `Northbound Crossing` is retained for schema compatibility, but values for 2008–2024 are total-flow counts. 2025 values (from ELP PDFs and LRD-RVG workbook) are northbound only.
+- **Source for 2008–2024:** `2008-2024 Master_CBP Border Crossings.xlsx` (northbound only). Annual totals match `NB-Yearly-Crossings-2013-2024.xlsx` exactly for all overlapping years 2013–2024. All values in `Northbound Crossing` are northbound counts throughout 2008–2025.
 - **Bridge-name mismatches** — resolved via `CROSSING_MAP` in `00_load_master.py` and crosswalks in `config/crossing_crosswalk.json`.
 - **Anzalduas 2010 data entry error** — all 12 monthly rows had Month=1 in the source. Reassigned sequentially (confirmed by magnitude alignment with adjacent years).
 - **DCL rows (Paso del Norte, Ysleta)** — dedicated commuter lane rows present as separate rows per month in the Master workbook; summed into main bridge row before melt. Annual totals confirmed to match `NB-Crossings-2013-2024.xlsx` exactly (100% match across 2013–2024).

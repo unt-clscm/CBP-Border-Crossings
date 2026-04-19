@@ -10,8 +10,8 @@ Notes:
 - Santa Teresa (NM) is dropped — not a Texas crossing.
 - El Paso RR is mapped to 'El Paso Railroad Bridges' (CBP combined row; see
   el_paso_rail_bridges_rule.md for map-layer split treatment).
-- The Master is total-flow (NB+SB); the 'Northbound Crossing' column name is
-  kept for schema compatibility but values here are total counts.
+- The Master is northbound only; the 'Northbound Crossing' column name is
+  kept for schema compatibility and values are consistent with the NB baseline.
 - Rail is reported as EmptyRC + LoadedRC in the Master; these are summed into
   the 'Railcars' mode. The 'Trains' column is dropped (no equivalent in NB file).
 

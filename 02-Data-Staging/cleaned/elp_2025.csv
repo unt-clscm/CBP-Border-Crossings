@@ -1,0 +1,397 @@
+Year,Month,Region,POE,Crossing,Modes,Northbound Crossing,source
+2025,1,El Paso,El Paso,Bridge of the Americas,Buses,939,ELP_pdf
+2025,1,El Paso,El Paso,Bridge of the Americas,Commercial Trucks,12746,ELP_pdf
+2025,1,El Paso,El Paso,Bridge of the Americas,Passenger Vehicles,274826,ELP_pdf
+2025,1,El Paso,El Paso,Bridge of the Americas,Pedestrians/ Bicyclists,91985,ELP_pdf
+2025,1,El Paso,El Paso,El Paso Railroad Bridges,Railcars,9183,ELP_pdf
+2025,1,El Paso,El Paso,Good Neighbor Bridge,Buses,0,ELP_pdf
+2025,1,El Paso,El Paso,Good Neighbor Bridge,Commercial Trucks,0,ELP_pdf
+2025,1,El Paso,El Paso,Good Neighbor Bridge,Passenger Vehicles,142164,ELP_pdf
+2025,1,El Paso,El Paso,Good Neighbor Bridge,Pedestrians/ Bicyclists,0,ELP_pdf
+2025,1,El Paso,El Paso,Paso del Norte Bridge,Buses,324,ELP_pdf
+2025,1,El Paso,El Paso,Paso del Norte Bridge,Commercial Trucks,0,ELP_pdf
+2025,1,El Paso,El Paso,Paso del Norte Bridge,Passenger Vehicles,233323,ELP_pdf
+2025,1,El Paso,El Paso,Paso del Norte Bridge,Pedestrians/ Bicyclists,252515,ELP_pdf
+2025,1,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Buses,0,ELP_pdf
+2025,1,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Commercial Trucks,0,ELP_pdf
+2025,1,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Passenger Vehicles,9488,ELP_pdf
+2025,1,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Pedestrians/ Bicyclists,124,ELP_pdf
+2025,1,El Paso,Marcelino Serna,Marcelino Serna Bridge,Buses,0,ELP_pdf
+2025,1,El Paso,Marcelino Serna,Marcelino Serna Bridge,Commercial Trucks,1966,ELP_pdf
+2025,1,El Paso,Marcelino Serna,Marcelino Serna Bridge,Passenger Vehicles,55090,ELP_pdf
+2025,1,El Paso,Marcelino Serna,Marcelino Serna Bridge,Pedestrians/ Bicyclists,5572,ELP_pdf
+2025,1,El Paso,Presidio,Boquillas,Buses,0,ELP_pdf
+2025,1,El Paso,Presidio,Boquillas,Commercial Trucks,0,ELP_pdf
+2025,1,El Paso,Presidio,Boquillas,Passenger Vehicles,0,ELP_pdf
+2025,1,El Paso,Presidio,Boquillas,Pedestrians/ Bicyclists,2614,ELP_pdf
+2025,1,El Paso,Presidio,Presidio-Ojinaga International Bridge,Buses,162,ELP_pdf
+2025,1,El Paso,Presidio,Presidio-Ojinaga International Bridge,Commercial Trucks,1010,ELP_pdf
+2025,1,El Paso,Presidio,Presidio-Ojinaga International Bridge,Passenger Vehicles,62432,ELP_pdf
+2025,1,El Paso,Presidio,Presidio-Ojinaga International Bridge,Pedestrians/ Bicyclists,14926,ELP_pdf
+2025,1,El Paso,Ysleta,Ysleta Bridge,Buses,0,ELP_pdf
+2025,1,El Paso,Ysleta,Ysleta Bridge,Commercial Trucks,55299,ELP_pdf
+2025,1,El Paso,Ysleta,Ysleta Bridge,Passenger Vehicles,296166,ELP_pdf
+2025,1,El Paso,Ysleta,Ysleta Bridge,Pedestrians/ Bicyclists,156297,ELP_pdf
+2025,2,El Paso,El Paso,Bridge of the Americas,Buses,775,ELP_pdf
+2025,2,El Paso,El Paso,Bridge of the Americas,Commercial Trucks,12123,ELP_pdf
+2025,2,El Paso,El Paso,Bridge of the Americas,Passenger Vehicles,266540,ELP_pdf
+2025,2,El Paso,El Paso,Bridge of the Americas,Pedestrians/ Bicyclists,88324,ELP_pdf
+2025,2,El Paso,El Paso,El Paso Railroad Bridges,Railcars,6478,ELP_pdf
+2025,2,El Paso,El Paso,Good Neighbor Bridge,Buses,0,ELP_pdf
+2025,2,El Paso,El Paso,Good Neighbor Bridge,Commercial Trucks,0,ELP_pdf
+2025,2,El Paso,El Paso,Good Neighbor Bridge,Passenger Vehicles,134124,ELP_pdf
+2025,2,El Paso,El Paso,Good Neighbor Bridge,Pedestrians/ Bicyclists,0,ELP_pdf
+2025,2,El Paso,El Paso,Paso del Norte Bridge,Buses,322,ELP_pdf
+2025,2,El Paso,El Paso,Paso del Norte Bridge,Commercial Trucks,0,ELP_pdf
+2025,2,El Paso,El Paso,Paso del Norte Bridge,Passenger Vehicles,231149,ELP_pdf
+2025,2,El Paso,El Paso,Paso del Norte Bridge,Pedestrians/ Bicyclists,273889,ELP_pdf
+2025,2,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Buses,0,ELP_pdf
+2025,2,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Commercial Trucks,0,ELP_pdf
+2025,2,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Passenger Vehicles,8968,ELP_pdf
+2025,2,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Pedestrians/ Bicyclists,106,ELP_pdf
+2025,2,El Paso,Marcelino Serna,Marcelino Serna Bridge,Buses,0,ELP_pdf
+2025,2,El Paso,Marcelino Serna,Marcelino Serna Bridge,Commercial Trucks,2625,ELP_pdf
+2025,2,El Paso,Marcelino Serna,Marcelino Serna Bridge,Passenger Vehicles,44330,ELP_pdf
+2025,2,El Paso,Marcelino Serna,Marcelino Serna Bridge,Pedestrians/ Bicyclists,5095,ELP_pdf
+2025,2,El Paso,Presidio,Boquillas,Buses,0,ELP_pdf
+2025,2,El Paso,Presidio,Boquillas,Commercial Trucks,0,ELP_pdf
+2025,2,El Paso,Presidio,Boquillas,Passenger Vehicles,0,ELP_pdf
+2025,2,El Paso,Presidio,Boquillas,Pedestrians/ Bicyclists,2274,ELP_pdf
+2025,2,El Paso,Presidio,Presidio-Ojinaga International Bridge,Buses,163,ELP_pdf
+2025,2,El Paso,Presidio,Presidio-Ojinaga International Bridge,Commercial Trucks,747,ELP_pdf
+2025,2,El Paso,Presidio,Presidio-Ojinaga International Bridge,Passenger Vehicles,53522,ELP_pdf
+2025,2,El Paso,Presidio,Presidio-Ojinaga International Bridge,Pedestrians/ Bicyclists,11382,ELP_pdf
+2025,2,El Paso,Ysleta,Ysleta Bridge,Buses,0,ELP_pdf
+2025,2,El Paso,Ysleta,Ysleta Bridge,Commercial Trucks,49937,ELP_pdf
+2025,2,El Paso,Ysleta,Ysleta Bridge,Passenger Vehicles,294173,ELP_pdf
+2025,2,El Paso,Ysleta,Ysleta Bridge,Pedestrians/ Bicyclists,142996,ELP_pdf
+2025,3,El Paso,El Paso,Bridge of the Americas,Buses,883,ELP_pdf
+2025,3,El Paso,El Paso,Bridge of the Americas,Commercial Trucks,12879,ELP_pdf
+2025,3,El Paso,El Paso,Bridge of the Americas,Passenger Vehicles,303107,ELP_pdf
+2025,3,El Paso,El Paso,Bridge of the Americas,Pedestrians/ Bicyclists,94696,ELP_pdf
+2025,3,El Paso,El Paso,El Paso Railroad Bridges,Railcars,7948,ELP_pdf
+2025,3,El Paso,El Paso,Good Neighbor Bridge,Buses,0,ELP_pdf
+2025,3,El Paso,El Paso,Good Neighbor Bridge,Commercial Trucks,0,ELP_pdf
+2025,3,El Paso,El Paso,Good Neighbor Bridge,Passenger Vehicles,146061,ELP_pdf
+2025,3,El Paso,El Paso,Good Neighbor Bridge,Pedestrians/ Bicyclists,0,ELP_pdf
+2025,3,El Paso,El Paso,Paso del Norte Bridge,Buses,337,ELP_pdf
+2025,3,El Paso,El Paso,Paso del Norte Bridge,Commercial Trucks,0,ELP_pdf
+2025,3,El Paso,El Paso,Paso del Norte Bridge,Passenger Vehicles,216309,ELP_pdf
+2025,3,El Paso,El Paso,Paso del Norte Bridge,Pedestrians/ Bicyclists,298018,ELP_pdf
+2025,3,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Buses,0,ELP_pdf
+2025,3,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Commercial Trucks,0,ELP_pdf
+2025,3,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Passenger Vehicles,9901,ELP_pdf
+2025,3,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Pedestrians/ Bicyclists,159,ELP_pdf
+2025,3,El Paso,Marcelino Serna,Marcelino Serna Bridge,Buses,0,ELP_pdf
+2025,3,El Paso,Marcelino Serna,Marcelino Serna Bridge,Commercial Trucks,2241,ELP_pdf
+2025,3,El Paso,Marcelino Serna,Marcelino Serna Bridge,Passenger Vehicles,51113,ELP_pdf
+2025,3,El Paso,Marcelino Serna,Marcelino Serna Bridge,Pedestrians/ Bicyclists,3948,ELP_pdf
+2025,3,El Paso,Presidio,Boquillas,Buses,0,ELP_pdf
+2025,3,El Paso,Presidio,Boquillas,Commercial Trucks,0,ELP_pdf
+2025,3,El Paso,Presidio,Boquillas,Passenger Vehicles,0,ELP_pdf
+2025,3,El Paso,Presidio,Boquillas,Pedestrians/ Bicyclists,4603,ELP_pdf
+2025,3,El Paso,Presidio,Presidio-Ojinaga International Bridge,Buses,243,ELP_pdf
+2025,3,El Paso,Presidio,Presidio-Ojinaga International Bridge,Commercial Trucks,1014,ELP_pdf
+2025,3,El Paso,Presidio,Presidio-Ojinaga International Bridge,Passenger Vehicles,65522,ELP_pdf
+2025,3,El Paso,Presidio,Presidio-Ojinaga International Bridge,Pedestrians/ Bicyclists,21146,ELP_pdf
+2025,3,El Paso,Ysleta,Ysleta Bridge,Buses,0,ELP_pdf
+2025,3,El Paso,Ysleta,Ysleta Bridge,Commercial Trucks,56157,ELP_pdf
+2025,3,El Paso,Ysleta,Ysleta Bridge,Passenger Vehicles,318541,ELP_pdf
+2025,3,El Paso,Ysleta,Ysleta Bridge,Pedestrians/ Bicyclists,151469,ELP_pdf
+2025,4,El Paso,El Paso,Bridge of the Americas,Buses,812,ELP_pdf
+2025,4,El Paso,El Paso,Bridge of the Americas,Commercial Trucks,13047,ELP_pdf
+2025,4,El Paso,El Paso,Bridge of the Americas,Passenger Vehicles,286984,ELP_pdf
+2025,4,El Paso,El Paso,Bridge of the Americas,Pedestrians/ Bicyclists,107288,ELP_pdf
+2025,4,El Paso,El Paso,El Paso Railroad Bridges,Railcars,8401,ELP_pdf
+2025,4,El Paso,El Paso,Good Neighbor Bridge,Buses,0,ELP_pdf
+2025,4,El Paso,El Paso,Good Neighbor Bridge,Commercial Trucks,0,ELP_pdf
+2025,4,El Paso,El Paso,Good Neighbor Bridge,Passenger Vehicles,146696,ELP_pdf
+2025,4,El Paso,El Paso,Good Neighbor Bridge,Pedestrians/ Bicyclists,0,ELP_pdf
+2025,4,El Paso,El Paso,Paso del Norte Bridge,Buses,332,ELP_pdf
+2025,4,El Paso,El Paso,Paso del Norte Bridge,Commercial Trucks,0,ELP_pdf
+2025,4,El Paso,El Paso,Paso del Norte Bridge,Passenger Vehicles,216386,ELP_pdf
+2025,4,El Paso,El Paso,Paso del Norte Bridge,Pedestrians/ Bicyclists,310677,ELP_pdf
+2025,4,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Buses,0,ELP_pdf
+2025,4,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Commercial Trucks,0,ELP_pdf
+2025,4,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Passenger Vehicles,9677,ELP_pdf
+2025,4,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Pedestrians/ Bicyclists,176,ELP_pdf
+2025,4,El Paso,Marcelino Serna,Marcelino Serna Bridge,Buses,0,ELP_pdf
+2025,4,El Paso,Marcelino Serna,Marcelino Serna Bridge,Commercial Trucks,1974,ELP_pdf
+2025,4,El Paso,Marcelino Serna,Marcelino Serna Bridge,Passenger Vehicles,52577,ELP_pdf
+2025,4,El Paso,Marcelino Serna,Marcelino Serna Bridge,Pedestrians/ Bicyclists,7476,ELP_pdf
+2025,4,El Paso,Presidio,Boquillas,Buses,0,ELP_pdf
+2025,4,El Paso,Presidio,Boquillas,Commercial Trucks,0,ELP_pdf
+2025,4,El Paso,Presidio,Boquillas,Passenger Vehicles,0,ELP_pdf
+2025,4,El Paso,Presidio,Boquillas,Pedestrians/ Bicyclists,2670,ELP_pdf
+2025,4,El Paso,Presidio,Presidio-Ojinaga International Bridge,Buses,179,ELP_pdf
+2025,4,El Paso,Presidio,Presidio-Ojinaga International Bridge,Commercial Trucks,971,ELP_pdf
+2025,4,El Paso,Presidio,Presidio-Ojinaga International Bridge,Passenger Vehicles,61121,ELP_pdf
+2025,4,El Paso,Presidio,Presidio-Ojinaga International Bridge,Pedestrians/ Bicyclists,20430,ELP_pdf
+2025,4,El Paso,Ysleta,Ysleta Bridge,Buses,0,ELP_pdf
+2025,4,El Paso,Ysleta,Ysleta Bridge,Commercial Trucks,54073,ELP_pdf
+2025,4,El Paso,Ysleta,Ysleta Bridge,Passenger Vehicles,316853,ELP_pdf
+2025,4,El Paso,Ysleta,Ysleta Bridge,Pedestrians/ Bicyclists,160085,ELP_pdf
+2025,5,El Paso,El Paso,Bridge of the Americas,Buses,826,ELP_pdf
+2025,5,El Paso,El Paso,Bridge of the Americas,Commercial Trucks,14548,ELP_pdf
+2025,5,El Paso,El Paso,Bridge of the Americas,Passenger Vehicles,290891,ELP_pdf
+2025,5,El Paso,El Paso,Bridge of the Americas,Pedestrians/ Bicyclists,90315,ELP_pdf
+2025,5,El Paso,El Paso,El Paso Railroad Bridges,Railcars,9805,ELP_pdf
+2025,5,El Paso,El Paso,Good Neighbor Bridge,Buses,0,ELP_pdf
+2025,5,El Paso,El Paso,Good Neighbor Bridge,Commercial Trucks,0,ELP_pdf
+2025,5,El Paso,El Paso,Good Neighbor Bridge,Passenger Vehicles,148979,ELP_pdf
+2025,5,El Paso,El Paso,Good Neighbor Bridge,Pedestrians/ Bicyclists,0,ELP_pdf
+2025,5,El Paso,El Paso,Paso del Norte Bridge,Buses,338,ELP_pdf
+2025,5,El Paso,El Paso,Paso del Norte Bridge,Commercial Trucks,0,ELP_pdf
+2025,5,El Paso,El Paso,Paso del Norte Bridge,Passenger Vehicles,229921,ELP_pdf
+2025,5,El Paso,El Paso,Paso del Norte Bridge,Pedestrians/ Bicyclists,33814,ELP_pdf
+2025,5,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Buses,0,ELP_pdf
+2025,5,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Commercial Trucks,0,ELP_pdf
+2025,5,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Passenger Vehicles,10517,ELP_pdf
+2025,5,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Pedestrians/ Bicyclists,146,ELP_pdf
+2025,5,El Paso,Marcelino Serna,Marcelino Serna Bridge,Buses,0,ELP_pdf
+2025,5,El Paso,Marcelino Serna,Marcelino Serna Bridge,Commercial Trucks,4027,ELP_pdf
+2025,5,El Paso,Marcelino Serna,Marcelino Serna Bridge,Passenger Vehicles,53043,ELP_pdf
+2025,5,El Paso,Marcelino Serna,Marcelino Serna Bridge,Pedestrians/ Bicyclists,5939,ELP_pdf
+2025,5,El Paso,Presidio,Boquillas,Buses,0,ELP_pdf
+2025,5,El Paso,Presidio,Boquillas,Commercial Trucks,0,ELP_pdf
+2025,5,El Paso,Presidio,Boquillas,Passenger Vehicles,0,ELP_pdf
+2025,5,El Paso,Presidio,Boquillas,Pedestrians/ Bicyclists,1403,ELP_pdf
+2025,5,El Paso,Presidio,Presidio-Ojinaga International Bridge,Buses,190,ELP_pdf
+2025,5,El Paso,Presidio,Presidio-Ojinaga International Bridge,Commercial Trucks,869,ELP_pdf
+2025,5,El Paso,Presidio,Presidio-Ojinaga International Bridge,Passenger Vehicles,62288,ELP_pdf
+2025,5,El Paso,Presidio,Presidio-Ojinaga International Bridge,Pedestrians/ Bicyclists,15511,ELP_pdf
+2025,5,El Paso,Ysleta,Ysleta Bridge,Buses,0,ELP_pdf
+2025,5,El Paso,Ysleta,Ysleta Bridge,Commercial Trucks,50412,ELP_pdf
+2025,5,El Paso,Ysleta,Ysleta Bridge,Passenger Vehicles,328635,ELP_pdf
+2025,5,El Paso,Ysleta,Ysleta Bridge,Pedestrians/ Bicyclists,171098,ELP_pdf
+2025,6,El Paso,El Paso,Bridge of the Americas,Buses,826,ELP_pdf
+2025,6,El Paso,El Paso,Bridge of the Americas,Commercial Trucks,14548,ELP_pdf
+2025,6,El Paso,El Paso,Bridge of the Americas,Passenger Vehicles,290891,ELP_pdf
+2025,6,El Paso,El Paso,Bridge of the Americas,Pedestrians/ Bicyclists,90315,ELP_pdf
+2025,6,El Paso,El Paso,El Paso Railroad Bridges,Railcars,9805,ELP_pdf
+2025,6,El Paso,El Paso,Good Neighbor Bridge,Buses,0,ELP_pdf
+2025,6,El Paso,El Paso,Good Neighbor Bridge,Commercial Trucks,0,ELP_pdf
+2025,6,El Paso,El Paso,Good Neighbor Bridge,Passenger Vehicles,148979,ELP_pdf
+2025,6,El Paso,El Paso,Good Neighbor Bridge,Pedestrians/ Bicyclists,0,ELP_pdf
+2025,6,El Paso,El Paso,Paso del Norte Bridge,Buses,338,ELP_pdf
+2025,6,El Paso,El Paso,Paso del Norte Bridge,Commercial Trucks,0,ELP_pdf
+2025,6,El Paso,El Paso,Paso del Norte Bridge,Passenger Vehicles,229921,ELP_pdf
+2025,6,El Paso,El Paso,Paso del Norte Bridge,Pedestrians/ Bicyclists,33814,ELP_pdf
+2025,6,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Buses,0,ELP_pdf
+2025,6,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Commercial Trucks,0,ELP_pdf
+2025,6,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Passenger Vehicles,10517,ELP_pdf
+2025,6,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Pedestrians/ Bicyclists,146,ELP_pdf
+2025,6,El Paso,Marcelino Serna,Marcelino Serna Bridge,Buses,0,ELP_pdf
+2025,6,El Paso,Marcelino Serna,Marcelino Serna Bridge,Commercial Trucks,4027,ELP_pdf
+2025,6,El Paso,Marcelino Serna,Marcelino Serna Bridge,Passenger Vehicles,53043,ELP_pdf
+2025,6,El Paso,Marcelino Serna,Marcelino Serna Bridge,Pedestrians/ Bicyclists,5939,ELP_pdf
+2025,6,El Paso,Presidio,Boquillas,Buses,0,ELP_pdf
+2025,6,El Paso,Presidio,Boquillas,Commercial Trucks,0,ELP_pdf
+2025,6,El Paso,Presidio,Boquillas,Passenger Vehicles,0,ELP_pdf
+2025,6,El Paso,Presidio,Boquillas,Pedestrians/ Bicyclists,1403,ELP_pdf
+2025,6,El Paso,Presidio,Presidio-Ojinaga International Bridge,Buses,190,ELP_pdf
+2025,6,El Paso,Presidio,Presidio-Ojinaga International Bridge,Commercial Trucks,869,ELP_pdf
+2025,6,El Paso,Presidio,Presidio-Ojinaga International Bridge,Passenger Vehicles,62288,ELP_pdf
+2025,6,El Paso,Presidio,Presidio-Ojinaga International Bridge,Pedestrians/ Bicyclists,15511,ELP_pdf
+2025,6,El Paso,Ysleta,Ysleta Bridge,Buses,0,ELP_pdf
+2025,6,El Paso,Ysleta,Ysleta Bridge,Commercial Trucks,50412,ELP_pdf
+2025,6,El Paso,Ysleta,Ysleta Bridge,Passenger Vehicles,328635,ELP_pdf
+2025,6,El Paso,Ysleta,Ysleta Bridge,Pedestrians/ Bicyclists,171098,ELP_pdf
+2025,7,El Paso,El Paso,Bridge of the Americas,Buses,887,ELP_pdf
+2025,7,El Paso,El Paso,Bridge of the Americas,Commercial Trucks,15659,ELP_pdf
+2025,7,El Paso,El Paso,Bridge of the Americas,Passenger Vehicles,244540,ELP_pdf
+2025,7,El Paso,El Paso,Bridge of the Americas,Pedestrians/ Bicyclists,105614,ELP_pdf
+2025,7,El Paso,El Paso,El Paso Railroad Bridges,Railcars,10750,ELP_pdf
+2025,7,El Paso,El Paso,Good Neighbor Bridge,Buses,0,ELP_pdf
+2025,7,El Paso,El Paso,Good Neighbor Bridge,Commercial Trucks,0,ELP_pdf
+2025,7,El Paso,El Paso,Good Neighbor Bridge,Passenger Vehicles,138657,ELP_pdf
+2025,7,El Paso,El Paso,Good Neighbor Bridge,Pedestrians/ Bicyclists,0,ELP_pdf
+2025,7,El Paso,El Paso,Paso del Norte Bridge,Buses,319,ELP_pdf
+2025,7,El Paso,El Paso,Paso del Norte Bridge,Commercial Trucks,0,ELP_pdf
+2025,7,El Paso,El Paso,Paso del Norte Bridge,Passenger Vehicles,218638,ELP_pdf
+2025,7,El Paso,El Paso,Paso del Norte Bridge,Pedestrians/ Bicyclists,306306,ELP_pdf
+2025,7,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Buses,0,ELP_pdf
+2025,7,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Commercial Trucks,0,ELP_pdf
+2025,7,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Passenger Vehicles,9463,ELP_pdf
+2025,7,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Pedestrians/ Bicyclists,231,ELP_pdf
+2025,7,El Paso,Marcelino Serna,Marcelino Serna Bridge,Buses,0,ELP_pdf
+2025,7,El Paso,Marcelino Serna,Marcelino Serna Bridge,Commercial Trucks,3487,ELP_pdf
+2025,7,El Paso,Marcelino Serna,Marcelino Serna Bridge,Passenger Vehicles,61273,ELP_pdf
+2025,7,El Paso,Marcelino Serna,Marcelino Serna Bridge,Pedestrians/ Bicyclists,6656,ELP_pdf
+2025,7,El Paso,Presidio,Boquillas,Buses,0,ELP_pdf
+2025,7,El Paso,Presidio,Boquillas,Commercial Trucks,0,ELP_pdf
+2025,7,El Paso,Presidio,Boquillas,Passenger Vehicles,0,ELP_pdf
+2025,7,El Paso,Presidio,Boquillas,Pedestrians/ Bicyclists,331,ELP_pdf
+2025,7,El Paso,Presidio,Presidio-Ojinaga International Bridge,Buses,196,ELP_pdf
+2025,7,El Paso,Presidio,Presidio-Ojinaga International Bridge,Commercial Trucks,996,ELP_pdf
+2025,7,El Paso,Presidio,Presidio-Ojinaga International Bridge,Passenger Vehicles,58271,ELP_pdf
+2025,7,El Paso,Presidio,Presidio-Ojinaga International Bridge,Pedestrians/ Bicyclists,21438,ELP_pdf
+2025,7,El Paso,Ysleta,Ysleta Bridge,Buses,0,ELP_pdf
+2025,7,El Paso,Ysleta,Ysleta Bridge,Commercial Trucks,57014,ELP_pdf
+2025,7,El Paso,Ysleta,Ysleta Bridge,Passenger Vehicles,313386,ELP_pdf
+2025,7,El Paso,Ysleta,Ysleta Bridge,Pedestrians/ Bicyclists,158286,ELP_pdf
+2025,8,El Paso,El Paso,Bridge of the Americas,Buses,868,ELP_pdf
+2025,8,El Paso,El Paso,Bridge of the Americas,Commercial Trucks,14076,ELP_pdf
+2025,8,El Paso,El Paso,Bridge of the Americas,Passenger Vehicles,288477,ELP_pdf
+2025,8,El Paso,El Paso,Bridge of the Americas,Pedestrians/ Bicyclists,116291,ELP_pdf
+2025,8,El Paso,El Paso,El Paso Railroad Bridges,Railcars,9928,ELP_pdf
+2025,8,El Paso,El Paso,Good Neighbor Bridge,Buses,0,ELP_pdf
+2025,8,El Paso,El Paso,Good Neighbor Bridge,Commercial Trucks,0,ELP_pdf
+2025,8,El Paso,El Paso,Good Neighbor Bridge,Passenger Vehicles,148248,ELP_pdf
+2025,8,El Paso,El Paso,Good Neighbor Bridge,Pedestrians/ Bicyclists,0,ELP_pdf
+2025,8,El Paso,El Paso,Paso del Norte Bridge,Buses,294,ELP_pdf
+2025,8,El Paso,El Paso,Paso del Norte Bridge,Commercial Trucks,0,ELP_pdf
+2025,8,El Paso,El Paso,Paso del Norte Bridge,Passenger Vehicles,234251,ELP_pdf
+2025,8,El Paso,El Paso,Paso del Norte Bridge,Pedestrians/ Bicyclists,321119,ELP_pdf
+2025,8,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Buses,0,ELP_pdf
+2025,8,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Commercial Trucks,0,ELP_pdf
+2025,8,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Passenger Vehicles,10406,ELP_pdf
+2025,8,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Pedestrians/ Bicyclists,235,ELP_pdf
+2025,8,El Paso,Marcelino Serna,Marcelino Serna Bridge,Buses,0,ELP_pdf
+2025,8,El Paso,Marcelino Serna,Marcelino Serna Bridge,Commercial Trucks,3169,ELP_pdf
+2025,8,El Paso,Marcelino Serna,Marcelino Serna Bridge,Passenger Vehicles,58124,ELP_pdf
+2025,8,El Paso,Marcelino Serna,Marcelino Serna Bridge,Pedestrians/ Bicyclists,7811,ELP_pdf
+2025,8,El Paso,Presidio,Boquillas,Buses,0,ELP_pdf
+2025,8,El Paso,Presidio,Boquillas,Commercial Trucks,0,ELP_pdf
+2025,8,El Paso,Presidio,Boquillas,Passenger Vehicles,0,ELP_pdf
+2025,8,El Paso,Presidio,Boquillas,Pedestrians/ Bicyclists,657,ELP_pdf
+2025,8,El Paso,Presidio,Presidio-Ojinaga International Bridge,Buses,251,ELP_pdf
+2025,8,El Paso,Presidio,Presidio-Ojinaga International Bridge,Commercial Trucks,755,ELP_pdf
+2025,8,El Paso,Presidio,Presidio-Ojinaga International Bridge,Passenger Vehicles,58713,ELP_pdf
+2025,8,El Paso,Presidio,Presidio-Ojinaga International Bridge,Pedestrians/ Bicyclists,8934,ELP_pdf
+2025,8,El Paso,Ysleta,Ysleta Bridge,Buses,0,ELP_pdf
+2025,8,El Paso,Ysleta,Ysleta Bridge,Commercial Trucks,53992,ELP_pdf
+2025,8,El Paso,Ysleta,Ysleta Bridge,Passenger Vehicles,328173,ELP_pdf
+2025,8,El Paso,Ysleta,Ysleta Bridge,Pedestrians/ Bicyclists,181006,ELP_pdf
+2025,9,El Paso,El Paso,Bridge of the Americas,Buses,725,ELP_pdf
+2025,9,El Paso,El Paso,Bridge of the Americas,Commercial Trucks,14121,ELP_pdf
+2025,9,El Paso,El Paso,Bridge of the Americas,Passenger Vehicles,275946,ELP_pdf
+2025,9,El Paso,El Paso,Bridge of the Americas,Pedestrians/ Bicyclists,110818,ELP_pdf
+2025,9,El Paso,El Paso,El Paso Railroad Bridges,Railcars,10495,ELP_pdf
+2025,9,El Paso,El Paso,Good Neighbor Bridge,Buses,0,ELP_pdf
+2025,9,El Paso,El Paso,Good Neighbor Bridge,Commercial Trucks,0,ELP_pdf
+2025,9,El Paso,El Paso,Good Neighbor Bridge,Passenger Vehicles,150184,ELP_pdf
+2025,9,El Paso,El Paso,Good Neighbor Bridge,Pedestrians/ Bicyclists,0,ELP_pdf
+2025,9,El Paso,El Paso,Paso del Norte Bridge,Buses,282,ELP_pdf
+2025,9,El Paso,El Paso,Paso del Norte Bridge,Commercial Trucks,0,ELP_pdf
+2025,9,El Paso,El Paso,Paso del Norte Bridge,Passenger Vehicles,233588,ELP_pdf
+2025,9,El Paso,El Paso,Paso del Norte Bridge,Pedestrians/ Bicyclists,321570,ELP_pdf
+2025,9,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Buses,0,ELP_pdf
+2025,9,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Commercial Trucks,0,ELP_pdf
+2025,9,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Passenger Vehicles,10423,ELP_pdf
+2025,9,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Pedestrians/ Bicyclists,313,ELP_pdf
+2025,9,El Paso,Marcelino Serna,Marcelino Serna Bridge,Buses,0,ELP_pdf
+2025,9,El Paso,Marcelino Serna,Marcelino Serna Bridge,Commercial Trucks,4022,ELP_pdf
+2025,9,El Paso,Marcelino Serna,Marcelino Serna Bridge,Passenger Vehicles,53890,ELP_pdf
+2025,9,El Paso,Marcelino Serna,Marcelino Serna Bridge,Pedestrians/ Bicyclists,6872,ELP_pdf
+2025,9,El Paso,Presidio,Boquillas,Buses,0,ELP_pdf
+2025,9,El Paso,Presidio,Boquillas,Commercial Trucks,0,ELP_pdf
+2025,9,El Paso,Presidio,Boquillas,Passenger Vehicles,0,ELP_pdf
+2025,9,El Paso,Presidio,Boquillas,Pedestrians/ Bicyclists,663,ELP_pdf
+2025,9,El Paso,Presidio,Presidio-Ojinaga International Bridge,Buses,201,ELP_pdf
+2025,9,El Paso,Presidio,Presidio-Ojinaga International Bridge,Commercial Trucks,729,ELP_pdf
+2025,9,El Paso,Presidio,Presidio-Ojinaga International Bridge,Passenger Vehicles,57021,ELP_pdf
+2025,9,El Paso,Presidio,Presidio-Ojinaga International Bridge,Pedestrians/ Bicyclists,13575,ELP_pdf
+2025,9,El Paso,Ysleta,Ysleta Bridge,Buses,0,ELP_pdf
+2025,9,El Paso,Ysleta,Ysleta Bridge,Commercial Trucks,55355,ELP_pdf
+2025,9,El Paso,Ysleta,Ysleta Bridge,Passenger Vehicles,323503,ELP_pdf
+2025,9,El Paso,Ysleta,Ysleta Bridge,Pedestrians/ Bicyclists,177704,ELP_pdf
+2025,10,El Paso,El Paso,Bridge of the Americas,Buses,400,ELP_pdf
+2025,10,El Paso,El Paso,Bridge of the Americas,Commercial Trucks,15637,ELP_pdf
+2025,10,El Paso,El Paso,Bridge of the Americas,Passenger Vehicles,287808,ELP_pdf
+2025,10,El Paso,El Paso,Bridge of the Americas,Pedestrians/ Bicyclists,111245,ELP_pdf
+2025,10,El Paso,El Paso,El Paso Railroad Bridges,Railcars,11664,ELP_pdf
+2025,10,El Paso,El Paso,Good Neighbor Bridge,Buses,0,ELP_pdf
+2025,10,El Paso,El Paso,Good Neighbor Bridge,Commercial Trucks,0,ELP_pdf
+2025,10,El Paso,El Paso,Good Neighbor Bridge,Passenger Vehicles,156481,ELP_pdf
+2025,10,El Paso,El Paso,Good Neighbor Bridge,Pedestrians/ Bicyclists,0,ELP_pdf
+2025,10,El Paso,El Paso,Paso del Norte Bridge,Buses,233,ELP_pdf
+2025,10,El Paso,El Paso,Paso del Norte Bridge,Commercial Trucks,0,ELP_pdf
+2025,10,El Paso,El Paso,Paso del Norte Bridge,Passenger Vehicles,230218,ELP_pdf
+2025,10,El Paso,El Paso,Paso del Norte Bridge,Pedestrians/ Bicyclists,325700,ELP_pdf
+2025,10,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Buses,0,ELP_pdf
+2025,10,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Commercial Trucks,0,ELP_pdf
+2025,10,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Passenger Vehicles,10601,ELP_pdf
+2025,10,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Pedestrians/ Bicyclists,221,ELP_pdf
+2025,10,El Paso,Marcelino Serna,Marcelino Serna Bridge,Buses,0,ELP_pdf
+2025,10,El Paso,Marcelino Serna,Marcelino Serna Bridge,Commercial Trucks,3880,ELP_pdf
+2025,10,El Paso,Marcelino Serna,Marcelino Serna Bridge,Passenger Vehicles,56437,ELP_pdf
+2025,10,El Paso,Marcelino Serna,Marcelino Serna Bridge,Pedestrians/ Bicyclists,6262,ELP_pdf
+2025,10,El Paso,Presidio,Boquillas,Buses,0,ELP_pdf
+2025,10,El Paso,Presidio,Boquillas,Commercial Trucks,0,ELP_pdf
+2025,10,El Paso,Presidio,Boquillas,Passenger Vehicles,0,ELP_pdf
+2025,10,El Paso,Presidio,Boquillas,Pedestrians/ Bicyclists,1780,ELP_pdf
+2025,10,El Paso,Presidio,Presidio-Ojinaga International Bridge,Buses,158,ELP_pdf
+2025,10,El Paso,Presidio,Presidio-Ojinaga International Bridge,Commercial Trucks,889,ELP_pdf
+2025,10,El Paso,Presidio,Presidio-Ojinaga International Bridge,Passenger Vehicles,58554,ELP_pdf
+2025,10,El Paso,Presidio,Presidio-Ojinaga International Bridge,Pedestrians/ Bicyclists,13802,ELP_pdf
+2025,10,El Paso,Ysleta,Ysleta Bridge,Buses,0,ELP_pdf
+2025,10,El Paso,Ysleta,Ysleta Bridge,Commercial Trucks,60991,ELP_pdf
+2025,10,El Paso,Ysleta,Ysleta Bridge,Passenger Vehicles,332718,ELP_pdf
+2025,10,El Paso,Ysleta,Ysleta Bridge,Pedestrians/ Bicyclists,175421,ELP_pdf
+2025,11,El Paso,El Paso,Bridge of the Americas,Buses,323,ELP_pdf
+2025,11,El Paso,El Paso,Bridge of the Americas,Commercial Trucks,11933,ELP_pdf
+2025,11,El Paso,El Paso,Bridge of the Americas,Passenger Vehicles,294645,ELP_pdf
+2025,11,El Paso,El Paso,Bridge of the Americas,Pedestrians/ Bicyclists,109380,ELP_pdf
+2025,11,El Paso,El Paso,El Paso Railroad Bridges,Railcars,9114,ELP_pdf
+2025,11,El Paso,El Paso,Good Neighbor Bridge,Buses,0,ELP_pdf
+2025,11,El Paso,El Paso,Good Neighbor Bridge,Commercial Trucks,0,ELP_pdf
+2025,11,El Paso,El Paso,Good Neighbor Bridge,Passenger Vehicles,144250,ELP_pdf
+2025,11,El Paso,El Paso,Good Neighbor Bridge,Pedestrians/ Bicyclists,0,ELP_pdf
+2025,11,El Paso,El Paso,Paso del Norte Bridge,Buses,228,ELP_pdf
+2025,11,El Paso,El Paso,Paso del Norte Bridge,Commercial Trucks,0,ELP_pdf
+2025,11,El Paso,El Paso,Paso del Norte Bridge,Passenger Vehicles,216236,ELP_pdf
+2025,11,El Paso,El Paso,Paso del Norte Bridge,Pedestrians/ Bicyclists,325546,ELP_pdf
+2025,11,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Buses,0,ELP_pdf
+2025,11,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Commercial Trucks,0,ELP_pdf
+2025,11,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Passenger Vehicles,11558,ELP_pdf
+2025,11,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Pedestrians/ Bicyclists,286,ELP_pdf
+2025,11,El Paso,Marcelino Serna,Marcelino Serna Bridge,Buses,0,ELP_pdf
+2025,11,El Paso,Marcelino Serna,Marcelino Serna Bridge,Commercial Trucks,2928,ELP_pdf
+2025,11,El Paso,Marcelino Serna,Marcelino Serna Bridge,Passenger Vehicles,59915,ELP_pdf
+2025,11,El Paso,Marcelino Serna,Marcelino Serna Bridge,Pedestrians/ Bicyclists,6284,ELP_pdf
+2025,11,El Paso,Presidio,Boquillas,Buses,0,ELP_pdf
+2025,11,El Paso,Presidio,Boquillas,Commercial Trucks,0,ELP_pdf
+2025,11,El Paso,Presidio,Boquillas,Passenger Vehicles,0,ELP_pdf
+2025,11,El Paso,Presidio,Boquillas,Pedestrians/ Bicyclists,2702,ELP_pdf
+2025,11,El Paso,Presidio,Presidio-Ojinaga International Bridge,Buses,177,ELP_pdf
+2025,11,El Paso,Presidio,Presidio-Ojinaga International Bridge,Commercial Trucks,925,ELP_pdf
+2025,11,El Paso,Presidio,Presidio-Ojinaga International Bridge,Passenger Vehicles,56311,ELP_pdf
+2025,11,El Paso,Presidio,Presidio-Ojinaga International Bridge,Pedestrians/ Bicyclists,15985,ELP_pdf
+2025,11,El Paso,Ysleta,Ysleta Bridge,Buses,0,ELP_pdf
+2025,11,El Paso,Ysleta,Ysleta Bridge,Commercial Trucks,45523,ELP_pdf
+2025,11,El Paso,Ysleta,Ysleta Bridge,Passenger Vehicles,306925,ELP_pdf
+2025,11,El Paso,Ysleta,Ysleta Bridge,Pedestrians/ Bicyclists,180328,ELP_pdf
+2025,12,El Paso,El Paso,Bridge of the Americas,Buses,501,ELP_pdf
+2025,12,El Paso,El Paso,Bridge of the Americas,Commercial Trucks,12845,ELP_pdf
+2025,12,El Paso,El Paso,Bridge of the Americas,Passenger Vehicles,300491,ELP_pdf
+2025,12,El Paso,El Paso,Bridge of the Americas,Pedestrians/ Bicyclists,107774,ELP_pdf
+2025,12,El Paso,El Paso,El Paso Railroad Bridges,Railcars,8019,ELP_pdf
+2025,12,El Paso,El Paso,Good Neighbor Bridge,Buses,0,ELP_pdf
+2025,12,El Paso,El Paso,Good Neighbor Bridge,Commercial Trucks,0,ELP_pdf
+2025,12,El Paso,El Paso,Good Neighbor Bridge,Passenger Vehicles,154796,ELP_pdf
+2025,12,El Paso,El Paso,Good Neighbor Bridge,Pedestrians/ Bicyclists,0,ELP_pdf
+2025,12,El Paso,El Paso,Paso del Norte Bridge,Buses,258,ELP_pdf
+2025,12,El Paso,El Paso,Paso del Norte Bridge,Commercial Trucks,0,ELP_pdf
+2025,12,El Paso,El Paso,Paso del Norte Bridge,Passenger Vehicles,216917,ELP_pdf
+2025,12,El Paso,El Paso,Paso del Norte Bridge,Pedestrians/ Bicyclists,330153,ELP_pdf
+2025,12,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Buses,0,ELP_pdf
+2025,12,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Commercial Trucks,0,ELP_pdf
+2025,12,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Passenger Vehicles,12548,ELP_pdf
+2025,12,El Paso,Marcelino Serna,Fort Hancock-El Porvenir Bridge,Pedestrians/ Bicyclists,247,ELP_pdf
+2025,12,El Paso,Marcelino Serna,Marcelino Serna Bridge,Buses,0,ELP_pdf
+2025,12,El Paso,Marcelino Serna,Marcelino Serna Bridge,Commercial Trucks,2991,ELP_pdf
+2025,12,El Paso,Marcelino Serna,Marcelino Serna Bridge,Passenger Vehicles,65136,ELP_pdf
+2025,12,El Paso,Marcelino Serna,Marcelino Serna Bridge,Pedestrians/ Bicyclists,11637,ELP_pdf
+2025,12,El Paso,Presidio,Boquillas,Buses,0,ELP_pdf
+2025,12,El Paso,Presidio,Boquillas,Commercial Trucks,0,ELP_pdf
+2025,12,El Paso,Presidio,Boquillas,Passenger Vehicles,0,ELP_pdf
+2025,12,El Paso,Presidio,Boquillas,Pedestrians/ Bicyclists,2497,ELP_pdf
+2025,12,El Paso,Presidio,Presidio-Ojinaga International Bridge,Buses,186,ELP_pdf
+2025,12,El Paso,Presidio,Presidio-Ojinaga International Bridge,Commercial Trucks,856,ELP_pdf
+2025,12,El Paso,Presidio,Presidio-Ojinaga International Bridge,Passenger Vehicles,57671,ELP_pdf
+2025,12,El Paso,Presidio,Presidio-Ojinaga International Bridge,Pedestrians/ Bicyclists,22354,ELP_pdf
+2025,12,El Paso,Ysleta,Ysleta Bridge,Buses,0,ELP_pdf
+2025,12,El Paso,Ysleta,Ysleta Bridge,Commercial Trucks,50232,ELP_pdf
+2025,12,El Paso,Ysleta,Ysleta Bridge,Passenger Vehicles,301598,ELP_pdf
+2025,12,El Paso,Ysleta,Ysleta Bridge,Pedestrians/ Bicyclists,186369,ELP_pdf

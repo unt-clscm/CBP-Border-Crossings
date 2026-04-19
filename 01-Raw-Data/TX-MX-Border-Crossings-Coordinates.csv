@@ -1,0 +1,38 @@
+﻿Order,Border Crossing Name,Code,Region,County,TxDOT District,Port Of Entry,City,Address,Lat,Lon
+1,Good Neighbor Bridge,ELP-ELP-GOOD,El Paso,El Paso,El Paso,El Paso,El Paso,"1001 S Stanton St, El Paso, TX 79901",31.748237,-106.482685
+2,Paso del Norte Bridge,ELP-ELP-PASO,El Paso,El Paso,El Paso,El Paso,El Paso,"1000 S El Paso St, El Paso, TX 79901",31.747743,-106.486957
+3,Bridge of the Americas,ELP-ELP-BRID,El Paso,El Paso,El Paso,El Paso,El Paso,"3600 E Paisano Dr, El Paso, TX 79905",31.764479,-106.451596
+4,BNSF Railroad Rail Bridge,ELP-ELP-ELPA-BNSF,El Paso,El Paso,El Paso,El Paso,El Paso,"805 S Santa Fe St
+El Paso, TX 79901",31.747985,-106.488242
+5,Union Pacific Railroad Rail Bridge,ELP-ELP-ELPA-UP,El Paso,El Paso,El Paso,El Paso,El Paso,"1115 Cesar E. Chavez Border Hwy, El Paso, TX 79901",31.747767,-106.484833
+6,Ysleta Bridge,ELP-YSL-YSLE,El Paso,El Paso,El Paso,Ysleta,El Paso,"791 S Zaragoza Rd, El Paso, TX 79927",31.670966,-106.337869
+7,Marcelino Serna Bridge,ELP-TOR-MARC,El Paso,El Paso,El Paso,Marcelino Serna,Tornillo,"1400 Lower Island Rd, Tornillo, TX 79853",31.432854,-106.147961
+8,Fort Hancock-El Porvenir Bridge,ELP-TOR-FORT,El Paso,Hudspeth,El Paso,Marcelino Serna,Fort Hancock,"828 South HWY 1088, Fort Hancock, TX 79839",31.273184,-105.854543
+9,Presidio-Ojinaga International Bridge,ELP-PSD-PRES,El Paso,Presidio,El Paso,Presidio,Presidio,"4902 US-67, Presidio, TX 79845",29.561906,-104.395144
+10,Boquillas,ELP-BOQ-BOQU,El Paso,Brewster,El Paso,,Big Bend National Park,"Big Bend National Park, TX 79834",29.188742,-102.945046
+11,Lake Amistad Dam Crossing,LRD-DLR-LAKA,Laredo,Val Verde,Laredo,Del Rio,Del Rio,"877 TX-349 Spur, Del Rio, TX 78840",29.449874,-101.058041
+12,Del Rio International Bridge,LRD-DLR-DELR,Laredo,Val Verde,Laredo,Del Rio,Del Rio,"3140 State Loop 239, Del Rio, TX 78840",29.326882,-100.927491
+13,Eagle Pass International Bridge,LRD-EGP-EAGL,Laredo,Maverick,Laredo,Eagle Pass,Eagle Pass,"160 E Garrison St, Eagle Pass, TX 78852",28.705495,-100.511724
+14,Camino Real International Bridge,LRD-EGP-CAMI,Laredo,Maverick,Laredo,Eagle Pass,Eagle Pass,"500 S Monroe St, Eagle Pass, TX 78852",28.697698,-100.510461
+15,Union Pacific Eagle Pass Railroad Bridge,LRD-EGP-UNIO,Laredo,Maverick,Laredo,Eagle Pass,Eagle Pass,"394 N Converse St, Eagle Pass, TX 78852",28.696318,-100.510377
+16,Gateway to the Americas Bridge,LRD-LRD-GTAB,Laredo,Webb,Laredo,Laredo,Laredo,"100 Convent Ave, Laredo, TX 78040",27.499484,-99.507481
+17,Juárez-Lincoln International Bridge,LRD-LRD-JUAR,Laredo,Webb,Laredo,Laredo,Laredo,"201 Santa Ursula Ave, Laredo, TX 78040",27.500438,-99.502723
+18,World Trade Bridge,LRD-LRD-WORL,Laredo,Webb,Laredo,Laredo,Laredo,"11601 FM 1472, Laredo, TX 78045",27.597208,-99.536873
+19,Colombia Solidarity Bridge,LRD-LRD-COLO,Laredo,Webb,Laredo,Laredo,Laredo,"202 State Highway 255
+Laredo, Texas 78045",27.699841,-99.745612
+20,Canadian Pacific Kansas City Laredo Railroad Bridge,LRD-LRD-CANA,Laredo,Webb,Laredo,Laredo,Laredo,"2115 Farragut St, Laredo, TX 78040",27.498402,-99.516263
+21,Lake Falcon Dam International Crossing,RGV-ROM-LAKF,Rio Grande Valley,Starr,Pharr,Roma,Falcon Heights,"153 Farm to Market Rd 2098 Spur, Roma, TX 78584",26.559422,-99.166961
+22,Roma-Ciudad Miguel Alemán International Bridge,RGV-ROM-ROMA,Rio Grande Valley,Starr,Pharr,Roma,Roma,"405 Estrella St APT B, Roma, TX 78584",26.403879,-99.019036
+23,Starr-Camargo Bridge,RGV-RGC-STAR,Rio Grande Valley,Starr,Pharr,Rio Grande City,Rio Grande City,"317 Pete Diaz Ave, Rio Grande City, TX 78582",26.365855,-98.802404
+24,Los Ebanos Ferry,RGV-RGC-LOSE,Rio Grande Valley,Hidalgo,Pharr,Rio Grande City,Los Ebanos,"200 Flores St, Los Ebanos, TX 78565",26.239494,-98.565036
+25,Anzalduas International Bridge,RGV-HID-ANZA,Rio Grande Valley,Hidalgo,Pharr,Hidalgo,Mission,"6100 S Stewart Rd, Mission, TX 78572",26.116589,-98.318268
+26,McAllen-Hidalgo International Bridge,RGV-HID-MCAL,Rio Grande Valley,Hidalgo,Pharr,Hidalgo,Hidalgo,"1023 S. International Blvd.
+Hidalgo, TX 78557",26.095424,-98.271909
+27,Pharr International Bridge,RGV-HID-PHAR,Rio Grande Valley,Hidalgo,Pharr,Hidalgo,Pharr,"9900 S Cage Blvd, Pharr, TX 78577",26.066916,-98.205235
+28,Donna-Rio Bravo International Bridge,RGV-PRG-DONN,Rio Grande Valley,Hidalgo,Pharr,Progreso,Donna,"8000 S International Blvd, Donna, TX 78537",26.065651,-98.075671
+29,Progreso International Bridge,RGV-PRG-PROG,Rio Grande Valley,Hidalgo,Pharr,Progreso,Progreso,"100 S International Blvd, Weslaco, TX 78596",26.062279,-97.949994
+30,Free Trade International Bridge (Los Indios),RGV-BRW-FREE,Rio Grande Valley,Cameron,Pharr,Brownsville,Los Indios,"100 S. Los Indios Blvd., Los Indios, TX. 78567",26.029172,-97.73885
+31,Brownsville & Matamoros Express Bridge,RGV-BRW-BROW,Rio Grande Valley,Cameron,Pharr,Brownsville,Brownsville,"1300 Mexico Blvd, Brownsville, TX 78520",25.892029,-97.504685
+32,Gateway International Bridge,RGV-BRW-GATE,Rio Grande Valley,Cameron,Pharr,Brownsville,Brownsville,"510 E. 14th Street, Brownsville TX 78520",25.898899,-97.497516
+33,West Rail Bridge,RGV-BRW-WEST,Rio Grande Valley,Cameron,Pharr,Brownsville,Brownsville,"1550 W University Blvd, Brownsville, TX 78520",25.962514,-97.583291
+34,Veterans International Bridge at Los Tomates,RGV-BRW-VETE,Rio Grande Valley,Cameron,Pharr,Brownsville,Brownsville,"3310 US-77, Brownsville, TX 78521",25.883758,-97.476112
