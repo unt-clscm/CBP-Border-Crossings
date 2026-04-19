@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Node
+node_modules/
+dist/
+.cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.local
+
+# Raw data — large Excel/PDF files tracked separately if needed
+# Uncomment to exclude:
+# 01-Raw-Data/*.xlsx
+# 01-Raw-Data/*.pdf
+# 01-Raw-Data/**/*.pdf

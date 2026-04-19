@@ -1,0 +1,113 @@
+{
+  "_notes": "Maps raw 2025 bridge/mode labels to the canonical vocabulary drawn from NB-Crossings-2013-2024.xlsx. Update this file (not the scripts) when adding new 2025 sources.",
+
+  "lrd_rvg": {
+    "_poe_map": {
+      "Brownsville": "Brownsville",
+      "Del Rio": "Del Rio",
+      "Eagle Pass": "Eagle Pass",
+      "Laredo": "Laredo",
+      "Hidalgo": "Hidalgo",
+      "Rio Grande City": "Rio Grande City",
+      "Progreso": "Progreso",
+      "Roma": "Roma"
+    },
+    "_region_for_poe": {
+      "Brownsville": "Pharr",
+      "Hidalgo": "Pharr",
+      "Rio Grande City": "Pharr",
+      "Progreso": "Pharr",
+      "Roma": "Pharr",
+      "Del Rio": "Laredo",
+      "Eagle Pass": "Laredo",
+      "Laredo": "Laredo"
+    },
+    "_crossing_map": {
+      "Gateway Bridge": "Gateway International Bridge",
+      "B&M Bridge": "Brownsville & Matamoros Express Bridge",
+      "Los Indios": "Free Trade International Bridge (Los Indios)",
+      "Los Tomates": "Veterans International Bridge at Los Tomates",
+      "Del Rio Bridge": "Del Rio International Bridge",
+      "Amistad Dam": "Lake Amistad Dam Crossing",
+      "Eagle Pass I": "Eagle Pass International Bridge",
+      "Eagle Pass II": "Camino Real International Bridge",
+      "Bridge I": "Gateway to the Americas Bridge",
+      "Bridge II": "Ju\u00e1rez-Lincoln International Bridge",
+      "Colombia": "Colombia Solidarity Bridge",
+      "World Trade": "World Trade Bridge",
+      "Hidalgo Bridge": "McAllen-Hidalgo International Bridge",
+      "Pharr": "Pharr International Bridge",
+      "Anzalduas": "Anzalduas International Bridge",
+      "Rio Grande City": "Starr-Camargo Bridge",
+      "Los Ebanos": "Los Ebanos Ferry",
+      "Progreso": "Progreso International Bridge",
+      "Donna": "Donna-Rio Bravo International Bridge",
+      "Roma": "Roma-Ciudad Miguel Alem\u00e1n International Bridge",
+      "Falcon Dam": "Lake Falcon Dam International Crossing"
+    },
+    "_mode_section_map": {
+      "Trucks": "Commercial Trucks",
+      "Buses": "Buses",
+      "POVs": "Passenger Vehicles",
+      "Pedestrians Arriving": "Pedestrians/ Bicyclists",
+      "Trains": null,
+      "Rail Containers Empty": "__railcars_component__",
+      "Rail Containers Full": "__railcars_component__"
+    },
+    "_railcars_definition": "Empirical match against the 2013-2024 baseline shows that the canonical 'Railcars' mode equals (Rail Containers Empty + Rail Containers Full), NOT the 'Trains' locomotive count. The 'Trains' section is therefore dropped.",
+    "_rail_aggregation": {
+      "_comment": "Baseline convention: railcars are posted under a dedicated rail crossing, not the freight bridge. The LRD-RVG sheet reports rail traffic on 'World Trade' for Laredo, 'B&M Bridge' for Brownsville, and 'Eagle Pass II' for Eagle Pass. We redirect the aggregated Railcars to the canonical rail crossing for each POE.",
+      "Laredo|World Trade": "Canadian Pacific Kansas City Laredo Railroad Bridge",
+      "Brownsville|B&M Bridge": "West Rail Bridge",
+      "Eagle Pass|Eagle Pass II": "Union Pacific Eagle Pass Railroad Bridge"
+    }
+  },
+
+  "elp": {
+    "_poe_for_row": {
+      "Paso Del Norte": "El Paso",
+      "Paso Del Norte DCL": "El Paso",
+      "Bridge of the Americas": "El Paso",
+      "Stanton DCL": "El Paso",
+      "Stanton St DCL": "El Paso",
+      "Ysleta": "Ysleta",
+      "Ysleta Bridge": "Ysleta",
+      "Ysleta DCL": "Ysleta",
+      "Presidio": "Presidio",
+      "Boquillas": "Presidio",
+      "Tornillo": "Marcelino Serna",
+      "Tornillo Fabens": "Marcelino Serna",
+      "Ft. Hancock": "Marcelino Serna"
+    },
+    "_crossing_for_row": {
+      "Paso Del Norte": "Paso del Norte Bridge",
+      "Paso Del Norte DCL": "Paso del Norte Bridge",
+      "Bridge of the Americas": "Bridge of the Americas",
+      "Stanton DCL": "Good Neighbor Bridge",
+      "Stanton St DCL": "Good Neighbor Bridge",
+      "Ysleta": "Ysleta Bridge",
+      "Ysleta Bridge": "Ysleta Bridge",
+      "Ysleta DCL": "Ysleta Bridge",
+      "Presidio": "Presidio-Ojinaga International Bridge",
+      "Boquillas": "Boquillas",
+      "Tornillo": "Marcelino Serna Bridge",
+      "Tornillo Fabens": "Marcelino Serna Bridge",
+      "Ft. Hancock": "Fort Hancock-El Porvenir Bridge"
+    },
+    "_rail_aggregation": {
+      "_comment": "In the PDFs, all rail values appear on the 'Bridge of the Americas' row (El Paso has no dedicated rail-bridge row in the report). Railcars in the canonical schema = (Full Containers + Empty Containers). The aggregated value is redirected to 'El Paso Railroad Bridges' per the 2013-2024 baseline convention. The 'Trains' column (locomotive count) is dropped.",
+      "source_row": "Bridge of the Americas",
+      "target_crossing": "El Paso Railroad Bridges",
+      "target_poe": "El Paso",
+      "target_region": "El Paso",
+      "railcars_formula": "Full Containers + Empty Containers"
+    },
+    "_non_texas_rows_ignored": [
+      "Columbus",
+      "Antelope Wells",
+      "Santa Teresa",
+      "El Paso Aircraft",
+      "Albuquerque Aircraft"
+    ]
+  }
+}

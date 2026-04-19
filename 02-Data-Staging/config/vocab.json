@@ -1,0 +1,682 @@
+{
+  "Region": [
+    "El Paso",
+    "Laredo",
+    "Pharr"
+  ],
+  "POE": [
+    "Brownsville",
+    "Del Rio",
+    "Eagle Pass",
+    "El Paso",
+    "Hidalgo",
+    "Laredo",
+    "Marcelino Serna",
+    "Presidio",
+    "Progreso",
+    "Rio Grande City",
+    "Roma",
+    "Ysleta"
+  ],
+  "Crossing": [
+    "Anzalduas International Bridge",
+    "Boquillas",
+    "Bridge of the Americas",
+    "Brownsville & Matamoros Express Bridge",
+    "Camino Real International Bridge",
+    "Canadian Pacific Kansas City Laredo Railroad Bridge",
+    "Colombia Solidarity Bridge",
+    "Del Rio International Bridge",
+    "Donna-Rio Bravo International Bridge",
+    "Eagle Pass International Bridge",
+    "El Paso Railroad Bridges",
+    "Fort Hancock-El Porvenir Bridge",
+    "Free Trade International Bridge (Los Indios)",
+    "Gateway International Bridge",
+    "Gateway to the Americas Bridge",
+    "Good Neighbor Bridge",
+    "Juárez-Lincoln International Bridge",
+    "Lake Amistad Dam Crossing",
+    "Lake Falcon Dam International Crossing",
+    "Los Ebanos Ferry",
+    "Marcelino Serna Bridge",
+    "McAllen-Hidalgo International Bridge",
+    "Paso del Norte Bridge",
+    "Pharr International Bridge",
+    "Presidio-Ojinaga International Bridge",
+    "Progreso International Bridge",
+    "Roma-Ciudad Miguel Alemán International Bridge",
+    "Starr-Camargo Bridge",
+    "Union Pacific Eagle Pass Railroad Bridge",
+    "Veterans International Bridge at Los Tomates",
+    "West Rail Bridge",
+    "World Trade Bridge",
+    "Ysleta Bridge"
+  ],
+  "Modes": [
+    "Buses",
+    "Commercial Trucks",
+    "Passenger Vehicles",
+    "Pedestrians/ Bicyclists",
+    "Railcars"
+  ],
+  "active_2024_triples": [
+    [
+      "El Paso",
+      "El Paso",
+      "Bridge of the Americas",
+      "Buses"
+    ],
+    [
+      "El Paso",
+      "El Paso",
+      "Bridge of the Americas",
+      "Commercial Trucks"
+    ],
+    [
+      "El Paso",
+      "El Paso",
+      "Bridge of the Americas",
+      "Passenger Vehicles"
+    ],
+    [
+      "El Paso",
+      "El Paso",
+      "Bridge of the Americas",
+      "Pedestrians/ Bicyclists"
+    ],
+    [
+      "El Paso",
+      "El Paso",
+      "El Paso Railroad Bridges",
+      "Railcars"
+    ],
+    [
+      "El Paso",
+      "El Paso",
+      "Good Neighbor Bridge",
+      "Passenger Vehicles"
+    ],
+    [
+      "El Paso",
+      "El Paso",
+      "Paso del Norte Bridge",
+      "Buses"
+    ],
+    [
+      "El Paso",
+      "El Paso",
+      "Paso del Norte Bridge",
+      "Passenger Vehicles"
+    ],
+    [
+      "El Paso",
+      "El Paso",
+      "Paso del Norte Bridge",
+      "Pedestrians/ Bicyclists"
+    ],
+    [
+      "El Paso",
+      "Marcelino Serna",
+      "Fort Hancock-El Porvenir Bridge",
+      "Passenger Vehicles"
+    ],
+    [
+      "El Paso",
+      "Marcelino Serna",
+      "Fort Hancock-El Porvenir Bridge",
+      "Pedestrians/ Bicyclists"
+    ],
+    [
+      "El Paso",
+      "Marcelino Serna",
+      "Marcelino Serna Bridge",
+      "Commercial Trucks"
+    ],
+    [
+      "El Paso",
+      "Marcelino Serna",
+      "Marcelino Serna Bridge",
+      "Passenger Vehicles"
+    ],
+    [
+      "El Paso",
+      "Marcelino Serna",
+      "Marcelino Serna Bridge",
+      "Pedestrians/ Bicyclists"
+    ],
+    [
+      "El Paso",
+      "Presidio",
+      "Boquillas",
+      "Pedestrians/ Bicyclists"
+    ],
+    [
+      "El Paso",
+      "Presidio",
+      "Presidio-Ojinaga International Bridge",
+      "Buses"
+    ],
+    [
+      "El Paso",
+      "Presidio",
+      "Presidio-Ojinaga International Bridge",
+      "Commercial Trucks"
+    ],
+    [
+      "El Paso",
+      "Presidio",
+      "Presidio-Ojinaga International Bridge",
+      "Passenger Vehicles"
+    ],
+    [
+      "El Paso",
+      "Presidio",
+      "Presidio-Ojinaga International Bridge",
+      "Pedestrians/ Bicyclists"
+    ],
+    [
+      "El Paso",
+      "Ysleta",
+      "Ysleta Bridge",
+      "Commercial Trucks"
+    ],
+    [
+      "El Paso",
+      "Ysleta",
+      "Ysleta Bridge",
+      "Passenger Vehicles"
+    ],
+    [
+      "El Paso",
+      "Ysleta",
+      "Ysleta Bridge",
+      "Pedestrians/ Bicyclists"
+    ],
+    [
+      "Laredo",
+      "Del Rio",
+      "Del Rio International Bridge",
+      "Commercial Trucks"
+    ],
+    [
+      "Laredo",
+      "Del Rio",
+      "Del Rio International Bridge",
+      "Passenger Vehicles"
+    ],
+    [
+      "Laredo",
+      "Del Rio",
+      "Del Rio International Bridge",
+      "Pedestrians/ Bicyclists"
+    ],
+    [
+      "Laredo",
+      "Del Rio",
+      "Lake Amistad Dam Crossing",
+      "Passenger Vehicles"
+    ],
+    [
+      "Laredo",
+      "Eagle Pass",
+      "Camino Real International Bridge",
+      "Buses"
+    ],
+    [
+      "Laredo",
+      "Eagle Pass",
+      "Camino Real International Bridge",
+      "Commercial Trucks"
+    ],
+    [
+      "Laredo",
+      "Eagle Pass",
+      "Camino Real International Bridge",
+      "Passenger Vehicles"
+    ],
+    [
+      "Laredo",
+      "Eagle Pass",
+      "Camino Real International Bridge",
+      "Pedestrians/ Bicyclists"
+    ],
+    [
+      "Laredo",
+      "Eagle Pass",
+      "Eagle Pass International Bridge",
+      "Passenger Vehicles"
+    ],
+    [
+      "Laredo",
+      "Eagle Pass",
+      "Eagle Pass International Bridge",
+      "Pedestrians/ Bicyclists"
+    ],
+    [
+      "Laredo",
+      "Eagle Pass",
+      "Union Pacific Eagle Pass Railroad Bridge",
+      "Railcars"
+    ],
+    [
+      "Laredo",
+      "Laredo",
+      "Canadian Pacific Kansas City Laredo Railroad Bridge",
+      "Railcars"
+    ],
+    [
+      "Laredo",
+      "Laredo",
+      "Colombia Solidarity Bridge",
+      "Commercial Trucks"
+    ],
+    [
+      "Laredo",
+      "Laredo",
+      "Colombia Solidarity Bridge",
+      "Passenger Vehicles"
+    ],
+    [
+      "Laredo",
+      "Laredo",
+      "Colombia Solidarity Bridge",
+      "Pedestrians/ Bicyclists"
+    ],
+    [
+      "Laredo",
+      "Laredo",
+      "Gateway to the Americas Bridge",
+      "Passenger Vehicles"
+    ],
+    [
+      "Laredo",
+      "Laredo",
+      "Gateway to the Americas Bridge",
+      "Pedestrians/ Bicyclists"
+    ],
+    [
+      "Laredo",
+      "Laredo",
+      "Juárez-Lincoln International Bridge",
+      "Buses"
+    ],
+    [
+      "Laredo",
+      "Laredo",
+      "Juárez-Lincoln International Bridge",
+      "Passenger Vehicles"
+    ],
+    [
+      "Laredo",
+      "Laredo",
+      "World Trade Bridge",
+      "Commercial Trucks"
+    ],
+    [
+      "Pharr",
+      "Brownsville",
+      "Brownsville & Matamoros Express Bridge",
+      "Passenger Vehicles"
+    ],
+    [
+      "Pharr",
+      "Brownsville",
+      "Brownsville & Matamoros Express Bridge",
+      "Pedestrians/ Bicyclists"
+    ],
+    [
+      "Pharr",
+      "Brownsville",
+      "Free Trade International Bridge (Los Indios)",
+      "Commercial Trucks"
+    ],
+    [
+      "Pharr",
+      "Brownsville",
+      "Free Trade International Bridge (Los Indios)",
+      "Passenger Vehicles"
+    ],
+    [
+      "Pharr",
+      "Brownsville",
+      "Free Trade International Bridge (Los Indios)",
+      "Pedestrians/ Bicyclists"
+    ],
+    [
+      "Pharr",
+      "Brownsville",
+      "Gateway International Bridge",
+      "Passenger Vehicles"
+    ],
+    [
+      "Pharr",
+      "Brownsville",
+      "Gateway International Bridge",
+      "Pedestrians/ Bicyclists"
+    ],
+    [
+      "Pharr",
+      "Brownsville",
+      "Veterans International Bridge at Los Tomates",
+      "Buses"
+    ],
+    [
+      "Pharr",
+      "Brownsville",
+      "Veterans International Bridge at Los Tomates",
+      "Commercial Trucks"
+    ],
+    [
+      "Pharr",
+      "Brownsville",
+      "Veterans International Bridge at Los Tomates",
+      "Passenger Vehicles"
+    ],
+    [
+      "Pharr",
+      "Brownsville",
+      "Veterans International Bridge at Los Tomates",
+      "Pedestrians/ Bicyclists"
+    ],
+    [
+      "Pharr",
+      "Brownsville",
+      "West Rail Bridge",
+      "Railcars"
+    ],
+    [
+      "Pharr",
+      "Hidalgo",
+      "Anzalduas International Bridge",
+      "Passenger Vehicles"
+    ],
+    [
+      "Pharr",
+      "Hidalgo",
+      "McAllen-Hidalgo International Bridge",
+      "Buses"
+    ],
+    [
+      "Pharr",
+      "Hidalgo",
+      "McAllen-Hidalgo International Bridge",
+      "Passenger Vehicles"
+    ],
+    [
+      "Pharr",
+      "Hidalgo",
+      "McAllen-Hidalgo International Bridge",
+      "Pedestrians/ Bicyclists"
+    ],
+    [
+      "Pharr",
+      "Hidalgo",
+      "Pharr International Bridge",
+      "Commercial Trucks"
+    ],
+    [
+      "Pharr",
+      "Hidalgo",
+      "Pharr International Bridge",
+      "Passenger Vehicles"
+    ],
+    [
+      "Pharr",
+      "Progreso",
+      "Donna-Rio Bravo International Bridge",
+      "Passenger Vehicles"
+    ],
+    [
+      "Pharr",
+      "Progreso",
+      "Donna-Rio Bravo International Bridge",
+      "Pedestrians/ Bicyclists"
+    ],
+    [
+      "Pharr",
+      "Progreso",
+      "Progreso International Bridge",
+      "Commercial Trucks"
+    ],
+    [
+      "Pharr",
+      "Progreso",
+      "Progreso International Bridge",
+      "Passenger Vehicles"
+    ],
+    [
+      "Pharr",
+      "Progreso",
+      "Progreso International Bridge",
+      "Pedestrians/ Bicyclists"
+    ],
+    [
+      "Pharr",
+      "Rio Grande City",
+      "Los Ebanos Ferry",
+      "Passenger Vehicles"
+    ],
+    [
+      "Pharr",
+      "Rio Grande City",
+      "Los Ebanos Ferry",
+      "Pedestrians/ Bicyclists"
+    ],
+    [
+      "Pharr",
+      "Rio Grande City",
+      "Starr-Camargo Bridge",
+      "Commercial Trucks"
+    ],
+    [
+      "Pharr",
+      "Rio Grande City",
+      "Starr-Camargo Bridge",
+      "Passenger Vehicles"
+    ],
+    [
+      "Pharr",
+      "Rio Grande City",
+      "Starr-Camargo Bridge",
+      "Pedestrians/ Bicyclists"
+    ],
+    [
+      "Pharr",
+      "Roma",
+      "Lake Falcon Dam International Crossing",
+      "Passenger Vehicles"
+    ],
+    [
+      "Pharr",
+      "Roma",
+      "Roma-Ciudad Miguel Alemán International Bridge",
+      "Buses"
+    ],
+    [
+      "Pharr",
+      "Roma",
+      "Roma-Ciudad Miguel Alemán International Bridge",
+      "Commercial Trucks"
+    ],
+    [
+      "Pharr",
+      "Roma",
+      "Roma-Ciudad Miguel Alemán International Bridge",
+      "Passenger Vehicles"
+    ],
+    [
+      "Pharr",
+      "Roma",
+      "Roma-Ciudad Miguel Alemán International Bridge",
+      "Pedestrians/ Bicyclists"
+    ]
+  ],
+  "region_poe_crossing": [
+    [
+      "El Paso",
+      "El Paso",
+      "Bridge of the Americas"
+    ],
+    [
+      "El Paso",
+      "El Paso",
+      "El Paso Railroad Bridges"
+    ],
+    [
+      "El Paso",
+      "El Paso",
+      "Good Neighbor Bridge"
+    ],
+    [
+      "El Paso",
+      "El Paso",
+      "Paso del Norte Bridge"
+    ],
+    [
+      "El Paso",
+      "Marcelino Serna",
+      "Fort Hancock-El Porvenir Bridge"
+    ],
+    [
+      "El Paso",
+      "Marcelino Serna",
+      "Marcelino Serna Bridge"
+    ],
+    [
+      "El Paso",
+      "Presidio",
+      "Boquillas"
+    ],
+    [
+      "El Paso",
+      "Presidio",
+      "Presidio-Ojinaga International Bridge"
+    ],
+    [
+      "El Paso",
+      "Ysleta",
+      "Ysleta Bridge"
+    ],
+    [
+      "Laredo",
+      "Del Rio",
+      "Del Rio International Bridge"
+    ],
+    [
+      "Laredo",
+      "Del Rio",
+      "Lake Amistad Dam Crossing"
+    ],
+    [
+      "Laredo",
+      "Eagle Pass",
+      "Camino Real International Bridge"
+    ],
+    [
+      "Laredo",
+      "Eagle Pass",
+      "Eagle Pass International Bridge"
+    ],
+    [
+      "Laredo",
+      "Eagle Pass",
+      "Union Pacific Eagle Pass Railroad Bridge"
+    ],
+    [
+      "Laredo",
+      "Laredo",
+      "Canadian Pacific Kansas City Laredo Railroad Bridge"
+    ],
+    [
+      "Laredo",
+      "Laredo",
+      "Colombia Solidarity Bridge"
+    ],
+    [
+      "Laredo",
+      "Laredo",
+      "Gateway to the Americas Bridge"
+    ],
+    [
+      "Laredo",
+      "Laredo",
+      "Juárez-Lincoln International Bridge"
+    ],
+    [
+      "Laredo",
+      "Laredo",
+      "World Trade Bridge"
+    ],
+    [
+      "Pharr",
+      "Brownsville",
+      "Brownsville & Matamoros Express Bridge"
+    ],
+    [
+      "Pharr",
+      "Brownsville",
+      "Free Trade International Bridge (Los Indios)"
+    ],
+    [
+      "Pharr",
+      "Brownsville",
+      "Gateway International Bridge"
+    ],
+    [
+      "Pharr",
+      "Brownsville",
+      "Veterans International Bridge at Los Tomates"
+    ],
+    [
+      "Pharr",
+      "Brownsville",
+      "West Rail Bridge"
+    ],
+    [
+      "Pharr",
+      "Hidalgo",
+      "Anzalduas International Bridge"
+    ],
+    [
+      "Pharr",
+      "Hidalgo",
+      "McAllen-Hidalgo International Bridge"
+    ],
+    [
+      "Pharr",
+      "Hidalgo",
+      "Pharr International Bridge"
+    ],
+    [
+      "Pharr",
+      "Progreso",
+      "Donna-Rio Bravo International Bridge"
+    ],
+    [
+      "Pharr",
+      "Progreso",
+      "Progreso International Bridge"
+    ],
+    [
+      "Pharr",
+      "Rio Grande City",
+      "Los Ebanos Ferry"
+    ],
+    [
+      "Pharr",
+      "Rio Grande City",
+      "Starr-Camargo Bridge"
+    ],
+    [
+      "Pharr",
+      "Roma",
+      "Lake Falcon Dam International Crossing"
+    ],
+    [
+      "Pharr",
+      "Roma",
+      "Roma-Ciudad Miguel Alemán International Bridge"
+    ]
+  ]
+}
