@@ -22,10 +22,15 @@ function TreemapChart({
   formatValue = formatCompact,
   animate = true,
   onCellClick,
+  ariaLabel,
 }) {
   const containerRef = useRef(null)
   const svgRef = useRef(null)
   const { width, height: containerHeight, isFullscreen } = useChartResize(containerRef)
+  const accessibleName = ariaLabel
+    ?? (data.length
+      ? `Treemap chart with ${data.length} cells`
+      : 'Treemap chart')
 
   useEffect(() => {
     if (!data.length || !width) return
@@ -168,7 +173,7 @@ function TreemapChart({
 
   return (
     <div ref={containerRef} className="w-full relative" style={{ minHeight: 640 }}>
-      <svg ref={svgRef} className="w-full" role="img" aria-label="Treemap chart visualization" />
+      <svg ref={svgRef} className="w-full" role="img" aria-label={accessibleName} />
     </div>
   )
 }

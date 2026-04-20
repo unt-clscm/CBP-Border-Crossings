@@ -96,11 +96,16 @@ function BarChart({
   maxBars = 15,
   animate = true,
   texasOverlay,
+  ariaLabel,
 }) {
   const containerRef = useRef(null)
   const svgRef = useRef(null)
   const tooltipRef = useRef(null)
   const { width, height: containerHeight, isFullscreen } = useChartResize(containerRef)
+  const accessibleName = ariaLabel
+    ?? (data.length
+      ? `${horizontal ? 'Horizontal bar' : 'Bar'} chart with ${Math.min(data.length, maxBars)} bars`
+      : `${horizontal ? 'Horizontal bar' : 'Bar'} chart`)
 
   useEffect(() => {
     if (!data.length || !width) return
@@ -426,7 +431,7 @@ function BarChart({
 
   return (
     <div ref={containerRef} className="w-full h-full relative" style={{ minHeight: minH }}>
-      <svg ref={svgRef} className="w-full" role="img" aria-label={`${horizontal ? 'Horizontal bar' : 'Bar'} chart visualization`} />
+      <svg ref={svgRef} className="w-full" role="img" aria-label={accessibleName} />
       <div
         ref={tooltipRef}
         role="tooltip"

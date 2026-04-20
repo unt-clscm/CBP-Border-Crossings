@@ -77,7 +77,12 @@ function DonutChart({
   maxSize: maxSizeProp,
   animate = true,
   colorOverrides = null, // { [name]: '#hex' } — override ordinal colors per slice
+  ariaLabel,
 }) {
+  const accessibleName = ariaLabel
+    ?? (data.length
+      ? `Donut chart with ${data.length} segments`
+      : 'Donut chart')
   const containerRef = useRef(null)
   const svgRef = useRef(null)
   const hasAnimated = useRef(false)
@@ -314,7 +319,7 @@ function DonutChart({
 
   return (
     <div ref={containerRef} className="w-full" style={{ minHeight: maxSizeProp || 300 }}>
-      <svg ref={svgRef} className="w-full" role="img" aria-label="Donut chart visualization" />
+      <svg ref={svgRef} className="w-full" role="img" aria-label={accessibleName} />
       {showBottomLegend && (
         <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 mt-2 px-2">
           {data.map((d, i) => {
@@ -323,11 +328,13 @@ function DonutChart({
               <button
                 key={d[nameKey]}
                 type="button"
+                aria-pressed={selectedSlice === d[nameKey]}
                 className="flex items-center gap-2 bg-transparent border-0 p-0 transition-opacity"
                 style={{ opacity: isDimmed ? 0.4 : 1, cursor: onSliceClick ? 'pointer' : 'default' }}
                 onClick={(e) => { e.stopPropagation(); onSliceClick?.(d) }}
               >
                 <span
+                  aria-hidden="true"
                   className="w-3 h-3 rounded-full inline-block shrink-0"
                   style={{ backgroundColor: colorOverrides?.[d[nameKey]] || CHART_COLORS[i % CHART_COLORS.length] }}
                 />

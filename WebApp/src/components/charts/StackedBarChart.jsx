@@ -72,11 +72,16 @@ function StackedBarChart({
   overlayColor = '#BF5700',
   colorOverrides = null,  // { [stackKey]: '#hex' } — override ordinal colors per layer
   showLegend = true,      // hide the legend row (e.g. when the chart shows a single series already named in a parent header)
+  ariaLabel,
 }) {
   const containerRef = useRef(null)
   const svgRef = useRef(null)
   const tipIdRef = useRef(`stacked-bar-tooltip-${Math.random().toString(36).slice(2, 9)}`)
   const { width, height: containerHeight, isFullscreen } = useChartResize(containerRef)
+  const accessibleName = ariaLabel
+    ?? (data.length && stackKeys.length
+      ? `Stacked bar chart, ${data.length} bars, ${stackKeys.length} categories: ${stackKeys.join(', ')}`
+      : 'Stacked bar chart')
 
   useEffect(() => {
     if (!data.length || !width || !stackKeys.length) return
@@ -608,7 +613,7 @@ function StackedBarChart({
 
   return (
     <div ref={containerRef} className="w-full" style={{ minHeight: minH }}>
-      <svg ref={svgRef} className="w-full" role="img" aria-label="Stacked bar chart visualization" />
+      <svg ref={svgRef} className="w-full" role="img" aria-label={accessibleName} />
     </div>
   )
 }

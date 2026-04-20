@@ -91,6 +91,7 @@ function LineChart({
   animate = true,
   annotations = [],
   colorOverrides,  // { seriesName: '#color' } — override ordinal colors for specific series
+  ariaLabel,
 }) {
   const containerRef = useRef(null)
   const svgRef = useRef(null)
@@ -717,10 +718,14 @@ function LineChart({
   const seriesCount = seriesKey ? new Set(data.map(d => d[seriesKey])).size : 0
   const estLegendRows = seriesCount > 1 ? Math.max(1, Math.ceil(seriesCount / 4)) : 0
   const minH = 300 + (estLegendRows > 0 ? 16 + estLegendRows * 28 : 0)
+  const accessibleName = ariaLabel
+    ?? (data.length
+      ? `Line chart with ${Math.max(1, seriesCount)} series`
+      : 'Line chart')
 
   return (
     <div ref={containerRef} className="w-full h-full" style={{ minHeight: minH }}>
-      <svg ref={svgRef} className="w-full" role="img" aria-label="Line chart visualization" />
+      <svg ref={svgRef} className="w-full" role="img" aria-label={accessibleName} />
     </div>
   )
 }
