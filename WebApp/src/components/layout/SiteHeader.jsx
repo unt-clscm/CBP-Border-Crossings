@@ -15,10 +15,10 @@ export default function SiteHeader() {
           />
           <div className="min-w-0">
             <h1 className="text-xl md:text-2xl font-semibold text-brand-blue leading-tight truncate">
-              CBP Border Crossings Dashboard
+              Border Crossings Dashboard
             </h1>
             <p className="text-sm text-text-secondary leading-snug truncate">
-              Northbound traffic at Texas–Mexico ports of entry
+              Northbound Texas–Mexico Border Crossings
             </p>
           </div>
         </div>
