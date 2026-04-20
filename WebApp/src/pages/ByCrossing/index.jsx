@@ -563,7 +563,6 @@ export default function ByCrossingPage() {
             columns={pctColumns}
             data={pctRows}
             pageSize={50}
-            fullWidth
           />
         ) : (
           <div className="bg-white rounded-xl border border-border-light shadow-xs p-8 text-center">
