@@ -74,7 +74,7 @@ All scripts live in `02-Data-Staging/Scripts/`. Run from the project root.
 | `ID` | string | `str(Year) + MM + Crossing + mode_abbrev` — unique key |
 | `Year` | int | 2008–2025 |
 | `Month` | int | 1–12 |
-| `Region` | string | CBP field office: `El Paso` / `Laredo` / `Pharr` |
+| `Region` | string | CBP field office: `El Paso` / `Laredo` / `Rio Grande Valley` |
 | `POE` | string | Port of entry city (12 distinct values) |
 | `Crossing` | string | Canonical bridge name (33 distinct values) |
 | `Modes` | string | `Commercial Trucks` / `Buses` / `Passenger Vehicles` / `Pedestrians/ Bicyclists` / `Railcars` |

@@ -273,10 +273,10 @@ def test_lrd_rvg_cross_source(t: TestRunner, df: pd.DataFrame) -> None:
                     pass
     proc = int(
         df[(df["Year"] == 2025)
-           & (df["Region"].isin(["Laredo", "Pharr"]))
+           & (df["Region"].isin(["Laredo", "Rio Grande Valley"]))
            & (df["Modes"] == "Commercial Trucks")]["Northbound Crossing"].sum()
     )
-    t.check("2025 Laredo+Pharr Commercial Trucks match raw LRD-RVG workbook sum",
+    t.check("2025 Laredo+RGV Commercial Trucks match raw LRD-RVG workbook sum",
             proc == truck_total,
             f"master={proc:,}  workbook={truck_total:,}  delta={proc - truck_total:+,}")
 

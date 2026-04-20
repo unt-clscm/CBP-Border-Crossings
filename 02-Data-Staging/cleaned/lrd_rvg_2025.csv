@@ -33,59 +33,59 @@ Year,Month,Region,POE,Crossing,Modes,source,Northbound Crossing
 2025,1,Laredo,Laredo,World Trade Bridge,Commercial Trucks,LRD_RVG_xlsx,183021
 2025,1,Laredo,Laredo,World Trade Bridge,Passenger Vehicles,LRD_RVG_xlsx,0
 2025,1,Laredo,Laredo,World Trade Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,1,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Buses,LRD_RVG_xlsx,0
-2025,1,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,1,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Passenger Vehicles,LRD_RVG_xlsx,112709
-2025,1,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,54552
-2025,1,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Buses,LRD_RVG_xlsx,0
-2025,1,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Commercial Trucks,LRD_RVG_xlsx,5724
-2025,1,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Passenger Vehicles,LRD_RVG_xlsx,47360
-2025,1,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Pedestrians/ Bicyclists,LRD_RVG_xlsx,3409
-2025,1,Pharr,Brownsville,Gateway International Bridge,Buses,LRD_RVG_xlsx,0
-2025,1,Pharr,Brownsville,Gateway International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,1,Pharr,Brownsville,Gateway International Bridge,Passenger Vehicles,LRD_RVG_xlsx,92653
-2025,1,Pharr,Brownsville,Gateway International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,137543
-2025,1,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Buses,LRD_RVG_xlsx,318
-2025,1,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Commercial Trucks,LRD_RVG_xlsx,17708
-2025,1,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Passenger Vehicles,LRD_RVG_xlsx,130109
-2025,1,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Pedestrians/ Bicyclists,LRD_RVG_xlsx,13811
-2025,1,Pharr,Brownsville,West Rail Bridge,Railcars,LRD_RVG_xlsx,8437
-2025,1,Pharr,Hidalgo,Anzalduas International Bridge,Buses,LRD_RVG_xlsx,0
-2025,1,Pharr,Hidalgo,Anzalduas International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,1,Pharr,Hidalgo,Anzalduas International Bridge,Passenger Vehicles,LRD_RVG_xlsx,139858
-2025,1,Pharr,Hidalgo,Anzalduas International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,1,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Buses,LRD_RVG_xlsx,984
-2025,1,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,1,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,199304
-2025,1,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,165530
-2025,1,Pharr,Hidalgo,Pharr International Bridge,Buses,LRD_RVG_xlsx,0
-2025,1,Pharr,Hidalgo,Pharr International Bridge,Commercial Trucks,LRD_RVG_xlsx,63187
-2025,1,Pharr,Hidalgo,Pharr International Bridge,Passenger Vehicles,LRD_RVG_xlsx,41526
-2025,1,Pharr,Hidalgo,Pharr International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,1,Pharr,Progreso,Donna-Rio Bravo International Bridge,Buses,LRD_RVG_xlsx,0
-2025,1,Pharr,Progreso,Donna-Rio Bravo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,1,Pharr,Progreso,Donna-Rio Bravo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,69785
-2025,1,Pharr,Progreso,Donna-Rio Bravo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,204
-2025,1,Pharr,Progreso,Progreso International Bridge,Buses,LRD_RVG_xlsx,0
-2025,1,Pharr,Progreso,Progreso International Bridge,Commercial Trucks,LRD_RVG_xlsx,3837
-2025,1,Pharr,Progreso,Progreso International Bridge,Passenger Vehicles,LRD_RVG_xlsx,47271
-2025,1,Pharr,Progreso,Progreso International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,112351
-2025,1,Pharr,Rio Grande City,Los Ebanos Ferry,Buses,LRD_RVG_xlsx,0
-2025,1,Pharr,Rio Grande City,Los Ebanos Ferry,Commercial Trucks,LRD_RVG_xlsx,0
-2025,1,Pharr,Rio Grande City,Los Ebanos Ferry,Passenger Vehicles,LRD_RVG_xlsx,2529
-2025,1,Pharr,Rio Grande City,Los Ebanos Ferry,Pedestrians/ Bicyclists,LRD_RVG_xlsx,2365
-2025,1,Pharr,Rio Grande City,Starr-Camargo Bridge,Buses,LRD_RVG_xlsx,0
-2025,1,Pharr,Rio Grande City,Starr-Camargo Bridge,Commercial Trucks,LRD_RVG_xlsx,3250
-2025,1,Pharr,Rio Grande City,Starr-Camargo Bridge,Passenger Vehicles,LRD_RVG_xlsx,35672
-2025,1,Pharr,Rio Grande City,Starr-Camargo Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,3247
-2025,1,Pharr,Roma,Lake Falcon Dam International Crossing,Buses,LRD_RVG_xlsx,0
-2025,1,Pharr,Roma,Lake Falcon Dam International Crossing,Commercial Trucks,LRD_RVG_xlsx,0
-2025,1,Pharr,Roma,Lake Falcon Dam International Crossing,Passenger Vehicles,LRD_RVG_xlsx,13162
-2025,1,Pharr,Roma,Lake Falcon Dam International Crossing,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,1,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Buses,LRD_RVG_xlsx,56
-2025,1,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Commercial Trucks,LRD_RVG_xlsx,3732
-2025,1,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Passenger Vehicles,LRD_RVG_xlsx,57967
-2025,1,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,13727
+2025,1,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Buses,LRD_RVG_xlsx,0
+2025,1,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,1,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Passenger Vehicles,LRD_RVG_xlsx,112709
+2025,1,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,54552
+2025,1,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Buses,LRD_RVG_xlsx,0
+2025,1,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Commercial Trucks,LRD_RVG_xlsx,5724
+2025,1,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Passenger Vehicles,LRD_RVG_xlsx,47360
+2025,1,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Pedestrians/ Bicyclists,LRD_RVG_xlsx,3409
+2025,1,Rio Grande Valley,Brownsville,Gateway International Bridge,Buses,LRD_RVG_xlsx,0
+2025,1,Rio Grande Valley,Brownsville,Gateway International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,1,Rio Grande Valley,Brownsville,Gateway International Bridge,Passenger Vehicles,LRD_RVG_xlsx,92653
+2025,1,Rio Grande Valley,Brownsville,Gateway International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,137543
+2025,1,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Buses,LRD_RVG_xlsx,318
+2025,1,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Commercial Trucks,LRD_RVG_xlsx,17708
+2025,1,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Passenger Vehicles,LRD_RVG_xlsx,130109
+2025,1,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Pedestrians/ Bicyclists,LRD_RVG_xlsx,13811
+2025,1,Rio Grande Valley,Brownsville,West Rail Bridge,Railcars,LRD_RVG_xlsx,8437
+2025,1,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Buses,LRD_RVG_xlsx,0
+2025,1,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,1,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Passenger Vehicles,LRD_RVG_xlsx,139858
+2025,1,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,1,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Buses,LRD_RVG_xlsx,984
+2025,1,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,1,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,199304
+2025,1,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,165530
+2025,1,Rio Grande Valley,Hidalgo,Pharr International Bridge,Buses,LRD_RVG_xlsx,0
+2025,1,Rio Grande Valley,Hidalgo,Pharr International Bridge,Commercial Trucks,LRD_RVG_xlsx,63187
+2025,1,Rio Grande Valley,Hidalgo,Pharr International Bridge,Passenger Vehicles,LRD_RVG_xlsx,41526
+2025,1,Rio Grande Valley,Hidalgo,Pharr International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,1,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Buses,LRD_RVG_xlsx,0
+2025,1,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,1,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,69785
+2025,1,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,204
+2025,1,Rio Grande Valley,Progreso,Progreso International Bridge,Buses,LRD_RVG_xlsx,0
+2025,1,Rio Grande Valley,Progreso,Progreso International Bridge,Commercial Trucks,LRD_RVG_xlsx,3837
+2025,1,Rio Grande Valley,Progreso,Progreso International Bridge,Passenger Vehicles,LRD_RVG_xlsx,47271
+2025,1,Rio Grande Valley,Progreso,Progreso International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,112351
+2025,1,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Buses,LRD_RVG_xlsx,0
+2025,1,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Commercial Trucks,LRD_RVG_xlsx,0
+2025,1,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Passenger Vehicles,LRD_RVG_xlsx,2529
+2025,1,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Pedestrians/ Bicyclists,LRD_RVG_xlsx,2365
+2025,1,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Buses,LRD_RVG_xlsx,0
+2025,1,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Commercial Trucks,LRD_RVG_xlsx,3250
+2025,1,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Passenger Vehicles,LRD_RVG_xlsx,35672
+2025,1,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,3247
+2025,1,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Buses,LRD_RVG_xlsx,0
+2025,1,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Commercial Trucks,LRD_RVG_xlsx,0
+2025,1,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Passenger Vehicles,LRD_RVG_xlsx,13162
+2025,1,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,1,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Buses,LRD_RVG_xlsx,56
+2025,1,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Commercial Trucks,LRD_RVG_xlsx,3732
+2025,1,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Passenger Vehicles,LRD_RVG_xlsx,57967
+2025,1,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,13727
 2025,2,Laredo,Del Rio,Del Rio International Bridge,Buses,LRD_RVG_xlsx,0
 2025,2,Laredo,Del Rio,Del Rio International Bridge,Commercial Trucks,LRD_RVG_xlsx,7295
 2025,2,Laredo,Del Rio,Del Rio International Bridge,Passenger Vehicles,LRD_RVG_xlsx,113322
@@ -120,59 +120,59 @@ Year,Month,Region,POE,Crossing,Modes,source,Northbound Crossing
 2025,2,Laredo,Laredo,World Trade Bridge,Commercial Trucks,LRD_RVG_xlsx,176968
 2025,2,Laredo,Laredo,World Trade Bridge,Passenger Vehicles,LRD_RVG_xlsx,0
 2025,2,Laredo,Laredo,World Trade Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,2,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Buses,LRD_RVG_xlsx,0
-2025,2,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,2,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Passenger Vehicles,LRD_RVG_xlsx,102931
-2025,2,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,46917
-2025,2,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Buses,LRD_RVG_xlsx,0
-2025,2,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Commercial Trucks,LRD_RVG_xlsx,7830
-2025,2,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Passenger Vehicles,LRD_RVG_xlsx,44455
-2025,2,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Pedestrians/ Bicyclists,LRD_RVG_xlsx,21644
-2025,2,Pharr,Brownsville,Gateway International Bridge,Buses,LRD_RVG_xlsx,0
-2025,2,Pharr,Brownsville,Gateway International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,2,Pharr,Brownsville,Gateway International Bridge,Passenger Vehicles,LRD_RVG_xlsx,84881
-2025,2,Pharr,Brownsville,Gateway International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,131598
-2025,2,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Buses,LRD_RVG_xlsx,276
-2025,2,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Commercial Trucks,LRD_RVG_xlsx,18139
-2025,2,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Passenger Vehicles,LRD_RVG_xlsx,129302
-2025,2,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Pedestrians/ Bicyclists,LRD_RVG_xlsx,11863
-2025,2,Pharr,Brownsville,West Rail Bridge,Railcars,LRD_RVG_xlsx,7774
-2025,2,Pharr,Hidalgo,Anzalduas International Bridge,Buses,LRD_RVG_xlsx,0
-2025,2,Pharr,Hidalgo,Anzalduas International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,2,Pharr,Hidalgo,Anzalduas International Bridge,Passenger Vehicles,LRD_RVG_xlsx,96194
-2025,2,Pharr,Hidalgo,Anzalduas International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,2,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Buses,LRD_RVG_xlsx,867
-2025,2,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,2,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,164619
-2025,2,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,164543
-2025,2,Pharr,Hidalgo,Pharr International Bridge,Buses,LRD_RVG_xlsx,0
-2025,2,Pharr,Hidalgo,Pharr International Bridge,Commercial Trucks,LRD_RVG_xlsx,50292
-2025,2,Pharr,Hidalgo,Pharr International Bridge,Passenger Vehicles,LRD_RVG_xlsx,37923
-2025,2,Pharr,Hidalgo,Pharr International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,2,Pharr,Progreso,Donna-Rio Bravo International Bridge,Buses,LRD_RVG_xlsx,0
-2025,2,Pharr,Progreso,Donna-Rio Bravo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,2,Pharr,Progreso,Donna-Rio Bravo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,64200
-2025,2,Pharr,Progreso,Donna-Rio Bravo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,115
-2025,2,Pharr,Progreso,Progreso International Bridge,Buses,LRD_RVG_xlsx,0
-2025,2,Pharr,Progreso,Progreso International Bridge,Commercial Trucks,LRD_RVG_xlsx,3341
-2025,2,Pharr,Progreso,Progreso International Bridge,Passenger Vehicles,LRD_RVG_xlsx,39831
-2025,2,Pharr,Progreso,Progreso International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,101712
-2025,2,Pharr,Rio Grande City,Los Ebanos Ferry,Buses,LRD_RVG_xlsx,0
-2025,2,Pharr,Rio Grande City,Los Ebanos Ferry,Commercial Trucks,LRD_RVG_xlsx,0
-2025,2,Pharr,Rio Grande City,Los Ebanos Ferry,Passenger Vehicles,LRD_RVG_xlsx,3225
-2025,2,Pharr,Rio Grande City,Los Ebanos Ferry,Pedestrians/ Bicyclists,LRD_RVG_xlsx,2641
-2025,2,Pharr,Rio Grande City,Starr-Camargo Bridge,Buses,LRD_RVG_xlsx,0
-2025,2,Pharr,Rio Grande City,Starr-Camargo Bridge,Commercial Trucks,LRD_RVG_xlsx,3124
-2025,2,Pharr,Rio Grande City,Starr-Camargo Bridge,Passenger Vehicles,LRD_RVG_xlsx,33907
-2025,2,Pharr,Rio Grande City,Starr-Camargo Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,4500
-2025,2,Pharr,Roma,Lake Falcon Dam International Crossing,Buses,LRD_RVG_xlsx,0
-2025,2,Pharr,Roma,Lake Falcon Dam International Crossing,Commercial Trucks,LRD_RVG_xlsx,0
-2025,2,Pharr,Roma,Lake Falcon Dam International Crossing,Passenger Vehicles,LRD_RVG_xlsx,11405
-2025,2,Pharr,Roma,Lake Falcon Dam International Crossing,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,2,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Buses,LRD_RVG_xlsx,64
-2025,2,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Commercial Trucks,LRD_RVG_xlsx,4257
-2025,2,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Passenger Vehicles,LRD_RVG_xlsx,54676
-2025,2,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,7250
+2025,2,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Buses,LRD_RVG_xlsx,0
+2025,2,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,2,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Passenger Vehicles,LRD_RVG_xlsx,102931
+2025,2,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,46917
+2025,2,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Buses,LRD_RVG_xlsx,0
+2025,2,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Commercial Trucks,LRD_RVG_xlsx,7830
+2025,2,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Passenger Vehicles,LRD_RVG_xlsx,44455
+2025,2,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Pedestrians/ Bicyclists,LRD_RVG_xlsx,21644
+2025,2,Rio Grande Valley,Brownsville,Gateway International Bridge,Buses,LRD_RVG_xlsx,0
+2025,2,Rio Grande Valley,Brownsville,Gateway International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,2,Rio Grande Valley,Brownsville,Gateway International Bridge,Passenger Vehicles,LRD_RVG_xlsx,84881
+2025,2,Rio Grande Valley,Brownsville,Gateway International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,131598
+2025,2,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Buses,LRD_RVG_xlsx,276
+2025,2,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Commercial Trucks,LRD_RVG_xlsx,18139
+2025,2,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Passenger Vehicles,LRD_RVG_xlsx,129302
+2025,2,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Pedestrians/ Bicyclists,LRD_RVG_xlsx,11863
+2025,2,Rio Grande Valley,Brownsville,West Rail Bridge,Railcars,LRD_RVG_xlsx,7774
+2025,2,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Buses,LRD_RVG_xlsx,0
+2025,2,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,2,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Passenger Vehicles,LRD_RVG_xlsx,96194
+2025,2,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,2,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Buses,LRD_RVG_xlsx,867
+2025,2,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,2,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,164619
+2025,2,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,164543
+2025,2,Rio Grande Valley,Hidalgo,Pharr International Bridge,Buses,LRD_RVG_xlsx,0
+2025,2,Rio Grande Valley,Hidalgo,Pharr International Bridge,Commercial Trucks,LRD_RVG_xlsx,50292
+2025,2,Rio Grande Valley,Hidalgo,Pharr International Bridge,Passenger Vehicles,LRD_RVG_xlsx,37923
+2025,2,Rio Grande Valley,Hidalgo,Pharr International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,2,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Buses,LRD_RVG_xlsx,0
+2025,2,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,2,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,64200
+2025,2,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,115
+2025,2,Rio Grande Valley,Progreso,Progreso International Bridge,Buses,LRD_RVG_xlsx,0
+2025,2,Rio Grande Valley,Progreso,Progreso International Bridge,Commercial Trucks,LRD_RVG_xlsx,3341
+2025,2,Rio Grande Valley,Progreso,Progreso International Bridge,Passenger Vehicles,LRD_RVG_xlsx,39831
+2025,2,Rio Grande Valley,Progreso,Progreso International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,101712
+2025,2,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Buses,LRD_RVG_xlsx,0
+2025,2,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Commercial Trucks,LRD_RVG_xlsx,0
+2025,2,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Passenger Vehicles,LRD_RVG_xlsx,3225
+2025,2,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Pedestrians/ Bicyclists,LRD_RVG_xlsx,2641
+2025,2,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Buses,LRD_RVG_xlsx,0
+2025,2,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Commercial Trucks,LRD_RVG_xlsx,3124
+2025,2,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Passenger Vehicles,LRD_RVG_xlsx,33907
+2025,2,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,4500
+2025,2,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Buses,LRD_RVG_xlsx,0
+2025,2,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Commercial Trucks,LRD_RVG_xlsx,0
+2025,2,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Passenger Vehicles,LRD_RVG_xlsx,11405
+2025,2,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,2,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Buses,LRD_RVG_xlsx,64
+2025,2,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Commercial Trucks,LRD_RVG_xlsx,4257
+2025,2,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Passenger Vehicles,LRD_RVG_xlsx,54676
+2025,2,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,7250
 2025,3,Laredo,Del Rio,Del Rio International Bridge,Buses,LRD_RVG_xlsx,0
 2025,3,Laredo,Del Rio,Del Rio International Bridge,Commercial Trucks,LRD_RVG_xlsx,6767
 2025,3,Laredo,Del Rio,Del Rio International Bridge,Passenger Vehicles,LRD_RVG_xlsx,132210
@@ -207,59 +207,59 @@ Year,Month,Region,POE,Crossing,Modes,source,Northbound Crossing
 2025,3,Laredo,Laredo,World Trade Bridge,Commercial Trucks,LRD_RVG_xlsx,199822
 2025,3,Laredo,Laredo,World Trade Bridge,Passenger Vehicles,LRD_RVG_xlsx,0
 2025,3,Laredo,Laredo,World Trade Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,3,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Buses,LRD_RVG_xlsx,0
-2025,3,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,3,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Passenger Vehicles,LRD_RVG_xlsx,115186
-2025,3,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,58956
-2025,3,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Buses,LRD_RVG_xlsx,0
-2025,3,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Commercial Trucks,LRD_RVG_xlsx,6544
-2025,3,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Passenger Vehicles,LRD_RVG_xlsx,52372
-2025,3,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Pedestrians/ Bicyclists,LRD_RVG_xlsx,3288
-2025,3,Pharr,Brownsville,Gateway International Bridge,Buses,LRD_RVG_xlsx,0
-2025,3,Pharr,Brownsville,Gateway International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,3,Pharr,Brownsville,Gateway International Bridge,Passenger Vehicles,LRD_RVG_xlsx,92936
-2025,3,Pharr,Brownsville,Gateway International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,150622
-2025,3,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Buses,LRD_RVG_xlsx,336
-2025,3,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Commercial Trucks,LRD_RVG_xlsx,18624
-2025,3,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Passenger Vehicles,LRD_RVG_xlsx,135987
-2025,3,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Pedestrians/ Bicyclists,LRD_RVG_xlsx,13580
-2025,3,Pharr,Brownsville,West Rail Bridge,Railcars,LRD_RVG_xlsx,7814
-2025,3,Pharr,Hidalgo,Anzalduas International Bridge,Buses,LRD_RVG_xlsx,0
-2025,3,Pharr,Hidalgo,Anzalduas International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,3,Pharr,Hidalgo,Anzalduas International Bridge,Passenger Vehicles,LRD_RVG_xlsx,80417
-2025,3,Pharr,Hidalgo,Anzalduas International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,3,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Buses,LRD_RVG_xlsx,1000
-2025,3,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,3,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,167247
-2025,3,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,210938
-2025,3,Pharr,Hidalgo,Pharr International Bridge,Buses,LRD_RVG_xlsx,0
-2025,3,Pharr,Hidalgo,Pharr International Bridge,Commercial Trucks,LRD_RVG_xlsx,62394
-2025,3,Pharr,Hidalgo,Pharr International Bridge,Passenger Vehicles,LRD_RVG_xlsx,48015
-2025,3,Pharr,Hidalgo,Pharr International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,3,Pharr,Progreso,Donna-Rio Bravo International Bridge,Buses,LRD_RVG_xlsx,0
-2025,3,Pharr,Progreso,Donna-Rio Bravo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,3,Pharr,Progreso,Donna-Rio Bravo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,64838
-2025,3,Pharr,Progreso,Donna-Rio Bravo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,81
-2025,3,Pharr,Progreso,Progreso International Bridge,Buses,LRD_RVG_xlsx,0
-2025,3,Pharr,Progreso,Progreso International Bridge,Commercial Trucks,LRD_RVG_xlsx,4242
-2025,3,Pharr,Progreso,Progreso International Bridge,Passenger Vehicles,LRD_RVG_xlsx,37945
-2025,3,Pharr,Progreso,Progreso International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,123147
-2025,3,Pharr,Rio Grande City,Los Ebanos Ferry,Buses,LRD_RVG_xlsx,0
-2025,3,Pharr,Rio Grande City,Los Ebanos Ferry,Commercial Trucks,LRD_RVG_xlsx,0
-2025,3,Pharr,Rio Grande City,Los Ebanos Ferry,Passenger Vehicles,LRD_RVG_xlsx,3172
-2025,3,Pharr,Rio Grande City,Los Ebanos Ferry,Pedestrians/ Bicyclists,LRD_RVG_xlsx,3328
-2025,3,Pharr,Rio Grande City,Starr-Camargo Bridge,Buses,LRD_RVG_xlsx,0
-2025,3,Pharr,Rio Grande City,Starr-Camargo Bridge,Commercial Trucks,LRD_RVG_xlsx,3238
-2025,3,Pharr,Rio Grande City,Starr-Camargo Bridge,Passenger Vehicles,LRD_RVG_xlsx,39744
-2025,3,Pharr,Rio Grande City,Starr-Camargo Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,4043
-2025,3,Pharr,Roma,Lake Falcon Dam International Crossing,Buses,LRD_RVG_xlsx,0
-2025,3,Pharr,Roma,Lake Falcon Dam International Crossing,Commercial Trucks,LRD_RVG_xlsx,0
-2025,3,Pharr,Roma,Lake Falcon Dam International Crossing,Passenger Vehicles,LRD_RVG_xlsx,13790
-2025,3,Pharr,Roma,Lake Falcon Dam International Crossing,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,3,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Buses,LRD_RVG_xlsx,77
-2025,3,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Commercial Trucks,LRD_RVG_xlsx,4223
-2025,3,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Passenger Vehicles,LRD_RVG_xlsx,59809
-2025,3,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,18388
+2025,3,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Buses,LRD_RVG_xlsx,0
+2025,3,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,3,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Passenger Vehicles,LRD_RVG_xlsx,115186
+2025,3,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,58956
+2025,3,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Buses,LRD_RVG_xlsx,0
+2025,3,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Commercial Trucks,LRD_RVG_xlsx,6544
+2025,3,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Passenger Vehicles,LRD_RVG_xlsx,52372
+2025,3,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Pedestrians/ Bicyclists,LRD_RVG_xlsx,3288
+2025,3,Rio Grande Valley,Brownsville,Gateway International Bridge,Buses,LRD_RVG_xlsx,0
+2025,3,Rio Grande Valley,Brownsville,Gateway International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,3,Rio Grande Valley,Brownsville,Gateway International Bridge,Passenger Vehicles,LRD_RVG_xlsx,92936
+2025,3,Rio Grande Valley,Brownsville,Gateway International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,150622
+2025,3,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Buses,LRD_RVG_xlsx,336
+2025,3,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Commercial Trucks,LRD_RVG_xlsx,18624
+2025,3,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Passenger Vehicles,LRD_RVG_xlsx,135987
+2025,3,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Pedestrians/ Bicyclists,LRD_RVG_xlsx,13580
+2025,3,Rio Grande Valley,Brownsville,West Rail Bridge,Railcars,LRD_RVG_xlsx,7814
+2025,3,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Buses,LRD_RVG_xlsx,0
+2025,3,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,3,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Passenger Vehicles,LRD_RVG_xlsx,80417
+2025,3,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,3,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Buses,LRD_RVG_xlsx,1000
+2025,3,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,3,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,167247
+2025,3,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,210938
+2025,3,Rio Grande Valley,Hidalgo,Pharr International Bridge,Buses,LRD_RVG_xlsx,0
+2025,3,Rio Grande Valley,Hidalgo,Pharr International Bridge,Commercial Trucks,LRD_RVG_xlsx,62394
+2025,3,Rio Grande Valley,Hidalgo,Pharr International Bridge,Passenger Vehicles,LRD_RVG_xlsx,48015
+2025,3,Rio Grande Valley,Hidalgo,Pharr International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,3,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Buses,LRD_RVG_xlsx,0
+2025,3,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,3,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,64838
+2025,3,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,81
+2025,3,Rio Grande Valley,Progreso,Progreso International Bridge,Buses,LRD_RVG_xlsx,0
+2025,3,Rio Grande Valley,Progreso,Progreso International Bridge,Commercial Trucks,LRD_RVG_xlsx,4242
+2025,3,Rio Grande Valley,Progreso,Progreso International Bridge,Passenger Vehicles,LRD_RVG_xlsx,37945
+2025,3,Rio Grande Valley,Progreso,Progreso International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,123147
+2025,3,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Buses,LRD_RVG_xlsx,0
+2025,3,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Commercial Trucks,LRD_RVG_xlsx,0
+2025,3,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Passenger Vehicles,LRD_RVG_xlsx,3172
+2025,3,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Pedestrians/ Bicyclists,LRD_RVG_xlsx,3328
+2025,3,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Buses,LRD_RVG_xlsx,0
+2025,3,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Commercial Trucks,LRD_RVG_xlsx,3238
+2025,3,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Passenger Vehicles,LRD_RVG_xlsx,39744
+2025,3,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,4043
+2025,3,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Buses,LRD_RVG_xlsx,0
+2025,3,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Commercial Trucks,LRD_RVG_xlsx,0
+2025,3,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Passenger Vehicles,LRD_RVG_xlsx,13790
+2025,3,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,3,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Buses,LRD_RVG_xlsx,77
+2025,3,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Commercial Trucks,LRD_RVG_xlsx,4223
+2025,3,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Passenger Vehicles,LRD_RVG_xlsx,59809
+2025,3,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,18388
 2025,4,Laredo,Del Rio,Del Rio International Bridge,Buses,LRD_RVG_xlsx,0
 2025,4,Laredo,Del Rio,Del Rio International Bridge,Commercial Trucks,LRD_RVG_xlsx,6420
 2025,4,Laredo,Del Rio,Del Rio International Bridge,Passenger Vehicles,LRD_RVG_xlsx,133158
@@ -294,59 +294,59 @@ Year,Month,Region,POE,Crossing,Modes,source,Northbound Crossing
 2025,4,Laredo,Laredo,World Trade Bridge,Commercial Trucks,LRD_RVG_xlsx,189526
 2025,4,Laredo,Laredo,World Trade Bridge,Passenger Vehicles,LRD_RVG_xlsx,0
 2025,4,Laredo,Laredo,World Trade Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,4,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Buses,LRD_RVG_xlsx,0
-2025,4,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,4,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Passenger Vehicles,LRD_RVG_xlsx,119052
-2025,4,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,60547
-2025,4,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Buses,LRD_RVG_xlsx,0
-2025,4,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Commercial Trucks,LRD_RVG_xlsx,4184
-2025,4,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Passenger Vehicles,LRD_RVG_xlsx,50751
-2025,4,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Pedestrians/ Bicyclists,LRD_RVG_xlsx,3905
-2025,4,Pharr,Brownsville,Gateway International Bridge,Buses,LRD_RVG_xlsx,0
-2025,4,Pharr,Brownsville,Gateway International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,4,Pharr,Brownsville,Gateway International Bridge,Passenger Vehicles,LRD_RVG_xlsx,88633
-2025,4,Pharr,Brownsville,Gateway International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,152697
-2025,4,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Buses,LRD_RVG_xlsx,333
-2025,4,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Commercial Trucks,LRD_RVG_xlsx,17614
-2025,4,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Passenger Vehicles,LRD_RVG_xlsx,140382
-2025,4,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Pedestrians/ Bicyclists,LRD_RVG_xlsx,13063
-2025,4,Pharr,Brownsville,West Rail Bridge,Railcars,LRD_RVG_xlsx,7470
-2025,4,Pharr,Hidalgo,Anzalduas International Bridge,Buses,LRD_RVG_xlsx,0
-2025,4,Pharr,Hidalgo,Anzalduas International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,4,Pharr,Hidalgo,Anzalduas International Bridge,Passenger Vehicles,LRD_RVG_xlsx,92608
-2025,4,Pharr,Hidalgo,Anzalduas International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,4,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Buses,LRD_RVG_xlsx,982
-2025,4,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,4,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,164568
-2025,4,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,225097
-2025,4,Pharr,Hidalgo,Pharr International Bridge,Buses,LRD_RVG_xlsx,0
-2025,4,Pharr,Hidalgo,Pharr International Bridge,Commercial Trucks,LRD_RVG_xlsx,59105
-2025,4,Pharr,Hidalgo,Pharr International Bridge,Passenger Vehicles,LRD_RVG_xlsx,49293
-2025,4,Pharr,Hidalgo,Pharr International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,4,Pharr,Progreso,Donna-Rio Bravo International Bridge,Buses,LRD_RVG_xlsx,0
-2025,4,Pharr,Progreso,Donna-Rio Bravo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,4,Pharr,Progreso,Donna-Rio Bravo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,73216
-2025,4,Pharr,Progreso,Donna-Rio Bravo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,104
-2025,4,Pharr,Progreso,Progreso International Bridge,Buses,LRD_RVG_xlsx,0
-2025,4,Pharr,Progreso,Progreso International Bridge,Commercial Trucks,LRD_RVG_xlsx,4778
-2025,4,Pharr,Progreso,Progreso International Bridge,Passenger Vehicles,LRD_RVG_xlsx,41727
-2025,4,Pharr,Progreso,Progreso International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,95969
-2025,4,Pharr,Rio Grande City,Los Ebanos Ferry,Buses,LRD_RVG_xlsx,0
-2025,4,Pharr,Rio Grande City,Los Ebanos Ferry,Commercial Trucks,LRD_RVG_xlsx,0
-2025,4,Pharr,Rio Grande City,Los Ebanos Ferry,Passenger Vehicles,LRD_RVG_xlsx,3726
-2025,4,Pharr,Rio Grande City,Los Ebanos Ferry,Pedestrians/ Bicyclists,LRD_RVG_xlsx,3288
-2025,4,Pharr,Rio Grande City,Starr-Camargo Bridge,Buses,LRD_RVG_xlsx,0
-2025,4,Pharr,Rio Grande City,Starr-Camargo Bridge,Commercial Trucks,LRD_RVG_xlsx,2792
-2025,4,Pharr,Rio Grande City,Starr-Camargo Bridge,Passenger Vehicles,LRD_RVG_xlsx,39981
-2025,4,Pharr,Rio Grande City,Starr-Camargo Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,4509
-2025,4,Pharr,Roma,Lake Falcon Dam International Crossing,Buses,LRD_RVG_xlsx,0
-2025,4,Pharr,Roma,Lake Falcon Dam International Crossing,Commercial Trucks,LRD_RVG_xlsx,0
-2025,4,Pharr,Roma,Lake Falcon Dam International Crossing,Passenger Vehicles,LRD_RVG_xlsx,13930
-2025,4,Pharr,Roma,Lake Falcon Dam International Crossing,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,4,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Buses,LRD_RVG_xlsx,81
-2025,4,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Commercial Trucks,LRD_RVG_xlsx,4048
-2025,4,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Passenger Vehicles,LRD_RVG_xlsx,62012
-2025,4,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,21693
+2025,4,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Buses,LRD_RVG_xlsx,0
+2025,4,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,4,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Passenger Vehicles,LRD_RVG_xlsx,119052
+2025,4,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,60547
+2025,4,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Buses,LRD_RVG_xlsx,0
+2025,4,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Commercial Trucks,LRD_RVG_xlsx,4184
+2025,4,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Passenger Vehicles,LRD_RVG_xlsx,50751
+2025,4,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Pedestrians/ Bicyclists,LRD_RVG_xlsx,3905
+2025,4,Rio Grande Valley,Brownsville,Gateway International Bridge,Buses,LRD_RVG_xlsx,0
+2025,4,Rio Grande Valley,Brownsville,Gateway International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,4,Rio Grande Valley,Brownsville,Gateway International Bridge,Passenger Vehicles,LRD_RVG_xlsx,88633
+2025,4,Rio Grande Valley,Brownsville,Gateway International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,152697
+2025,4,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Buses,LRD_RVG_xlsx,333
+2025,4,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Commercial Trucks,LRD_RVG_xlsx,17614
+2025,4,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Passenger Vehicles,LRD_RVG_xlsx,140382
+2025,4,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Pedestrians/ Bicyclists,LRD_RVG_xlsx,13063
+2025,4,Rio Grande Valley,Brownsville,West Rail Bridge,Railcars,LRD_RVG_xlsx,7470
+2025,4,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Buses,LRD_RVG_xlsx,0
+2025,4,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,4,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Passenger Vehicles,LRD_RVG_xlsx,92608
+2025,4,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,4,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Buses,LRD_RVG_xlsx,982
+2025,4,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,4,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,164568
+2025,4,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,225097
+2025,4,Rio Grande Valley,Hidalgo,Pharr International Bridge,Buses,LRD_RVG_xlsx,0
+2025,4,Rio Grande Valley,Hidalgo,Pharr International Bridge,Commercial Trucks,LRD_RVG_xlsx,59105
+2025,4,Rio Grande Valley,Hidalgo,Pharr International Bridge,Passenger Vehicles,LRD_RVG_xlsx,49293
+2025,4,Rio Grande Valley,Hidalgo,Pharr International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,4,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Buses,LRD_RVG_xlsx,0
+2025,4,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,4,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,73216
+2025,4,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,104
+2025,4,Rio Grande Valley,Progreso,Progreso International Bridge,Buses,LRD_RVG_xlsx,0
+2025,4,Rio Grande Valley,Progreso,Progreso International Bridge,Commercial Trucks,LRD_RVG_xlsx,4778
+2025,4,Rio Grande Valley,Progreso,Progreso International Bridge,Passenger Vehicles,LRD_RVG_xlsx,41727
+2025,4,Rio Grande Valley,Progreso,Progreso International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,95969
+2025,4,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Buses,LRD_RVG_xlsx,0
+2025,4,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Commercial Trucks,LRD_RVG_xlsx,0
+2025,4,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Passenger Vehicles,LRD_RVG_xlsx,3726
+2025,4,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Pedestrians/ Bicyclists,LRD_RVG_xlsx,3288
+2025,4,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Buses,LRD_RVG_xlsx,0
+2025,4,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Commercial Trucks,LRD_RVG_xlsx,2792
+2025,4,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Passenger Vehicles,LRD_RVG_xlsx,39981
+2025,4,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,4509
+2025,4,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Buses,LRD_RVG_xlsx,0
+2025,4,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Commercial Trucks,LRD_RVG_xlsx,0
+2025,4,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Passenger Vehicles,LRD_RVG_xlsx,13930
+2025,4,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,4,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Buses,LRD_RVG_xlsx,81
+2025,4,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Commercial Trucks,LRD_RVG_xlsx,4048
+2025,4,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Passenger Vehicles,LRD_RVG_xlsx,62012
+2025,4,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,21693
 2025,5,Laredo,Del Rio,Del Rio International Bridge,Buses,LRD_RVG_xlsx,0
 2025,5,Laredo,Del Rio,Del Rio International Bridge,Commercial Trucks,LRD_RVG_xlsx,6656
 2025,5,Laredo,Del Rio,Del Rio International Bridge,Passenger Vehicles,LRD_RVG_xlsx,146452
@@ -381,59 +381,59 @@ Year,Month,Region,POE,Crossing,Modes,source,Northbound Crossing
 2025,5,Laredo,Laredo,World Trade Bridge,Commercial Trucks,LRD_RVG_xlsx,190379
 2025,5,Laredo,Laredo,World Trade Bridge,Passenger Vehicles,LRD_RVG_xlsx,0
 2025,5,Laredo,Laredo,World Trade Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,5,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Buses,LRD_RVG_xlsx,0
-2025,5,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,5,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Passenger Vehicles,LRD_RVG_xlsx,123027
-2025,5,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,62853
-2025,5,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Buses,LRD_RVG_xlsx,0
-2025,5,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Commercial Trucks,LRD_RVG_xlsx,5779
-2025,5,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Passenger Vehicles,LRD_RVG_xlsx,51844
-2025,5,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Pedestrians/ Bicyclists,LRD_RVG_xlsx,4164
-2025,5,Pharr,Brownsville,Gateway International Bridge,Buses,LRD_RVG_xlsx,0
-2025,5,Pharr,Brownsville,Gateway International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,5,Pharr,Brownsville,Gateway International Bridge,Passenger Vehicles,LRD_RVG_xlsx,94531
-2025,5,Pharr,Brownsville,Gateway International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,152377
-2025,5,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Buses,LRD_RVG_xlsx,353
-2025,5,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Commercial Trucks,LRD_RVG_xlsx,18370
-2025,5,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Passenger Vehicles,LRD_RVG_xlsx,143418
-2025,5,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Pedestrians/ Bicyclists,LRD_RVG_xlsx,13863
-2025,5,Pharr,Brownsville,West Rail Bridge,Railcars,LRD_RVG_xlsx,7427
-2025,5,Pharr,Hidalgo,Anzalduas International Bridge,Buses,LRD_RVG_xlsx,0
-2025,5,Pharr,Hidalgo,Anzalduas International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,5,Pharr,Hidalgo,Anzalduas International Bridge,Passenger Vehicles,LRD_RVG_xlsx,78120
-2025,5,Pharr,Hidalgo,Anzalduas International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,5,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Buses,LRD_RVG_xlsx,865
-2025,5,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,5,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,180412
-2025,5,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,222921
-2025,5,Pharr,Hidalgo,Pharr International Bridge,Buses,LRD_RVG_xlsx,0
-2025,5,Pharr,Hidalgo,Pharr International Bridge,Commercial Trucks,LRD_RVG_xlsx,59906
-2025,5,Pharr,Hidalgo,Pharr International Bridge,Passenger Vehicles,LRD_RVG_xlsx,49911
-2025,5,Pharr,Hidalgo,Pharr International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,5,Pharr,Progreso,Donna-Rio Bravo International Bridge,Buses,LRD_RVG_xlsx,0
-2025,5,Pharr,Progreso,Donna-Rio Bravo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,5,Pharr,Progreso,Donna-Rio Bravo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,78798
-2025,5,Pharr,Progreso,Donna-Rio Bravo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,500
-2025,5,Pharr,Progreso,Progreso International Bridge,Buses,LRD_RVG_xlsx,0
-2025,5,Pharr,Progreso,Progreso International Bridge,Commercial Trucks,LRD_RVG_xlsx,5913
-2025,5,Pharr,Progreso,Progreso International Bridge,Passenger Vehicles,LRD_RVG_xlsx,49871
-2025,5,Pharr,Progreso,Progreso International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,87490
-2025,5,Pharr,Rio Grande City,Los Ebanos Ferry,Buses,LRD_RVG_xlsx,0
-2025,5,Pharr,Rio Grande City,Los Ebanos Ferry,Commercial Trucks,LRD_RVG_xlsx,0
-2025,5,Pharr,Rio Grande City,Los Ebanos Ferry,Passenger Vehicles,LRD_RVG_xlsx,4150
-2025,5,Pharr,Rio Grande City,Los Ebanos Ferry,Pedestrians/ Bicyclists,LRD_RVG_xlsx,3340
-2025,5,Pharr,Rio Grande City,Starr-Camargo Bridge,Buses,LRD_RVG_xlsx,0
-2025,5,Pharr,Rio Grande City,Starr-Camargo Bridge,Commercial Trucks,LRD_RVG_xlsx,2744
-2025,5,Pharr,Rio Grande City,Starr-Camargo Bridge,Passenger Vehicles,LRD_RVG_xlsx,42676
-2025,5,Pharr,Rio Grande City,Starr-Camargo Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,3596
-2025,5,Pharr,Roma,Lake Falcon Dam International Crossing,Buses,LRD_RVG_xlsx,0
-2025,5,Pharr,Roma,Lake Falcon Dam International Crossing,Commercial Trucks,LRD_RVG_xlsx,0
-2025,5,Pharr,Roma,Lake Falcon Dam International Crossing,Passenger Vehicles,LRD_RVG_xlsx,12460
-2025,5,Pharr,Roma,Lake Falcon Dam International Crossing,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,5,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Buses,LRD_RVG_xlsx,75
-2025,5,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Commercial Trucks,LRD_RVG_xlsx,4394
-2025,5,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Passenger Vehicles,LRD_RVG_xlsx,65633
-2025,5,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,17727
+2025,5,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Buses,LRD_RVG_xlsx,0
+2025,5,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,5,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Passenger Vehicles,LRD_RVG_xlsx,123027
+2025,5,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,62853
+2025,5,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Buses,LRD_RVG_xlsx,0
+2025,5,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Commercial Trucks,LRD_RVG_xlsx,5779
+2025,5,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Passenger Vehicles,LRD_RVG_xlsx,51844
+2025,5,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Pedestrians/ Bicyclists,LRD_RVG_xlsx,4164
+2025,5,Rio Grande Valley,Brownsville,Gateway International Bridge,Buses,LRD_RVG_xlsx,0
+2025,5,Rio Grande Valley,Brownsville,Gateway International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,5,Rio Grande Valley,Brownsville,Gateway International Bridge,Passenger Vehicles,LRD_RVG_xlsx,94531
+2025,5,Rio Grande Valley,Brownsville,Gateway International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,152377
+2025,5,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Buses,LRD_RVG_xlsx,353
+2025,5,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Commercial Trucks,LRD_RVG_xlsx,18370
+2025,5,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Passenger Vehicles,LRD_RVG_xlsx,143418
+2025,5,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Pedestrians/ Bicyclists,LRD_RVG_xlsx,13863
+2025,5,Rio Grande Valley,Brownsville,West Rail Bridge,Railcars,LRD_RVG_xlsx,7427
+2025,5,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Buses,LRD_RVG_xlsx,0
+2025,5,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,5,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Passenger Vehicles,LRD_RVG_xlsx,78120
+2025,5,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,5,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Buses,LRD_RVG_xlsx,865
+2025,5,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,5,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,180412
+2025,5,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,222921
+2025,5,Rio Grande Valley,Hidalgo,Pharr International Bridge,Buses,LRD_RVG_xlsx,0
+2025,5,Rio Grande Valley,Hidalgo,Pharr International Bridge,Commercial Trucks,LRD_RVG_xlsx,59906
+2025,5,Rio Grande Valley,Hidalgo,Pharr International Bridge,Passenger Vehicles,LRD_RVG_xlsx,49911
+2025,5,Rio Grande Valley,Hidalgo,Pharr International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,5,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Buses,LRD_RVG_xlsx,0
+2025,5,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,5,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,78798
+2025,5,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,500
+2025,5,Rio Grande Valley,Progreso,Progreso International Bridge,Buses,LRD_RVG_xlsx,0
+2025,5,Rio Grande Valley,Progreso,Progreso International Bridge,Commercial Trucks,LRD_RVG_xlsx,5913
+2025,5,Rio Grande Valley,Progreso,Progreso International Bridge,Passenger Vehicles,LRD_RVG_xlsx,49871
+2025,5,Rio Grande Valley,Progreso,Progreso International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,87490
+2025,5,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Buses,LRD_RVG_xlsx,0
+2025,5,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Commercial Trucks,LRD_RVG_xlsx,0
+2025,5,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Passenger Vehicles,LRD_RVG_xlsx,4150
+2025,5,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Pedestrians/ Bicyclists,LRD_RVG_xlsx,3340
+2025,5,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Buses,LRD_RVG_xlsx,0
+2025,5,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Commercial Trucks,LRD_RVG_xlsx,2744
+2025,5,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Passenger Vehicles,LRD_RVG_xlsx,42676
+2025,5,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,3596
+2025,5,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Buses,LRD_RVG_xlsx,0
+2025,5,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Commercial Trucks,LRD_RVG_xlsx,0
+2025,5,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Passenger Vehicles,LRD_RVG_xlsx,12460
+2025,5,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,5,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Buses,LRD_RVG_xlsx,75
+2025,5,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Commercial Trucks,LRD_RVG_xlsx,4394
+2025,5,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Passenger Vehicles,LRD_RVG_xlsx,65633
+2025,5,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,17727
 2025,6,Laredo,Del Rio,Del Rio International Bridge,Buses,LRD_RVG_xlsx,0
 2025,6,Laredo,Del Rio,Del Rio International Bridge,Commercial Trucks,LRD_RVG_xlsx,6935
 2025,6,Laredo,Del Rio,Del Rio International Bridge,Passenger Vehicles,LRD_RVG_xlsx,138800
@@ -468,59 +468,59 @@ Year,Month,Region,POE,Crossing,Modes,source,Northbound Crossing
 2025,6,Laredo,Laredo,World Trade Bridge,Commercial Trucks,LRD_RVG_xlsx,186736
 2025,6,Laredo,Laredo,World Trade Bridge,Passenger Vehicles,LRD_RVG_xlsx,0
 2025,6,Laredo,Laredo,World Trade Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,6,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Buses,LRD_RVG_xlsx,4
-2025,6,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,6,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Passenger Vehicles,LRD_RVG_xlsx,116013
-2025,6,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,50326
-2025,6,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Buses,LRD_RVG_xlsx,0
-2025,6,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Commercial Trucks,LRD_RVG_xlsx,6774
-2025,6,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Passenger Vehicles,LRD_RVG_xlsx,49701
-2025,6,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Pedestrians/ Bicyclists,LRD_RVG_xlsx,3990
-2025,6,Pharr,Brownsville,Gateway International Bridge,Buses,LRD_RVG_xlsx,0
-2025,6,Pharr,Brownsville,Gateway International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,6,Pharr,Brownsville,Gateway International Bridge,Passenger Vehicles,LRD_RVG_xlsx,89607
-2025,6,Pharr,Brownsville,Gateway International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,137917
-2025,6,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Buses,LRD_RVG_xlsx,330
-2025,6,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Commercial Trucks,LRD_RVG_xlsx,17795
-2025,6,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Passenger Vehicles,LRD_RVG_xlsx,127765
-2025,6,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Pedestrians/ Bicyclists,LRD_RVG_xlsx,12660
-2025,6,Pharr,Brownsville,West Rail Bridge,Railcars,LRD_RVG_xlsx,7780
-2025,6,Pharr,Hidalgo,Anzalduas International Bridge,Buses,LRD_RVG_xlsx,0
-2025,6,Pharr,Hidalgo,Anzalduas International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,6,Pharr,Hidalgo,Anzalduas International Bridge,Passenger Vehicles,LRD_RVG_xlsx,86181
-2025,6,Pharr,Hidalgo,Anzalduas International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,6,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Buses,LRD_RVG_xlsx,826
-2025,6,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,6,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,157588
-2025,6,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,180973
-2025,6,Pharr,Hidalgo,Pharr International Bridge,Buses,LRD_RVG_xlsx,0
-2025,6,Pharr,Hidalgo,Pharr International Bridge,Commercial Trucks,LRD_RVG_xlsx,58451
-2025,6,Pharr,Hidalgo,Pharr International Bridge,Passenger Vehicles,LRD_RVG_xlsx,44025
-2025,6,Pharr,Hidalgo,Pharr International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,6,Pharr,Progreso,Donna-Rio Bravo International Bridge,Buses,LRD_RVG_xlsx,0
-2025,6,Pharr,Progreso,Donna-Rio Bravo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,6,Pharr,Progreso,Donna-Rio Bravo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,66200
-2025,6,Pharr,Progreso,Donna-Rio Bravo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,158
-2025,6,Pharr,Progreso,Progreso International Bridge,Buses,LRD_RVG_xlsx,0
-2025,6,Pharr,Progreso,Progreso International Bridge,Commercial Trucks,LRD_RVG_xlsx,5472
-2025,6,Pharr,Progreso,Progreso International Bridge,Passenger Vehicles,LRD_RVG_xlsx,49319
-2025,6,Pharr,Progreso,Progreso International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,79500
-2025,6,Pharr,Rio Grande City,Los Ebanos Ferry,Buses,LRD_RVG_xlsx,0
-2025,6,Pharr,Rio Grande City,Los Ebanos Ferry,Commercial Trucks,LRD_RVG_xlsx,0
-2025,6,Pharr,Rio Grande City,Los Ebanos Ferry,Passenger Vehicles,LRD_RVG_xlsx,3448
-2025,6,Pharr,Rio Grande City,Los Ebanos Ferry,Pedestrians/ Bicyclists,LRD_RVG_xlsx,2058
-2025,6,Pharr,Rio Grande City,Starr-Camargo Bridge,Buses,LRD_RVG_xlsx,0
-2025,6,Pharr,Rio Grande City,Starr-Camargo Bridge,Commercial Trucks,LRD_RVG_xlsx,2592
-2025,6,Pharr,Rio Grande City,Starr-Camargo Bridge,Passenger Vehicles,LRD_RVG_xlsx,35860
-2025,6,Pharr,Rio Grande City,Starr-Camargo Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,2119
-2025,6,Pharr,Roma,Lake Falcon Dam International Crossing,Buses,LRD_RVG_xlsx,0
-2025,6,Pharr,Roma,Lake Falcon Dam International Crossing,Commercial Trucks,LRD_RVG_xlsx,0
-2025,6,Pharr,Roma,Lake Falcon Dam International Crossing,Passenger Vehicles,LRD_RVG_xlsx,10885
-2025,6,Pharr,Roma,Lake Falcon Dam International Crossing,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,6,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Buses,LRD_RVG_xlsx,63
-2025,6,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Commercial Trucks,LRD_RVG_xlsx,3949
-2025,6,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Passenger Vehicles,LRD_RVG_xlsx,55839
-2025,6,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,12069
+2025,6,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Buses,LRD_RVG_xlsx,4
+2025,6,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,6,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Passenger Vehicles,LRD_RVG_xlsx,116013
+2025,6,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,50326
+2025,6,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Buses,LRD_RVG_xlsx,0
+2025,6,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Commercial Trucks,LRD_RVG_xlsx,6774
+2025,6,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Passenger Vehicles,LRD_RVG_xlsx,49701
+2025,6,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Pedestrians/ Bicyclists,LRD_RVG_xlsx,3990
+2025,6,Rio Grande Valley,Brownsville,Gateway International Bridge,Buses,LRD_RVG_xlsx,0
+2025,6,Rio Grande Valley,Brownsville,Gateway International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,6,Rio Grande Valley,Brownsville,Gateway International Bridge,Passenger Vehicles,LRD_RVG_xlsx,89607
+2025,6,Rio Grande Valley,Brownsville,Gateway International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,137917
+2025,6,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Buses,LRD_RVG_xlsx,330
+2025,6,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Commercial Trucks,LRD_RVG_xlsx,17795
+2025,6,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Passenger Vehicles,LRD_RVG_xlsx,127765
+2025,6,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Pedestrians/ Bicyclists,LRD_RVG_xlsx,12660
+2025,6,Rio Grande Valley,Brownsville,West Rail Bridge,Railcars,LRD_RVG_xlsx,7780
+2025,6,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Buses,LRD_RVG_xlsx,0
+2025,6,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,6,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Passenger Vehicles,LRD_RVG_xlsx,86181
+2025,6,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,6,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Buses,LRD_RVG_xlsx,826
+2025,6,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,6,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,157588
+2025,6,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,180973
+2025,6,Rio Grande Valley,Hidalgo,Pharr International Bridge,Buses,LRD_RVG_xlsx,0
+2025,6,Rio Grande Valley,Hidalgo,Pharr International Bridge,Commercial Trucks,LRD_RVG_xlsx,58451
+2025,6,Rio Grande Valley,Hidalgo,Pharr International Bridge,Passenger Vehicles,LRD_RVG_xlsx,44025
+2025,6,Rio Grande Valley,Hidalgo,Pharr International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,6,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Buses,LRD_RVG_xlsx,0
+2025,6,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,6,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,66200
+2025,6,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,158
+2025,6,Rio Grande Valley,Progreso,Progreso International Bridge,Buses,LRD_RVG_xlsx,0
+2025,6,Rio Grande Valley,Progreso,Progreso International Bridge,Commercial Trucks,LRD_RVG_xlsx,5472
+2025,6,Rio Grande Valley,Progreso,Progreso International Bridge,Passenger Vehicles,LRD_RVG_xlsx,49319
+2025,6,Rio Grande Valley,Progreso,Progreso International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,79500
+2025,6,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Buses,LRD_RVG_xlsx,0
+2025,6,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Commercial Trucks,LRD_RVG_xlsx,0
+2025,6,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Passenger Vehicles,LRD_RVG_xlsx,3448
+2025,6,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Pedestrians/ Bicyclists,LRD_RVG_xlsx,2058
+2025,6,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Buses,LRD_RVG_xlsx,0
+2025,6,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Commercial Trucks,LRD_RVG_xlsx,2592
+2025,6,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Passenger Vehicles,LRD_RVG_xlsx,35860
+2025,6,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,2119
+2025,6,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Buses,LRD_RVG_xlsx,0
+2025,6,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Commercial Trucks,LRD_RVG_xlsx,0
+2025,6,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Passenger Vehicles,LRD_RVG_xlsx,10885
+2025,6,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,6,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Buses,LRD_RVG_xlsx,63
+2025,6,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Commercial Trucks,LRD_RVG_xlsx,3949
+2025,6,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Passenger Vehicles,LRD_RVG_xlsx,55839
+2025,6,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,12069
 2025,7,Laredo,Del Rio,Del Rio International Bridge,Buses,LRD_RVG_xlsx,0
 2025,7,Laredo,Del Rio,Del Rio International Bridge,Commercial Trucks,LRD_RVG_xlsx,7014
 2025,7,Laredo,Del Rio,Del Rio International Bridge,Passenger Vehicles,LRD_RVG_xlsx,144315
@@ -555,59 +555,59 @@ Year,Month,Region,POE,Crossing,Modes,source,Northbound Crossing
 2025,7,Laredo,Laredo,World Trade Bridge,Commercial Trucks,LRD_RVG_xlsx,192454
 2025,7,Laredo,Laredo,World Trade Bridge,Passenger Vehicles,LRD_RVG_xlsx,0
 2025,7,Laredo,Laredo,World Trade Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,7,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Buses,LRD_RVG_xlsx,0
-2025,7,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,7,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Passenger Vehicles,LRD_RVG_xlsx,117466
-2025,7,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,57101
-2025,7,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Buses,LRD_RVG_xlsx,0
-2025,7,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Commercial Trucks,LRD_RVG_xlsx,6156
-2025,7,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Passenger Vehicles,LRD_RVG_xlsx,54561
-2025,7,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Pedestrians/ Bicyclists,LRD_RVG_xlsx,4994
-2025,7,Pharr,Brownsville,Gateway International Bridge,Buses,LRD_RVG_xlsx,0
-2025,7,Pharr,Brownsville,Gateway International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,7,Pharr,Brownsville,Gateway International Bridge,Passenger Vehicles,LRD_RVG_xlsx,87699
-2025,7,Pharr,Brownsville,Gateway International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,148623
-2025,7,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Buses,LRD_RVG_xlsx,374
-2025,7,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Commercial Trucks,LRD_RVG_xlsx,18905
-2025,7,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Passenger Vehicles,LRD_RVG_xlsx,126334
-2025,7,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Pedestrians/ Bicyclists,LRD_RVG_xlsx,14612
-2025,7,Pharr,Brownsville,West Rail Bridge,Railcars,LRD_RVG_xlsx,8672
-2025,7,Pharr,Hidalgo,Anzalduas International Bridge,Buses,LRD_RVG_xlsx,0
-2025,7,Pharr,Hidalgo,Anzalduas International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,7,Pharr,Hidalgo,Anzalduas International Bridge,Passenger Vehicles,LRD_RVG_xlsx,103715
-2025,7,Pharr,Hidalgo,Anzalduas International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,7,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Buses,LRD_RVG_xlsx,897
-2025,7,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,7,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,165627
-2025,7,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,194869
-2025,7,Pharr,Hidalgo,Pharr International Bridge,Buses,LRD_RVG_xlsx,0
-2025,7,Pharr,Hidalgo,Pharr International Bridge,Commercial Trucks,LRD_RVG_xlsx,59630
-2025,7,Pharr,Hidalgo,Pharr International Bridge,Passenger Vehicles,LRD_RVG_xlsx,47938
-2025,7,Pharr,Hidalgo,Pharr International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,7,Pharr,Progreso,Donna-Rio Bravo International Bridge,Buses,LRD_RVG_xlsx,0
-2025,7,Pharr,Progreso,Donna-Rio Bravo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,7,Pharr,Progreso,Donna-Rio Bravo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,60399
-2025,7,Pharr,Progreso,Donna-Rio Bravo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,158
-2025,7,Pharr,Progreso,Progreso International Bridge,Buses,LRD_RVG_xlsx,0
-2025,7,Pharr,Progreso,Progreso International Bridge,Commercial Trucks,LRD_RVG_xlsx,5611
-2025,7,Pharr,Progreso,Progreso International Bridge,Passenger Vehicles,LRD_RVG_xlsx,49666
-2025,7,Pharr,Progreso,Progreso International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,86440
-2025,7,Pharr,Rio Grande City,Los Ebanos Ferry,Buses,LRD_RVG_xlsx,0
-2025,7,Pharr,Rio Grande City,Los Ebanos Ferry,Commercial Trucks,LRD_RVG_xlsx,0
-2025,7,Pharr,Rio Grande City,Los Ebanos Ferry,Passenger Vehicles,LRD_RVG_xlsx,4009
-2025,7,Pharr,Rio Grande City,Los Ebanos Ferry,Pedestrians/ Bicyclists,LRD_RVG_xlsx,2322
-2025,7,Pharr,Rio Grande City,Starr-Camargo Bridge,Buses,LRD_RVG_xlsx,0
-2025,7,Pharr,Rio Grande City,Starr-Camargo Bridge,Commercial Trucks,LRD_RVG_xlsx,2807
-2025,7,Pharr,Rio Grande City,Starr-Camargo Bridge,Passenger Vehicles,LRD_RVG_xlsx,36932
-2025,7,Pharr,Rio Grande City,Starr-Camargo Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,2269
-2025,7,Pharr,Roma,Lake Falcon Dam International Crossing,Buses,LRD_RVG_xlsx,0
-2025,7,Pharr,Roma,Lake Falcon Dam International Crossing,Commercial Trucks,LRD_RVG_xlsx,0
-2025,7,Pharr,Roma,Lake Falcon Dam International Crossing,Passenger Vehicles,LRD_RVG_xlsx,11806
-2025,7,Pharr,Roma,Lake Falcon Dam International Crossing,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,7,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Buses,LRD_RVG_xlsx,67
-2025,7,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Commercial Trucks,LRD_RVG_xlsx,4496
-2025,7,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Passenger Vehicles,LRD_RVG_xlsx,57900
-2025,7,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,14178
+2025,7,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Buses,LRD_RVG_xlsx,0
+2025,7,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,7,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Passenger Vehicles,LRD_RVG_xlsx,117466
+2025,7,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,57101
+2025,7,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Buses,LRD_RVG_xlsx,0
+2025,7,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Commercial Trucks,LRD_RVG_xlsx,6156
+2025,7,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Passenger Vehicles,LRD_RVG_xlsx,54561
+2025,7,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Pedestrians/ Bicyclists,LRD_RVG_xlsx,4994
+2025,7,Rio Grande Valley,Brownsville,Gateway International Bridge,Buses,LRD_RVG_xlsx,0
+2025,7,Rio Grande Valley,Brownsville,Gateway International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,7,Rio Grande Valley,Brownsville,Gateway International Bridge,Passenger Vehicles,LRD_RVG_xlsx,87699
+2025,7,Rio Grande Valley,Brownsville,Gateway International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,148623
+2025,7,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Buses,LRD_RVG_xlsx,374
+2025,7,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Commercial Trucks,LRD_RVG_xlsx,18905
+2025,7,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Passenger Vehicles,LRD_RVG_xlsx,126334
+2025,7,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Pedestrians/ Bicyclists,LRD_RVG_xlsx,14612
+2025,7,Rio Grande Valley,Brownsville,West Rail Bridge,Railcars,LRD_RVG_xlsx,8672
+2025,7,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Buses,LRD_RVG_xlsx,0
+2025,7,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,7,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Passenger Vehicles,LRD_RVG_xlsx,103715
+2025,7,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,7,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Buses,LRD_RVG_xlsx,897
+2025,7,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,7,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,165627
+2025,7,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,194869
+2025,7,Rio Grande Valley,Hidalgo,Pharr International Bridge,Buses,LRD_RVG_xlsx,0
+2025,7,Rio Grande Valley,Hidalgo,Pharr International Bridge,Commercial Trucks,LRD_RVG_xlsx,59630
+2025,7,Rio Grande Valley,Hidalgo,Pharr International Bridge,Passenger Vehicles,LRD_RVG_xlsx,47938
+2025,7,Rio Grande Valley,Hidalgo,Pharr International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,7,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Buses,LRD_RVG_xlsx,0
+2025,7,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,7,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,60399
+2025,7,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,158
+2025,7,Rio Grande Valley,Progreso,Progreso International Bridge,Buses,LRD_RVG_xlsx,0
+2025,7,Rio Grande Valley,Progreso,Progreso International Bridge,Commercial Trucks,LRD_RVG_xlsx,5611
+2025,7,Rio Grande Valley,Progreso,Progreso International Bridge,Passenger Vehicles,LRD_RVG_xlsx,49666
+2025,7,Rio Grande Valley,Progreso,Progreso International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,86440
+2025,7,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Buses,LRD_RVG_xlsx,0
+2025,7,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Commercial Trucks,LRD_RVG_xlsx,0
+2025,7,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Passenger Vehicles,LRD_RVG_xlsx,4009
+2025,7,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Pedestrians/ Bicyclists,LRD_RVG_xlsx,2322
+2025,7,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Buses,LRD_RVG_xlsx,0
+2025,7,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Commercial Trucks,LRD_RVG_xlsx,2807
+2025,7,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Passenger Vehicles,LRD_RVG_xlsx,36932
+2025,7,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,2269
+2025,7,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Buses,LRD_RVG_xlsx,0
+2025,7,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Commercial Trucks,LRD_RVG_xlsx,0
+2025,7,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Passenger Vehicles,LRD_RVG_xlsx,11806
+2025,7,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,7,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Buses,LRD_RVG_xlsx,67
+2025,7,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Commercial Trucks,LRD_RVG_xlsx,4496
+2025,7,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Passenger Vehicles,LRD_RVG_xlsx,57900
+2025,7,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,14178
 2025,8,Laredo,Del Rio,Del Rio International Bridge,Buses,LRD_RVG_xlsx,0
 2025,8,Laredo,Del Rio,Del Rio International Bridge,Commercial Trucks,LRD_RVG_xlsx,6950
 2025,8,Laredo,Del Rio,Del Rio International Bridge,Passenger Vehicles,LRD_RVG_xlsx,150610
@@ -642,59 +642,59 @@ Year,Month,Region,POE,Crossing,Modes,source,Northbound Crossing
 2025,8,Laredo,Laredo,World Trade Bridge,Commercial Trucks,LRD_RVG_xlsx,186534
 2025,8,Laredo,Laredo,World Trade Bridge,Passenger Vehicles,LRD_RVG_xlsx,0
 2025,8,Laredo,Laredo,World Trade Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,8,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Buses,LRD_RVG_xlsx,0
-2025,8,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,8,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Passenger Vehicles,LRD_RVG_xlsx,118414
-2025,8,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,59463
-2025,8,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Buses,LRD_RVG_xlsx,0
-2025,8,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Commercial Trucks,LRD_RVG_xlsx,7751
-2025,8,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Passenger Vehicles,LRD_RVG_xlsx,51119
-2025,8,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Pedestrians/ Bicyclists,LRD_RVG_xlsx,6933
-2025,8,Pharr,Brownsville,Gateway International Bridge,Buses,LRD_RVG_xlsx,0
-2025,8,Pharr,Brownsville,Gateway International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,8,Pharr,Brownsville,Gateway International Bridge,Passenger Vehicles,LRD_RVG_xlsx,96406
-2025,8,Pharr,Brownsville,Gateway International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,158441
-2025,8,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Buses,LRD_RVG_xlsx,300
-2025,8,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Commercial Trucks,LRD_RVG_xlsx,19366
-2025,8,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Passenger Vehicles,LRD_RVG_xlsx,138679
-2025,8,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Pedestrians/ Bicyclists,LRD_RVG_xlsx,14509
-2025,8,Pharr,Brownsville,West Rail Bridge,Railcars,LRD_RVG_xlsx,7948
-2025,8,Pharr,Hidalgo,Anzalduas International Bridge,Buses,LRD_RVG_xlsx,0
-2025,8,Pharr,Hidalgo,Anzalduas International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,8,Pharr,Hidalgo,Anzalduas International Bridge,Passenger Vehicles,LRD_RVG_xlsx,112873
-2025,8,Pharr,Hidalgo,Anzalduas International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,8,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Buses,LRD_RVG_xlsx,933
-2025,8,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,8,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,183776
-2025,8,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,203357
-2025,8,Pharr,Hidalgo,Pharr International Bridge,Buses,LRD_RVG_xlsx,0
-2025,8,Pharr,Hidalgo,Pharr International Bridge,Commercial Trucks,LRD_RVG_xlsx,60318
-2025,8,Pharr,Hidalgo,Pharr International Bridge,Passenger Vehicles,LRD_RVG_xlsx,50231
-2025,8,Pharr,Hidalgo,Pharr International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,8,Pharr,Progreso,Donna-Rio Bravo International Bridge,Buses,LRD_RVG_xlsx,0
-2025,8,Pharr,Progreso,Donna-Rio Bravo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,8,Pharr,Progreso,Donna-Rio Bravo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,57657
-2025,8,Pharr,Progreso,Donna-Rio Bravo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,71
-2025,8,Pharr,Progreso,Progreso International Bridge,Buses,LRD_RVG_xlsx,0
-2025,8,Pharr,Progreso,Progreso International Bridge,Commercial Trucks,LRD_RVG_xlsx,5653
-2025,8,Pharr,Progreso,Progreso International Bridge,Passenger Vehicles,LRD_RVG_xlsx,50215
-2025,8,Pharr,Progreso,Progreso International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,91077
-2025,8,Pharr,Rio Grande City,Los Ebanos Ferry,Buses,LRD_RVG_xlsx,0
-2025,8,Pharr,Rio Grande City,Los Ebanos Ferry,Commercial Trucks,LRD_RVG_xlsx,0
-2025,8,Pharr,Rio Grande City,Los Ebanos Ferry,Passenger Vehicles,LRD_RVG_xlsx,4141
-2025,8,Pharr,Rio Grande City,Los Ebanos Ferry,Pedestrians/ Bicyclists,LRD_RVG_xlsx,3032
-2025,8,Pharr,Rio Grande City,Starr-Camargo Bridge,Buses,LRD_RVG_xlsx,0
-2025,8,Pharr,Rio Grande City,Starr-Camargo Bridge,Commercial Trucks,LRD_RVG_xlsx,2338
-2025,8,Pharr,Rio Grande City,Starr-Camargo Bridge,Passenger Vehicles,LRD_RVG_xlsx,38551
-2025,8,Pharr,Rio Grande City,Starr-Camargo Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,4234
-2025,8,Pharr,Roma,Lake Falcon Dam International Crossing,Buses,LRD_RVG_xlsx,0
-2025,8,Pharr,Roma,Lake Falcon Dam International Crossing,Commercial Trucks,LRD_RVG_xlsx,0
-2025,8,Pharr,Roma,Lake Falcon Dam International Crossing,Passenger Vehicles,LRD_RVG_xlsx,12142
-2025,8,Pharr,Roma,Lake Falcon Dam International Crossing,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,8,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Buses,LRD_RVG_xlsx,79
-2025,8,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Commercial Trucks,LRD_RVG_xlsx,4253
-2025,8,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Passenger Vehicles,LRD_RVG_xlsx,63723
-2025,8,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,16642
+2025,8,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Buses,LRD_RVG_xlsx,0
+2025,8,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,8,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Passenger Vehicles,LRD_RVG_xlsx,118414
+2025,8,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,59463
+2025,8,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Buses,LRD_RVG_xlsx,0
+2025,8,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Commercial Trucks,LRD_RVG_xlsx,7751
+2025,8,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Passenger Vehicles,LRD_RVG_xlsx,51119
+2025,8,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Pedestrians/ Bicyclists,LRD_RVG_xlsx,6933
+2025,8,Rio Grande Valley,Brownsville,Gateway International Bridge,Buses,LRD_RVG_xlsx,0
+2025,8,Rio Grande Valley,Brownsville,Gateway International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,8,Rio Grande Valley,Brownsville,Gateway International Bridge,Passenger Vehicles,LRD_RVG_xlsx,96406
+2025,8,Rio Grande Valley,Brownsville,Gateway International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,158441
+2025,8,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Buses,LRD_RVG_xlsx,300
+2025,8,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Commercial Trucks,LRD_RVG_xlsx,19366
+2025,8,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Passenger Vehicles,LRD_RVG_xlsx,138679
+2025,8,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Pedestrians/ Bicyclists,LRD_RVG_xlsx,14509
+2025,8,Rio Grande Valley,Brownsville,West Rail Bridge,Railcars,LRD_RVG_xlsx,7948
+2025,8,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Buses,LRD_RVG_xlsx,0
+2025,8,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,8,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Passenger Vehicles,LRD_RVG_xlsx,112873
+2025,8,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,8,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Buses,LRD_RVG_xlsx,933
+2025,8,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,8,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,183776
+2025,8,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,203357
+2025,8,Rio Grande Valley,Hidalgo,Pharr International Bridge,Buses,LRD_RVG_xlsx,0
+2025,8,Rio Grande Valley,Hidalgo,Pharr International Bridge,Commercial Trucks,LRD_RVG_xlsx,60318
+2025,8,Rio Grande Valley,Hidalgo,Pharr International Bridge,Passenger Vehicles,LRD_RVG_xlsx,50231
+2025,8,Rio Grande Valley,Hidalgo,Pharr International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,8,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Buses,LRD_RVG_xlsx,0
+2025,8,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,8,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,57657
+2025,8,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,71
+2025,8,Rio Grande Valley,Progreso,Progreso International Bridge,Buses,LRD_RVG_xlsx,0
+2025,8,Rio Grande Valley,Progreso,Progreso International Bridge,Commercial Trucks,LRD_RVG_xlsx,5653
+2025,8,Rio Grande Valley,Progreso,Progreso International Bridge,Passenger Vehicles,LRD_RVG_xlsx,50215
+2025,8,Rio Grande Valley,Progreso,Progreso International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,91077
+2025,8,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Buses,LRD_RVG_xlsx,0
+2025,8,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Commercial Trucks,LRD_RVG_xlsx,0
+2025,8,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Passenger Vehicles,LRD_RVG_xlsx,4141
+2025,8,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Pedestrians/ Bicyclists,LRD_RVG_xlsx,3032
+2025,8,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Buses,LRD_RVG_xlsx,0
+2025,8,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Commercial Trucks,LRD_RVG_xlsx,2338
+2025,8,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Passenger Vehicles,LRD_RVG_xlsx,38551
+2025,8,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,4234
+2025,8,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Buses,LRD_RVG_xlsx,0
+2025,8,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Commercial Trucks,LRD_RVG_xlsx,0
+2025,8,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Passenger Vehicles,LRD_RVG_xlsx,12142
+2025,8,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,8,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Buses,LRD_RVG_xlsx,79
+2025,8,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Commercial Trucks,LRD_RVG_xlsx,4253
+2025,8,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Passenger Vehicles,LRD_RVG_xlsx,63723
+2025,8,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,16642
 2025,9,Laredo,Del Rio,Del Rio International Bridge,Buses,LRD_RVG_xlsx,0
 2025,9,Laredo,Del Rio,Del Rio International Bridge,Commercial Trucks,LRD_RVG_xlsx,7240
 2025,9,Laredo,Del Rio,Del Rio International Bridge,Passenger Vehicles,LRD_RVG_xlsx,145911
@@ -729,59 +729,59 @@ Year,Month,Region,POE,Crossing,Modes,source,Northbound Crossing
 2025,9,Laredo,Laredo,World Trade Bridge,Commercial Trucks,LRD_RVG_xlsx,183827
 2025,9,Laredo,Laredo,World Trade Bridge,Passenger Vehicles,LRD_RVG_xlsx,0
 2025,9,Laredo,Laredo,World Trade Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,9,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Buses,LRD_RVG_xlsx,0
-2025,9,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,9,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Passenger Vehicles,LRD_RVG_xlsx,118573
-2025,9,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,55681
-2025,9,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Buses,LRD_RVG_xlsx,0
-2025,9,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Commercial Trucks,LRD_RVG_xlsx,9437
-2025,9,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Passenger Vehicles,LRD_RVG_xlsx,46054
-2025,9,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Pedestrians/ Bicyclists,LRD_RVG_xlsx,2261
-2025,9,Pharr,Brownsville,Gateway International Bridge,Buses,LRD_RVG_xlsx,0
-2025,9,Pharr,Brownsville,Gateway International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,9,Pharr,Brownsville,Gateway International Bridge,Passenger Vehicles,LRD_RVG_xlsx,94416
-2025,9,Pharr,Brownsville,Gateway International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,157162
-2025,9,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Buses,LRD_RVG_xlsx,320
-2025,9,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Commercial Trucks,LRD_RVG_xlsx,20973
-2025,9,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Passenger Vehicles,LRD_RVG_xlsx,133813
-2025,9,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Pedestrians/ Bicyclists,LRD_RVG_xlsx,13725
-2025,9,Pharr,Brownsville,West Rail Bridge,Railcars,LRD_RVG_xlsx,7036
-2025,9,Pharr,Hidalgo,Anzalduas International Bridge,Buses,LRD_RVG_xlsx,0
-2025,9,Pharr,Hidalgo,Anzalduas International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,9,Pharr,Hidalgo,Anzalduas International Bridge,Passenger Vehicles,LRD_RVG_xlsx,110883
-2025,9,Pharr,Hidalgo,Anzalduas International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,9,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Buses,LRD_RVG_xlsx,916
-2025,9,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,9,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,192905
-2025,9,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,205948
-2025,9,Pharr,Hidalgo,Pharr International Bridge,Buses,LRD_RVG_xlsx,0
-2025,9,Pharr,Hidalgo,Pharr International Bridge,Commercial Trucks,LRD_RVG_xlsx,61336
-2025,9,Pharr,Hidalgo,Pharr International Bridge,Passenger Vehicles,LRD_RVG_xlsx,44197
-2025,9,Pharr,Hidalgo,Pharr International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,9,Pharr,Progreso,Donna-Rio Bravo International Bridge,Buses,LRD_RVG_xlsx,0
-2025,9,Pharr,Progreso,Donna-Rio Bravo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,9,Pharr,Progreso,Donna-Rio Bravo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,57636
-2025,9,Pharr,Progreso,Donna-Rio Bravo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,84
-2025,9,Pharr,Progreso,Progreso International Bridge,Buses,LRD_RVG_xlsx,0
-2025,9,Pharr,Progreso,Progreso International Bridge,Commercial Trucks,LRD_RVG_xlsx,6317
-2025,9,Pharr,Progreso,Progreso International Bridge,Passenger Vehicles,LRD_RVG_xlsx,45266
-2025,9,Pharr,Progreso,Progreso International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,84250
-2025,9,Pharr,Rio Grande City,Los Ebanos Ferry,Buses,LRD_RVG_xlsx,0
-2025,9,Pharr,Rio Grande City,Los Ebanos Ferry,Commercial Trucks,LRD_RVG_xlsx,0
-2025,9,Pharr,Rio Grande City,Los Ebanos Ferry,Passenger Vehicles,LRD_RVG_xlsx,3733
-2025,9,Pharr,Rio Grande City,Los Ebanos Ferry,Pedestrians/ Bicyclists,LRD_RVG_xlsx,3217
-2025,9,Pharr,Rio Grande City,Starr-Camargo Bridge,Buses,LRD_RVG_xlsx,0
-2025,9,Pharr,Rio Grande City,Starr-Camargo Bridge,Commercial Trucks,LRD_RVG_xlsx,2259
-2025,9,Pharr,Rio Grande City,Starr-Camargo Bridge,Passenger Vehicles,LRD_RVG_xlsx,37156
-2025,9,Pharr,Rio Grande City,Starr-Camargo Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,5106
-2025,9,Pharr,Roma,Lake Falcon Dam International Crossing,Buses,LRD_RVG_xlsx,0
-2025,9,Pharr,Roma,Lake Falcon Dam International Crossing,Commercial Trucks,LRD_RVG_xlsx,0
-2025,9,Pharr,Roma,Lake Falcon Dam International Crossing,Passenger Vehicles,LRD_RVG_xlsx,12512
-2025,9,Pharr,Roma,Lake Falcon Dam International Crossing,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,9,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Buses,LRD_RVG_xlsx,83
-2025,9,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Commercial Trucks,LRD_RVG_xlsx,4000
-2025,9,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Passenger Vehicles,LRD_RVG_xlsx,63689
-2025,9,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,17627
+2025,9,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Buses,LRD_RVG_xlsx,0
+2025,9,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,9,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Passenger Vehicles,LRD_RVG_xlsx,118573
+2025,9,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,55681
+2025,9,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Buses,LRD_RVG_xlsx,0
+2025,9,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Commercial Trucks,LRD_RVG_xlsx,9437
+2025,9,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Passenger Vehicles,LRD_RVG_xlsx,46054
+2025,9,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Pedestrians/ Bicyclists,LRD_RVG_xlsx,2261
+2025,9,Rio Grande Valley,Brownsville,Gateway International Bridge,Buses,LRD_RVG_xlsx,0
+2025,9,Rio Grande Valley,Brownsville,Gateway International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,9,Rio Grande Valley,Brownsville,Gateway International Bridge,Passenger Vehicles,LRD_RVG_xlsx,94416
+2025,9,Rio Grande Valley,Brownsville,Gateway International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,157162
+2025,9,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Buses,LRD_RVG_xlsx,320
+2025,9,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Commercial Trucks,LRD_RVG_xlsx,20973
+2025,9,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Passenger Vehicles,LRD_RVG_xlsx,133813
+2025,9,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Pedestrians/ Bicyclists,LRD_RVG_xlsx,13725
+2025,9,Rio Grande Valley,Brownsville,West Rail Bridge,Railcars,LRD_RVG_xlsx,7036
+2025,9,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Buses,LRD_RVG_xlsx,0
+2025,9,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,9,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Passenger Vehicles,LRD_RVG_xlsx,110883
+2025,9,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,9,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Buses,LRD_RVG_xlsx,916
+2025,9,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,9,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,192905
+2025,9,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,205948
+2025,9,Rio Grande Valley,Hidalgo,Pharr International Bridge,Buses,LRD_RVG_xlsx,0
+2025,9,Rio Grande Valley,Hidalgo,Pharr International Bridge,Commercial Trucks,LRD_RVG_xlsx,61336
+2025,9,Rio Grande Valley,Hidalgo,Pharr International Bridge,Passenger Vehicles,LRD_RVG_xlsx,44197
+2025,9,Rio Grande Valley,Hidalgo,Pharr International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,9,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Buses,LRD_RVG_xlsx,0
+2025,9,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,9,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,57636
+2025,9,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,84
+2025,9,Rio Grande Valley,Progreso,Progreso International Bridge,Buses,LRD_RVG_xlsx,0
+2025,9,Rio Grande Valley,Progreso,Progreso International Bridge,Commercial Trucks,LRD_RVG_xlsx,6317
+2025,9,Rio Grande Valley,Progreso,Progreso International Bridge,Passenger Vehicles,LRD_RVG_xlsx,45266
+2025,9,Rio Grande Valley,Progreso,Progreso International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,84250
+2025,9,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Buses,LRD_RVG_xlsx,0
+2025,9,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Commercial Trucks,LRD_RVG_xlsx,0
+2025,9,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Passenger Vehicles,LRD_RVG_xlsx,3733
+2025,9,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Pedestrians/ Bicyclists,LRD_RVG_xlsx,3217
+2025,9,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Buses,LRD_RVG_xlsx,0
+2025,9,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Commercial Trucks,LRD_RVG_xlsx,2259
+2025,9,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Passenger Vehicles,LRD_RVG_xlsx,37156
+2025,9,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,5106
+2025,9,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Buses,LRD_RVG_xlsx,0
+2025,9,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Commercial Trucks,LRD_RVG_xlsx,0
+2025,9,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Passenger Vehicles,LRD_RVG_xlsx,12512
+2025,9,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,9,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Buses,LRD_RVG_xlsx,83
+2025,9,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Commercial Trucks,LRD_RVG_xlsx,4000
+2025,9,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Passenger Vehicles,LRD_RVG_xlsx,63689
+2025,9,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,17627
 2025,10,Laredo,Del Rio,Del Rio International Bridge,Buses,LRD_RVG_xlsx,0
 2025,10,Laredo,Del Rio,Del Rio International Bridge,Commercial Trucks,LRD_RVG_xlsx,7996
 2025,10,Laredo,Del Rio,Del Rio International Bridge,Passenger Vehicles,LRD_RVG_xlsx,148045
@@ -816,59 +816,59 @@ Year,Month,Region,POE,Crossing,Modes,source,Northbound Crossing
 2025,10,Laredo,Laredo,World Trade Bridge,Commercial Trucks,LRD_RVG_xlsx,196854
 2025,10,Laredo,Laredo,World Trade Bridge,Passenger Vehicles,LRD_RVG_xlsx,0
 2025,10,Laredo,Laredo,World Trade Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,10,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Buses,LRD_RVG_xlsx,0
-2025,10,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,10,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Passenger Vehicles,LRD_RVG_xlsx,139365
-2025,10,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,57698
-2025,10,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Buses,LRD_RVG_xlsx,0
-2025,10,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Commercial Trucks,LRD_RVG_xlsx,9581
-2025,10,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Passenger Vehicles,LRD_RVG_xlsx,47039
-2025,10,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Pedestrians/ Bicyclists,LRD_RVG_xlsx,2206
-2025,10,Pharr,Brownsville,Gateway International Bridge,Buses,LRD_RVG_xlsx,1
-2025,10,Pharr,Brownsville,Gateway International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,10,Pharr,Brownsville,Gateway International Bridge,Passenger Vehicles,LRD_RVG_xlsx,91969
-2025,10,Pharr,Brownsville,Gateway International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,164206
-2025,10,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Buses,LRD_RVG_xlsx,239
-2025,10,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Commercial Trucks,LRD_RVG_xlsx,22150
-2025,10,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Passenger Vehicles,LRD_RVG_xlsx,149948
-2025,10,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Pedestrians/ Bicyclists,LRD_RVG_xlsx,13854
-2025,10,Pharr,Brownsville,West Rail Bridge,Railcars,LRD_RVG_xlsx,6867
-2025,10,Pharr,Hidalgo,Anzalduas International Bridge,Buses,LRD_RVG_xlsx,0
-2025,10,Pharr,Hidalgo,Anzalduas International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,10,Pharr,Hidalgo,Anzalduas International Bridge,Passenger Vehicles,LRD_RVG_xlsx,128382
-2025,10,Pharr,Hidalgo,Anzalduas International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,10,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Buses,LRD_RVG_xlsx,715
-2025,10,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,10,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,194407
-2025,10,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,210671
-2025,10,Pharr,Hidalgo,Pharr International Bridge,Buses,LRD_RVG_xlsx,0
-2025,10,Pharr,Hidalgo,Pharr International Bridge,Commercial Trucks,LRD_RVG_xlsx,68007
-2025,10,Pharr,Hidalgo,Pharr International Bridge,Passenger Vehicles,LRD_RVG_xlsx,46414
-2025,10,Pharr,Hidalgo,Pharr International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,10,Pharr,Progreso,Donna-Rio Bravo International Bridge,Buses,LRD_RVG_xlsx,0
-2025,10,Pharr,Progreso,Donna-Rio Bravo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,10,Pharr,Progreso,Donna-Rio Bravo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,58493
-2025,10,Pharr,Progreso,Donna-Rio Bravo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,121
-2025,10,Pharr,Progreso,Progreso International Bridge,Buses,LRD_RVG_xlsx,0
-2025,10,Pharr,Progreso,Progreso International Bridge,Commercial Trucks,LRD_RVG_xlsx,6228
-2025,10,Pharr,Progreso,Progreso International Bridge,Passenger Vehicles,LRD_RVG_xlsx,46028
-2025,10,Pharr,Progreso,Progreso International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,86023
-2025,10,Pharr,Rio Grande City,Los Ebanos Ferry,Buses,LRD_RVG_xlsx,0
-2025,10,Pharr,Rio Grande City,Los Ebanos Ferry,Commercial Trucks,LRD_RVG_xlsx,0
-2025,10,Pharr,Rio Grande City,Los Ebanos Ferry,Passenger Vehicles,LRD_RVG_xlsx,3758
-2025,10,Pharr,Rio Grande City,Los Ebanos Ferry,Pedestrians/ Bicyclists,LRD_RVG_xlsx,3177
-2025,10,Pharr,Rio Grande City,Starr-Camargo Bridge,Buses,LRD_RVG_xlsx,0
-2025,10,Pharr,Rio Grande City,Starr-Camargo Bridge,Commercial Trucks,LRD_RVG_xlsx,2594
-2025,10,Pharr,Rio Grande City,Starr-Camargo Bridge,Passenger Vehicles,LRD_RVG_xlsx,36848
-2025,10,Pharr,Rio Grande City,Starr-Camargo Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,5335
-2025,10,Pharr,Roma,Lake Falcon Dam International Crossing,Buses,LRD_RVG_xlsx,0
-2025,10,Pharr,Roma,Lake Falcon Dam International Crossing,Commercial Trucks,LRD_RVG_xlsx,0
-2025,10,Pharr,Roma,Lake Falcon Dam International Crossing,Passenger Vehicles,LRD_RVG_xlsx,12280
-2025,10,Pharr,Roma,Lake Falcon Dam International Crossing,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,10,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Buses,LRD_RVG_xlsx,105
-2025,10,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Commercial Trucks,LRD_RVG_xlsx,4524
-2025,10,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Passenger Vehicles,LRD_RVG_xlsx,65095
-2025,10,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,17923
+2025,10,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Buses,LRD_RVG_xlsx,0
+2025,10,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,10,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Passenger Vehicles,LRD_RVG_xlsx,139365
+2025,10,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,57698
+2025,10,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Buses,LRD_RVG_xlsx,0
+2025,10,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Commercial Trucks,LRD_RVG_xlsx,9581
+2025,10,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Passenger Vehicles,LRD_RVG_xlsx,47039
+2025,10,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Pedestrians/ Bicyclists,LRD_RVG_xlsx,2206
+2025,10,Rio Grande Valley,Brownsville,Gateway International Bridge,Buses,LRD_RVG_xlsx,1
+2025,10,Rio Grande Valley,Brownsville,Gateway International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,10,Rio Grande Valley,Brownsville,Gateway International Bridge,Passenger Vehicles,LRD_RVG_xlsx,91969
+2025,10,Rio Grande Valley,Brownsville,Gateway International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,164206
+2025,10,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Buses,LRD_RVG_xlsx,239
+2025,10,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Commercial Trucks,LRD_RVG_xlsx,22150
+2025,10,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Passenger Vehicles,LRD_RVG_xlsx,149948
+2025,10,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Pedestrians/ Bicyclists,LRD_RVG_xlsx,13854
+2025,10,Rio Grande Valley,Brownsville,West Rail Bridge,Railcars,LRD_RVG_xlsx,6867
+2025,10,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Buses,LRD_RVG_xlsx,0
+2025,10,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,10,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Passenger Vehicles,LRD_RVG_xlsx,128382
+2025,10,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,10,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Buses,LRD_RVG_xlsx,715
+2025,10,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,10,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,194407
+2025,10,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,210671
+2025,10,Rio Grande Valley,Hidalgo,Pharr International Bridge,Buses,LRD_RVG_xlsx,0
+2025,10,Rio Grande Valley,Hidalgo,Pharr International Bridge,Commercial Trucks,LRD_RVG_xlsx,68007
+2025,10,Rio Grande Valley,Hidalgo,Pharr International Bridge,Passenger Vehicles,LRD_RVG_xlsx,46414
+2025,10,Rio Grande Valley,Hidalgo,Pharr International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,10,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Buses,LRD_RVG_xlsx,0
+2025,10,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,10,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,58493
+2025,10,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,121
+2025,10,Rio Grande Valley,Progreso,Progreso International Bridge,Buses,LRD_RVG_xlsx,0
+2025,10,Rio Grande Valley,Progreso,Progreso International Bridge,Commercial Trucks,LRD_RVG_xlsx,6228
+2025,10,Rio Grande Valley,Progreso,Progreso International Bridge,Passenger Vehicles,LRD_RVG_xlsx,46028
+2025,10,Rio Grande Valley,Progreso,Progreso International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,86023
+2025,10,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Buses,LRD_RVG_xlsx,0
+2025,10,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Commercial Trucks,LRD_RVG_xlsx,0
+2025,10,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Passenger Vehicles,LRD_RVG_xlsx,3758
+2025,10,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Pedestrians/ Bicyclists,LRD_RVG_xlsx,3177
+2025,10,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Buses,LRD_RVG_xlsx,0
+2025,10,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Commercial Trucks,LRD_RVG_xlsx,2594
+2025,10,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Passenger Vehicles,LRD_RVG_xlsx,36848
+2025,10,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,5335
+2025,10,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Buses,LRD_RVG_xlsx,0
+2025,10,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Commercial Trucks,LRD_RVG_xlsx,0
+2025,10,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Passenger Vehicles,LRD_RVG_xlsx,12280
+2025,10,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,10,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Buses,LRD_RVG_xlsx,105
+2025,10,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Commercial Trucks,LRD_RVG_xlsx,4524
+2025,10,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Passenger Vehicles,LRD_RVG_xlsx,65095
+2025,10,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,17923
 2025,11,Laredo,Del Rio,Del Rio International Bridge,Buses,LRD_RVG_xlsx,0
 2025,11,Laredo,Del Rio,Del Rio International Bridge,Commercial Trucks,LRD_RVG_xlsx,6120
 2025,11,Laredo,Del Rio,Del Rio International Bridge,Passenger Vehicles,LRD_RVG_xlsx,142125
@@ -903,59 +903,59 @@ Year,Month,Region,POE,Crossing,Modes,source,Northbound Crossing
 2025,11,Laredo,Laredo,World Trade Bridge,Commercial Trucks,LRD_RVG_xlsx,173245
 2025,11,Laredo,Laredo,World Trade Bridge,Passenger Vehicles,LRD_RVG_xlsx,0
 2025,11,Laredo,Laredo,World Trade Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,11,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Buses,LRD_RVG_xlsx,0
-2025,11,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,11,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Passenger Vehicles,LRD_RVG_xlsx,135409
-2025,11,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,59140
-2025,11,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Buses,LRD_RVG_xlsx,0
-2025,11,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Commercial Trucks,LRD_RVG_xlsx,4583
-2025,11,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Passenger Vehicles,LRD_RVG_xlsx,50726
-2025,11,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Pedestrians/ Bicyclists,LRD_RVG_xlsx,2428
-2025,11,Pharr,Brownsville,Gateway International Bridge,Buses,LRD_RVG_xlsx,0
-2025,11,Pharr,Brownsville,Gateway International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,11,Pharr,Brownsville,Gateway International Bridge,Passenger Vehicles,LRD_RVG_xlsx,81994
-2025,11,Pharr,Brownsville,Gateway International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,156780
-2025,11,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Buses,LRD_RVG_xlsx,270
-2025,11,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Commercial Trucks,LRD_RVG_xlsx,17069
-2025,11,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Passenger Vehicles,LRD_RVG_xlsx,154406
-2025,11,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Pedestrians/ Bicyclists,LRD_RVG_xlsx,13032
-2025,11,Pharr,Brownsville,West Rail Bridge,Railcars,LRD_RVG_xlsx,7549
-2025,11,Pharr,Hidalgo,Anzalduas International Bridge,Buses,LRD_RVG_xlsx,0
-2025,11,Pharr,Hidalgo,Anzalduas International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,11,Pharr,Hidalgo,Anzalduas International Bridge,Passenger Vehicles,LRD_RVG_xlsx,133774
-2025,11,Pharr,Hidalgo,Anzalduas International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,11,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Buses,LRD_RVG_xlsx,708
-2025,11,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,11,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,183713
-2025,11,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,211733
-2025,11,Pharr,Hidalgo,Pharr International Bridge,Buses,LRD_RVG_xlsx,0
-2025,11,Pharr,Hidalgo,Pharr International Bridge,Commercial Trucks,LRD_RVG_xlsx,57601
-2025,11,Pharr,Hidalgo,Pharr International Bridge,Passenger Vehicles,LRD_RVG_xlsx,49644
-2025,11,Pharr,Hidalgo,Pharr International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,11,Pharr,Progreso,Donna-Rio Bravo International Bridge,Buses,LRD_RVG_xlsx,0
-2025,11,Pharr,Progreso,Donna-Rio Bravo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,11,Pharr,Progreso,Donna-Rio Bravo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,60274
-2025,11,Pharr,Progreso,Donna-Rio Bravo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,8365
-2025,11,Pharr,Progreso,Progreso International Bridge,Buses,LRD_RVG_xlsx,0
-2025,11,Pharr,Progreso,Progreso International Bridge,Commercial Trucks,LRD_RVG_xlsx,4692
-2025,11,Pharr,Progreso,Progreso International Bridge,Passenger Vehicles,LRD_RVG_xlsx,46586
-2025,11,Pharr,Progreso,Progreso International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,127287
-2025,11,Pharr,Rio Grande City,Los Ebanos Ferry,Buses,LRD_RVG_xlsx,0
-2025,11,Pharr,Rio Grande City,Los Ebanos Ferry,Commercial Trucks,LRD_RVG_xlsx,0
-2025,11,Pharr,Rio Grande City,Los Ebanos Ferry,Passenger Vehicles,LRD_RVG_xlsx,3977
-2025,11,Pharr,Rio Grande City,Los Ebanos Ferry,Pedestrians/ Bicyclists,LRD_RVG_xlsx,3538
-2025,11,Pharr,Rio Grande City,Starr-Camargo Bridge,Buses,LRD_RVG_xlsx,0
-2025,11,Pharr,Rio Grande City,Starr-Camargo Bridge,Commercial Trucks,LRD_RVG_xlsx,1865
-2025,11,Pharr,Rio Grande City,Starr-Camargo Bridge,Passenger Vehicles,LRD_RVG_xlsx,38907
-2025,11,Pharr,Rio Grande City,Starr-Camargo Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,4689
-2025,11,Pharr,Roma,Lake Falcon Dam International Crossing,Buses,LRD_RVG_xlsx,0
-2025,11,Pharr,Roma,Lake Falcon Dam International Crossing,Commercial Trucks,LRD_RVG_xlsx,0
-2025,11,Pharr,Roma,Lake Falcon Dam International Crossing,Passenger Vehicles,LRD_RVG_xlsx,13886
-2025,11,Pharr,Roma,Lake Falcon Dam International Crossing,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,11,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Buses,LRD_RVG_xlsx,81
-2025,11,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Commercial Trucks,LRD_RVG_xlsx,4239
-2025,11,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Passenger Vehicles,LRD_RVG_xlsx,65285
-2025,11,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,18278
+2025,11,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Buses,LRD_RVG_xlsx,0
+2025,11,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,11,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Passenger Vehicles,LRD_RVG_xlsx,135409
+2025,11,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,59140
+2025,11,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Buses,LRD_RVG_xlsx,0
+2025,11,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Commercial Trucks,LRD_RVG_xlsx,4583
+2025,11,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Passenger Vehicles,LRD_RVG_xlsx,50726
+2025,11,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Pedestrians/ Bicyclists,LRD_RVG_xlsx,2428
+2025,11,Rio Grande Valley,Brownsville,Gateway International Bridge,Buses,LRD_RVG_xlsx,0
+2025,11,Rio Grande Valley,Brownsville,Gateway International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,11,Rio Grande Valley,Brownsville,Gateway International Bridge,Passenger Vehicles,LRD_RVG_xlsx,81994
+2025,11,Rio Grande Valley,Brownsville,Gateway International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,156780
+2025,11,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Buses,LRD_RVG_xlsx,270
+2025,11,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Commercial Trucks,LRD_RVG_xlsx,17069
+2025,11,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Passenger Vehicles,LRD_RVG_xlsx,154406
+2025,11,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Pedestrians/ Bicyclists,LRD_RVG_xlsx,13032
+2025,11,Rio Grande Valley,Brownsville,West Rail Bridge,Railcars,LRD_RVG_xlsx,7549
+2025,11,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Buses,LRD_RVG_xlsx,0
+2025,11,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,11,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Passenger Vehicles,LRD_RVG_xlsx,133774
+2025,11,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,11,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Buses,LRD_RVG_xlsx,708
+2025,11,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,11,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,183713
+2025,11,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,211733
+2025,11,Rio Grande Valley,Hidalgo,Pharr International Bridge,Buses,LRD_RVG_xlsx,0
+2025,11,Rio Grande Valley,Hidalgo,Pharr International Bridge,Commercial Trucks,LRD_RVG_xlsx,57601
+2025,11,Rio Grande Valley,Hidalgo,Pharr International Bridge,Passenger Vehicles,LRD_RVG_xlsx,49644
+2025,11,Rio Grande Valley,Hidalgo,Pharr International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,11,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Buses,LRD_RVG_xlsx,0
+2025,11,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,11,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,60274
+2025,11,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,8365
+2025,11,Rio Grande Valley,Progreso,Progreso International Bridge,Buses,LRD_RVG_xlsx,0
+2025,11,Rio Grande Valley,Progreso,Progreso International Bridge,Commercial Trucks,LRD_RVG_xlsx,4692
+2025,11,Rio Grande Valley,Progreso,Progreso International Bridge,Passenger Vehicles,LRD_RVG_xlsx,46586
+2025,11,Rio Grande Valley,Progreso,Progreso International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,127287
+2025,11,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Buses,LRD_RVG_xlsx,0
+2025,11,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Commercial Trucks,LRD_RVG_xlsx,0
+2025,11,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Passenger Vehicles,LRD_RVG_xlsx,3977
+2025,11,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Pedestrians/ Bicyclists,LRD_RVG_xlsx,3538
+2025,11,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Buses,LRD_RVG_xlsx,0
+2025,11,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Commercial Trucks,LRD_RVG_xlsx,1865
+2025,11,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Passenger Vehicles,LRD_RVG_xlsx,38907
+2025,11,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,4689
+2025,11,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Buses,LRD_RVG_xlsx,0
+2025,11,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Commercial Trucks,LRD_RVG_xlsx,0
+2025,11,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Passenger Vehicles,LRD_RVG_xlsx,13886
+2025,11,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,11,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Buses,LRD_RVG_xlsx,81
+2025,11,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Commercial Trucks,LRD_RVG_xlsx,4239
+2025,11,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Passenger Vehicles,LRD_RVG_xlsx,65285
+2025,11,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,18278
 2025,12,Laredo,Del Rio,Del Rio International Bridge,Buses,LRD_RVG_xlsx,0
 2025,12,Laredo,Del Rio,Del Rio International Bridge,Commercial Trucks,LRD_RVG_xlsx,6377
 2025,12,Laredo,Del Rio,Del Rio International Bridge,Passenger Vehicles,LRD_RVG_xlsx,145230
@@ -990,56 +990,56 @@ Year,Month,Region,POE,Crossing,Modes,source,Northbound Crossing
 2025,12,Laredo,Laredo,World Trade Bridge,Commercial Trucks,LRD_RVG_xlsx,161860
 2025,12,Laredo,Laredo,World Trade Bridge,Passenger Vehicles,LRD_RVG_xlsx,0
 2025,12,Laredo,Laredo,World Trade Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,12,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Buses,LRD_RVG_xlsx,0
-2025,12,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,12,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Passenger Vehicles,LRD_RVG_xlsx,139752
-2025,12,Pharr,Brownsville,Brownsville & Matamoros Express Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,66473
-2025,12,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Buses,LRD_RVG_xlsx,0
-2025,12,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Commercial Trucks,LRD_RVG_xlsx,7446
-2025,12,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Passenger Vehicles,LRD_RVG_xlsx,53939
-2025,12,Pharr,Brownsville,Free Trade International Bridge (Los Indios),Pedestrians/ Bicyclists,LRD_RVG_xlsx,4039
-2025,12,Pharr,Brownsville,Gateway International Bridge,Buses,LRD_RVG_xlsx,0
-2025,12,Pharr,Brownsville,Gateway International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,12,Pharr,Brownsville,Gateway International Bridge,Passenger Vehicles,LRD_RVG_xlsx,79628
-2025,12,Pharr,Brownsville,Gateway International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,159080
-2025,12,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Buses,LRD_RVG_xlsx,295
-2025,12,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Commercial Trucks,LRD_RVG_xlsx,18359
-2025,12,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Passenger Vehicles,LRD_RVG_xlsx,158598
-2025,12,Pharr,Brownsville,Veterans International Bridge at Los Tomates,Pedestrians/ Bicyclists,LRD_RVG_xlsx,14698
-2025,12,Pharr,Brownsville,West Rail Bridge,Railcars,LRD_RVG_xlsx,7293
-2025,12,Pharr,Hidalgo,Anzalduas International Bridge,Buses,LRD_RVG_xlsx,1
-2025,12,Pharr,Hidalgo,Anzalduas International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,12,Pharr,Hidalgo,Anzalduas International Bridge,Passenger Vehicles,LRD_RVG_xlsx,147931
-2025,12,Pharr,Hidalgo,Anzalduas International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,12,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Buses,LRD_RVG_xlsx,767
-2025,12,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,12,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,201437
-2025,12,Pharr,Hidalgo,McAllen-Hidalgo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,220256
-2025,12,Pharr,Hidalgo,Pharr International Bridge,Buses,LRD_RVG_xlsx,0
-2025,12,Pharr,Hidalgo,Pharr International Bridge,Commercial Trucks,LRD_RVG_xlsx,58962
-2025,12,Pharr,Hidalgo,Pharr International Bridge,Passenger Vehicles,LRD_RVG_xlsx,51090
-2025,12,Pharr,Hidalgo,Pharr International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,12,Pharr,Progreso,Donna-Rio Bravo International Bridge,Buses,LRD_RVG_xlsx,0
-2025,12,Pharr,Progreso,Donna-Rio Bravo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
-2025,12,Pharr,Progreso,Donna-Rio Bravo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,63320
-2025,12,Pharr,Progreso,Donna-Rio Bravo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,151
-2025,12,Pharr,Progreso,Progreso International Bridge,Buses,LRD_RVG_xlsx,0
-2025,12,Pharr,Progreso,Progreso International Bridge,Commercial Trucks,LRD_RVG_xlsx,6039
-2025,12,Pharr,Progreso,Progreso International Bridge,Passenger Vehicles,LRD_RVG_xlsx,50282
-2025,12,Pharr,Progreso,Progreso International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,104619
-2025,12,Pharr,Rio Grande City,Los Ebanos Ferry,Buses,LRD_RVG_xlsx,0
-2025,12,Pharr,Rio Grande City,Los Ebanos Ferry,Commercial Trucks,LRD_RVG_xlsx,0
-2025,12,Pharr,Rio Grande City,Los Ebanos Ferry,Passenger Vehicles,LRD_RVG_xlsx,3864
-2025,12,Pharr,Rio Grande City,Los Ebanos Ferry,Pedestrians/ Bicyclists,LRD_RVG_xlsx,3745
-2025,12,Pharr,Rio Grande City,Starr-Camargo Bridge,Buses,LRD_RVG_xlsx,0
-2025,12,Pharr,Rio Grande City,Starr-Camargo Bridge,Commercial Trucks,LRD_RVG_xlsx,1750
-2025,12,Pharr,Rio Grande City,Starr-Camargo Bridge,Passenger Vehicles,LRD_RVG_xlsx,40901
-2025,12,Pharr,Rio Grande City,Starr-Camargo Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,4985
-2025,12,Pharr,Roma,Lake Falcon Dam International Crossing,Buses,LRD_RVG_xlsx,0
-2025,12,Pharr,Roma,Lake Falcon Dam International Crossing,Commercial Trucks,LRD_RVG_xlsx,0
-2025,12,Pharr,Roma,Lake Falcon Dam International Crossing,Passenger Vehicles,LRD_RVG_xlsx,15455
-2025,12,Pharr,Roma,Lake Falcon Dam International Crossing,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
-2025,12,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Buses,LRD_RVG_xlsx,84
-2025,12,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Commercial Trucks,LRD_RVG_xlsx,4224
-2025,12,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Passenger Vehicles,LRD_RVG_xlsx,71024
-2025,12,Pharr,Roma,Roma-Ciudad Miguel Alemán International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,21888
+2025,12,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Buses,LRD_RVG_xlsx,0
+2025,12,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,12,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Passenger Vehicles,LRD_RVG_xlsx,139752
+2025,12,Rio Grande Valley,Brownsville,Brownsville & Matamoros Express Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,66473
+2025,12,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Buses,LRD_RVG_xlsx,0
+2025,12,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Commercial Trucks,LRD_RVG_xlsx,7446
+2025,12,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Passenger Vehicles,LRD_RVG_xlsx,53939
+2025,12,Rio Grande Valley,Brownsville,Free Trade International Bridge (Los Indios),Pedestrians/ Bicyclists,LRD_RVG_xlsx,4039
+2025,12,Rio Grande Valley,Brownsville,Gateway International Bridge,Buses,LRD_RVG_xlsx,0
+2025,12,Rio Grande Valley,Brownsville,Gateway International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,12,Rio Grande Valley,Brownsville,Gateway International Bridge,Passenger Vehicles,LRD_RVG_xlsx,79628
+2025,12,Rio Grande Valley,Brownsville,Gateway International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,159080
+2025,12,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Buses,LRD_RVG_xlsx,295
+2025,12,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Commercial Trucks,LRD_RVG_xlsx,18359
+2025,12,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Passenger Vehicles,LRD_RVG_xlsx,158598
+2025,12,Rio Grande Valley,Brownsville,Veterans International Bridge at Los Tomates,Pedestrians/ Bicyclists,LRD_RVG_xlsx,14698
+2025,12,Rio Grande Valley,Brownsville,West Rail Bridge,Railcars,LRD_RVG_xlsx,7293
+2025,12,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Buses,LRD_RVG_xlsx,1
+2025,12,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,12,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Passenger Vehicles,LRD_RVG_xlsx,147931
+2025,12,Rio Grande Valley,Hidalgo,Anzalduas International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,12,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Buses,LRD_RVG_xlsx,767
+2025,12,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,12,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,201437
+2025,12,Rio Grande Valley,Hidalgo,McAllen-Hidalgo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,220256
+2025,12,Rio Grande Valley,Hidalgo,Pharr International Bridge,Buses,LRD_RVG_xlsx,0
+2025,12,Rio Grande Valley,Hidalgo,Pharr International Bridge,Commercial Trucks,LRD_RVG_xlsx,58962
+2025,12,Rio Grande Valley,Hidalgo,Pharr International Bridge,Passenger Vehicles,LRD_RVG_xlsx,51090
+2025,12,Rio Grande Valley,Hidalgo,Pharr International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,12,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Buses,LRD_RVG_xlsx,0
+2025,12,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Commercial Trucks,LRD_RVG_xlsx,0
+2025,12,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Passenger Vehicles,LRD_RVG_xlsx,63320
+2025,12,Rio Grande Valley,Progreso,Donna-Rio Bravo International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,151
+2025,12,Rio Grande Valley,Progreso,Progreso International Bridge,Buses,LRD_RVG_xlsx,0
+2025,12,Rio Grande Valley,Progreso,Progreso International Bridge,Commercial Trucks,LRD_RVG_xlsx,6039
+2025,12,Rio Grande Valley,Progreso,Progreso International Bridge,Passenger Vehicles,LRD_RVG_xlsx,50282
+2025,12,Rio Grande Valley,Progreso,Progreso International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,104619
+2025,12,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Buses,LRD_RVG_xlsx,0
+2025,12,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Commercial Trucks,LRD_RVG_xlsx,0
+2025,12,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Passenger Vehicles,LRD_RVG_xlsx,3864
+2025,12,Rio Grande Valley,Rio Grande City,Los Ebanos Ferry,Pedestrians/ Bicyclists,LRD_RVG_xlsx,3745
+2025,12,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Buses,LRD_RVG_xlsx,0
+2025,12,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Commercial Trucks,LRD_RVG_xlsx,1750
+2025,12,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Passenger Vehicles,LRD_RVG_xlsx,40901
+2025,12,Rio Grande Valley,Rio Grande City,Starr-Camargo Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,4985
+2025,12,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Buses,LRD_RVG_xlsx,0
+2025,12,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Commercial Trucks,LRD_RVG_xlsx,0
+2025,12,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Passenger Vehicles,LRD_RVG_xlsx,15455
+2025,12,Rio Grande Valley,Roma,Lake Falcon Dam International Crossing,Pedestrians/ Bicyclists,LRD_RVG_xlsx,0
+2025,12,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Buses,LRD_RVG_xlsx,84
+2025,12,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Commercial Trucks,LRD_RVG_xlsx,4224
+2025,12,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Passenger Vehicles,LRD_RVG_xlsx,71024
+2025,12,Rio Grande Valley,Roma,Roma-Ciudad Miguel Alemán International Bridge,Pedestrians/ Bicyclists,LRD_RVG_xlsx,21888

@@ -22,7 +22,7 @@
 | `ID` | `2025-01-DELR-Trucks` — formula: `YYYY-MM-SLUG-ModeAbbr` (slug from `CROSSING_SLUG` in `00_load_master.py`; mode abbrev from `MODE_ID`) |
 | `Year` | `2025` |
 | `Month` | `1` (1–12) |
-| `Region` | `Laredo` (CBP field office: `El Paso` / `Laredo` / `Pharr`) |
+| `Region` | `Laredo` (CBP field office: `El Paso` / `Laredo` / `Rio Grande Valley`) |
 | `POE` | `Del Rio` (12 total — see `02-Data-Staging/config/vocab.json`) |
 | `Crossing` | `Del Rio International Bridge` (33 canonical names — see §Canonical names) |
 | `Modes` | `Commercial Trucks` / `Buses` / `Pedestrians/ Bicyclists` / `Passenger Vehicles` / `Railcars` |
@@ -129,7 +129,7 @@ Standalone pass/fail regression suite — exit 0 on all-pass, 1 on any failure. 
 7. Coordinates-CSV name alignment: every `Crossing` in coordinates CSV (exception: `El Paso Railroad Bridges`); BNSF and UP rail bridges absent as expected (combined).
 8. ID formula: monthly `ID == YYYY-MM-SLUG-ModeAbbr`; yearly `ID == YYYY-SLUG-ModeAbbr`; both unique.
 9. No duplicate (Year, Month, Crossing, Modes) rows in monthly file.
-10. Cross-source check: 2025 Laredo+Pharr Commercial Trucks equals raw sum from LRD-RVG workbook.
+10. Cross-source check: 2025 Laredo+Rio Grande Valley Commercial Trucks equals raw sum from LRD-RVG workbook.
 11. Yearly totals exactly match the sum of monthly totals for every (Year, Crossing, Mode).
 12. 2025 coverage: top-10 crossings each have all 12 months present.
 13. Pre-opening absence: crossings with known opening dates (Anzalduas, El Paso Railroad Bridges, Donna-Rio Bravo, Marcelino Serna, Boquillas) are absent before their opening year.

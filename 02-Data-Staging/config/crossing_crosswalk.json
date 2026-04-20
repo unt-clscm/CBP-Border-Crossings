@@ -13,11 +13,11 @@
       "Roma": "Roma"
     },
     "_region_for_poe": {
-      "Brownsville": "Pharr",
-      "Hidalgo": "Pharr",
-      "Rio Grande City": "Pharr",
-      "Progreso": "Pharr",
-      "Roma": "Pharr",
+      "Brownsville": "Rio Grande Valley",
+      "Hidalgo": "Rio Grande Valley",
+      "Rio Grande City": "Rio Grande Valley",
+      "Progreso": "Rio Grande Valley",
+      "Roma": "Rio Grande Valley",
       "Del Rio": "Laredo",
       "Eagle Pass": "Laredo",
       "Laredo": "Laredo"

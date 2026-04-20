@@ -74,7 +74,7 @@ CROSSING_MAP = {
 REGION_MAP = {
     "ELP": "El Paso",
     "LAR": "Laredo",
-    "RGV": "Pharr",
+    "RGV": "Rio Grande Valley",
     # NM dropped via CROSSING_MAP exclusion
 }
 
