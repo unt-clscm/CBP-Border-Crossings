@@ -1,26 +1,28 @@
 /**
- * ModeIcon — Inline SVG icon for one of the five canonical CBP modes.
+ * ModeIcon — Inline icon for one of the five canonical CBP modes.
  *
- * The underlying SVG files are imported via Vite's `?raw` suffix and their
- * internal `.cls-1` / `.st0` fill is already rewritten to `currentColor`, so
- * the icon inherits the surrounding text color via `style={{ color }}` or any
- * Tailwind text-* utility on the wrapping span.
+ * The underlying SVG files are imported via Vite's `?url` suffix so they
+ * ship as separate static assets instead of being inlined into the JS
+ * bundle as raw strings (bus.svg alone is ~249 kB — that cost was landing
+ * on the initial paint). The shape is applied via CSS `mask-image`, and
+ * the fill comes from `background-color: currentColor`, so the icon still
+ * inherits surrounding text color (e.g. `text-brand-blue`).
  */
-import busRaw from '@/assets/icons/modes/bus.svg?raw'
-import truckRaw from '@/assets/icons/modes/commercial-truck.svg?raw'
-import pvRaw from '@/assets/icons/modes/passenger-vehicle.svg?raw'
-import pedRaw from '@/assets/icons/modes/pedestrian-bicycle.svg?raw'
-import railRaw from '@/assets/icons/modes/rail.svg?raw'
+import busUrl from '@/assets/icons/modes/bus.svg?url'
+import truckUrl from '@/assets/icons/modes/commercial-truck.svg?url'
+import pvUrl from '@/assets/icons/modes/passenger-vehicle.svg?url'
+import pedUrl from '@/assets/icons/modes/pedestrian-bicycle.svg?url'
+import railUrl from '@/assets/icons/modes/rail.svg?url'
 
-const RAW = {
-  'Commercial Trucks': truckRaw,
-  Buses: busRaw,
-  'Pedestrians/ Bicyclists': pedRaw,
-  'Passenger Vehicles': pvRaw,
-  Railcars: railRaw,
+const URLS = {
+  'Commercial Trucks': truckUrl,
+  Buses: busUrl,
+  'Pedestrians/ Bicyclists': pedUrl,
+  'Passenger Vehicles': pvUrl,
+  Railcars: railUrl,
 }
 
-export const MODE_HAS_ICON = (mode) => mode in RAW
+export const MODE_HAS_ICON = (mode) => mode in URLS
 
 // Per-mode size boost. The pedestrian/bicyclist SVG has a wide ~1.92:1 viewBox,
 // so when fit into a square box its content only occupies ~52% of the height
@@ -30,18 +32,30 @@ const SIZE_BOOST = {
 }
 
 export default function ModeIcon({ mode, size = 18, className = '', title }) {
-  const raw = RAW[mode]
-  if (!raw) return null
+  const url = URLS[mode]
+  if (!url) return null
   const boost = SIZE_BOOST[mode] || 1
   const rendered = size * boost
+  const maskUrl = `url(${url})`
   return (
     <span
       role={title ? 'img' : undefined}
       aria-label={title}
       aria-hidden={title ? undefined : true}
-      className={`inline-flex items-center justify-center flex-shrink-0 [&_svg]:w-full [&_svg]:h-full ${className}`}
-      style={{ width: rendered, height: rendered }}
-      dangerouslySetInnerHTML={{ __html: raw }}
+      className={`inline-block flex-shrink-0 align-middle ${className}`}
+      style={{
+        width: rendered,
+        height: rendered,
+        backgroundColor: 'currentColor',
+        WebkitMaskImage: maskUrl,
+        maskImage: maskUrl,
+        WebkitMaskRepeat: 'no-repeat',
+        maskRepeat: 'no-repeat',
+        WebkitMaskPosition: 'center',
+        maskPosition: 'center',
+        WebkitMaskSize: 'contain',
+        maskSize: 'contain',
+      }}
     />
   )
 }
@@ -52,7 +66,7 @@ export default function ModeIcon({ mode, size = 18, className = '', title }) {
  * a component that forwards `size` / `className` / `title` to ModeIcon.
  */
 export const MODE_ICON_MAP = Object.fromEntries(
-  Object.keys(RAW).map((mode) => [
+  Object.keys(URLS).map((mode) => [
     mode,
     function BoundModeIcon(props) {
       return <ModeIcon mode={mode} {...props} />

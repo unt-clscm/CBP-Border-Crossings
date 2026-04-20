@@ -23,10 +23,12 @@ import {
   FitBoundsHandler,
 } from './mapHelpers'
 
+// Matches the chart region palette used by Overview / ByRegion / ByCrossing
+// so the map, filter chips, and region bars agree on every region's color.
 const REGION_COLORS = {
-  'El Paso':            { fill: '#0056a9', stroke: '#002e69' }, // brand blue
-  'Laredo':             { fill: '#d97706', stroke: '#92400e' }, // amber
-  'Rio Grande Valley':  { fill: '#16a34a', stroke: '#166534' }, // green
+  'El Paso':            { fill: '#d97706', stroke: '#92400e' }, // amber
+  'Laredo':             { fill: '#16a34a', stroke: '#166534' }, // green
+  'Rio Grande Valley':  { fill: '#0056a9', stroke: '#002e69' }, // brand blue
 }
 
 // TxDOT district abbreviation → CBP region (the canonical region color theme)
@@ -136,7 +138,11 @@ export default function CrossingsMap({
       onMarkerClick(marker)
       return
     }
-    navigate(`/by-crossing?crossing=${encodeURIComponent(marker.dataCrossingName)}`)
+    // Include the region — ByCrossing defaults to El Paso when no region
+    // is present, which would otherwise hide Laredo / RGV drill-downs.
+    const params = new URLSearchParams({ crossing: marker.dataCrossingName })
+    if (marker.region) params.set('region', marker.region)
+    navigate(`/by-crossing?${params.toString()}`)
   }, [onMarkerClick, navigate])
 
   return (

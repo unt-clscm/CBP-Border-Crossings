@@ -152,7 +152,11 @@ export default function AboutPage() {
             crossing opened or began reporting to CBP. Crossings are listed
             north-to-south along the Texas–Mexico border.
           </p>
-          {monthlyStatus !== 'ready' ? (
+          {monthlyStatus === 'error' ? (
+            <p className="text-base text-red-700 italic">
+              Monthly coverage data failed to load.
+            </p>
+          ) : monthlyStatus !== 'ready' ? (
             <p className="text-base text-text-secondary/80 italic">
               Loading monthly coverage…
             </p>
