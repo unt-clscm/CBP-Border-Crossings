@@ -20,110 +20,51 @@
  *   - ?year=<start>-<end>&mode=<m1>,<m2>,... round-trips via useSearchParams.
  *   - Reset-all clears filters and URL.
  */
-import { useMemo, useCallback } from 'react'
+import { useMemo, useCallback, useState, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { Map as MapIcon, Layers } from 'lucide-react'
+import { Map as MapIcon, Layers, TrendingUp, TrendingDown, BarChart3, ChevronDown } from 'lucide-react'
 import { useCrossingsStore } from '@/stores/crossingsStore'
 import {
   MODES,
   REGIONS,
   MODE_LABELS,
+  VALUE_KEY,
   filterRows,
   yearlyModeSeries,
   totalCrossings,
   parseYearRangeParam,
 } from '@/lib/cbpHelpers'
 import { formatNumber, formatCompact, CHART_COLORS } from '@/lib/chartColors'
-import { PAGE_YEARLY_COLS } from '@/lib/downloadColumns'
+import { PAGE_YEARLY_COLS, DL } from '@/lib/downloadColumns'
 import { buildMapCrossings, aggregateByDataCrossing } from '@/hooks/useCrossingsMapData'
 
 import DashboardLayout from '@/components/layout/DashboardLayout'
 import SectionBlock from '@/components/ui/SectionBlock'
 import ChartCard from '@/components/ui/ChartCard'
 import StackedBarChart from '@/components/charts/StackedBarChart'
+import DataTable from '@/components/ui/DataTable'
 import CrossingsMap from '@/components/maps/CrossingsMap'
-import FilterMultiSelect from '@/components/filters/FilterMultiSelect'
+import FilterRadioGroup from '@/components/filters/FilterRadioGroup'
 import YearRangeFilter from '@/components/filters/YearRangeFilter'
+import { MODE_ICON_MAP } from '@/components/ui/ModeIcon'
+
+/* Region palette — mirrors CrossingsMap so region color is consistent across
+   the page. Charts #2 and #3 are colored by region. */
+const REGION_BAR_COLORS = {
+  'El Paso':           '#d97706', // amber (matches screenshot accent for El Paso column)
+  'Laredo':            '#16a34a', // green
+  'Rio Grande Valley': '#0056a9', // brand blue
+}
 
 /* ── URL param (de)serialisation ────────────────────────────────────── */
 
+// Mode is single-select with a required default — unit-incompatible modes
+// (trucks vs. pedestrians vs. railcars) shouldn't be summed. Accept the first
+// valid value from the URL (single token or legacy CSV); fall back to MODES[0].
 function parseModeParam(raw) {
-  if (!raw) return []
+  if (!raw) return MODES[0]
   const vals = String(raw).split(',').map((s) => s.trim()).filter(Boolean)
-  return vals.filter((v) => MODES.includes(v))
-}
-
-/* ── Mode-share inline bar ──────────────────────────────────────────── */
-
-// `rows` is already scoped to the active filter selection; the share is
-// computed over that subset so the bar always reflects the user's choice.
-function ModeShareBar({ rows, year }) {
-  const data = useMemo(() => {
-    if (!rows?.length || year == null) return []
-    const inYear = rows.filter((r) => r.Year === year)
-    const totals = new Map()
-    let total = 0
-    for (const r of inYear) {
-      if (!r.Modes) continue
-      const v = r['Northbound Crossing'] || 0
-      totals.set(r.Modes, (totals.get(r.Modes) || 0) + v)
-      total += v
-    }
-    if (total <= 0) return []
-    return MODES
-      .filter((m) => totals.has(m) && totals.get(m) > 0)
-      .map((m) => ({
-        mode: m,
-        label: MODE_LABELS[m] || m,
-        value: totals.get(m),
-        pct: totals.get(m) / total,
-        color: CHART_COLORS[MODES.indexOf(m) % CHART_COLORS.length],
-      }))
-  }, [rows, year])
-
-  if (!data.length) {
-    return (
-      <div className="text-base text-text-secondary italic px-2 py-3">
-        No data for {year}.
-      </div>
-    )
-  }
-
-  return (
-    <div className="space-y-2">
-      <div className="flex items-center justify-between text-base text-text-secondary">
-        <span className="uppercase tracking-wider font-medium">
-          Mode mix · {year}
-        </span>
-      </div>
-      <div
-        className="flex w-full h-3 rounded-full overflow-hidden ring-1 ring-border-light/60 bg-surface-alt"
-        role="img"
-        aria-label={`Mode share for ${year}`}
-      >
-        {data.map((d) => (
-          <div
-            key={d.mode}
-            title={`${d.label}: ${formatCompact(d.value)} (${(d.pct * 100).toFixed(1)}%)`}
-            style={{ width: `${d.pct * 100}%`, background: d.color }}
-            className="h-full first:rounded-l-full last:rounded-r-full"
-          />
-        ))}
-      </div>
-      <ul className="flex flex-wrap gap-x-3 gap-y-1 text-base text-text-secondary">
-        {data.map((d) => (
-          <li key={d.mode} className="flex items-center gap-1.5">
-            <span
-              className="inline-block w-2.5 h-2.5 rounded-full flex-shrink-0"
-              style={{ background: d.color }}
-            />
-            <span className="text-text-primary font-medium">{d.label}</span>
-            <span>{(d.pct * 100).toFixed(1)}%</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
+  return vals.find((v) => MODES.includes(v)) || MODES[0]
 }
 
 /* ── Per-region panel ───────────────────────────────────────────────── */
@@ -140,15 +81,6 @@ function RegionPanel({ region, rows, startYear, endYear }) {
     const s = new Set()
     for (const r of rows) if (r.Crossing) s.add(r.Crossing)
     return s.size
-  }, [rows])
-
-  // Latest year present in the filtered window.
-  const latestYearInRange = useMemo(() => {
-    let y = null
-    for (const r of rows) {
-      if (r.Year != null && (y == null || r.Year > y)) y = r.Year
-    }
-    return y
   }, [rows])
 
   const hasData = rows.length > 0
@@ -198,13 +130,307 @@ function RegionPanel({ region, rows, startYear, endYear }) {
             </div>
           )}
         </div>
+      </div>
+    </ChartCard>
+  )
+}
 
-        {/* Mode share for latest year in range */}
-        {latestYearInRange != null && (
-          <div className="pt-3 border-t border-border-light/60">
-            <ModeShareBar rows={rows} year={latestYearInRange} />
+/* ── Region × Mode aggregator ───────────────────────────────────────── */
+
+// Group a slice of yearly rows into a Region → Mode → total map.
+// Returns a plain object keyed by region so React-memo keys stay stable.
+function aggregateRegionMode(rows) {
+  const out = {}
+  for (const region of REGIONS) {
+    out[region] = {}
+    for (const mode of MODES) out[region][mode] = 0
+  }
+  for (const r of rows) {
+    if (!REGIONS.includes(r.Region) || !MODES.includes(r.Modes)) continue
+    out[r.Region][r.Modes] += r[VALUE_KEY] || 0
+  }
+  return out
+}
+
+/* ── Chart 1 · Percentage change (Region × Mode) ────────────────────── */
+// Year endpoints are taken from the sidebar YearRangeFilter — no local picker.
+
+function RegionPctChangeSection({ yearly, startYear, endYear }) {
+  const rows = useMemo(() => {
+    if (!yearly?.length || startYear == null || endYear == null) return []
+    const startAgg = aggregateRegionMode(yearly.filter((r) => r.Year === startYear))
+    const endAgg   = aggregateRegionMode(yearly.filter((r) => r.Year === endYear))
+    return REGIONS.map((region) => {
+      const row = { Region: region }
+      for (const mode of MODES) {
+        const s = startAgg[region][mode]
+        const e = endAgg[region][mode]
+        row[mode] = !s || !e ? null : ((e - s) / s) * 100
+      }
+      return row
+    })
+  }, [yearly, startYear, endYear])
+
+  const columns = useMemo(() => {
+    const renderPct = (v) => {
+      if (v == null) return <span className="text-text-secondary/40">—</span>
+      const rounded = Math.round(v * 10) / 10
+      const sign = rounded > 0 ? '+' : ''
+      const colorClass = rounded > 0
+        ? 'text-green-700'
+        : rounded < 0
+          ? 'text-red-700'
+          : 'text-text-secondary'
+      return (
+        <span className={`inline-flex items-center gap-1 font-medium ${colorClass}`}>
+          {sign}{rounded.toFixed(1)}%
+          {rounded > 0 && <TrendingUp size={14} />}
+          {rounded < 0 && <TrendingDown size={14} />}
+        </span>
+      )
+    }
+    return [
+      { key: 'Region', label: 'Region' },
+      ...MODES.map((m) => ({ key: m, label: MODE_LABELS[m] || m, render: renderPct })),
+    ]
+  }, [])
+
+  const sameYear = startYear != null && startYear === endYear
+
+  return (
+    <ChartCard
+      title={`Percentage Change in NB Crossings (${startYear ?? '—'} to ${endYear ?? '—'})`}
+      subtitle="Change in total northbound volume per region, per mode"
+      emptyState={
+        sameYear
+          ? 'Start and end year are the same — widen the sidebar year range to compute change.'
+          : rows.length === 0 ? 'No data available.' : undefined
+      }
+      minHeight={180}
+    >
+      <DataTable columns={columns} data={rows} pageSize={10} fullWidth />
+    </ChartCard>
+  )
+}
+
+/* ── Chart 2 · Region × Year grouped bars ───────────────────────────── */
+// Region label rendered once; two bar rows (start year + end year) with the
+// end-year row annotated by % change. Mode is taken from the sidebar.
+
+function RegionChangeBarsSection({ yearly, startYear, endYear, mode }) {
+  const data = useMemo(() => {
+    if (!yearly?.length || startYear == null || endYear == null) return []
+    const startAgg = aggregateRegionMode(yearly.filter((r) => r.Year === startYear))
+    const endAgg   = aggregateRegionMode(yearly.filter((r) => r.Year === endYear))
+    return REGIONS.map((region) => {
+      const s = startAgg[region][mode] || 0
+      const e = endAgg[region][mode]   || 0
+      const pct = s > 0 ? ((e - s) / s) * 100 : null
+      return { region, startValue: s, endValue: e, pct }
+    })
+  }, [yearly, startYear, endYear, mode])
+
+  const maxVal = useMemo(
+    () => Math.max(1, ...data.flatMap((d) => [d.startValue, d.endValue])),
+    [data],
+  )
+
+  const empty = data.every((d) => d.startValue === 0 && d.endValue === 0)
+  const sameYear = startYear != null && startYear === endYear
+
+  // Bar sits on the left with the numeric label immediately to its right.
+  // Reserve ~140px for the value + signed % badge (e.g. "3.4M  ↗+46.1%") so
+  // the label + trend chip never clip against the card's right edge.
+  const barStyle = (pct, color) => ({
+    width: `calc((100% - 140px) * ${pct})`,
+    minWidth: pct > 0 ? 4 : 0,
+    height: '1.5rem',
+    background: color,
+  })
+
+  return (
+    <ChartCard
+      title={`Change in NB Crossings (${startYear ?? '—'} to ${endYear ?? '—'}, Mode: ${MODE_LABELS[mode] || mode})`}
+      subtitle="Start-year vs end-year totals per region"
+      emptyState={
+        sameYear
+          ? 'Start and end year are the same — widen the sidebar year range to compare.'
+          : empty ? 'No volume for this mode in either endpoint year.' : undefined
+      }
+      downloadData={{
+        summary: {
+          data: data.flatMap((d) => [
+            { label: `${d.region} ${startYear}`, value: d.startValue },
+            { label: `${d.region} ${endYear}`,   value: d.endValue },
+          ]),
+          filename: `region-change-${mode.replace(/[^a-z0-9]+/gi, '-').toLowerCase()}-${startYear}-${endYear}`,
+          columns: DL.regionRank,
+        },
+      }}
+      minHeight={260}
+    >
+      <div className="space-y-8 pt-2 pb-4">
+        {data.map(({ region, startValue, endValue, pct }) => {
+          const color = REGION_BAR_COLORS[region] || CHART_COLORS[0]
+          const sPct = startValue / maxVal
+          const ePct = endValue   / maxVal
+          const pctColor = pct == null
+            ? 'text-text-secondary/60'
+            : pct >= 0 ? 'text-green-700' : 'text-red-700'
+          return (
+            <div key={region} className="flex items-center gap-2">
+              <div className="w-20 sm:w-24 flex-shrink-0 font-semibold text-text-primary text-sm">
+                {region}
+              </div>
+              <div className="flex-1 min-w-0 flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <span className="w-10 text-sm text-text-secondary tabular-nums flex-shrink-0">{startYear}</span>
+                  <div className="flex-1 flex items-center gap-2 min-w-0">
+                    <div className="rounded-sm flex-shrink-0" style={barStyle(sPct, color)} aria-hidden="true" />
+                    <span className="font-semibold text-text-primary tabular-nums whitespace-nowrap">
+                      {formatCompact(startValue)}
+                    </span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-10 text-sm text-text-secondary tabular-nums flex-shrink-0">{endYear}</span>
+                  <div className="flex-1 flex items-center gap-2 min-w-0">
+                    <div className="rounded-sm flex-shrink-0" style={barStyle(ePct, color)} aria-hidden="true" />
+                    <span className="font-semibold text-text-primary tabular-nums whitespace-nowrap">
+                      {formatCompact(endValue)}
+                    </span>
+                    {pct != null && (
+                      <span className={`text-xs font-medium inline-flex items-center gap-0.5 whitespace-nowrap ${pctColor}`}>
+                        {pct >= 0
+                          ? <TrendingUp size={12} />
+                          : <TrendingDown size={12} />}
+                        {pct >= 0 ? '+' : ''}{pct.toFixed(1)}%
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+    </ChartCard>
+  )
+}
+
+/* ── Chart 3 · Region × Mode grid for a single year ─────────────────── */
+// Local year selector. Bars sit left-aligned in each cell with the value
+// label immediately to their right; faint column separators frame each mode.
+
+function RegionModeGridSection({ yearly, yearsAvailable, year, onYearChange }) {
+  const { cells, columnMax } = useMemo(() => {
+    if (!yearly?.length || year == null) return { cells: {}, columnMax: {} }
+    const agg = aggregateRegionMode(yearly.filter((r) => r.Year === year))
+    const columnMax = {}
+    for (const m of MODES) {
+      let mx = 0
+      for (const region of REGIONS) mx = Math.max(mx, agg[region][m] || 0)
+      columnMax[m] = mx
+    }
+    return { cells: agg, columnMax }
+  }, [yearly, year])
+
+  const downloadRows = useMemo(() => {
+    const out = []
+    for (const region of REGIONS) {
+      for (const m of MODES) {
+        out.push({ Region: region, Mode: MODE_LABELS[m] || m, Value: cells[region]?.[m] ?? 0 })
+      }
+    }
+    return out
+  }, [cells])
+
+  const compactYearPicker = (
+    <label className="inline-flex items-center gap-1.5 text-xs text-text-secondary">
+      <span className="uppercase tracking-wider font-medium">Year</span>
+      <span className="relative inline-block">
+        <select
+          value={year == null ? '' : String(year)}
+          onChange={(e) => onYearChange(e.target.value ? Number(e.target.value) : null)}
+          className="appearance-none px-2 py-1 pr-7 rounded-md border border-border bg-white
+                     text-sm text-text-primary cursor-pointer
+                     focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue"
+        >
+          {(yearsAvailable || []).map((y) => (
+            <option key={y} value={String(y)}>{y}</option>
+          ))}
+        </select>
+        <ChevronDown
+          size={12}
+          className="pointer-events-none absolute right-1.5 top-1/2 -translate-y-1/2 text-text-secondary"
+        />
+      </span>
+    </label>
+  )
+
+  return (
+    <ChartCard
+      title={`NB Crossings Per Region Per Mode (${year ?? '—'})`}
+      subtitle="Bars scaled to the largest region within each mode column"
+      headerRight={compactYearPicker}
+      downloadData={{
+        summary: {
+          data: downloadRows,
+          filename: `region-mode-grid-${year ?? 'na'}`,
+          columns: { Region: 'Region', Mode: 'Mode', Value: 'Northbound Crossings' },
+        },
+      }}
+      minHeight={220}
+    >
+      <div className="overflow-x-auto">
+        <div
+          className="grid gap-y-1 min-w-[820px] text-base"
+          style={{ gridTemplateColumns: `minmax(170px, 1fr) repeat(${MODES.length}, minmax(150px, 2fr))` }}
+        >
+          <div className="text-xs font-semibold uppercase tracking-wider text-text-secondary pb-2 pr-3 border-b border-border-light">
+            Region
           </div>
-        )}
+          {MODES.map((m, i) => (
+            <div
+              key={m}
+              className={`text-xs font-semibold uppercase tracking-wider text-text-secondary pb-2 px-3 border-b border-border-light text-center ${i > 0 ? 'border-l border-border-light/50' : ''}`}
+            >
+              {MODE_LABELS[m] || m}
+            </div>
+          ))}
+          {REGIONS.map((region) => {
+            const color = REGION_BAR_COLORS[region]
+            return (
+              <div key={region} className="contents">
+                <div className="py-2.5 pr-3 font-medium text-text-primary self-center whitespace-nowrap">{region}</div>
+                {MODES.map((m, i) => {
+                  const v = cells[region]?.[m] ?? 0
+                  const mx = columnMax[m] || 1
+                  const pct = mx > 0 ? v / mx : 0
+                  return (
+                    <div
+                      key={m}
+                      className={`py-2.5 px-3 flex items-center gap-2 min-w-0 overflow-hidden ${i > 0 ? 'border-l border-border-light/50' : ''}`}
+                    >
+                      <div
+                        className="h-5 rounded-sm flex-shrink-0"
+                        style={{
+                          width: `calc((100% - 64px) * ${pct})`,
+                          minWidth: v > 0 ? 3 : 0,
+                          background: color,
+                        }}
+                        aria-hidden="true"
+                      />
+                      <span className="font-semibold text-text-primary whitespace-nowrap tabular-nums">
+                        {formatCompact(v)}
+                      </span>
+                    </div>
+                  )
+                })}
+              </div>
+            )
+          })}
+        </div>
       </div>
     </ChartCard>
   )
@@ -252,7 +478,7 @@ function ByRegionPageBody() {
       endYear:   parsed?.end   ?? maxYear,
     }
   }, [searchParams, minYear, maxYear])
-  const selectedModes = useMemo(
+  const selectedMode = useMemo(
     () => parseModeParam(searchParams.get('mode')),
     [searchParams],
   )
@@ -278,10 +504,10 @@ function ByRegionPageBody() {
     })
   }, [updateParams, minYear, maxYear])
 
-  const setModes = useCallback((modes) => {
+  const setMode = useCallback((mode) => {
     updateParams((p) => {
-      if (!modes?.length) p.delete('mode')
-      else p.set('mode', modes.join(','))
+      if (!mode) p.delete('mode')
+      else p.set('mode', mode)
     })
   }, [updateParams])
 
@@ -289,14 +515,23 @@ function ByRegionPageBody() {
     setSearchParams(new URLSearchParams(), { replace: true })
   }, [setSearchParams])
 
+  /* ── Comparison section local state ────────────────────────────────
+     Charts #1 and #2 read start/end year and mode from the sidebar. Only the
+     single-year snapshot grid keeps its own year selector. */
+  const [gridYear, setGridYear] = useState(null)
+
+  useEffect(() => {
+    if (maxYear != null && gridYear == null) setGridYear(maxYear)
+  }, [maxYear, gridYear])
+
   /* ── Filtered rows (shared across panels + map + download) ──────── */
 
   const filteredYearly = useMemo(() => (
     filterRows(yearly, {
       yearRange: { start: startYear, end: endYear },
-      modes: selectedModes.length ? selectedModes : null,
+      modes: [selectedMode],
     })
-  ), [yearly, startYear, endYear, selectedModes])
+  ), [yearly, startYear, endYear, selectedMode])
 
   // Map pins sized by total NB volume for the filtered window.
   // highlightNames = null → every pin is shown in full color; region palette
@@ -322,9 +557,10 @@ function ByRegionPageBody() {
   const activeCount = useMemo(() => {
     let n = 0
     if (!(startYear === minYear && endYear === maxYear)) n += 1
-    if (selectedModes.length > 0) n += 1
+    // Mode always has exactly one value — not counted as an "active" filter
+    // (it can't be unset, only changed).
     return n
-  }, [startYear, endYear, selectedModes, minYear, maxYear])
+  }, [startYear, endYear, minYear, maxYear])
 
   const activeTags = useMemo(() => {
     const tags = []
@@ -335,15 +571,9 @@ function ByRegionPageBody() {
         onRemove: () => setYearRange({ startYear: minYear, endYear: maxYear }),
       })
     }
-    selectedModes.forEach((m) => {
-      tags.push({
-        group: 'Mode',
-        label: MODE_LABELS[m] || m,
-        onRemove: () => setModes(selectedModes.filter((x) => x !== m)),
-      })
-    })
+    // Mode is single-select with a required default — no removable tag.
     return tags
-  }, [startYear, endYear, minYear, maxYear, selectedModes, setYearRange, setModes])
+  }, [startYear, endYear, minYear, maxYear, setYearRange])
 
   /* ── Empty-state detection ──────────────────────────────────────── */
 
@@ -369,12 +599,13 @@ function ByRegionPageBody() {
           onChange={setYearRange}
         />
       </div>
-      <FilterMultiSelect
+      <FilterRadioGroup
         label="Mode"
-        value={selectedModes}
+        name="by-region-mode"
+        value={selectedMode}
         options={MODES.map((m) => ({ value: m, label: MODE_LABELS[m] || m }))}
-        onChange={setModes}
-        allLabel="All modes"
+        onChange={setMode}
+        iconMap={MODE_ICON_MAP}
       />
     </div>
   )
@@ -383,7 +614,7 @@ function ByRegionPageBody() {
 
   const pageDownload = {
     data: filteredYearly,
-    filename: `cbp-by-region_${startYear}-${endYear}${selectedModes.length ? `_${selectedModes.length}modes` : ''}`,
+    filename: `cbp-by-region_${startYear}-${endYear}_${selectedMode.replace(/[^a-z0-9]+/gi, '-').toLowerCase()}`,
     columns: PAGE_YEARLY_COLS,
   }
 
@@ -441,8 +672,46 @@ function ByRegionPageBody() {
         </div>
       </SectionBlock>
 
-      {/* ── Map ─────────────────────────────────────────────────── */}
+      {/* ── Region × Mode comparison charts ─────────────────────── */}
       <SectionBlock alt>
+        <div className="max-w-7xl mx-auto space-y-6">
+          <div className="flex items-center gap-2.5">
+            <BarChart3 size={20} className="text-brand-blue" />
+            <h3 className="text-xl font-bold text-text-primary">
+              Region vs Region — Change &amp; Snapshot
+            </h3>
+          </div>
+          <p className="text-base text-text-secondary leading-relaxed max-w-3xl">
+            Pick two endpoint years to see how each region&rsquo;s northbound
+            crossings shifted by mode, then drop into a single-year snapshot to
+            compare regions side-by-side. These charts are independent of the
+            sidebar filters.
+          </p>
+
+          <div className="grid grid-cols-1 gap-6">
+            <RegionPctChangeSection
+              yearly={yearly}
+              startYear={startYear}
+              endYear={endYear}
+            />
+            <RegionChangeBarsSection
+              yearly={yearly}
+              startYear={startYear}
+              endYear={endYear}
+              mode={selectedMode}
+            />
+            <RegionModeGridSection
+              yearly={yearly}
+              yearsAvailable={yearsAvailable}
+              year={gridYear}
+              onYearChange={setGridYear}
+            />
+          </div>
+        </div>
+      </SectionBlock>
+
+      {/* ── Map ─────────────────────────────────────────────────── */}
+      <SectionBlock>
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center gap-2.5 mb-4">
             <MapIcon size={20} className="text-brand-blue" />
@@ -451,10 +720,9 @@ function ByRegionPageBody() {
             </h3>
           </div>
           <p className="text-base text-text-secondary leading-relaxed mb-4 max-w-3xl">
-            Circle size reflects total northbound crossings in the
-            {selectedModes.length > 0 ? ' filtered mode and ' : ' filtered '}
-            year window ({startYear}–{endYear}). Click any pin to drill into
-            its full history.
+            Circle size reflects total northbound {MODE_LABELS[selectedMode] || selectedMode}
+            {' '}crossings in the year window ({startYear}–{endYear}). Click any pin
+            to drill into its full history.
           </p>
           <div className="rounded-xl overflow-hidden shadow-sm ring-1 ring-border-light bg-white" style={{ height: 560 }}>
             {mapMarkers.length > 0 ? (

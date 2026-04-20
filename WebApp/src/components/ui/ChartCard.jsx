@@ -61,6 +61,8 @@ export default function ChartCard({
   downloadData,
   footnote,
   emptyState,
+  titleClassName = 'text-xl font-semibold text-text-primary leading-snug',
+  subtitleClassName = 'text-base text-text-secondary mt-0.5',
 }) {
   const chartAreaRef = useRef(null)
   const [zoomRange, setZoomRange] = useState(null)
@@ -135,11 +137,11 @@ export default function ChartCard({
         {/* Header */}
         <div className="flex items-start justify-between gap-3 px-3 pt-5 pb-3">
           <div className="min-w-0">
-            <h3 className="text-xl font-semibold text-text-primary leading-snug">
+            <h3 className={titleClassName}>
               {title}
             </h3>
             {subtitle && (
-              <p className="text-base text-text-secondary mt-0.5">{subtitle}</p>
+              <p className={subtitleClassName}>{subtitle}</p>
             )}
           </div>
           <div className="flex items-center gap-2 flex-shrink-0 group/actions">
