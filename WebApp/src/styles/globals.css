@@ -1,0 +1,364 @@
+@import "tailwindcss";
+
+/* ============================================================
+   TxDOT DESIGN TOKENS — CSS Custom Properties
+   These mirror the Tailwind config and are accessible by D3.
+   ============================================================ */
+
+@theme {
+  /* --- PRIMARY COLORS --- */
+  --color-brand-blue: #0056a9;
+  --color-brand-blue-dark: #002e69;
+  --color-brand-red: #d90d0d;
+
+  /* --- SECONDARY COLORS --- */
+  --color-brand-green: #196533;
+  --color-brand-purple: #5f0f40;
+  --color-brand-gray-dark: #333f48;
+  --color-brand-brown: #c5bbaa;
+  --color-brand-gray-light: #dadee5;
+  --color-brand-yellow: #f2ce1b;
+  --color-brand-orange: #df5c16;
+  --color-brand-green-light: #8ec02d;
+
+  /* --- NEUTRALS --- */
+  --color-surface: #ffffff;
+  --color-surface-alt: #f5f7f9;
+  --color-surface-dark: #333f48;
+  --color-border: #d1d5db;
+  --color-border-light: #c4c9cf;
+  --color-text-primary: #333f48;
+  --color-text-secondary: #5a6872;
+  --color-text-inverse: #ffffff;
+
+  /* --- FONT SIZES (min 16px enforced) --- */
+  --font-size-xs: 1rem;
+  --font-size-xs--line-height: 1.5rem;
+  --font-size-sm: 1rem;
+  --font-size-sm--line-height: 1.5rem;
+
+  /* --- FONT FAMILIES --- */
+  --font-sans: 'IBM Plex Sans', Verdana, Aptos, Arial, sans-serif;
+  --font-condensed: 'IBM Plex Sans Condensed', Verdana, Arial, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+
+  /* --- SHADOWS --- */
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* --- BORDER RADII --- */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+}
+
+:root {
+  /* --- TYPOGRAPHY SCALE --- */
+  --font-size-xs: 1rem;
+  --font-size-sm: 1rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.125rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 1.875rem;
+  --font-size-3xl: 2.25rem;
+  --font-size-4xl: 3rem;
+
+  /* --- FONT WEIGHTS --- */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* --- SPACING SCALE --- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* --- TRANSITIONS --- */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+
+  /* --- D3 CHART COLORS (as vars for JS access) --- */
+  --chart-color-1: #0056a9;
+  --chart-color-2: #002e69;
+  --chart-color-3: #196533;
+  --chart-color-4: #df5c16;
+  --chart-color-5: #5f0f40;
+  --chart-color-6: #8ec02d;
+  --chart-color-7: #f2ce1b;
+  --chart-color-8: #c5bbaa;
+  --chart-color-9: #d90d0d;
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-text-primary);
+    background-color: #ffffff;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.2;
+    color: var(--color-text-primary);
+  }
+
+  h1 { font-size: var(--font-size-4xl); }
+  h2 { font-size: var(--font-size-3xl); }
+  h3 { font-size: var(--font-size-2xl); }
+  h4 { font-size: var(--font-size-xl); }
+  h5 { font-size: var(--font-size-lg); }
+  h6 { font-size: var(--font-size-md); }
+
+  a {
+    color: var(--color-brand-blue);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  a:hover {
+    color: var(--color-brand-blue-dark);
+  }
+
+  ::selection {
+    background-color: rgba(0, 86, 169, 0.15);
+    color: var(--color-text-primary);
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-surface-alt);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: var(--radius-full);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-secondary);
+  }
+}
+
+/* ============================================================
+   UTILITY CLASSES
+   ============================================================ */
+
+@layer utilities {
+  .container-main {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  /* Narrower container for header/footer chrome */
+  .container-chrome {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .section-padding {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+
+  .section-alt {
+    background-color: var(--color-surface-alt);
+  }
+
+  .gradient-blue {
+    background: linear-gradient(to right, #002e69 0%, #0056a9 100%);
+  }
+
+  .gradient-blue-light {
+    background: linear-gradient(135deg, #1a6fbe 0%, #3a8fd4 100%);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Animated number counter effect */
+  .animate-fade-up {
+    animation: fadeUp 0.5s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes yearPop {
+    0% {
+      opacity: 0.9;
+      transform: scale(0.6);
+    }
+    40% {
+      opacity: 0.7;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.15);
+    }
+  }
+
+  /* CHART HEIGHT — IMPORTANT
+     Chart components (BarChart, LineChart, StackedBarChart, DonutChart)
+     manage their own height via inline `minHeight` styles on their container divs.
+     This is intentional: each chart calculates the minimum height it needs based on
+     data count, legend rows, and orientation, then sets it as a minHeight so the
+     parent ChartCard (which uses h-full + flex-col) expands to fit.
+     DO NOT add fixed heights or max-heights to chart containers — it will compress
+     the charts and cause overlapping labels/legends. */
+
+  /* Fullscreen chart overlay — make chart containers fill available space */
+  .fullscreen-chart-area {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fullscreen-chart-area > * {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Ensure the inner container div (ref target for ResizeObserver) gets height */
+  .fullscreen-chart-area > * > div {
+    height: 100%;
+  }
+
+  /* DataTable in fullscreen: auto-width (content-sized columns, centered),
+     max-height so rows paginate at the viewport boundary but small tables
+     don't stretch with empty space below the last row.
+     Must override the generic "> * > div { height:100% }" rule which
+     breaks flex layout by forcing both scroll-area and pagination to 100%. */
+  .fullscreen-chart-area .data-table-root {
+    flex: 0 1 auto !important;
+    width: fit-content !important;
+    max-width: 100%;
+    height: auto !important;
+    max-height: 100%;
+  }
+  .fullscreen-chart-area .data-table-root > div {
+    height: unset !important;
+  }
+
+  /* AirportMap in fullscreen: fill available space, keep legend at natural height.
+     Must override the generic "> * > div { height:100% }" rule which
+     breaks the map's flex layout by stretching the legend. */
+  .fullscreen-chart-area .airport-map-container {
+    height: 100% !important;
+  }
+  .fullscreen-chart-area .airport-map-container > div {
+    height: auto !important;
+  }
+  .fullscreen-chart-area .airport-map-container > div:first-child {
+    flex: 1;
+    height: 0 !important;
+    min-height: 0;
+  }
+
+  /* Fullscreen chart enhancements — thicker strokes for presence.
+     Font sizes are handled natively by each chart via isFullscreen + getResponsiveFontSize
+     so D3 can allocate proper margins. */
+
+  /* Line chart — thicker data lines and bigger dots */
+  .fullscreen-chart-area svg .line-path {
+    stroke-width: 5 !important;
+  }
+  .fullscreen-chart-area svg .data-dot {
+    r: 6;
+    stroke-width: 3 !important;
+  }
+
+  /* Reduced motion — respect user preference for less animation */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-up,
+    .animate-fade-in {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    .typing-dot {
+      animation: none !important;
+      opacity: 0.6 !important;
+    }
+  }
+
+  /* Hidden scrollbar — used by TabBar for mobile horizontal scroll */
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* Ask AI — typing indicator dots */
+  .typing-dot {
+    animation: typingDot 1.4s ease-in-out infinite;
+  }
+  .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+  .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+  @keyframes typingDot {
+    0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+    30% { opacity: 1; transform: translateY(-4px); }
+  }
+}
