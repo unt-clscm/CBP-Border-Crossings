@@ -13,13 +13,14 @@
  */
 import { useMemo, useCallback, useState, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { MapPin, TrendingUp, TrendingDown, Table as TableIcon, Percent, Grid2x2, PieChart as PieChartIcon } from 'lucide-react'
+import { MapPin, TrendingUp, TrendingDown, Table as TableIcon, Percent, Grid2x2, PieChart as PieChartIcon, CalendarDays, Check } from 'lucide-react'
 
 import { useCrossingsStore } from '@/stores/crossingsStore'
 import {
   MODES,
   MODE_LABELS,
   REGIONS,
+  MONTH_LABELS,
   filterRows,
   crossingSeries,
   makeCrossingOrderComparator,
@@ -38,7 +39,6 @@ import LineChart from '@/components/charts/LineChart'
 import TreemapChart from '@/components/charts/TreemapChart'
 import DonutChart from '@/components/charts/DonutChart'
 import CrossingsMap from '@/components/maps/CrossingsMap'
-import FilterMultiSelect from '@/components/filters/FilterMultiSelect'
 import YearRangeFilter from '@/components/filters/YearRangeFilter'
 import ModeIcon from '@/components/ui/ModeIcon'
 
@@ -48,6 +48,15 @@ const REGION_COLORS = {
   'El Paso':           '#d97706',
   'Laredo':            '#16a34a',
   'Rio Grande Valley': '#0056a9',
+}
+
+/* Mode palette — matches the Overview page so mode identity is consistent. */
+const MODE_COLORS = {
+  'Commercial Trucks':       '#6d28d9',
+  'Buses':                   '#be123c',
+  'Pedestrians/ Bicyclists': '#0d9488',
+  'Passenger Vehicles':      '#2563eb',
+  'Railcars':                '#facc15',
 }
 
 /* ─── URL-param helpers ───────────────────────────────────────────────── */
@@ -69,6 +78,8 @@ function formatYearRange(start, end) {
 export default function ByCrossingPage() {
   const status         = useCrossingsStore((s) => s.status)
   const yearly         = useCrossingsStore((s) => s.yearly)
+  const monthly        = useCrossingsStore((s) => s.monthly)
+  const monthlyStatus  = useCrossingsStore((s) => s.monthlyStatus)
   const coords         = useCrossingsStore((s) => s.coords)
   const yearsAvailable = useCrossingsStore((s) => s.yearsAvailable)
   const minYear        = useCrossingsStore((s) => s.minYear)
@@ -114,7 +125,28 @@ export default function ByCrossingPage() {
   }, [updateParam])
 
   // Region is single-select — write the bare string to the URL.
-  const setRegion    = useCallback((v) => updateParam('region', v || null), [updateParam])
+  // Also prune any selected crossings that don't belong to the new region,
+  // so the cascading Region → Crossing relationship stays consistent.
+  const setRegion = useCallback((newRegion) => {
+    setSearchParams((prev) => {
+      const next = new URLSearchParams(prev)
+      if (!newRegion) next.delete('region')
+      else next.set('region', newRegion)
+
+      const currentCrossings = parseMulti(next.get('crossing'))
+      if (currentCrossings.length && newRegion && yearly?.length) {
+        const valid = new Set()
+        for (const r of yearly) {
+          if (r.Region === newRegion && r.Crossing) valid.add(r.Crossing)
+        }
+        const pruned = currentCrossings.filter((c) => valid.has(c))
+        if (pruned.length) next.set('crossing', pruned.join(','))
+        else next.delete('crossing')
+      }
+      return next
+    }, { replace: true })
+  }, [setSearchParams, yearly])
+
   const setCrossings = useCallback((v) => updateParam('crossing', joinMulti(v)), [updateParam])
 
   const resetAll = useCallback(() => {
@@ -123,14 +155,21 @@ export default function ByCrossingPage() {
 
   /* ─── Derived data (guarded until store ready) ──────────────────────── */
 
-  // Distinct crossings sorted north-to-south for the filter options
+  // Distinct crossings sorted north-to-south, scoped to the active region so
+  // the Crossing filter only surfaces crossings that belong to the selected
+  // region (cascading Region → Crossing).
   const crossingOptions = useMemo(() => {
     if (!yearly?.length) return []
+    const region = filters.regions[0]
     const s = new Set()
-    for (const r of yearly) if (r.Crossing) s.add(r.Crossing)
+    for (const r of yearly) {
+      if (!r.Crossing) continue
+      if (region && r.Region !== region) continue
+      s.add(r.Crossing)
+    }
     const cmp = makeCrossingOrderComparator(coords)
     return [...s].sort(cmp)
-  }, [yearly, coords])
+  }, [yearly, coords, filters.regions])
 
   // Full filter-result (yearly rows) — drives table + chart + map
   const filteredYearly = useMemo(() => {
@@ -173,30 +212,51 @@ export default function ByCrossingPage() {
       .sort((a, b) => cmp(a.label, b.label))
   }, [yearly, coords, filters.regions, perCrossingMode, perCrossingYear])
 
-  /* ─── Percentage-change section: local two-year selectors ────────────── */
-  // Independent of the sidebar year-range slider — this view needs exactly two
-  // specific years, not a range. Defaults to the full available span.
-  const [pctStart, setPctStart] = useState(null)
-  const [pctEnd, setPctEnd]     = useState(null)
-
+  /* ─── Monthly seasonality (per-crossing, per-year) ──────────────────── */
+  // Shows the intra-year shape: one line per mode, x = month. Single-year
+  // snapshot so month-to-month swings are legible; local year picker defaults
+  // to the most recent year.
+  const [seasonalYear, setSeasonalYear] = useState(null)
   useEffect(() => {
-    if (minYear != null && pctStart == null) setPctStart(minYear)
-    if (maxYear != null && pctEnd == null)   setPctEnd(maxYear)
-  }, [minYear, maxYear, pctStart, pctEnd])
+    if (maxYear != null && seasonalYear == null) setSeasonalYear(maxYear)
+  }, [maxYear, seasonalYear])
 
-  const pctStartYear = pctStart ?? minYear
-  const pctEndYear   = pctEnd   ?? maxYear
+  const seasonalRows = useMemo(() => {
+    if (monthlyStatus !== 'ready' || !monthly?.length || seasonalYear == null) return []
+    // Reuse sidebar region + crossing filters but pin to the single selected year.
+    const base = filterRows(monthly, {
+      year: seasonalYear,
+      regions: filters.regions,
+      crossings: filters.crossings,
+    })
+    // One point per (month, mode). Build by summing across whatever crossings
+    // matched the sidebar filter.
+    const bucket = new Map() // `${month}|${mode}` → sum
+    const modeSet = new Set()
+    for (const r of base) {
+      if (!r.Modes || !Number.isFinite(r.Month)) continue
+      modeSet.add(r.Modes)
+      const k = `${r.Month}|${r.Modes}`
+      bucket.set(k, (bucket.get(k) || 0) + (r[VALUE_KEY] || 0))
+    }
+    const modes = MODES.filter((m) => modeSet.has(m))
+    const out = []
+    for (let m = 1; m <= 12; m++) {
+      for (const mode of modes) {
+        out.push({ month: m, Mode: mode, value: bucket.get(`${m}|${mode}`) || 0 })
+      }
+    }
+    return out
+  }, [monthly, monthlyStatus, seasonalYear, filters.regions, filters.crossings])
 
-  const handlePctYearChange = useCallback(({ startYear, endYear }) => {
-    setPctStart(startYear)
-    setPctEnd(endYear)
-  }, [])
+  /* ─── Percentage-change section ───────────────────────────────────────── */
+  // Uses the sidebar year range's endpoints as the two comparison years.
+  const pctStartYear = filters.startYear
+  const pctEndYear   = filters.endYear
 
   const pctRows = useMemo(() => {
     if (!yearly?.length || pctStartYear == null || pctEndYear == null) return []
 
-    // Respect sidebar region + crossing filters (but not the year range, since
-    // this section supplies its own two-year endpoints).
     const base = filterRows(yearly, {
       regions:   filters.regions,
       crossings: filters.crossings,
@@ -251,25 +311,33 @@ export default function ByCrossingPage() {
       )
     }
 
+    // Explicit column widths: Crossing takes a narrow-ish left slice and all
+    // five mode columns share the remaining 75% equally (15% each). `wrap`
+    // lets multi-word mode labels like "Pedestrians/ Bicyclists" break onto a
+    // second header line instead of overflowing into neighboring columns.
     return [
-      { key: 'Crossing', label: 'Crossing' },
+      { key: 'Crossing', label: 'Crossing', width: '25%', wrap: true },
       ...MODES.map((m) => ({
         key: m,
         label: MODE_LABELS[m] || m,
+        headerIcon: <ModeIcon mode={m} size={20} className="text-text-secondary" />,
         render: renderPct,
+        width: '15%',
+        wrap: true,
       })),
     ]
   }, [])
 
   /* ─── Map markers ───────────────────────────────────────────────────── */
+  // Only show crossings in the active region so the map zooms to that
+  // region's bridges. Bounds are fit from the returned markers.
   const mapMarkers = useMemo(() => {
     if (!coords?.length || !yearly?.length) return []
-    // Map sizing reflects the currently filtered data — so the user sees
-    // the volume they care about. If no crossings are highlighted, all pins
-    // remain visible at their filtered totals.
+    const region = filters.regions[0]
+    const scopedCoords = region ? coords.filter((c) => c.region === region) : coords
     const totals = aggregateByDataCrossing(filteredYearly)
-    return buildMapCrossings(coords, totals)
-  }, [coords, yearly, filteredYearly])
+    return buildMapCrossings(scopedCoords, totals)
+  }, [coords, yearly, filteredYearly, filters.regions])
 
   // Highlight selected crossings by their data_crossing_name equivalents
   const highlightNames = useMemo(() => {
@@ -372,7 +440,7 @@ export default function ByCrossingPage() {
 
   /* ─── Filter sidebar JSX ────────────────────────────────────────────── */
   const filterControls = (
-    <div className="space-y-4">
+    <div className="flex flex-col gap-4 h-full min-h-0">
       <div className="flex flex-col gap-1 min-w-0 w-full">
         <span className="text-base font-medium text-text-secondary uppercase tracking-wider">
           Year Range
@@ -389,18 +457,18 @@ export default function ByCrossingPage() {
         <span className="text-base font-medium text-text-secondary uppercase tracking-wider">
           Region
         </span>
-        <div role="radiogroup" aria-label="Region" className="flex flex-col gap-1.5 mt-1">
+        <div role="radiogroup" aria-label="Region" className="flex flex-col mt-1">
           {REGIONS.map((r) => {
             const selected = filters.regions[0] === r
             const color = REGION_COLORS[r]
             const rowStyle = selected
-              ? { borderColor: color, backgroundColor: `${color}1A` }
+              ? { backgroundColor: `${color}1A` }
               : undefined
             return (
               <label
                 key={r}
                 style={rowStyle}
-                className={`flex items-center gap-2 px-3 py-2 rounded-lg border cursor-pointer transition-colors ${selected ? 'border' : 'border-border hover:bg-brand-blue/5'}`}
+                className={`flex items-center gap-2 px-3 py-1.5 rounded cursor-pointer transition-colors ${selected ? '' : 'hover:bg-brand-blue/5'}`}
               >
                 <input
                   type="radio"
@@ -433,14 +501,75 @@ export default function ByCrossingPage() {
         </div>
       </div>
 
-      <FilterMultiSelect
-        label="Crossing"
-        value={filters.crossings}
-        options={crossingOptions}
-        onChange={setCrossings}
-        allLabel="All crossings"
-        searchable
-      />
+      <div className="flex flex-col gap-1 min-w-0 w-full flex-1 min-h-0">
+        <span className="text-base font-medium text-text-secondary uppercase tracking-wider">
+          Crossing
+        </span>
+        <div role="group" aria-label="Crossing" className="flex flex-col mt-1 flex-1 min-h-0 overflow-y-auto">
+          {(() => {
+            const allSelected = filters.crossings.length === 0
+            return (
+              <label
+                className={`flex items-center gap-2 px-3 py-1.5 rounded cursor-pointer transition-colors ${
+                  allSelected ? 'bg-brand-blue/10' : 'hover:bg-brand-blue/5'
+                }`}
+              >
+                <input
+                  type="checkbox"
+                  checked={allSelected}
+                  onChange={() => setCrossings([])}
+                  className="sr-only"
+                />
+                <span
+                  className={`flex-shrink-0 flex items-center justify-center w-4 h-4 rounded border ${
+                    allSelected ? 'bg-brand-blue border-brand-blue' : 'border-border'
+                  }`}
+                >
+                  {allSelected && <Check size={12} className="text-white" />}
+                </span>
+                <span className={`text-sm ${allSelected ? 'text-brand-blue font-medium' : 'text-text-primary'}`}>
+                  All crossings
+                </span>
+              </label>
+            )
+          })()}
+          {crossingOptions.map((c) => {
+            const selected = filters.crossings.includes(c)
+            return (
+              <label
+                key={c}
+                className={`flex items-center gap-2 px-3 py-1.5 rounded cursor-pointer transition-colors ${
+                  selected ? 'bg-brand-blue/10' : 'hover:bg-brand-blue/5'
+                }`}
+              >
+                <input
+                  type="checkbox"
+                  checked={selected}
+                  onChange={() => {
+                    if (selected) {
+                      setCrossings(filters.crossings.filter((x) => x !== c))
+                    } else {
+                      const next = [...filters.crossings, c]
+                      setCrossings(next.length === crossingOptions.length ? [] : next)
+                    }
+                  }}
+                  className="sr-only"
+                />
+                <span
+                  className={`flex-shrink-0 flex items-center justify-center w-4 h-4 rounded border ${
+                    selected ? 'bg-brand-blue border-brand-blue' : 'border-border'
+                  }`}
+                >
+                  {selected && <Check size={12} className="text-white" />}
+                </span>
+                <span className={`text-sm whitespace-nowrap ${selected ? 'text-brand-blue font-medium' : 'text-text-primary'}`}>
+                  {c}
+                </span>
+              </label>
+            )
+          })}
+        </div>
+      </div>
     </div>
   )
 
@@ -474,10 +603,12 @@ export default function ByCrossingPage() {
           By Crossing
         </h2>
         <p className="text-white/80 mt-2 text-sm md:text-base leading-relaxed max-w-3xl">
-          Drill into any of the 34 Texas–Mexico northbound crossings. Filter by
-          year range, region, or specific crossing to isolate the trend and
-          table rows you care about. All selections round-trip through the URL
-          so the view is shareable and refresh-safe.
+          Drill into any of the 34 Texas–Mexico northbound crossings. Compare
+          yearly trends by mode, see how a single mode is distributed across
+          every crossing in a region, and measure percentage change between
+          years. Filter by year range, region, or specific crossing — all
+          selections round-trip through the URL so the view is shareable and
+          refresh-safe.
         </p>
       </div>
     </div>
@@ -514,8 +645,8 @@ export default function ByCrossingPage() {
         </div>
         <p className="text-base text-text-secondary leading-relaxed mb-4 max-w-3xl">
           {highlightNames?.length
-            ? 'Highlighted pins match the crossings selected in the Crossing filter. Unhighlighted pins remain visible for spatial context.'
-            : 'All 34 crossings. Circle size reflects total northbound volume within the active filter selection; color marks the CBP field-office region.'}
+            ? `Highlighted pins match the crossings selected in the Crossing filter within the ${filters.regions[0]} region.`
+            : `Crossings in the ${filters.regions[0]} region. Color marks the Texas Border region.`}
         </p>
         <div className="rounded-xl overflow-hidden shadow-sm ring-1 ring-border-light" style={{ height: 400 }}>
           {mapMarkers.length > 0 ? (
@@ -524,6 +655,7 @@ export default function ByCrossingPage() {
               height="400px"
               metricLabel="crossings (filtered)"
               highlightNames={highlightNames}
+              uniformDots
             />
           ) : (
             <div className="w-full h-full bg-surface-alt flex items-center justify-center">
@@ -540,6 +672,7 @@ export default function ByCrossingPage() {
           <h3 className="text-xl font-bold text-text-primary">Yearly Trend by Mode</h3>
         </div>
         <ChartCard
+          hideTitle
           title="Northbound Crossings by Year"
           subtitle={lineSubtitle}
           emptyState={lineChartData.data.length === 0
@@ -563,6 +696,104 @@ export default function ByCrossingPage() {
         </ChartCard>
       </SectionBlock>
 
+      {/* ─── Monthly seasonality — small multiples per mode ─────────────── */}
+      <SectionBlock>
+        <div className="flex items-center justify-between gap-3 flex-wrap mb-2">
+          <div className="flex items-center gap-2.5">
+            <CalendarDays size={20} className="text-brand-blue" />
+            <h3 className="text-xl font-bold text-text-primary">Monthly Pattern</h3>
+          </div>
+          <label className="inline-flex items-center gap-1.5 text-sm text-text-secondary">
+            <span>Year</span>
+            <select
+              value={seasonalYear ?? ''}
+              onChange={(e) => setSeasonalYear(Number(e.target.value))}
+              className="border border-border rounded-md px-2 py-1 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue"
+            >
+              {(yearsAvailable || []).map((y) => (
+                <option key={y} value={y}>{y}</option>
+              ))}
+            </select>
+          </label>
+        </div>
+        <p className="text-base text-text-secondary leading-relaxed mb-4 max-w-3xl">
+          Month-to-month volume for a single year, one chart per mode so each
+          mode has its own y-axis. Reveals seasonality that yearly totals and
+          a shared-scale chart both hide — e.g. the late-spring Pedestrian dip
+          or the summer Bus peak.
+        </p>
+        {monthlyStatus === 'loading' && (
+          <div className="bg-white rounded-xl border border-border-light shadow-xs p-8 text-center">
+            <p className="text-base text-text-secondary">Loading monthly dataset…</p>
+          </div>
+        )}
+        {monthlyStatus === 'error' && (
+          <div className="bg-white rounded-xl border border-border-light shadow-xs p-8 text-center">
+            <p className="text-base text-text-secondary">Monthly dataset failed to load.</p>
+          </div>
+        )}
+        {monthlyStatus === 'ready' && seasonalRows.length === 0 && (
+          <div className="bg-white rounded-xl border border-border-light shadow-xs p-8 text-center">
+            <p className="text-base text-text-secondary">No monthly data for the current filters.</p>
+          </div>
+        )}
+        {monthlyStatus === 'ready' && seasonalRows.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {MODES.map((mode) => {
+              const rows = seasonalRows.filter((r) => r.Mode === mode)
+              const hasVolume = rows.some((r) => r.value > 0)
+              const color = MODE_COLORS[mode]
+              const scopeLabel = filters.crossings.length === 1
+                ? filters.crossings[0]
+                : filters.crossings.length > 1
+                  ? `${filters.crossings.length} crossings · ${filters.regions[0]}`
+                  : `all crossings · ${filters.regions[0]}`
+              return (
+                <ChartCard
+                  key={mode}
+                  title={MODE_LABELS[mode] || mode}
+                  subtitle={`${seasonalYear ?? '—'} · ${scopeLabel}`}
+                  titleClassName="text-base font-semibold text-text-primary leading-snug"
+                  subtitleClassName="text-xs text-text-secondary mt-0.5"
+                  minHeight={220}
+                  emptyState={!hasVolume ? `No ${MODE_LABELS[mode] || mode} volume this year.` : undefined}
+                  downloadData={{
+                    summary: {
+                      data: rows.map((d) => ({
+                        Year: seasonalYear,
+                        Month: d.month,
+                        'Month Label': MONTH_LABELS[d.month - 1],
+                        Mode: d.Mode,
+                        'Northbound Crossings': d.value,
+                      })),
+                      filename: `by-crossing-monthly-${mode.replace(/\W+/g, '-').toLowerCase()}-${seasonalYear}`,
+                      columns: {
+                        Year: 'Year',
+                        Month: 'Month',
+                        'Month Label': 'Month Label',
+                        Mode: 'Mode',
+                        'Northbound Crossings': 'Northbound Crossings',
+                      },
+                    },
+                  }}
+                >
+                  <LineChart
+                    data={rows}
+                    xKey="month"
+                    yKey="value"
+                    formatValue={formatCompact}
+                    formatX={(m) => MONTH_LABELS[(m - 1) % 12] || String(m)}
+                    colorOverrides={{ default: color }}
+                    showArea
+                    animate={false}
+                  />
+                </ChartCard>
+              )
+            })}
+          </div>
+        )}
+      </SectionBlock>
+
       {/* ─── Per-crossing single-year breakdown (Treemap ⇄ Donut) ──────── */}
       <SectionBlock>
         <div className="flex items-center gap-2.5 mb-4">
@@ -575,6 +806,7 @@ export default function ByCrossingPage() {
           a donut (emphasizes percentage share).
         </p>
         <ChartCard
+          hideTitle
           title="NB Crossings Per Crossing"
           subtitle={
             <span className="inline-flex items-center gap-1.5">
@@ -683,6 +915,7 @@ export default function ByCrossingPage() {
                 nameKey="label"
                 valueKey="value"
                 formatValue={formatCompact}
+                maxSize={620}
               />
             )}
           </div>
@@ -691,63 +924,75 @@ export default function ByCrossingPage() {
 
       {/* ─── Percentage change matrix ──────────────────────────────────── */}
       <SectionBlock>
-        <div className="flex items-start justify-between gap-4 flex-wrap mb-4">
-          <div className="min-w-0">
-            <div className="flex items-center gap-2.5 mb-2">
-              <Percent size={20} className="text-brand-blue" />
-              <h3 className="text-xl font-bold text-text-primary">
-                Percentage Change by Crossing &amp; Mode
-              </h3>
+        {pctRows.length > 0 && pctColumns.length > 1 ? (
+          // Full-width layout so the explicit column widths on pctColumns
+          // resolve against the available page width — gives every mode
+          // column an identical 14% slice.
+          <div className="w-full">
+            <div className="mb-4">
+              <div className="flex items-center gap-2.5 mb-2">
+                <Percent size={20} className="text-brand-blue" />
+                <h3 className="text-xl font-bold text-text-primary">
+                  Percentage Change by Crossing &amp; Mode
+                </h3>
+              </div>
+              <p className="text-base text-text-secondary leading-relaxed max-w-3xl">
+                How northbound volume shifted at each crossing between the
+                start and end of the selected year range. Empty cells mean no
+                activity in one or both endpoint years, so a percentage change
+                can&rsquo;t be computed. All sidebar filters apply.
+              </p>
             </div>
-            <p className="text-base text-text-secondary leading-relaxed max-w-3xl">
-              Pick a start year and an end year to see how northbound volume
-              shifted at each crossing. Empty cells mean no activity in one or
-              both endpoint years, so a percentage change can&rsquo;t be computed.
-              Region and Crossing sidebar filters still apply; the sidebar year
-              range does not.
-            </p>
-          </div>
-          <div className="flex flex-col gap-1 flex-shrink-0">
-            <div className="flex gap-6 items-baseline">
-              <span className="text-xs font-medium text-text-secondary uppercase tracking-wider">Start Year</span>
-              <span className="text-xs font-medium text-text-secondary uppercase tracking-wider">End Year</span>
-            </div>
-            <YearRangeFilter
-              years={yearsAvailable || []}
-              startYear={pctStartYear ?? minYear}
-              endYear={pctEndYear ?? maxYear}
-              onChange={handlePctYearChange}
+            <DataTable
+              columns={pctColumns}
+              data={pctRows}
+              pageSize={50}
+              fullWidth
             />
           </div>
-        </div>
-
-        {pctRows.length > 0 && pctColumns.length > 1 ? (
-          <DataTable
-            columns={pctColumns}
-            data={pctRows}
-            pageSize={50}
-          />
         ) : (
-          <div className="bg-white rounded-xl border border-border-light shadow-xs p-8 text-center">
-            <p className="text-base text-text-secondary">
-              No crossings match the current region / crossing / mode filters.
-            </p>
-          </div>
+          <>
+            <div className="mb-4">
+              <div className="flex items-center gap-2.5 mb-2">
+                <Percent size={20} className="text-brand-blue" />
+                <h3 className="text-xl font-bold text-text-primary">
+                  Percentage Change by Crossing &amp; Mode
+                </h3>
+              </div>
+              <p className="text-base text-text-secondary leading-relaxed max-w-3xl">
+                How northbound volume shifted at each crossing between the
+                start and end of the selected year range. Empty cells mean no
+                activity in one or both endpoint years, so a percentage change
+                can&rsquo;t be computed. All sidebar filters apply.
+              </p>
+            </div>
+            <div className="bg-white rounded-xl border border-border-light shadow-xs p-8 text-center">
+              <p className="text-base text-text-secondary">
+                No crossings match the current region / crossing / mode filters.
+              </p>
+            </div>
+          </>
         )}
       </SectionBlock>
 
       {/* ─── Detail table ──────────────────────────────────────────────── */}
       <SectionBlock>
-        <div className="flex items-center gap-2.5 mb-4">
-          <TableIcon size={20} className="text-brand-blue" />
-          <h3 className="text-xl font-bold text-text-primary">Detail Table</h3>
-        </div>
-        <p className="text-base text-text-secondary leading-relaxed mb-4 max-w-3xl">
-          One row per Year × Crossing × Mode. Click column headers to sort; use
-          the Download button in the filter panel to export the filtered rows.
-        </p>
         {filteredYearly.length > 0 ? (
-          <div className="bg-white rounded-xl border border-border-light shadow-xs overflow-hidden">
+          // Wrapper is sized to the table (w-fit) and centered. The text block
+          // uses w-0 min-w-full so its intrinsic width doesn't push the wrapper
+          // wider than the table — title/subtitle stay aligned with the table's
+          // left and right edges.
+          <div className="mx-auto w-fit max-w-full">
+            <div className="w-0 min-w-full mb-4">
+              <div className="flex items-center gap-2.5 mb-2">
+                <TableIcon size={20} className="text-brand-blue" />
+                <h3 className="text-xl font-bold text-text-primary">Detail Table</h3>
+              </div>
+              <p className="text-base text-text-secondary leading-relaxed">
+                One row per Year × Crossing × Mode. Click column headers to sort; use
+                the Download button in the filter panel to export the filtered rows.
+              </p>
+            </div>
             <DataTable
               columns={tableColumns}
               data={filteredYearly}
@@ -755,11 +1000,23 @@ export default function ByCrossingPage() {
             />
           </div>
         ) : (
-          <div className="bg-white rounded-xl border border-border-light shadow-xs p-8 text-center">
-            <p className="text-base text-text-secondary">
-              No rows match the current filter selection.
-            </p>
-          </div>
+          <>
+            <div className="mb-4">
+              <div className="flex items-center gap-2.5 mb-2">
+                <TableIcon size={20} className="text-brand-blue" />
+                <h3 className="text-xl font-bold text-text-primary">Detail Table</h3>
+              </div>
+              <p className="text-base text-text-secondary leading-relaxed max-w-3xl">
+                One row per Year × Crossing × Mode. Click column headers to sort; use
+                the Download button in the filter panel to export the filtered rows.
+              </p>
+            </div>
+            <div className="bg-white rounded-xl border border-border-light shadow-xs p-8 text-center">
+              <p className="text-base text-text-secondary">
+                No rows match the current filter selection.
+              </p>
+            </div>
+          </>
         )}
       </SectionBlock>
     </DashboardLayout>

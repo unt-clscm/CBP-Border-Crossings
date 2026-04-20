@@ -61,6 +61,7 @@ export default function ChartCard({
   downloadData,
   footnote,
   emptyState,
+  hideTitle = false,
   titleClassName = 'text-xl font-semibold text-text-primary leading-snug',
   subtitleClassName = 'text-base text-text-secondary mt-0.5',
 }) {
@@ -134,12 +135,16 @@ export default function ChartCard({
                     hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 overflow-hidden
                     flex flex-col ${className}`}
       >
-        {/* Header */}
+        {/* Header — title is hidden when `hideTitle` is true (parent renders an
+            outside title with icon); `title` is still used for PNG filename,
+            fullscreen overlay, and aria-label. */}
         <div className="flex items-start justify-between gap-3 px-3 pt-5 pb-3">
           <div className="min-w-0">
-            <h3 className={titleClassName}>
-              {title}
-            </h3>
+            {!hideTitle && (
+              <h3 className={titleClassName}>
+                {title}
+              </h3>
+            )}
             {subtitle && (
               <p className={subtitleClassName}>{subtitle}</p>
             )}

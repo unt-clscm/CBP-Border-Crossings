@@ -28,6 +28,30 @@ export function MapResizeHandler() {
   return null
 }
 
+/** Fits the map to the given bounds whenever they change. Runs inside
+ *  MapContainer so the map instance is guaranteed to exist. Defers the
+ *  fit via rAF + a fallback timeout so Leaflet has laid out its container
+ *  (otherwise the first fit can silently no-op when the container is 0×0). */
+export function FitBoundsHandler({ bounds }) {
+  const map = useMap()
+  const key = bounds ? JSON.stringify(bounds) : null
+  useEffect(() => {
+    if (!map || !bounds) return
+    let raf = 0
+    let timer = 0
+    const apply = () => {
+      map.invalidateSize()
+      map.fitBounds(bounds)
+    }
+    raf = requestAnimationFrame(() => { timer = setTimeout(apply, 150) })
+    return () => {
+      cancelAnimationFrame(raf)
+      clearTimeout(timer)
+    }
+  }, [map, key]) // eslint-disable-line react-hooks/exhaustive-deps
+  return null
+}
+
 /** Button to reset the map to initial center/zoom */
 export function ResetZoomButton({ center, zoom }) {
   const map = useMap()

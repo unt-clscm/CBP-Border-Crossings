@@ -118,10 +118,12 @@ function DonutChart({
     const legendWidth = showLegendRight ? Math.min(legendW, width - 160) : 0
     const chartArea = width - legendWidth
     // Use fixed size in normal mode to prevent feedback loops in CSS grid layouts.
+    // An explicit `maxSize` prop overrides that default (caller has committed to
+    // a fixed-height wrapper and opted in to a larger donut).
     const defaultMaxSize = isFullscreen
       ? (containerHeight > 100 ? containerHeight : 300)
       : 300
-    const maxSize = maxSizeProp ? Math.min(maxSizeProp, defaultMaxSize) : defaultMaxSize
+    const maxSize = maxSizeProp ?? defaultMaxSize
     const size = Math.min(chartArea, maxSize)
     const explodeOffset = 6
     const radius = size / 2 - explodeOffset

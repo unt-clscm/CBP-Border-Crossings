@@ -22,16 +22,25 @@ const RAW = {
 
 export const MODE_HAS_ICON = (mode) => mode in RAW
 
+// Per-mode size boost. The pedestrian/bicyclist SVG has a wide ~1.92:1 viewBox,
+// so when fit into a square box its content only occupies ~52% of the height
+// and reads as much smaller than the other icons. Scale it up to compensate.
+const SIZE_BOOST = {
+  'Pedestrians/ Bicyclists': 1.7,
+}
+
 export default function ModeIcon({ mode, size = 18, className = '', title }) {
   const raw = RAW[mode]
   if (!raw) return null
+  const boost = SIZE_BOOST[mode] || 1
+  const rendered = size * boost
   return (
     <span
       role={title ? 'img' : undefined}
       aria-label={title}
       aria-hidden={title ? undefined : true}
       className={`inline-flex items-center justify-center flex-shrink-0 [&_svg]:w-full [&_svg]:h-full ${className}`}
-      style={{ width: size, height: size }}
+      style={{ width: rendered, height: rendered }}
       dangerouslySetInnerHTML={{ __html: raw }}
     />
   )

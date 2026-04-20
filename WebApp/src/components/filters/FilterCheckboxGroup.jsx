@@ -49,9 +49,9 @@ export default function FilterCheckboxGroup({
       <span className="text-base font-medium text-text-secondary uppercase tracking-wider">
         {label}
       </span>
-      <div role="group" aria-label={label} className="flex flex-col gap-1.5 mt-1">
+      <div role="group" aria-label={label} className="flex flex-col mt-1">
         <label
-          className={`flex items-center gap-2 px-3 py-2 rounded-lg border cursor-pointer transition-colors ${allSelected ? 'border-brand-blue bg-brand-blue/10' : 'border-border hover:bg-brand-blue/5'}`}
+          className={`flex items-center gap-2 px-3 py-1.5 rounded cursor-pointer transition-colors ${allSelected ? 'bg-brand-blue/10' : 'hover:bg-brand-blue/5'}`}
         >
           <input
             type="checkbox"
@@ -74,7 +74,7 @@ export default function FilterCheckboxGroup({
           const checked = value.includes(val)
           const color = colorMap?.[val]
           const rowStyle = color && checked
-            ? { borderColor: color, backgroundColor: `${color}1A` }
+            ? { backgroundColor: `${color}1A` }
             : undefined
           const boxStyle = color && checked
             ? { backgroundColor: color, borderColor: color }
@@ -84,10 +84,10 @@ export default function FilterCheckboxGroup({
             <label
               key={val}
               style={rowStyle}
-              className={`flex items-center gap-2 px-3 py-2 rounded-lg border cursor-pointer transition-colors ${
+              className={`flex items-center gap-2 px-3 py-1.5 rounded cursor-pointer transition-colors ${
                 checked
-                  ? color ? 'border' : 'border-brand-blue bg-brand-blue/10'
-                  : 'border-border hover:bg-brand-blue/5'
+                  ? color ? '' : 'bg-brand-blue/10'
+                  : 'hover:bg-brand-blue/5'
               }`}
             >
               <input

@@ -1,6 +1,6 @@
 /**
  * ── ByRegion page ───────────────────────────────────────────────────────
- * Side-by-side comparison of CBP's three Texas–Mexico field-office regions
+ * Side-by-side comparison of the three Texas Border regions
  * (El Paso → Laredo → Rio Grande Valley, north-to-south).
  *
  * Layout:
@@ -22,15 +22,17 @@
  */
 import { useMemo, useCallback, useState, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { Map as MapIcon, Layers, TrendingUp, TrendingDown, BarChart3, ChevronDown } from 'lucide-react'
+import { Map as MapIcon, Layers, TrendingUp, TrendingDown, BarChart3, CalendarDays, ChevronDown, Percent, Grid3x3 } from 'lucide-react'
 import { useCrossingsStore } from '@/stores/crossingsStore'
 import {
   MODES,
   REGIONS,
   MODE_LABELS,
+  MONTH_LABELS,
   VALUE_KEY,
   filterRows,
   yearlyModeSeries,
+  monthlySeasonalSeries,
   totalCrossings,
   parseYearRangeParam,
 } from '@/lib/cbpHelpers'
@@ -42,11 +44,12 @@ import DashboardLayout from '@/components/layout/DashboardLayout'
 import SectionBlock from '@/components/ui/SectionBlock'
 import ChartCard from '@/components/ui/ChartCard'
 import StackedBarChart from '@/components/charts/StackedBarChart'
+import LineChart from '@/components/charts/LineChart'
 import DataTable from '@/components/ui/DataTable'
 import CrossingsMap from '@/components/maps/CrossingsMap'
 import FilterRadioGroup from '@/components/filters/FilterRadioGroup'
 import YearRangeFilter from '@/components/filters/YearRangeFilter'
-import { MODE_ICON_MAP } from '@/components/ui/ModeIcon'
+import ModeIcon, { MODE_ICON_MAP } from '@/components/ui/ModeIcon'
 
 /* Region palette — mirrors CrossingsMap so region color is consistent across
    the page. Charts #2 and #3 are colored by region. */
@@ -70,30 +73,51 @@ function parseModeParam(raw) {
 /* ── Per-region panel ───────────────────────────────────────────────── */
 
 // `rows` are already scoped to the region and the active filter selection.
-function RegionPanel({ region, rows, startYear, endYear }) {
+function RegionPanel({ region, rows }) {
   const { data: seriesData, keys: seriesKeys } = useMemo(
     () => yearlyModeSeries(rows),
     [rows],
   )
 
   const total = useMemo(() => totalCrossings(rows), [rows])
+  // Active crossings must reflect the selected mode — a crossing with zero
+  // volume for the chosen mode in this window shouldn't count as "active".
   const activeCrossings = useMemo(() => {
     const s = new Set()
-    for (const r of rows) if (r.Crossing) s.add(r.Crossing)
+    for (const r of rows) {
+      if (r.Crossing && (r['Northbound Crossing'] || 0) > 0) s.add(r.Crossing)
+    }
     return s.size
   }, [rows])
+
+  const regionColor = REGION_BAR_COLORS[region] || CHART_COLORS[0]
+  const colorOverrides = useMemo(
+    () => Object.fromEntries(seriesKeys.map((k) => [k, regionColor])),
+    [seriesKeys, regionColor],
+  )
 
   const hasData = rows.length > 0
 
   return (
-    <ChartCard
-      title={region}
-      subtitle={hasData
-        ? `${startYear}–${endYear} · ${activeCrossings} active crossing${activeCrossings === 1 ? '' : 's'}`
-        : 'No data for current filters'}
-      emptyState={!hasData ? `No crossings in ${region} match the current filters.` : undefined}
-      minHeight={360}
-    >
+    <div className="flex flex-col">
+      <div className="flex items-center gap-2.5 mb-4">
+        <span
+          className="inline-block w-3 h-3 rounded-full flex-shrink-0"
+          style={{ background: regionColor }}
+          aria-hidden="true"
+        />
+        <h3 className="text-xl font-bold text-text-primary">{region}</h3>
+      </div>
+      <ChartCard
+        className="flex-1"
+        hideTitle
+        title={region}
+        subtitle={hasData
+          ? `${activeCrossings} active crossing${activeCrossings === 1 ? '' : 's'}`
+          : 'No data for current filters'}
+        emptyState={!hasData ? `No crossings in ${region} match the current filters.` : undefined}
+        minHeight={360}
+      >
       <div className="flex flex-col h-full gap-3">
         {/* Region totals banner */}
         <div className="flex items-baseline justify-between px-1">
@@ -123,6 +147,8 @@ function RegionPanel({ region, rows, startYear, endYear }) {
               xKey="year"
               stackKeys={seriesKeys}
               formatValue={formatCompact}
+              colorOverrides={colorOverrides}
+              showLegend={false}
             />
           ) : (
             <div className="flex items-center justify-center h-48 text-text-secondary italic text-base">
@@ -131,7 +157,8 @@ function RegionPanel({ region, rows, startYear, endYear }) {
           )}
         </div>
       </div>
-    </ChartCard>
+      </ChartCard>
+    </div>
   )
 }
 
@@ -190,26 +217,42 @@ function RegionPctChangeSection({ yearly, startYear, endYear }) {
       )
     }
     return [
-      { key: 'Region', label: 'Region' },
-      ...MODES.map((m) => ({ key: m, label: MODE_LABELS[m] || m, render: renderPct })),
+      { key: 'Region', label: 'Region', width: '18%' },
+      ...MODES.map((m) => ({
+        key: m,
+        label: MODE_LABELS[m] || m,
+        headerIcon: <ModeIcon mode={m} size={20} className="text-text-secondary" />,
+        render: renderPct,
+        width: '16.4%',
+        wrap: true,
+      })),
     ]
   }, [])
 
   const sameYear = startYear != null && startYear === endYear
 
   return (
-    <ChartCard
-      title={`Percentage Change in NB Crossings (${startYear ?? '—'} to ${endYear ?? '—'})`}
-      subtitle="Change in total northbound volume per region, per mode"
-      emptyState={
-        sameYear
-          ? 'Start and end year are the same — widen the sidebar year range to compute change.'
-          : rows.length === 0 ? 'No data available.' : undefined
-      }
-      minHeight={180}
-    >
-      <DataTable columns={columns} data={rows} pageSize={10} fullWidth />
-    </ChartCard>
+    <div className="flex flex-col">
+      <div className="flex items-center gap-2.5 mb-4">
+        <Percent size={20} className="text-brand-blue" />
+        <h3 className="text-xl font-bold text-text-primary">
+          Percentage change in NB crossings ({startYear ?? '—'} to {endYear ?? '—'})
+        </h3>
+      </div>
+      <ChartCard
+        hideTitle
+        title={`Percentage Change in NB Crossings (${startYear ?? '—'} to ${endYear ?? '—'})`}
+        subtitle="Change in total northbound volume per region, per mode"
+        emptyState={
+          sameYear
+            ? 'Start and end year are the same — widen the sidebar year range to compute change.'
+            : rows.length === 0 ? 'No data available.' : undefined
+        }
+        minHeight={180}
+      >
+        <DataTable columns={columns} data={rows} pageSize={10} fullWidth />
+      </ChartCard>
+    </div>
   )
 }
 
@@ -249,26 +292,34 @@ function RegionChangeBarsSection({ yearly, startYear, endYear, mode }) {
   })
 
   return (
-    <ChartCard
-      title={`Change in NB Crossings (${startYear ?? '—'} to ${endYear ?? '—'}, Mode: ${MODE_LABELS[mode] || mode})`}
-      subtitle="Start-year vs end-year totals per region"
-      emptyState={
-        sameYear
-          ? 'Start and end year are the same — widen the sidebar year range to compare.'
-          : empty ? 'No volume for this mode in either endpoint year.' : undefined
-      }
-      downloadData={{
-        summary: {
-          data: data.flatMap((d) => [
-            { label: `${d.region} ${startYear}`, value: d.startValue },
-            { label: `${d.region} ${endYear}`,   value: d.endValue },
-          ]),
-          filename: `region-change-${mode.replace(/[^a-z0-9]+/gi, '-').toLowerCase()}-${startYear}-${endYear}`,
-          columns: DL.regionRank,
-        },
-      }}
-      minHeight={260}
-    >
+    <div className="flex flex-col">
+      <div className="flex items-center gap-2.5 mb-4">
+        <BarChart3 size={20} className="text-brand-blue" />
+        <h3 className="text-xl font-bold text-text-primary">
+          Change in NB crossings ({startYear ?? '—'} to {endYear ?? '—'}, Mode: {MODE_LABELS[mode] || mode})
+        </h3>
+      </div>
+      <ChartCard
+        hideTitle
+        title={`Change in NB Crossings (${startYear ?? '—'} to ${endYear ?? '—'}, Mode: ${MODE_LABELS[mode] || mode})`}
+        subtitle="Start-year vs end-year totals per region"
+        emptyState={
+          sameYear
+            ? 'Start and end year are the same — widen the sidebar year range to compare.'
+            : empty ? 'No volume for this mode in either endpoint year.' : undefined
+        }
+        downloadData={{
+          summary: {
+            data: data.flatMap((d) => [
+              { label: `${d.region} ${startYear}`, value: d.startValue },
+              { label: `${d.region} ${endYear}`,   value: d.endValue },
+            ]),
+            filename: `region-change-${mode.replace(/[^a-z0-9]+/gi, '-').toLowerCase()}-${startYear}-${endYear}`,
+            columns: DL.regionRank,
+          },
+        }}
+        minHeight={260}
+      >
       <div className="space-y-8 pt-2 pb-4">
         {data.map(({ region, startValue, endValue, pct }) => {
           const color = REGION_BAR_COLORS[region] || CHART_COLORS[0]
@@ -314,7 +365,8 @@ function RegionChangeBarsSection({ yearly, startYear, endYear, mode }) {
           )
         })}
       </div>
-    </ChartCard>
+      </ChartCard>
+    </div>
   )
 }
 
@@ -369,19 +421,27 @@ function RegionModeGridSection({ yearly, yearsAvailable, year, onYearChange }) {
   )
 
   return (
-    <ChartCard
-      title={`NB Crossings Per Region Per Mode (${year ?? '—'})`}
-      subtitle="Bars scaled to the largest region within each mode column"
-      headerRight={compactYearPicker}
-      downloadData={{
-        summary: {
-          data: downloadRows,
-          filename: `region-mode-grid-${year ?? 'na'}`,
-          columns: { Region: 'Region', Mode: 'Mode', Value: 'Northbound Crossings' },
-        },
-      }}
-      minHeight={220}
-    >
+    <div className="flex flex-col">
+      <div className="flex items-center gap-2.5 mb-4">
+        <Grid3x3 size={20} className="text-brand-blue" />
+        <h3 className="text-xl font-bold text-text-primary">
+          NB crossings per region per mode ({year ?? '—'})
+        </h3>
+      </div>
+      <ChartCard
+        hideTitle
+        title={`NB Crossings Per Region Per Mode (${year ?? '—'})`}
+        subtitle="Bars scaled to the largest region within each mode column"
+        headerRight={compactYearPicker}
+        downloadData={{
+          summary: {
+            data: downloadRows,
+            filename: `region-mode-grid-${year ?? 'na'}`,
+            columns: { Region: 'Region', Mode: 'Mode', Value: 'Northbound Crossings' },
+          },
+        }}
+        minHeight={220}
+      >
       <div className="overflow-x-auto">
         <div
           className="grid gap-y-1 min-w-[820px] text-base"
@@ -393,9 +453,12 @@ function RegionModeGridSection({ yearly, yearsAvailable, year, onYearChange }) {
           {MODES.map((m, i) => (
             <div
               key={m}
-              className={`text-xs font-semibold uppercase tracking-wider text-text-secondary pb-2 px-3 border-b border-border-light text-center ${i > 0 ? 'border-l border-border-light/50' : ''}`}
+              className={`text-xs font-semibold uppercase tracking-wider text-text-secondary pb-2 px-3 border-b border-border-light ${i > 0 ? 'border-l border-border-light/50' : ''}`}
             >
-              {MODE_LABELS[m] || m}
+              <div className="flex items-center justify-center gap-1.5">
+                <ModeIcon mode={m} size={16} className="text-text-secondary" />
+                <span>{MODE_LABELS[m] || m}</span>
+              </div>
             </div>
           ))}
           {REGIONS.map((region) => {
@@ -432,7 +495,8 @@ function RegionModeGridSection({ yearly, yearsAvailable, year, onYearChange }) {
           })}
         </div>
       </div>
-    </ChartCard>
+      </ChartCard>
+    </div>
   )
 }
 
@@ -463,6 +527,8 @@ export default function ByRegionPage() {
    depend on minYear / maxYear / yearsAvailable being populated. */
 function ByRegionPageBody() {
   const yearly = useCrossingsStore((s) => s.yearly)
+  const monthly = useCrossingsStore((s) => s.monthly)
+  const monthlyStatus = useCrossingsStore((s) => s.monthlyStatus)
   const coords = useCrossingsStore((s) => s.coords)
   const yearsAvailable = useCrossingsStore((s) => s.yearsAvailable)
   const minYear = useCrossingsStore((s) => s.minYear)
@@ -532,6 +598,33 @@ function ByRegionPageBody() {
       modes: [selectedMode],
     })
   ), [yearly, startYear, endYear, selectedMode])
+
+  /* ── YoY monthly comparison: endpoint years × 12 months × 3 regions ── */
+  const monthlyYoyByRegion = useMemo(() => {
+    if (monthlyStatus !== 'ready' || !monthly?.length || startYear == null || endYear == null) {
+      return new Map()
+    }
+    // When start == end we fall back to comparing against the year before.
+    const sameEndpoints = startYear === endYear
+    const firstYr = sameEndpoints ? startYear - 1 : startYear
+    const lastYr  = endYear
+    const years = [firstYr, lastYr]
+
+    const out = new Map()
+    for (const region of REGIONS) {
+      const rows = filterRows(monthly, {
+        yearRange: { start: firstYr, end: lastYr },
+        modes: [selectedMode],
+        regions: [region],
+      })
+      // Stringify year so LineChart's legend-width calc (uses name.length)
+      // handles it as a normal string series.
+      const series = monthlySeasonalSeries(rows, { years })
+        .map((d) => ({ ...d, year: String(d.year) }))
+      out.set(region, { series, years })
+    }
+    return out
+  }, [monthly, monthlyStatus, startYear, endYear, selectedMode])
 
   // Map pins sized by total NB volume for the filtered window.
   // highlightNames = null → every pin is shown in full color; region palette
@@ -628,12 +721,14 @@ function ByRegionPageBody() {
           <span className="uppercase tracking-wider">By Region</span>
         </div>
         <h2 className="text-2xl md:text-3xl font-bold text-white text-balance">
-          Compare the three CBP field-office regions
+          Compare the three Texas Border regions
         </h2>
         <p className="text-white/80 mt-2 text-sm md:text-base leading-relaxed max-w-3xl">
           El Paso, Laredo, and Rio Grande Valley each oversee a distinct stretch
-          of the Texas–Mexico border. Filter by year range or mode to compare
-          how each region's northbound crossings have evolved.
+          of the Texas–Mexico border. See yearly totals per region side-by-side,
+          measure percentage change between two endpoint years, and drop into a
+          single-year snapshot comparing every region against every mode. Filter
+          by year range or mode using the sidebar.
         </p>
       </div>
     </div>
@@ -658,14 +753,12 @@ function ByRegionPageBody() {
               Yearly crossings by region ({startYear}–{endYear})
             </h3>
           </div>
-          <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 items-stretch">
             {REGIONS.map((region) => (
               <RegionPanel
                 key={region}
                 region={region}
                 rows={filteredRowsByRegion.get(region) || []}
-                startYear={startYear}
-                endYear={endYear}
               />
             ))}
           </div>
@@ -706,6 +799,92 @@ function ByRegionPageBody() {
               year={gridYear}
               onYearChange={setGridYear}
             />
+          </div>
+        </div>
+      </SectionBlock>
+
+      {/* ── YoY monthly shape per region ─────────────────────────── */}
+      <SectionBlock>
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center gap-2.5 mb-2">
+            <CalendarDays size={20} className="text-brand-blue" />
+            <h3 className="text-xl font-bold text-text-primary">
+              Monthly shape — year-over-year
+            </h3>
+          </div>
+          <p className="text-base text-text-secondary mb-5 max-w-3xl">
+            Monthly {MODE_LABELS[selectedMode] || selectedMode} volume for each
+            region, comparing the sidebar&rsquo;s start year and end year. Shows
+            whether the seasonal curve shifted or flattened between the two
+            endpoints.
+          </p>
+          <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+            {REGIONS.map((region) => {
+              const bundle = monthlyYoyByRegion.get(region)
+              const series = bundle?.series ?? []
+              const years  = bundle?.years ?? []
+              const regionColor = REGION_BAR_COLORS[region]
+              const colorOverrides = years.length === 2
+                ? {
+                    [String(years[0])]: '#cbd5e1',
+                    [String(years[1])]: regionColor,
+                  }
+                : {}
+              const hasData = series.some((d) => d.value > 0)
+              return (
+                <ChartCard
+                  key={region}
+                  title={region}
+                  subtitle={
+                    years.length === 2
+                      ? `${years[0]} vs ${years[1]} · ${MODE_LABELS[selectedMode] || selectedMode}`
+                      : undefined
+                  }
+                  minHeight={280}
+                  emptyState={
+                    monthlyStatus === 'loading'
+                      ? 'Loading monthly dataset…'
+                      : monthlyStatus === 'error'
+                        ? 'Monthly dataset failed to load.'
+                        : !hasData
+                          ? 'No monthly data for these endpoints.'
+                          : undefined
+                  }
+                  downloadData={{
+                    summary: {
+                      data: series.map((d) => ({
+                        Region: region,
+                        Year: d.year,
+                        Month: d.month,
+                        'Month Label': MONTH_LABELS[d.month - 1],
+                        Mode: selectedMode,
+                        'Northbound Crossings': d.value,
+                      })),
+                      filename: `region-monthly-yoy-${region.replace(/\s+/g, '-').toLowerCase()}`,
+                      columns: {
+                        Region: 'Region',
+                        Year: 'Year',
+                        Month: 'Month',
+                        'Month Label': 'Month Label',
+                        Mode: 'Mode',
+                        'Northbound Crossings': 'Northbound Crossings',
+                      },
+                    },
+                  }}
+                >
+                  <LineChart
+                    data={series}
+                    xKey="month"
+                    yKey="value"
+                    seriesKey="year"
+                    formatValue={formatCompact}
+                    formatX={(m) => MONTH_LABELS[(m - 1) % 12] || String(m)}
+                    colorOverrides={colorOverrides}
+                    animate={false}
+                  />
+                </ChartCard>
+              )
+            })}
           </div>
         </div>
       </SectionBlock>

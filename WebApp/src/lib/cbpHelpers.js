@@ -19,12 +19,17 @@ export const MODES = [
 
 export const REGIONS = ['El Paso', 'Laredo', 'Rio Grande Valley']
 
+export const MONTH_LABELS = [
+  'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+]
+
 /** Pretty labels for legend/axis display (mode values are stored as-is). */
 export const MODE_LABELS = {
-  'Commercial Trucks': 'Trucks',
+  'Commercial Trucks': 'Commercial Trucks',
   'Buses': 'Buses',
-  'Pedestrians/ Bicyclists': 'Pedestrians',
-  'Passenger Vehicles': 'POVs',
+  'Pedestrians/ Bicyclists': 'Pedestrians/ Bicyclists',
+  'Passenger Vehicles': 'Passenger Vehicles',
   'Railcars': 'Railcars',
 }
 
@@ -159,7 +164,7 @@ export function yearlyModeSeries(yearlyRows) {
 
 /**
  * Wide-format year × region series. Stacks sum to per-year totals across the
- * three CBP field-office regions. Rows with unknown Region are skipped.
+ * three Texas Border regions. Rows with unknown Region are skipped.
  */
 export function yearlyRegionSeries(yearlyRows) {
   if (!yearlyRows?.length) return { data: [], keys: [] }
@@ -247,6 +252,66 @@ export function parseYearRangeParam(param, { minYear = null, maxYear = null } = 
   }
   if (start > end) [start, end] = [end, start]
   return { start, end }
+}
+
+/**
+ * Monthly seasonality: sum rows into 12 month buckets, optionally split by
+ * year. Returns long-format [{ month: 1..12, year, value }] suitable for
+ * LineChart with xKey="month" and seriesKey="year".
+ *
+ * @param rows — monthly rows (already filtered to the desired slice).
+ * @param years — optional list of years to include as separate series. When
+ *   omitted, all years present in `rows` are kept.
+ */
+export function monthlySeasonalSeries(rows, { years = null } = {}) {
+  if (!rows?.length) return []
+  const yearFilter = years?.length ? new Set(years) : null
+  const byKey = new Map() // `${year}-${month}` → total
+  for (const r of rows) {
+    if (!Number.isFinite(r.Year) || !Number.isFinite(r.Month)) continue
+    if (yearFilter && !yearFilter.has(r.Year)) continue
+    const k = `${r.Year}-${r.Month}`
+    byKey.set(k, (byKey.get(k) || 0) + (r[VALUE_KEY] || 0))
+  }
+  const out = []
+  for (const [k, value] of byKey) {
+    const [y, m] = k.split('-').map(Number)
+    out.push({ year: y, month: m, value })
+  }
+  return out.sort((a, b) => a.year - b.year || a.month - b.month)
+}
+
+/**
+ * Month × mode matrix for a seasonality heatmap. For each mode, returns the
+ * share of its total volume that landed in each calendar month (summed across
+ * however many years are in `rows`). Summer peaks → hot cells in Jun/Jul/Aug.
+ *
+ * @returns Array<{ mode, total, cells: Array<{ month, value, share }> }>
+ */
+export function monthlyModeHeatmap(rows) {
+  if (!rows?.length) return []
+  // mode → Map<month, sum>
+  const byMode = new Map()
+  for (const r of rows) {
+    if (!r.Modes || !Number.isFinite(r.Month)) continue
+    if (!byMode.has(r.Modes)) byMode.set(r.Modes, new Map())
+    const bucket = byMode.get(r.Modes)
+    bucket.set(r.Month, (bucket.get(r.Month) || 0) + (r[VALUE_KEY] || 0))
+  }
+  return MODES
+    .filter((m) => byMode.has(m))
+    .map((m) => {
+      const bucket = byMode.get(m)
+      let total = 0
+      for (let month = 1; month <= 12; month++) total += bucket.get(month) || 0
+      const cells = []
+      for (let month = 1; month <= 12; month++) {
+        const value = bucket.get(month) || 0
+        cells.push({ month, value, share: total > 0 ? value / total : 0 })
+      }
+      return { mode: m, total, cells }
+    })
+    .filter((g) => g.total > 0)
 }
 
 export { VALUE_KEY }

@@ -36,7 +36,7 @@ export default function FilterRadioGroup({
       <span className="text-base font-medium text-text-secondary uppercase tracking-wider">
         {label}
       </span>
-      <div role="radiogroup" aria-label={label} className="flex flex-col gap-1.5 mt-1">
+      <div role="radiogroup" aria-label={label} className="flex flex-col mt-1">
         {options.map((opt) => {
           const val = getVal(opt)
           const lbl = getLbl(opt)
@@ -45,7 +45,7 @@ export default function FilterRadioGroup({
           return (
             <label
               key={val}
-              className={`flex items-center gap-2 px-3 py-2 rounded-lg border cursor-pointer transition-colors ${selected ? 'border-brand-blue bg-brand-blue/10' : 'border-border hover:bg-brand-blue/5'}`}
+              className={`flex items-center gap-2 px-3 py-1.5 rounded cursor-pointer transition-colors ${selected ? 'bg-brand-blue/10' : 'hover:bg-brand-blue/5'}`}
             >
               <input
                 type="radio"

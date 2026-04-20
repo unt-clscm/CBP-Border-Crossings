@@ -22,10 +22,6 @@ const DATASET_FILES = {
 
 const FETCH_TIMEOUT_MS = 30_000
 
-// Display window: only the last N years (inclusive of latest) are surfaced to the UI.
-// Raw JSON still covers 2008–2025; older rows are filtered out at load time.
-const YEARS_WINDOW = 10
-
 const NUMERIC_FIELDS = ['Year', 'Month', 'Northbound Crossing']
 const STRING_FIELDS = ['ID', 'Region', 'POE', 'Crossing', 'Modes']
 
@@ -44,16 +40,6 @@ function normalizeRow(d) {
     }
   }
   return out
-}
-
-function applyYearWindow(rows) {
-  let maxYear = -Infinity
-  for (const r of rows) {
-    if (Number.isFinite(r.Year) && r.Year > maxYear) maxYear = r.Year
-  }
-  if (!Number.isFinite(maxYear)) return rows
-  const cutoff = maxYear - YEARS_WINDOW + 1
-  return rows.filter((r) => Number.isFinite(r.Year) && r.Year >= cutoff)
 }
 
 function fetchWithTimeout(url, signal) {
@@ -140,7 +126,7 @@ export const useCrossingsStore = create((set) => ({
     // Fire it in parallel but do NOT let its failure block app-ready state.
     const monthlyPromise = fetchJson(DATASET_FILES.monthly, 'monthly')
       .then((raw) => {
-        const monthly = applyYearWindow(raw.map(normalizeRow))
+        const monthly = raw.map(normalizeRow)
         const ix = buildIndexes(monthly)
         set({
           monthly,
@@ -161,7 +147,7 @@ export const useCrossingsStore = create((set) => ({
         fetchJson(DATASET_FILES.coords, 'coords'),
       ])
 
-      const yearly = applyYearWindow(yearlyRaw.map(normalizeRow))
+      const yearly = yearlyRaw.map(normalizeRow)
       const yearlyIx = buildIndexes(yearly)
 
       const yearsAvailable = yearlyIx.years

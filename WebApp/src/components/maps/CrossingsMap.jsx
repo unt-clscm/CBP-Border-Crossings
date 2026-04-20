@@ -11,7 +11,7 @@
 import { useMemo, useCallback, useState, useRef, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { useNavigate } from 'react-router-dom'
-import { MapContainer, TileLayer, CircleMarker } from 'react-leaflet'
+import { MapContainer, TileLayer, CircleMarker, GeoJSON } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 
@@ -20,6 +20,7 @@ import {
   MapResizeHandler,
   ResetZoomButton,
   TooltipSync,
+  FitBoundsHandler,
 } from './mapHelpers'
 
 const REGION_COLORS = {
@@ -28,11 +29,12 @@ const REGION_COLORS = {
   'Rio Grande Valley':  { fill: '#16a34a', stroke: '#166534' }, // green
 }
 
-const REGION_LEGEND = [
-  { label: 'El Paso',            color: REGION_COLORS['El Paso'].fill },
-  { label: 'Laredo',             color: REGION_COLORS['Laredo'].fill },
-  { label: 'Rio Grande Valley',  color: REGION_COLORS['Rio Grande Valley'].fill },
-]
+// TxDOT district abbreviation → CBP region (the canonical region color theme)
+const DISTRICT_TO_REGION = {
+  ELP: 'El Paso',
+  LRD: 'Laredo',
+  PHR: 'Rio Grande Valley', // Pharr district covers the Rio Grande Valley
+}
 
 function radiusScale(value, maxValue) {
   if (!maxValue || !value) return 4
@@ -73,6 +75,29 @@ export default function CrossingsMap({
   const [mapActive, setMapActive] = useState(false)
   const [showHint, setShowHint] = useState(false)
   const hintTimer = useRef(null)
+  const [districts, setDistricts] = useState(null)
+
+  useEffect(() => {
+    let cancelled = false
+    fetch(`${import.meta.env.BASE_URL}data/border_districts.geojson`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((gj) => { if (!cancelled) setDistricts(gj) })
+      .catch(() => {})
+    return () => { cancelled = true }
+  }, [])
+
+  const districtStyle = useCallback((feature) => {
+    const region = DISTRICT_TO_REGION[feature?.properties?.DIST_ABRVN_NM]
+    const palette = REGION_COLORS[region] || { fill: '#6b7280', stroke: '#374151' }
+    return {
+      color: palette.stroke,
+      weight: 1.5,
+      opacity: 0.7,
+      fillColor: palette.fill,
+      fillOpacity: 0.08,
+      interactive: false,
+    }
+  }, [])
 
   const maxValue = useMemo(
     () => Math.max(1, ...crossings.map((c) => c.value || 0)),
@@ -90,13 +115,6 @@ export default function CrossingsMap({
     return [[b.getSouth(), b.getWest()], [b.getNorth(), b.getEast()]]
   }, [bounds, crossings])
 
-  // Apply bounds to the map once it's mounted / when bounds change.
-  useEffect(() => {
-    const map = mapInstanceRef.current
-    if (map && fitBounds) {
-      map.fitBounds(fitBounds)
-    }
-  }, [fitBounds])
 
   const handleWheel = useCallback(() => {
     if (!mapActive) {
@@ -161,9 +179,18 @@ export default function CrossingsMap({
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
+            {districts && (
+              <GeoJSON
+                key="border-districts"
+                data={districts}
+                style={districtStyle}
+                interactive={false}
+              />
+            )}
             <ScrollWheelGuard onActiveChange={setMapActive} />
             <ResetZoomButton center={[29.5, -100.5]} zoom={6} />
             <MapResizeHandler />
+            <FitBoundsHandler bounds={fitBounds} />
             <TooltipSync mapRef={mapInstanceRef} tooltip={tooltip} setTooltip={setTooltip} />
 
             {crossings
@@ -231,26 +258,6 @@ export default function CrossingsMap({
           </MapContainer>
         </div>
 
-        {/* Legend */}
-        <div
-          className="flex flex-wrap items-center gap-x-4 gap-y-1 px-3 py-2 bg-white/90 text-base text-text-secondary border-t border-border-light flex-shrink-0"
-        >
-          {REGION_LEGEND.map((g) => (
-            <span key={g.label} className="flex items-center gap-1">
-              <span className="inline-block w-3 h-3 rounded-full" style={{ background: g.color }} />
-              {g.label}
-            </span>
-          ))}
-          {!uniformDots && (
-            <span className="flex items-center gap-1.5">
-              <svg width="24" height="16" aria-hidden="true" className="flex-shrink-0">
-                <circle cx="7" cy="11" r="3" fill="#999" opacity="0.5" />
-                <circle cx="17" cy="8" r="6" fill="#999" opacity="0.5" />
-              </svg>
-              Size = {metricLabel}
-            </span>
-          )}
-        </div>
       </div>
 
       {/* Portal tooltip */}

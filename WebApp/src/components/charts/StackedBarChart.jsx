@@ -71,6 +71,7 @@ function StackedBarChart({
   overlayLabel = 'Texas',
   overlayColor = '#BF5700',
   colorOverrides = null,  // { [stackKey]: '#hex' } — override ordinal colors per layer
+  showLegend = true,      // hide the legend row (e.g. when the chart shows a single series already named in a parent header)
 }) {
   const containerRef = useRef(null)
   const svgRef = useRef(null)
@@ -126,7 +127,7 @@ function StackedBarChart({
     })
     const hasOverlay = overlayData.length > 0 && !normalize
     const overlayAnnotH = hasOverlay ? 24 : 0
-    const legendSpace = 16 + legendRows * 28 + overlayAnnotH
+    const legendSpace = showLegend ? 16 + legendRows * 28 + overlayAnnotH : 0
 
     const defaultH = 320 + legendSpace
     // Use computed default height in normal mode to prevent feedback loops
@@ -508,6 +509,9 @@ function StackedBarChart({
 
     // Legend (centered, wraps to multiple rows if needed)
     const legendG = svg.append('g')
+    if (!showLegend) {
+      return () => { document.getElementById(tipId)?.remove() }
+    }
 
     // Shared legend-hover handlers: highlight one stack layer across all columns
     const bindLegendHover = (ig, item) => {
@@ -596,10 +600,10 @@ function StackedBarChart({
     }
 
     return () => { document.getElementById(tipId)?.remove() }
-  }, [data, width, containerHeight, isFullscreen, xKey, stackKeys, animate, normalize, formatValue, overlayData, overlayLabel, overlayColor, colorOverrides])
+  }, [data, width, containerHeight, isFullscreen, xKey, stackKeys, animate, normalize, formatValue, overlayData, overlayLabel, overlayColor, colorOverrides, showLegend])
 
   // Ensure container expands for legend rows
-  const estLegendRows = stackKeys.length > 0 ? Math.max(1, Math.ceil(stackKeys.length / 4)) : 0
+  const estLegendRows = showLegend && stackKeys.length > 0 ? Math.max(1, Math.ceil(stackKeys.length / 4)) : 0
   const minH = 320 + (estLegendRows > 0 ? 16 + estLegendRows * 28 : 0)
 
   return (

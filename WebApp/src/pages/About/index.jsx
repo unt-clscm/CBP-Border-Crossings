@@ -1,10 +1,18 @@
-import { Database, Layers, Package, Map as MapIcon } from 'lucide-react'
+import { useMemo } from 'react'
+import { Calendar, Database, Layers, Package, Map as MapIcon } from 'lucide-react'
 import { MODES } from '@/lib/cbpHelpers'
+import ModeIcon from '@/components/ui/ModeIcon'
+import { useCrossingsStore } from '@/stores/crossingsStore'
+
+const MONTH_NAMES = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December',
+]
 
 const FIELDS_MONTHLY = [
   { key: 'ID', desc: 'Unique identifier (Year-Month-Crossing-ModeAbbr slug).' },
   { key: 'Year / Month', desc: 'Calendar year and month of the crossing count.' },
-  { key: 'Region', desc: 'CBP field office region — El Paso, Laredo, or Rio Grande Valley (Pharr).' },
+  { key: 'Region', desc: 'Texas Border region — El Paso, Laredo, or Rio Grande Valley (Pharr).' },
   { key: 'POE', desc: 'Port of Entry that administers the crossing.' },
   { key: 'Crossing', desc: 'Named crossing (34 bridges/ferries total along the Texas-Mexico border).' },
   { key: 'Modes', desc: 'Transportation mode — one of the five canonical values.' },
@@ -12,17 +20,53 @@ const FIELDS_MONTHLY = [
 ]
 
 export default function AboutPage() {
+  const monthly = useCrossingsStore((s) => s.monthly)
+  const monthlyStatus = useCrossingsStore((s) => s.monthlyStatus)
+  const coords = useCrossingsStore((s) => s.coords)
+
+  const coverage = useMemo(() => {
+    if (monthlyStatus !== 'ready' || !monthly?.length) return []
+    const earliest = new Map()
+    for (const r of monthly) {
+      const name = r.Crossing
+      const y = r.Year
+      const m = r.Month
+      const v = r['Northbound Crossing']
+      if (!name || !Number.isFinite(y) || !Number.isFinite(m)) continue
+      if (!Number.isFinite(v) || v <= 0) continue
+      const key = y * 12 + m
+      const prev = earliest.get(name)
+      if (!prev || key < prev.key) {
+        earliest.set(name, { key, year: y, month: m, region: r.Region, poe: r.POE })
+      }
+    }
+    const order = new Map()
+    for (const c of coords || []) {
+      const name = c.data_crossing_name || c.crossing_name
+      if (!name) continue
+      const o = Number.isFinite(c.order) ? c.order : null
+      if (o == null) continue
+      if (!order.has(name) || o < order.get(name)) order.set(name, o)
+    }
+    const rows = [...earliest.entries()].map(([crossing, v]) => ({ crossing, ...v }))
+    rows.sort((a, b) => (order.get(a.crossing) ?? 1e9) - (order.get(b.crossing) ?? 1e9))
+    return rows
+  }, [monthly, monthlyStatus, coords])
+
   return (
     <>
       {/* Hero */}
       <div className="gradient-blue text-white relative overflow-visible">
-        <div className="max-w-5xl mx-auto px-6 py-12 md:py-16 relative">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 md:py-16 relative">
           <h2 className="text-3xl md:text-4xl font-bold text-white text-balance">
             About the Data
           </h2>
           <p className="text-white/80 mt-3 text-base md:text-lg max-w-3xl">
-            Northbound crossing counts at every Texas–Mexico port of entry for the last 10 years (2016–2025),
-            compiled from data provided directly by U.S. Customs and Border Protection (CBP).
+            Northbound crossing counts at every Texas–Mexico border crossing from 2008
+            through 2025, compiled from data provided directly by U.S. Customs and
+            Border Protection (CBP). This page documents the data source, table structure,
+            field definitions, mode vocabulary, and the processing pipeline behind the
+            dashboard.
           </p>
         </div>
       </div>
@@ -42,7 +86,7 @@ export default function AboutPage() {
             northbound crossings by bridge and mode on a monthly cadence; the
             underlying records were provided as workbooks and monthly PDF traffic
             summaries covering 2008 through 2025; this dashboard surfaces the
-            most recent 10 years (2016–2025).
+            full series from 2008 to 2025.
           </p>
         </section>
 
@@ -73,9 +117,9 @@ export default function AboutPage() {
             </div>
           </div>
           <p className="text-lg text-text-secondary leading-relaxed">
-            The dashboard displays the most recent <strong>10 years (2016–2025)</strong>.
-            Both tables share the same column set; yearly is the month-summed view of
-            the monthly table.
+            The dashboard displays the full series <strong>2008–2025</strong>. Both
+            tables share the same column set; yearly is the month-summed view of the
+            monthly table.
           </p>
         </section>
 
@@ -95,6 +139,49 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* ── Coverage per Crossing ──────────────────────────────────── */}
+        <section>
+          <div className="flex items-center gap-2.5 mb-3">
+            <Calendar size={20} className="text-brand-blue" />
+            <h2 className="text-xl font-bold text-text-primary">Coverage per Crossing</h2>
+          </div>
+          <p className="text-lg text-text-secondary leading-relaxed mb-4">
+            CBP's records reach back to January 2008, but some crossings came
+            online later. The month shown below is the first month of reported
+            northbound activity in the source data — a proxy for when the
+            crossing opened or began reporting to CBP. Crossings are listed
+            north-to-south along the Texas–Mexico border.
+          </p>
+          {monthlyStatus !== 'ready' ? (
+            <p className="text-base text-text-secondary/80 italic">
+              Loading monthly coverage…
+            </p>
+          ) : (
+            <div className="overflow-hidden rounded-lg border border-border-light">
+              <table className="w-full text-base">
+                <thead className="bg-surface-alt text-text-primary">
+                  <tr>
+                    <th className="text-left font-semibold px-4 py-2">Crossing</th>
+                    <th className="text-left font-semibold px-4 py-2">Region · POE</th>
+                    <th className="text-left font-semibold px-4 py-2 whitespace-nowrap">Data since</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {coverage.map((r, i) => (
+                    <tr key={r.crossing} className={i % 2 ? 'bg-surface-alt/50' : 'bg-white'}>
+                      <td className="px-4 py-2 text-text-primary">{r.crossing}</td>
+                      <td className="px-4 py-2 text-text-secondary">{r.region} · {r.poe}</td>
+                      <td className="px-4 py-2 text-text-secondary whitespace-nowrap tabular-nums">
+                        {MONTH_NAMES[r.month - 1]} {r.year}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </section>
+
         {/* ── Modes ───────────────────────────────────────────────────── */}
         <section>
           <div className="flex items-center gap-2.5 mb-3">
@@ -104,10 +191,10 @@ export default function AboutPage() {
           <p className="text-lg text-text-secondary leading-relaxed mb-3">
             The dashboard uses a canonical five-mode vocabulary:
           </p>
-          <ul className="space-y-1.5">
+          <ul className="space-y-2">
             {MODES.map((m) => (
-              <li key={m} className="flex gap-3">
-                <span className="mt-1.5 w-2 h-2 rounded-full bg-brand-blue flex-shrink-0" />
+              <li key={m} className="flex items-center gap-3">
+                <ModeIcon mode={m} size={22} className="text-brand-blue" />
                 <p className="text-lg text-text-secondary leading-relaxed">{m}</p>
               </li>
             ))}
@@ -127,17 +214,21 @@ export default function AboutPage() {
             <Database size={20} className="text-brand-blue" />
             <h2 className="text-xl font-bold text-text-primary">Processing</h2>
           </div>
-          <p className="text-lg text-text-secondary leading-relaxed mb-3">
-            The raw CBP inputs (a master 2013–2024 workbook, a 2025 LRD/RGV
-            workbook, and three 2025 El Paso field-office PDFs) are ingested
-            through a five-step Python pipeline that normalizes crossing names,
-            reconciles mode labels, sums rail containers into the
-            <em> Railcars</em> mode, and produces two flat tables (monthly and
-            yearly) covering the full 2008–2025 window. The dashboard loads
-            those two tables directly and joins them to the authoritative list
-            of 34 Texas–Mexico crossings (with lat/lon coordinates) for the
-            maps.
-          </p>
+          <ol className="space-y-2 list-decimal pl-6 marker:text-brand-blue marker:font-semibold">
+            <li className="text-lg text-text-secondary leading-relaxed pl-1">
+              Request data from CBP via TxDOT (El Paso and Laredo).
+            </li>
+            <li className="text-lg text-text-secondary leading-relaxed pl-1">
+              Extract data from PDF (El Paso) and Excel worksheet, and populate
+              master spreadsheet by mode and bridge.
+            </li>
+            <li className="text-lg text-text-secondary leading-relaxed pl-1">
+              Aggregate monthly data to annual.
+            </li>
+            <li className="text-lg text-text-secondary leading-relaxed pl-1">
+              Develop dashboard visualizations.
+            </li>
+          </ol>
         </section>
 
       </div>

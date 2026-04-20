@@ -165,7 +165,7 @@ export default function StatCard({
   }, [])
 
   const trendIcon =
-    trend === 'up' ? TrendingUp : trend === 'down' ? TrendingDown : Minus
+    trend === 'up' ? TrendingUp : trend === 'down' ? TrendingDown : trend === 'neutral' ? Minus : null
   const TrendIcon = trendIcon
   const trendColor =
     trend === 'up'
@@ -217,7 +217,7 @@ export default function StatCard({
           <div className={`flex items-center gap-1 mt-2 text-base font-medium ${
             highlight ? 'text-white/80' : trendColor
           }`}>
-            <TrendIcon size={14} />
+            {TrendIcon && <TrendIcon size={14} />}
             <span>{trendLabel}</span>
           </div>
         )}

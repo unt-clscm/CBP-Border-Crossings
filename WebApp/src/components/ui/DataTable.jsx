@@ -158,6 +158,8 @@ export default function DataTable({ columns, data, pageSize: fixedPageSize, full
     )
   }
 
+  const hasHeaderIcons = columns.some((c) => c.headerIcon)
+
   return (
     <div ref={rootRef} className={`data-table-root bg-white rounded-xl border border-border-light shadow-xs overflow-hidden flex flex-col mx-auto max-w-full ${fullWidth ? 'w-full' : 'w-fit'}`}>
       {/* Off-screen table for measuring max column widths across all data */}
@@ -172,6 +174,11 @@ export default function DataTable({ columns, data, pageSize: fixedPageSize, full
               <tr>
                 {columns.map((col) => (
                   <th key={col.key} className="px-4 py-3 text-left text-base font-semibold uppercase tracking-wider whitespace-nowrap">
+                    {hasHeaderIcons && (
+                      <div className="h-6 mb-1 flex items-center">
+                        {col.headerIcon ?? null}
+                      </div>
+                    )}
                     <span className="inline-flex items-center gap-1">
                       {col.label}
                       <ChevronsUpDown size={12} />
@@ -227,19 +234,29 @@ export default function DataTable({ columns, data, pageSize: fixedPageSize, full
                 <th
                   key={col.key}
                   aria-sort={sortKey === col.key ? (sortDir === 'asc' ? 'ascending' : 'descending') : 'none'}
-                  className="px-4 py-3 text-left whitespace-nowrap"
+                  className={`px-4 py-3 text-left align-bottom ${fullWidth && col.wrap ? 'break-words' : 'whitespace-nowrap'}`}
                 >
+                  {hasHeaderIcons && (
+                    <div className="h-6 mb-1 flex items-center" aria-hidden="true">
+                      {col.headerIcon ?? null}
+                    </div>
+                  )}
                   <button
                     type="button"
                     onClick={() => handleSort(col.key)}
-                    className="inline-flex items-center gap-1 text-base font-semibold text-text-secondary
+                    className={`${fullWidth && col.wrap
+                               ? 'flex w-full items-end text-left'
+                               : 'inline-flex items-center'}
+                             gap-1 text-base font-semibold text-text-secondary
                              uppercase tracking-wider cursor-pointer select-none
                              hover:text-brand-blue focus-visible:text-brand-blue
                              focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue
-                             transition-colors bg-transparent border-none p-0"
+                             transition-colors bg-transparent border-none p-0`}
                     aria-label={`Sort by ${col.label}${sortKey === col.key ? (sortDir === 'asc' ? ', currently ascending' : ', currently descending') : ''}`}
                   >
-                    {col.label}
+                    <span className={fullWidth && col.wrap ? 'min-w-0 break-words' : ''}>
+                      {col.label}
+                    </span>
                     <SortIcon col={col.key} />
                   </button>
                 </th>

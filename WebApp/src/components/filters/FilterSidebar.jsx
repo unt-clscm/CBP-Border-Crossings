@@ -54,7 +54,7 @@ export default function FilterSidebar({ children, onResetAll, activeCount = 0, a
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const width = collapsed ? 'w-12' : 'w-72'
+  const width = collapsed ? 'w-12' : 'w-[26rem]'
 
   return (
       <aside
@@ -94,78 +94,79 @@ export default function FilterSidebar({ children, onResetAll, activeCount = 0, a
           </button>
         </div>
 
-        {/* Scrollable content area */}
-        <div className="flex-1 overflow-y-auto">
-          {/* Content */}
-          {!collapsed && (
-            <div className="p-4 space-y-4 animate-fade-in">
-              <ActiveFilterTags activeTags={activeTags} />
-              {/* Reset — right below active tags */}
-              {onResetAll && activeCount > 0 && (
-                <button
-                  onClick={onResetAll}
-                  className="flex items-center justify-center gap-1.5 w-full px-3 py-2 text-base font-medium
-                             text-brand-blue border border-brand-blue/30 rounded-lg
-                             hover:bg-brand-blue/5 transition-all duration-150"
-                >
-                  <RotateCcw size={12} />
-                  Reset all filters
-                </button>
-              )}
-              {activeCount > 0 && <div className="border-b border-border-light" />}
-              <div className="w-full min-w-0">
-                {children}
+        {/* Expanded layout: header + pinned top + flex-1 middle + pinned bottom */}
+        {!collapsed && (
+          <>
+            {/* Active tags + Reset — pinned at top, not scrollable */}
+            {activeCount > 0 && (
+              <div className="flex-shrink-0 px-4 pt-4 space-y-3 animate-fade-in">
+                <ActiveFilterTags activeTags={activeTags} />
+                {onResetAll && (
+                  <button
+                    onClick={onResetAll}
+                    className="flex items-center justify-center gap-1.5 w-full px-3 py-2 text-base font-medium
+                               text-brand-blue border border-brand-blue/30 rounded-lg
+                               hover:bg-brand-blue/5 transition-all duration-150"
+                  >
+                    <RotateCcw size={12} />
+                    Reset all filters
+                  </button>
+                )}
+                <div className="border-b border-border-light" />
               </div>
+            )}
 
-              {/* Scroll to top */}
-              {showScrollTop && (
-                <button
-                  onClick={scrollToTop}
-                  className="flex items-center justify-center gap-1.5 w-full px-3 py-2 text-base font-medium
-                             text-text-secondary border border-border-light rounded-lg
-                             hover:text-brand-blue hover:border-brand-blue/30 hover:bg-brand-blue/5
-                             transition-all duration-200 mt-1"
-                >
-                  <ArrowUp size={12} />
-                  Back to top
-                </button>
-              )}
-
-              {/* Page-level data download */}
-              {pageDownload && (
-                <div className="border-t border-border-light pt-4 mt-2">
-                  <PageDataDownloadButton pageDownload={pageDownload} />
-                </div>
-              )}
+            {/* Filter controls — fills remaining space; any internal scrolling is the child's job */}
+            <div className="flex-1 min-h-0 px-4 pt-4 pb-3 animate-fade-in w-full min-w-0">
+              {children}
             </div>
-          )}
 
-          {/* Collapsed icon indicator */}
-          {collapsed && activeCount > 0 && (
-            <div className="flex flex-col items-center py-3 gap-2">
-              <Filter size={14} className="text-brand-blue" />
-              <span className="text-base font-bold text-brand-blue bg-brand-blue/10 rounded-full w-6 h-6
-                             flex items-center justify-center">
-                {activeCount}
-              </span>
-            </div>
-          )}
-
-          {/* Collapsed scroll to top */}
-          {collapsed && showScrollTop && (
-            <div className="flex justify-center py-2">
+            {/* Pinned bottom — Back to top + Download (always visible) */}
+            <div className="flex-shrink-0 px-4 pb-4 pt-2 border-t border-border-light space-y-2">
               <button
                 onClick={scrollToTop}
-                aria-label="Back to top"
-                className="p-1.5 rounded-md text-text-secondary hover:text-brand-blue
-                           hover:bg-surface-alt transition-all duration-150"
-                title="Back to top"
+                className="flex items-center justify-center gap-1.5 w-full px-3 py-2 text-base font-medium
+                           text-text-secondary border border-border-light rounded-lg
+                           hover:text-brand-blue hover:border-brand-blue/30 hover:bg-brand-blue/5
+                           transition-all duration-200"
               >
-                <ArrowUp size={14} />
+                <ArrowUp size={12} />
+                Back to top
               </button>
+              {pageDownload && (
+                <PageDataDownloadButton pageDownload={pageDownload} />
+              )}
             </div>
-          )}
-        </div>
+          </>
+        )}
+
+        {/* Collapsed icon indicators */}
+        {collapsed && (
+          <div className="flex-1 overflow-y-auto">
+            {activeCount > 0 && (
+              <div className="flex flex-col items-center py-3 gap-2">
+                <Filter size={14} className="text-brand-blue" />
+                <span className="text-base font-bold text-brand-blue bg-brand-blue/10 rounded-full w-6 h-6
+                               flex items-center justify-center">
+                  {activeCount}
+                </span>
+              </div>
+            )}
+            {showScrollTop && (
+              <div className="flex justify-center py-2">
+                <button
+                  onClick={scrollToTop}
+                  aria-label="Back to top"
+                  className="p-1.5 rounded-md text-text-secondary hover:text-brand-blue
+                             hover:bg-surface-alt transition-all duration-150"
+                  title="Back to top"
+                >
+                  <ArrowUp size={14} />
+                </button>
+              </div>
+            )}
+          </div>
+        )}
 
       </aside>
   )
