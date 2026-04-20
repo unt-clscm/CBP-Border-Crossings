@@ -13,7 +13,7 @@
 import { useId } from 'react'
 import { ChevronDown } from 'lucide-react'
 
-export default function FilterSelect({ label, value, options = [], onChange, allLabel = 'All', disabledValues = [] }) {
+export default function FilterSelect({ label, value, options = [], onChange, allLabel = 'All', hideAll = false, disabledValues = [] }) {
   const id = useId()
   const disabledSet = disabledValues.length ? new Set(disabledValues) : null
   return (
@@ -31,7 +31,7 @@ export default function FilterSelect({ label, value, options = [], onChange, all
                      focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue
                      transition-all duration-150 cursor-pointer"
         >
-          <option value="">{allLabel}</option>
+          {!hideAll && <option value="">{allLabel}</option>}
           {options.map((opt) => {
             const val = typeof opt === 'string' ? opt : opt.value
             const lbl = typeof opt === 'string' ? opt : opt.label

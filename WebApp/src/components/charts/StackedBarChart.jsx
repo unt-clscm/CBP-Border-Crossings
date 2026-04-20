@@ -70,6 +70,7 @@ function StackedBarChart({
   overlayData = [],
   overlayLabel = 'Texas',
   overlayColor = '#BF5700',
+  colorOverrides = null,  // { [stackKey]: '#hex' } — override ordinal colors per layer
 }) {
   const containerRef = useRef(null)
   const svgRef = useRef(null)
@@ -142,7 +143,10 @@ function StackedBarChart({
 
     const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`)
 
-    const colorScale = d3.scaleOrdinal().domain(stackKeys).range(CHART_COLORS)
+    const baseColorScale = d3.scaleOrdinal().domain(stackKeys).range(CHART_COLORS)
+    const colorScale = colorOverrides
+      ? (key) => colorOverrides[key] || baseColorScale(key)
+      : baseColorScale
 
     // D3 stack layout: converts the wide-format data into layer arrays.
     // Each layer contains [y0, y1] pairs per data point (cumulative ranges).
@@ -592,7 +596,7 @@ function StackedBarChart({
     }
 
     return () => { document.getElementById(tipId)?.remove() }
-  }, [data, width, containerHeight, isFullscreen, xKey, stackKeys, animate, normalize, formatValue, overlayData, overlayLabel, overlayColor])
+  }, [data, width, containerHeight, isFullscreen, xKey, stackKeys, animate, normalize, formatValue, overlayData, overlayLabel, overlayColor, colorOverrides])
 
   // Ensure container expands for legend rows
   const estLegendRows = stackKeys.length > 0 ? Math.max(1, Math.ceil(stackKeys.length / 4)) : 0

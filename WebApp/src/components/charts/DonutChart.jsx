@@ -76,6 +76,7 @@ function DonutChart({
   selectedSlice,
   maxSize: maxSizeProp,
   animate = true,
+  colorOverrides = null, // { [name]: '#hex' } — override ordinal colors per slice
 }) {
   const containerRef = useRef(null)
   const svgRef = useRef(null)
@@ -141,7 +142,10 @@ function DonutChart({
     const wrapper = svg.append('g')
     const g = wrapper.append('g').attr('transform', `translate(${size / 2},${size / 2})`)
 
-    const colorScale = d3.scaleOrdinal().range(CHART_COLORS)
+    const baseColorScale = d3.scaleOrdinal().range(CHART_COLORS)
+    const colorScale = colorOverrides
+      ? (name) => colorOverrides[name] || baseColorScale(name)
+      : baseColorScale
     const pie = d3.pie().value((d) => d[valueKey]).sort(null).padAngle(0.02)
     const arc = d3.arc().innerRadius(innerRadius).outerRadius(radius - 4)
     const arcHover = d3.arc().innerRadius(innerRadius).outerRadius(radius)
@@ -304,7 +308,7 @@ function DonutChart({
     const neededH = Math.ceil(bbox.y + bbox.height + 4)
     if (neededH > size) svg.attr('height', neededH)
 
-  }, [data, width, containerHeight, isFullscreen, nameKey, valueKey, selectedSlice, animate, showLegendRight, maxSizeProp, formatValue, legendMaxW, onSliceClick])
+  }, [data, width, containerHeight, isFullscreen, nameKey, valueKey, selectedSlice, animate, showLegendRight, maxSizeProp, formatValue, legendMaxW, onSliceClick, colorOverrides])
 
   return (
     <div ref={containerRef} className="w-full" style={{ minHeight: maxSizeProp || 300 }}>
@@ -323,7 +327,7 @@ function DonutChart({
               >
                 <span
                   className="w-3 h-3 rounded-full inline-block shrink-0"
-                  style={{ backgroundColor: CHART_COLORS[i % CHART_COLORS.length] }}
+                  style={{ backgroundColor: colorOverrides?.[d[nameKey]] || CHART_COLORS[i % CHART_COLORS.length] }}
                 />
                 <span style={{ fontSize: '16px', color: 'var(--color-text-primary)' }}>
                   {d[nameKey]} ({formatValue(d[valueKey])})

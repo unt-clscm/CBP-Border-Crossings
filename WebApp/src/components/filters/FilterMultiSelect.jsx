@@ -32,6 +32,8 @@ export default function FilterMultiSelect({
   allLabel = 'All',
   searchable = false,
   maxHeight = 280,
+  colorMap,
+  iconMap,
 }) {
   const id = useId()
   const listboxId = `${id}-listbox`
@@ -224,6 +226,14 @@ export default function FilterMultiSelect({
     const checked = value.includes(val)
     const idx = visibleOptions.indexOf(val)
     const isFocused = idx === focusIdx
+    const color = colorMap?.[val]
+    const Icon = iconMap?.[val]
+    const rowStyle = color && checked
+      ? { backgroundColor: `${color}1A`, color }
+      : undefined
+    const boxStyle = color && checked
+      ? { backgroundColor: color, borderColor: color }
+      : undefined
     return (
       // eslint-disable-next-line jsx-a11y/click-events-have-key-events -- keyboard handled by parent listbox per WAI-ARIA managed-focus pattern
       <div
@@ -235,13 +245,36 @@ export default function FilterMultiSelect({
         tabIndex={-1}
         onClick={() => toggle(val)}
         onMouseEnter={() => setFocusIdx(idx)}
-        className={`w-full flex items-center gap-2 px-3 py-1.5 text-sm text-left cursor-pointer transition-colors ${checked ? 'bg-brand-blue/10 font-medium text-brand-blue' : ''} ${isFocused ? 'bg-brand-blue/10 outline outline-2 outline-brand-blue/30' : 'hover:bg-brand-blue/5'}`}
+        style={rowStyle}
+        className={`w-full flex items-center gap-2 px-3 py-1.5 text-sm text-left cursor-pointer transition-colors ${
+          checked
+            ? color ? 'font-medium' : 'bg-brand-blue/10 font-medium text-brand-blue'
+            : ''
+        } ${isFocused ? 'bg-brand-blue/10 outline outline-2 outline-brand-blue/30' : 'hover:bg-brand-blue/5'}`}
       >
         <span
-          className={`flex-shrink-0 flex items-center justify-center w-4 h-4 rounded border ${checked ? 'bg-brand-blue border-brand-blue' : 'border-border'}`}
+          style={boxStyle}
+          className={`flex-shrink-0 flex items-center justify-center w-4 h-4 rounded border ${
+            checked
+              ? color ? '' : 'bg-brand-blue border-brand-blue'
+              : 'border-border'
+          }`}
         >
           {checked && <Check size={12} className="text-white" />}
         </span>
+        {color && (
+          <span
+            aria-hidden="true"
+            className="flex-shrink-0 inline-block w-2 h-2 rounded-full"
+            style={{ backgroundColor: color }}
+          />
+        )}
+        {Icon && (
+          <Icon
+            size={16}
+            className={checked ? 'text-brand-blue' : 'text-text-secondary'}
+          />
+        )}
         <span className="truncate">{lbl}</span>
       </div>
     )

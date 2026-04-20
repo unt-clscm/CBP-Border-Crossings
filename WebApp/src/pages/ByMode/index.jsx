@@ -32,7 +32,16 @@ import LineChart from '@/components/charts/LineChart'
 import DataTable from '@/components/ui/DataTable'
 import FilterMultiSelect from '@/components/filters/FilterMultiSelect'
 import YearRangeFilter from '@/components/filters/YearRangeFilter'
+import ModeIcon from '@/components/ui/ModeIcon'
 import { DL, PAGE_YEARLY_COLS } from '@/lib/downloadColumns'
+
+/* Region palette — mirrors the Overview/ByRegion chart palette so the
+ * Region filter swatches stay consistent with the charts. */
+const REGION_COLORS = {
+  'El Paso':           '#d97706',
+  'Laredo':            '#16a34a',
+  'Rio Grande Valley': '#0056a9',
+}
 
 /* ─────────────────────────────────────────────────────────────────────── */
 /*  URL query-string helpers                                               */
@@ -239,6 +248,7 @@ export default function ByModePage() {
         options={REGIONS}
         onChange={handleRegionChange}
         allLabel="All regions"
+        colorMap={REGION_COLORS}
       />
 
       <FilterMultiSelect
@@ -282,7 +292,20 @@ export default function ByModePage() {
 
   /* ── Table columns ───────────────────────────────────────────────── */
   const tableColumns = [
-    { key: 'Mode', label: 'Mode' },
+    {
+      key: 'Mode',
+      label: 'Mode',
+      render: (_v, row) => (
+        <span className="inline-flex items-center gap-2">
+          <ModeIcon
+            mode={row.Mode}
+            size={18}
+            className="text-brand-blue"
+          />
+          <span>{row.Mode}</span>
+        </span>
+      ),
+    },
     {
       key: 'value',
       label: 'Northbound Crossings',

@@ -157,6 +157,24 @@ export function yearlyModeSeries(yearlyRows) {
   return { data, keys: orderedKeys }
 }
 
+/**
+ * Wide-format year × region series. Stacks sum to per-year totals across the
+ * three CBP field-office regions. Rows with unknown Region are skipped.
+ */
+export function yearlyRegionSeries(yearlyRows) {
+  if (!yearlyRows?.length) return { data: [], keys: [] }
+  const byYear = new Map()
+  for (const r of yearlyRows) {
+    if (r.Year == null || !REGIONS.includes(r.Region)) continue
+    if (!byYear.has(r.Year)) byYear.set(r.Year, { year: r.Year })
+    const row = byYear.get(r.Year)
+    row[r.Region] = (row[r.Region] || 0) + (r[VALUE_KEY] || 0)
+  }
+  const data = Array.from(byYear.values()).sort((a, b) => a.year - b.year)
+  for (const row of data) for (const k of REGIONS) if (!(k in row)) row[k] = 0
+  return { data, keys: REGIONS }
+}
+
 /** Unique sorted list of crossings observed in rows. */
 export function distinctCrossings(rows) {
   const s = new Set()

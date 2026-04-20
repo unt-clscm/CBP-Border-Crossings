@@ -65,6 +65,7 @@ export default function CrossingsMap({
   bounds = null,
   onMarkerClick = null,
   highlightNames = null,
+  uniformDots = false, // when true, render all pins at a fixed radius (no value-based sizing)
 }) {
   const mapInstanceRef = useRef(null)
   const navigate = useNavigate()
@@ -168,7 +169,7 @@ export default function CrossingsMap({
             {crossings
               .filter((c) => c.lat != null && c.lng != null)
               .map((c) => {
-                const r = radiusScale(c.value, maxValue)
+                const r = uniformDots ? 6 : radiusScale(c.value, maxValue)
                 const palette = REGION_COLORS[c.region] || { fill: '#6b7280', stroke: '#374151' }
                 const dim = highlightSet && !highlightSet.has(c.dataCrossingName)
                 return (
@@ -197,8 +198,12 @@ export default function CrossingsMap({
                               <strong>{c.crossingName}</strong>
                               <br />
                               <span style={{ color: '#555', fontSize: 12 }}>{c.region} region</span>
-                              <br />
-                              {formatValue(c.value)} {metricLabel}
+                              {!uniformDots && (
+                                <>
+                                  <br />
+                                  {formatValue(c.value)} {metricLabel}
+                                </>
+                              )}
                               {c.isRail && (
                                 <>
                                   <br />
@@ -236,13 +241,15 @@ export default function CrossingsMap({
               {g.label}
             </span>
           ))}
-          <span className="flex items-center gap-1.5">
-            <svg width="24" height="16" aria-hidden="true" className="flex-shrink-0">
-              <circle cx="7" cy="11" r="3" fill="#999" opacity="0.5" />
-              <circle cx="17" cy="8" r="6" fill="#999" opacity="0.5" />
-            </svg>
-            Size = {metricLabel}
-          </span>
+          {!uniformDots && (
+            <span className="flex items-center gap-1.5">
+              <svg width="24" height="16" aria-hidden="true" className="flex-shrink-0">
+                <circle cx="7" cy="11" r="3" fill="#999" opacity="0.5" />
+                <circle cx="17" cy="8" r="6" fill="#999" opacity="0.5" />
+              </svg>
+              Size = {metricLabel}
+            </span>
+          )}
         </div>
       </div>
 

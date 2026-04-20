@@ -90,6 +90,7 @@ function BarChart({
   horizontal = false,
   formatValue = formatCompact,
   labelAccessor,
+  labelSegmentsAccessor,
   onBarClick,
   selectedBar,
   maxBars = 15,
@@ -208,15 +209,29 @@ function BarChart({
         .attr('font-size', `${FS}px`)
         .each(function (d) {
           const barW = x(d[yKey])
-          const labelText = labelAccessor ? labelAccessor(d) : formatValue(d[yKey])
-          const labelW = labelText.length * charW // approx char width
+          const segments = labelSegmentsAccessor ? labelSegmentsAccessor(d) : null
+          const fullText = segments
+            ? segments.map((s) => s.text).join('')
+            : (labelAccessor ? labelAccessor(d) : formatValue(d[yKey]))
+          const labelW = fullText.length * charW // approx char width
           const overflows = barW + labelW + 8 > innerW + rightMarginPx
-          d3.select(this)
+          const defaultFill = overflows ? 'white' : 'var(--color-text-secondary)'
+          const defaultWeight = overflows ? '600' : 'normal'
+          const sel = d3.select(this)
             .attr('x', overflows ? barW - 8 : barW + 4)
             .attr('text-anchor', overflows ? 'end' : 'start')
-            .attr('fill', overflows ? 'white' : 'var(--color-text-secondary)')
-            .attr('font-weight', overflows ? '600' : 'normal')
-            .text(labelText)
+            .attr('fill', defaultFill)
+            .attr('font-weight', defaultWeight)
+          if (segments) {
+            segments.forEach((s) => {
+              sel.append('tspan')
+                .attr('fill', s.fill ?? defaultFill)
+                .attr('font-weight', s.weight ?? defaultWeight)
+                .text(s.text)
+            })
+          } else {
+            sel.text(fullText)
+          }
         })
         .attr('opacity', 0)
         .transition()
@@ -402,7 +417,7 @@ function BarChart({
         })
     }
 
-  }, [data, width, containerHeight, isFullscreen, xKey, yKey, color, colorAccessor, horizontal, selectedBar, maxBars, animate, labelAccessor, formatValue, onBarClick, texasOverlay])
+  }, [data, width, containerHeight, isFullscreen, xKey, yKey, color, colorAccessor, horizontal, selectedBar, maxBars, animate, labelAccessor, labelSegmentsAccessor, formatValue, onBarClick, texasOverlay])
 
   // In horizontal mode, set a minimum height so each bar gets enough space
   // (~32px per bar). This allows the parent grid cell to grow accordingly.

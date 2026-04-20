@@ -24,7 +24,7 @@
  * structural wrapper only. If you want to move the sidebar to the left,
  * add a top toolbar, or change the layout structure, edit this file.
  */
-import { Filter, X, SearchX } from 'lucide-react'
+import { X, SearchX } from 'lucide-react'
 import FilterSidebar from '@/components/filters/FilterSidebar'
 import FilterBar from '@/components/filters/FilterBar'
 import FilterContext from '@/contexts/FilterContext'
@@ -39,23 +39,6 @@ export default function DashboardLayout({ children, hero, filters, onResetAll, a
       <div data-sidebar-top className="flex min-h-screen flex-col lg:flex-row">
         {/* Main Content */}
         <div className="flex-1 min-w-0">
-          {/* Active filter disclosure banner — visible when filters are active */}
-          {filters && activeCount > 0 && (
-            <div className="mx-4 sm:mx-6 mt-3 px-3 py-2 rounded-lg bg-brand-blue/5 border border-brand-blue/15
-                            flex items-center gap-2 text-base text-brand-blue">
-              <Filter size={14} className="flex-shrink-0" />
-              <span className="font-medium">{activeCount} filter{activeCount > 1 ? 's' : ''} active</span>
-              <span className="text-text-secondary">— results on this page are filtered.</span>
-              <button
-                onClick={onResetAll}
-                className="ml-auto flex items-center gap-1 px-2 py-0.5 rounded-md text-base font-medium
-                           text-brand-blue hover:bg-brand-blue/10 transition-colors flex-shrink-0"
-              >
-                <X size={12} />
-                Clear all
-              </button>
-            </div>
-          )}
           {/* Mobile/tablet filters: inline bar above content */}
           {filters && (
             <div className="px-4 pt-4 lg:hidden">
