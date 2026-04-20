@@ -75,7 +75,7 @@ export default function FullscreenChart({
     )
   }
 
-  const sidebarWidth = sidebarCollapsed ? 'w-12' : 'w-72'
+  const sidebarWidth = sidebarCollapsed ? 'w-12' : 'w-[26rem]'
 
   return (
     <div className="fixed inset-0 z-[100] flex flex-row bg-white animate-fade-in overflow-hidden">
