@@ -56,7 +56,7 @@ export default function FilterRadioGroup({
                 className="sr-only"
               />
               <span
-                className={`flex-shrink-0 flex items-center justify-center w-4 h-4 rounded-full border-2 ${selected ? 'border-brand-blue' : 'border-border'}`}
+                className={`flex-shrink-0 flex items-center justify-center w-4 h-4 rounded-full border-2 ${selected ? 'border-brand-blue' : 'border-text-secondary'}`}
               >
                 {selected && <span className="w-2 h-2 rounded-full bg-brand-blue" />}
               </span>

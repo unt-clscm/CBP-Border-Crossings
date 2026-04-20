@@ -63,7 +63,7 @@ export default function TabBar({ tabs, activeTab, onChange, className = '', idPr
                           rounded-full whitespace-nowrap transition-all duration-200 cursor-pointer
                           ${isActive
                             ? 'bg-brand-blue text-white shadow-md'
-                            : 'bg-white text-text-secondary border border-border hover:border-brand-blue hover:text-brand-blue hover:shadow-sm'
+                            : 'bg-white text-text-secondary border border-text-secondary hover:border-brand-blue hover:text-brand-blue hover:shadow-sm'
                           }`}
             >
               {Icon && <Icon size={18} />}

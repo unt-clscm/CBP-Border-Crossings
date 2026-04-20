@@ -60,7 +60,7 @@ export default function FilterCheckboxGroup({
             className="sr-only"
           />
           <span
-            className={`flex-shrink-0 flex items-center justify-center w-4 h-4 rounded border ${allSelected ? 'bg-brand-blue border-brand-blue' : 'border-border'}`}
+            className={`flex-shrink-0 flex items-center justify-center w-4 h-4 rounded border ${allSelected ? 'bg-brand-blue border-brand-blue' : 'border-text-secondary'}`}
           >
             {allSelected && <Check size={12} className="text-white" />}
           </span>
@@ -102,7 +102,7 @@ export default function FilterCheckboxGroup({
                 className={`flex-shrink-0 flex items-center justify-center w-4 h-4 rounded border ${
                   checked
                     ? color ? '' : 'bg-brand-blue border-brand-blue'
-                    : 'border-border'
+                    : 'border-text-secondary'
                 }`}
               >
                 {checked && <Check size={12} className="text-white" />}
