@@ -416,6 +416,25 @@ function StackedBarChart({
         })
         tipDiv.appendChild(body)
 
+        // Skip the Total footer when there's only one visible row and no
+        // overlay — the total just duplicates the single row's value.
+        const showTotal = hasOverlay || rows.length > 1
+        if (!showTotal) {
+          // Position using viewport coordinates, clamped to stay on-screen
+          const tipW0 = tipDiv.offsetWidth
+          const tipH0 = tipDiv.offsetHeight
+          const pad0 = 12
+          let tx0 = event.clientX + 16
+          if (tx0 + tipW0 + pad0 > window.innerWidth) tx0 = event.clientX - tipW0 - 16
+          let ty0 = event.clientY - tipH0 - 10
+          if (ty0 < pad0) ty0 = event.clientY + 16
+          tx0 = Math.max(pad0, Math.min(tx0, window.innerWidth - tipW0 - pad0))
+          ty0 = Math.max(pad0, Math.min(ty0, window.innerHeight - tipH0 - pad0))
+          tipDiv.style.left = `${tx0}px`
+          tipDiv.style.top = `${ty0}px`
+          return
+        }
+
         const footer = document.createElement('div')
         Object.assign(footer.style, { borderTop: '1px solid #e5e7eb', marginTop: '3px', paddingTop: '3px', display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', fontWeight: '700' })
         const totalLabel = document.createElement('span')
