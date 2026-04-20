@@ -300,10 +300,10 @@ function StackedBarChart({
       tipDiv.setAttribute('role', 'tooltip')
       Object.assign(tipDiv.style, {
         position: 'fixed', pointerEvents: 'none', display: 'none',
-        background: 'white', border: '1px solid #e2e5e9', borderRadius: '8px',
-        boxShadow: '0 4px 12px rgba(0,0,0,0.10)', padding: '12px 14px',
-        fontSize: '16px', lineHeight: '1.6', zIndex: '9999', whiteSpace: 'nowrap',
-        fontFamily: 'inherit', color: '#333f48', maxWidth: hasOverlay ? '520px' : '360px',
+        background: 'white', border: '1px solid #e2e5e9', borderRadius: '6px',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.10)', padding: '6px 8px',
+        fontSize: '12px', lineHeight: '1.3', zIndex: '9999', whiteSpace: 'nowrap',
+        fontFamily: 'inherit', color: '#333f48', maxWidth: hasOverlay ? '480px' : '320px',
       })
       document.body.appendChild(tipDiv)
     }
@@ -350,30 +350,29 @@ function StackedBarChart({
         // only. Never use innerHTML to prevent XSS from data values.
         tipDiv.textContent = ''
         const header = document.createElement('div')
-        Object.assign(header.style, { fontWeight: '700', fontSize: '16px', marginBottom: '6px' })
+        Object.assign(header.style, { fontWeight: '700', fontSize: '12px', marginBottom: '2px', color: '#6b7280' })
         header.textContent = d[xKey]
         tipDiv.appendChild(header)
 
         const body = document.createElement('div')
-        Object.assign(body.style, { borderTop: '1px solid #e5e7eb', paddingTop: '6px' })
 
         if (hasOverlay) {
           // Column headers for comparison tooltip
           const colHeader = document.createElement('div')
-          Object.assign(colHeader.style, { display: 'flex', justifyContent: 'space-between', gap: '12px', marginBottom: '4px', fontSize: '11px', color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.05em' })
+          Object.assign(colHeader.style, { display: 'flex', justifyContent: 'space-between', gap: '10px', marginBottom: '2px', fontSize: '10px', color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.05em' })
           const colMode = document.createElement('span')
           colMode.textContent = 'Mode'
           const colRight = document.createElement('span')
-          Object.assign(colRight.style, { display: 'flex', gap: '16px' })
+          Object.assign(colRight.style, { display: 'flex', gap: '12px' })
           const colUS = document.createElement('span')
           colUS.textContent = 'U.S. Total'
-          Object.assign(colUS.style, { width: '80px', textAlign: 'right' })
+          Object.assign(colUS.style, { width: '72px', textAlign: 'right' })
           const colTX = document.createElement('span')
           colTX.textContent = overlayLabel
-          Object.assign(colTX.style, { width: '80px', textAlign: 'right' })
+          Object.assign(colTX.style, { width: '72px', textAlign: 'right' })
           const colPct = document.createElement('span')
           colPct.textContent = 'Share'
-          Object.assign(colPct.style, { width: '44px', textAlign: 'right' })
+          Object.assign(colPct.style, { width: '38px', textAlign: 'right' })
           colRight.appendChild(colUS)
           colRight.appendChild(colTX)
           colRight.appendChild(colPct)
@@ -384,30 +383,24 @@ function StackedBarChart({
 
         rows.forEach((r) => {
           const row = document.createElement('div')
-          Object.assign(row.style, { display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'space-between' })
-          const left = document.createElement('span')
-          Object.assign(left.style, { display: 'flex', alignItems: 'center', gap: '6px' })
-          const dot = document.createElement('span')
-          Object.assign(dot.style, { width: '10px', height: '10px', borderRadius: '50%', background: r.color, flexShrink: '0' })
+          Object.assign(row.style, { display: 'flex', alignItems: 'baseline', gap: '8px', justifyContent: 'space-between' })
           const labelSpan = document.createElement('span')
-          labelSpan.style.color = '#6b7280'
+          Object.assign(labelSpan.style, { color: '#6b7280', fontSize: '11px' })
           labelSpan.textContent = r.name
-          left.appendChild(dot)
-          left.appendChild(labelSpan)
-          row.appendChild(left)
+          row.appendChild(labelSpan)
 
           if (hasOverlay) {
             const right = document.createElement('span')
-            Object.assign(right.style, { display: 'flex', gap: '16px', alignItems: 'baseline' })
+            Object.assign(right.style, { display: 'flex', gap: '12px', alignItems: 'baseline' })
             const usSpan = document.createElement('span')
-            Object.assign(usSpan.style, { fontWeight: '600', width: '80px', textAlign: 'right', opacity: '0.5' })
+            Object.assign(usSpan.style, { fontWeight: '600', width: '72px', textAlign: 'right', opacity: '0.5' })
             usSpan.textContent = normalize ? `${r.pct.toFixed(1)}% (${formatValue(r.abs)})` : formatValue(r.pct)
             const txSpan = document.createElement('span')
-            Object.assign(txSpan.style, { fontWeight: '700', width: '80px', textAlign: 'right', color: '#333f48' })
+            Object.assign(txSpan.style, { fontWeight: '700', width: '72px', textAlign: 'right', color: '#333f48' })
             txSpan.textContent = formatValue(r.overlayVal)
             const pctSpan = document.createElement('span')
             const sharePct = r.pct > 0 ? ((r.overlayVal / r.pct) * 100).toFixed(0) : '0'
-            Object.assign(pctSpan.style, { fontSize: '12px', width: '44px', textAlign: 'right', color: overlayColor, fontWeight: '600' })
+            Object.assign(pctSpan.style, { fontSize: '11px', width: '38px', textAlign: 'right', color: overlayColor, fontWeight: '600' })
             pctSpan.textContent = `${sharePct}%`
             right.appendChild(usSpan)
             right.appendChild(txSpan)
@@ -415,7 +408,7 @@ function StackedBarChart({
             row.appendChild(right)
           } else {
             const valSpan = document.createElement('span')
-            Object.assign(valSpan.style, { fontWeight: '600', marginLeft: '16px' })
+            Object.assign(valSpan.style, { fontWeight: '700', fontSize: '13px', marginLeft: '12px' })
             valSpan.textContent = normalize ? `${r.pct.toFixed(1)}% (${formatValue(r.abs)})` : formatValue(r.pct)
             row.appendChild(valSpan)
           }
@@ -424,21 +417,22 @@ function StackedBarChart({
         tipDiv.appendChild(body)
 
         const footer = document.createElement('div')
-        Object.assign(footer.style, { borderTop: '1px solid #e5e7eb', marginTop: '6px', paddingTop: '6px', display: 'flex', justifyContent: 'space-between', fontWeight: '700' })
+        Object.assign(footer.style, { borderTop: '1px solid #e5e7eb', marginTop: '3px', paddingTop: '3px', display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', fontWeight: '700' })
         const totalLabel = document.createElement('span')
+        Object.assign(totalLabel.style, { fontSize: '11px', color: '#6b7280' })
         totalLabel.textContent = 'Total'
         if (hasOverlay) {
           const right = document.createElement('span')
-          Object.assign(right.style, { display: 'flex', gap: '16px' })
+          Object.assign(right.style, { display: 'flex', gap: '12px', alignItems: 'baseline' })
           const usTotal = document.createElement('span')
-          Object.assign(usTotal.style, { width: '80px', textAlign: 'right', opacity: '0.5' })
+          Object.assign(usTotal.style, { width: '72px', textAlign: 'right', opacity: '0.5' })
           usTotal.textContent = normalize ? `100% (${formatValue(totalAbs)})` : formatValue(totalAbs)
           const txTotal = document.createElement('span')
-          Object.assign(txTotal.style, { width: '80px', textAlign: 'right', color: '#333f48' })
+          Object.assign(txTotal.style, { width: '72px', textAlign: 'right', color: '#333f48' })
           txTotal.textContent = formatValue(totalOverlay)
           const pctTotal = document.createElement('span')
           const totalShare = totalAbs > 0 ? ((totalOverlay / totalAbs) * 100).toFixed(0) : '0'
-          Object.assign(pctTotal.style, { width: '44px', textAlign: 'right', color: overlayColor, fontWeight: '700', fontSize: '12px' })
+          Object.assign(pctTotal.style, { width: '38px', textAlign: 'right', color: overlayColor, fontWeight: '700', fontSize: '11px' })
           pctTotal.textContent = `${totalShare}%`
           right.appendChild(usTotal)
           right.appendChild(txTotal)
@@ -447,6 +441,7 @@ function StackedBarChart({
           footer.appendChild(right)
         } else {
           const totalVal = document.createElement('span')
+          Object.assign(totalVal.style, { fontSize: '13px' })
           totalVal.textContent = normalize ? `100% (${formatValue(totalAbs)})` : formatValue(totalAbs)
           footer.appendChild(totalLabel)
           footer.appendChild(totalVal)

@@ -44,11 +44,18 @@ export const CHART_COLORS = [
 /** Pre-built D3 ordinal scale using the brand palette. */
 export const chartColorScale = d3.scaleOrdinal().range(CHART_COLORS)
 
+// Format a number with 1 decimal place, dropping a trailing ".0" so whole
+// values render cleanly (e.g. 80 → "80", 1.5 → "1.5").
+const trimDecimal = (n) => {
+  const s = n.toFixed(1)
+  return s.endsWith('.0') ? s.slice(0, -2) : s
+}
+
 /**
  * Format a numeric value as a compact string (no currency prefix).
  * Handles null, NaN, and negative values correctly.
  *
- * Examples: 1500000000 → "1.5B", -250000 → "-250.0K", 0 → "0"
+ * Examples: 1500000000 → "1.5B", -250000 → "-250K", 0 → "0"
  *
  * Used as the default formatValue for all chart components.
  *
@@ -59,10 +66,10 @@ export const formatCompact = (value) => {
   if (value == null || isNaN(value)) return '0'
   const abs = Math.abs(value)
   const sign = value < 0 ? '-' : ''
-  if (abs >= 1e12) return `${sign}${(abs / 1e12).toFixed(1)}T`
-  if (abs >= 1e9) return `${sign}${(abs / 1e9).toFixed(1)}B`
-  if (abs >= 1e6) return `${sign}${(abs / 1e6).toFixed(1)}M`
-  if (abs >= 1e3) return `${sign}${(abs / 1e3).toFixed(1)}K`
+  if (abs >= 1e12) return `${sign}${trimDecimal(abs / 1e12)}T`
+  if (abs >= 1e9) return `${sign}${trimDecimal(abs / 1e9)}B`
+  if (abs >= 1e6) return `${sign}${trimDecimal(abs / 1e6)}M`
+  if (abs >= 1e3) return `${sign}${trimDecimal(abs / 1e3)}K`
   return `${sign}${abs.toFixed(0)}`
 }
 

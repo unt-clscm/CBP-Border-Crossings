@@ -91,8 +91,10 @@ function LineChart({
   animate = true,
   annotations = [],
   colorOverrides,  // { seriesName: '#color' } — override ordinal colors for specific series
+  dashedSeries,    // Array<string> — series names to render as dashed reference lines (no dots, thinner stroke)
   ariaLabel,
 }) {
+  const dashedSet = dashedSeries?.length ? new Set(dashedSeries) : null
   const containerRef = useRef(null)
   const svgRef = useRef(null)
   const { width, height: containerHeight, isFullscreen } = useChartResize(containerRef)
@@ -334,17 +336,21 @@ function LineChart({
 
     // ── Lines + dots — in clipped group ─────────────────────────
     series.forEach((s, i) => {
+      const isDashed = dashedSet?.has(s.name) || false
       const path = contentG.append('path')
         .datum(s.values)
         .attr('class', 'line-path')
+        .classed('is-dashed', isDashed)
         .attr('fill', 'none')
         .attr('stroke', colorScale(s.name))
-        .attr('stroke-width', 3.5)
+        .attr('stroke-width', isDashed ? 2.25 : 3.5)
         .attr('stroke-linejoin', 'round')
-        .attr('stroke-linecap', 'round')
+        .attr('stroke-linecap', isDashed ? 'butt' : 'round')
         .attr('d', line)
 
-      if (animate) {
+      if (isDashed) {
+        path.attr('stroke-dasharray', '6,4')
+      } else if (animate) {
         const totalLength = path.node().getTotalLength()
         path
           .attr('stroke-dasharray', `${totalLength} ${totalLength}`)
@@ -356,7 +362,8 @@ function LineChart({
           .attr('stroke-dashoffset', 0)
       }
 
-      // Data-point dots
+      // Data-point dots — skipped on dashed reference lines for less clutter
+      if (isDashed) return
       contentG.selectAll(`.dot-${i}`).data(s.values).enter()
         .append('circle')
         .attr('class', 'data-dot')
@@ -382,10 +389,10 @@ function LineChart({
       tipDiv.setAttribute('role', 'tooltip')
       Object.assign(tipDiv.style, {
         position: 'fixed', pointerEvents: 'none', display: 'none',
-        background: 'white', border: '1px solid #e2e5e9', borderRadius: '8px',
-        boxShadow: '0 4px 12px rgba(0,0,0,0.10)', padding: '12px 14px',
-        fontSize: '16px', lineHeight: '1.6', zIndex: '9999', whiteSpace: 'nowrap',
-        fontFamily: 'inherit', color: '#333f48', maxWidth: '360px',
+        background: 'white', border: '1px solid #e2e5e9', borderRadius: '6px',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.10)', padding: '6px 8px',
+        fontSize: '12px', lineHeight: '1.3', zIndex: '9999', whiteSpace: 'nowrap',
+        fontFamily: 'inherit', color: '#333f48', maxWidth: '320px',
       })
       document.body.appendChild(tipDiv)
     }
@@ -433,29 +440,24 @@ function LineChart({
         // only. Never use innerHTML to prevent XSS from data values.
         tipDiv.textContent = ''
         const header = document.createElement('div')
-        Object.assign(header.style, { fontWeight: '700', fontSize: '16px', marginBottom: '6px' })
+        Object.assign(header.style, { fontWeight: '700', fontSize: '12px', marginBottom: '2px', color: '#6b7280' })
         header.textContent = formatX ? formatX(xVal) : xVal
         tipDiv.appendChild(header)
 
         const body = document.createElement('div')
-        Object.assign(body.style, { borderTop: '1px solid #e5e7eb', paddingTop: '6px' })
         points.forEach((p) => {
           const label = p.name !== 'default' ? p.name : ''
           const row = document.createElement('div')
-          Object.assign(row.style, { display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'space-between' })
-          const left = document.createElement('span')
-          Object.assign(left.style, { display: 'flex', alignItems: 'center', gap: '6px' })
-          const dot = document.createElement('span')
-          Object.assign(dot.style, { width: '10px', height: '10px', borderRadius: '50%', background: p.color, flexShrink: '0' })
-          const labelSpan = document.createElement('span')
-          labelSpan.style.color = '#6b7280'
-          labelSpan.textContent = label
-          left.appendChild(dot)
-          left.appendChild(labelSpan)
+          Object.assign(row.style, { display: 'flex', alignItems: 'baseline', gap: '8px', justifyContent: 'space-between' })
+          if (label) {
+            const labelSpan = document.createElement('span')
+            Object.assign(labelSpan.style, { color: '#6b7280', fontSize: '11px' })
+            labelSpan.textContent = label
+            row.appendChild(labelSpan)
+          }
           const valSpan = document.createElement('span')
-          Object.assign(valSpan.style, { fontWeight: '600', marginLeft: '16px' })
+          Object.assign(valSpan.style, { fontWeight: '700', fontSize: '13px', marginLeft: label ? '12px' : '0' })
           valSpan.textContent = formatValue(p.point[yKey])
-          row.appendChild(left)
           row.appendChild(valSpan)
           body.appendChild(row)
         })
@@ -581,11 +583,13 @@ function LineChart({
             .y((d) => y(d[yKey]))
             .curve(d3.curveMonotoneX)
 
-          // Update line paths
-          contentG.selectAll('.line-path')
+          // Update line paths (preserve dash pattern on dashed reference lines)
+          contentG.selectAll('.line-path:not(.is-dashed)')
             .attr('d', (d) => zoomedLine(d))
             .attr('stroke-dasharray', null)
             .attr('stroke-dashoffset', null)
+          contentG.selectAll('.line-path.is-dashed')
+            .attr('d', (d) => zoomedLine(d))
 
           // Update dots
           contentG.selectAll('.data-dot')
@@ -658,7 +662,12 @@ function LineChart({
       series.forEach((s, i) => {
         const textW = s.name.length * (LEGEND_FONT * 0.55)
         const itemW = LINE_W + TEXT_GAP + textW
-        items.push({ name: s.name, color: colorScale(s.name), itemW })
+        items.push({
+          name: s.name,
+          color: colorScale(s.name),
+          itemW,
+          isDashed: dashedSet?.has(s.name) || false,
+        })
         totalW += itemW + (i < series.length - 1 ? LEGEND_GAP : 0)
       })
 
@@ -667,19 +676,22 @@ function LineChart({
 
       const drawLegendItem = (ig, item) => {
         // Line segment
-        ig.append('line')
+        const lineSeg = ig.append('line')
           .attr('x1', 0).attr('x2', LINE_W)
           .attr('y1', 0).attr('y2', 0)
           .attr('stroke', item.color)
-          .attr('stroke-width', 3.5)
-          .attr('stroke-linecap', 'round')
-        // Hollow circle marker in the middle
-        ig.append('circle')
-          .attr('cx', LINE_W / 2).attr('cy', 0)
-          .attr('r', MARKER_R)
-          .attr('fill', 'white')
-          .attr('stroke', item.color)
-          .attr('stroke-width', 2)
+          .attr('stroke-width', item.isDashed ? 2.25 : 3.5)
+          .attr('stroke-linecap', item.isDashed ? 'butt' : 'round')
+        if (item.isDashed) lineSeg.attr('stroke-dasharray', '6,4')
+        // Hollow circle marker in the middle — omitted on dashed reference lines
+        if (!item.isDashed) {
+          ig.append('circle')
+            .attr('cx', LINE_W / 2).attr('cy', 0)
+            .attr('r', MARKER_R)
+            .attr('fill', 'white')
+            .attr('stroke', item.color)
+            .attr('stroke-width', 2)
+        }
         // Label text
         ig.append('text')
           .attr('x', LINE_W + TEXT_GAP)
@@ -712,7 +724,7 @@ function LineChart({
     }
 
     return () => { document.getElementById(tipId)?.remove() }
-  }, [data, width, containerHeight, isFullscreen, xKey, yKey, seriesKey, formatX, showArea, animate, annotations, formatValue, setZoomRange, colorOverrides])
+  }, [data, width, containerHeight, isFullscreen, xKey, yKey, seriesKey, formatX, showArea, animate, annotations, formatValue, setZoomRange, colorOverrides, dashedSeries])
 
   // Ensure container expands for legend rows
   const seriesCount = seriesKey ? new Set(data.map(d => d[seriesKey])).size : 0

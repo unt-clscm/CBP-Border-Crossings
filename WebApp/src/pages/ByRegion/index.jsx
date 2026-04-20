@@ -609,6 +609,9 @@ function ByRegionPageBody() {
     const firstYr = sameEndpoints ? startYear - 1 : startYear
     const lastYr  = endYear
     const years = [firstYr, lastYr]
+    // Only show the all-years average when the range spans ≥3 years —
+    // averaging exactly the two endpoints would duplicate the visible lines.
+    const avgLabel = (lastYr - firstYr) >= 2 ? `Avg ${firstYr}–${lastYr}` : null
 
     const out = new Map()
     for (const region of REGIONS) {
@@ -619,9 +622,33 @@ function ByRegionPageBody() {
       })
       // Stringify year so LineChart's legend-width calc (uses name.length)
       // handles it as a normal string series.
-      const series = monthlySeasonalSeries(rows, { years })
+      const endpointSeries = monthlySeasonalSeries(rows, { years })
         .map((d) => ({ ...d, year: String(d.year) }))
-      out.set(region, { series, years })
+
+      // Average across all years in the range: for each month, mean of the
+      // per-year monthly totals. Years with no data are simply absent from
+      // the mean (no zero-fill).
+      let avgEntries = []
+      if (avgLabel) {
+        const perYearMonth = monthlySeasonalSeries(rows)
+        const byMonth = new Map()
+        for (const d of perYearMonth) {
+          if (!byMonth.has(d.month)) byMonth.set(d.month, [])
+          byMonth.get(d.month).push(d.value)
+        }
+        for (let m = 1; m <= 12; m++) {
+          const vals = byMonth.get(m)
+          if (!vals?.length) continue
+          const avg = vals.reduce((s, v) => s + v, 0) / vals.length
+          avgEntries.push({ month: m, year: avgLabel, value: avg })
+        }
+      }
+
+      out.set(region, {
+        series: [...endpointSeries, ...avgEntries],
+        years,
+        avgLabel,
+      })
     }
     return out
   }, [monthly, monthlyStatus, startYear, endYear, selectedMode])
@@ -814,22 +841,27 @@ function ByRegionPageBody() {
           </div>
           <p className="text-base text-text-secondary mb-5 max-w-3xl">
             Monthly {MODE_LABELS[selectedMode] || selectedMode} volume for each
-            region, comparing the sidebar&rsquo;s start year and end year. Shows
-            whether the seasonal curve shifted or flattened between the two
-            endpoints.
+            region, comparing the sidebar&rsquo;s start year and end year
+            against the dashed all-years average across the selected range.
+            Shows whether the seasonal curve shifted or flattened between the
+            two endpoints, and how each endpoint sits relative to the
+            multi-year norm.
           </p>
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
             {REGIONS.map((region) => {
               const bundle = monthlyYoyByRegion.get(region)
               const series = bundle?.series ?? []
               const years  = bundle?.years ?? []
+              const avgLabel = bundle?.avgLabel ?? null
               const regionColor = REGION_BAR_COLORS[region]
               const colorOverrides = years.length === 2
                 ? {
                     [String(years[0])]: '#cbd5e1',
                     [String(years[1])]: regionColor,
+                    ...(avgLabel ? { [avgLabel]: '#475569' } : {}),
                   }
                 : {}
+              const dashedSeries = avgLabel ? [avgLabel] : undefined
               const hasData = series.some((d) => d.value > 0)
               return (
                 <ChartCard
@@ -852,14 +884,18 @@ function ByRegionPageBody() {
                   }
                   downloadData={{
                     summary: {
-                      data: series.map((d) => ({
-                        Region: region,
-                        Year: d.year,
-                        Month: d.month,
-                        'Month Label': MONTH_LABELS[d.month - 1],
-                        Mode: selectedMode,
-                        'Northbound Crossings': d.value,
-                      })),
+                      // Exclude the derived average row from the CSV — raw
+                      // per-year values only.
+                      data: series
+                        .filter((d) => d.year !== avgLabel)
+                        .map((d) => ({
+                          Region: region,
+                          Year: d.year,
+                          Month: d.month,
+                          'Month Label': MONTH_LABELS[d.month - 1],
+                          Mode: selectedMode,
+                          'Northbound Crossings': d.value,
+                        })),
                       filename: `region-monthly-yoy-${region.replace(/\s+/g, '-').toLowerCase()}`,
                       columns: {
                         Region: 'Region',
@@ -880,6 +916,7 @@ function ByRegionPageBody() {
                     formatValue={formatCompact}
                     formatX={(m) => MONTH_LABELS[(m - 1) % 12] || String(m)}
                     colorOverrides={colorOverrides}
+                    dashedSeries={dashedSeries}
                     animate={false}
                   />
                 </ChartCard>

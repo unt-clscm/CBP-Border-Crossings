@@ -542,39 +542,55 @@ export default function ByModePage() {
         </div>
       </SectionBlock>
 
-      {/* ── Line chart — one line per mode ──────────────────────────── */}
+      {/* ── Line charts — one small-multiple per mode ───────────────── */}
       <SectionBlock alt>
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center gap-2.5 mb-5">
+          <div className="flex items-center gap-2.5 mb-2">
             <LineIcon size={20} className="text-brand-blue" />
             <h3 className="text-xl font-bold text-text-primary">Mode trends over time</h3>
           </div>
-          <ChartCard
-            hideTitle
-            title="Mode Trends"
-            subtitle={yearSubtitle}
-            downloadData={{
-              summary: {
-                data: lineData,
-                filename: `mode-trends`,
-                columns: DL.crossingsTrendSeries,
-              },
-            }}
-            emptyState={
-              lineData.length === 0
-                ? 'No crossings match the current filters.'
-                : undefined
-            }
-          >
-            <LineChart
-              data={lineData}
-              xKey="year"
-              yKey="value"
-              seriesKey="Mode"
-              formatValue={formatCompact}
-              colorOverrides={MODE_COLOR_OVERRIDES}
-            />
-          </ChartCard>
+          <p className="text-base text-text-secondary mb-5 max-w-3xl">
+            One panel per mode, each with its own y-axis scale so low-volume
+            modes (Buses, Railcars, Commercial Trucks) stay legible alongside
+            Passenger Vehicles and Pedestrians.
+          </p>
+          <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+            {MODES.map((mode) => {
+              const modeRows = lineData.filter((d) => d.Mode === mode)
+              const hasData = modeRows.some((d) => d.value > 0)
+              const color = MODE_COLOR_OVERRIDES[mode]
+              return (
+                <ChartCard
+                  key={mode}
+                  title={MODE_LABELS[mode] || mode}
+                  subtitle={yearSubtitle}
+                  minHeight={280}
+                  emptyState={
+                    !hasData
+                      ? 'No crossings match the current filters.'
+                      : undefined
+                  }
+                  downloadData={{
+                    summary: {
+                      data: modeRows,
+                      filename: `mode-trend-${mode.replace(/[\s/]+/g, '-').toLowerCase()}`,
+                      columns: DL.crossingsTrendSeries,
+                    },
+                  }}
+                >
+                  <LineChart
+                    data={modeRows}
+                    xKey="year"
+                    yKey="value"
+                    formatValue={formatCompact}
+                    colorOverrides={{ default: color }}
+                    showArea
+                    ariaLabel={`${MODE_LABELS[mode] || mode} trend`}
+                  />
+                </ChartCard>
+              )
+            })}
+          </div>
         </div>
       </SectionBlock>
 

@@ -234,10 +234,10 @@ export default function DataTable({ columns, data, pageSize: fixedPageSize, full
                 <th
                   key={col.key}
                   aria-sort={sortKey === col.key ? (sortDir === 'asc' ? 'ascending' : 'descending') : 'none'}
-                  className={`px-4 py-3 text-left align-bottom ${fullWidth && col.wrap ? 'break-words' : 'whitespace-nowrap'}`}
+                  className={`px-4 py-3 text-left ${hasHeaderIcons ? 'align-top' : 'align-bottom'} ${fullWidth && col.wrap ? 'break-words' : 'whitespace-nowrap'}`}
                 >
                   {hasHeaderIcons && (
-                    <div className="h-6 mb-1 flex items-center" aria-hidden="true">
+                    <div className="h-6 mb-1 flex items-center justify-start" aria-hidden="true">
                       {col.headerIcon ?? null}
                     </div>
                   )}
@@ -245,7 +245,7 @@ export default function DataTable({ columns, data, pageSize: fixedPageSize, full
                     type="button"
                     onClick={() => handleSort(col.key)}
                     className={`${fullWidth && col.wrap
-                               ? 'flex w-full items-end text-left'
+                               ? `flex w-full ${hasHeaderIcons ? 'items-start' : 'items-end'} text-left`
                                : 'inline-flex items-center'}
                              gap-1 text-base font-semibold text-text-secondary
                              uppercase tracking-wider cursor-pointer select-none

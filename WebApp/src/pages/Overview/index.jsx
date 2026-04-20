@@ -228,6 +228,51 @@ function OverviewPageBody() {
     return out
   }, [seasonalYears])
 
+  /* ── Average across the sidebar year range (dashed reference line) ──
+     Skipped when the filter spans <3 years; averaging a 1-2 year window
+     would just duplicate the visible lines. */
+  const seasonalAverageLabel = useMemo(() => {
+    if (startYear == null || endYear == null) return null
+    if (endYear - startYear < 2) return null
+    return `Avg ${startYear}–${endYear}`
+  }, [startYear, endYear])
+
+  const seasonalAverageEntries = useMemo(() => {
+    if (!seasonalAverageLabel) return []
+    if (monthlyStatus !== 'ready' || !monthly?.length) return []
+    const rows = filterRows(monthly, {
+      yearRange: { start: startYear, end: endYear },
+      regions: selectedRegions,
+      crossings: selectedCrossings,
+      modes: [selectedMode],
+    })
+    const perYearMonth = monthlySeasonalSeries(rows)
+    const byMonth = new Map()
+    for (const d of perYearMonth) {
+      if (!byMonth.has(d.month)) byMonth.set(d.month, [])
+      byMonth.get(d.month).push(d.value)
+    }
+    const out = []
+    for (let m = 1; m <= 12; m++) {
+      const vals = byMonth.get(m)
+      if (!vals?.length) continue
+      const avg = vals.reduce((s, v) => s + v, 0) / vals.length
+      out.push({ month: m, year: seasonalAverageLabel, value: avg })
+    }
+    return out
+  }, [seasonalAverageLabel, monthly, monthlyStatus, startYear, endYear, selectedRegions, selectedCrossings, selectedMode])
+
+  const seasonalChartData = useMemo(() => (
+    [...seasonalData, ...seasonalAverageEntries]
+  ), [seasonalData, seasonalAverageEntries])
+
+  const seasonalChartColorOverrides = useMemo(() => {
+    if (!seasonalAverageLabel) return seasonalColorOverrides
+    return { ...seasonalColorOverrides, [seasonalAverageLabel]: '#475569' }
+  }, [seasonalColorOverrides, seasonalAverageLabel])
+
+  const seasonalDashedSeries = seasonalAverageLabel ? [seasonalAverageLabel] : undefined
+
   /* ── Stat card calculations ─────────────────────────────────────── */
   const latestFilteredYear = useMemo(() => {
     let y = null
@@ -773,7 +818,9 @@ function OverviewPageBody() {
           <p className="text-base text-text-secondary mb-5">
             Monthly northbound volume for the most recent {seasonalYears.length} years,
             overlaid by calendar month so seasonal peaks (summer travel, fall produce)
-            line up for year-over-year comparison. Respects the Region and Mode filters.
+            line up for year-over-year comparison. Respects the Region and Mode
+            filters; the dashed line shows the monthly average across the
+            sidebar&rsquo;s full year range as a multi-year norm.
           </p>
           <ChartCard
             hideTitle
@@ -811,13 +858,14 @@ function OverviewPageBody() {
             }}
           >
             <LineChart
-              data={seasonalData}
+              data={seasonalChartData}
               xKey="month"
               yKey="value"
               seriesKey="year"
               formatValue={formatCompact}
               formatX={(m) => MONTH_LABELS[(m - 1) % 12] || String(m)}
-              colorOverrides={seasonalColorOverrides}
+              colorOverrides={seasonalChartColorOverrides}
+              dashedSeries={seasonalDashedSeries}
               animate={false}
             />
           </ChartCard>

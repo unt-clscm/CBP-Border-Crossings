@@ -124,10 +124,10 @@ function TreemapChart({
       tipDiv.setAttribute('role', 'tooltip')
       Object.assign(tipDiv.style, {
         position: 'fixed', pointerEvents: 'none', display: 'none',
-        background: 'white', border: '1px solid #e2e5e9', borderRadius: '8px',
-        boxShadow: '0 4px 12px rgba(0,0,0,0.10)', padding: '12px 14px',
-        fontSize: '16px', lineHeight: '1.6', zIndex: '9999', whiteSpace: 'nowrap',
-        fontFamily: 'inherit', color: '#333f48', maxWidth: '360px',
+        background: 'white', border: '1px solid #e2e5e9', borderRadius: '6px',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.10)', padding: '6px 8px',
+        fontSize: '12px', lineHeight: '1.3', zIndex: '9999', whiteSpace: 'nowrap',
+        fontFamily: 'inherit', color: '#333f48', maxWidth: '320px',
       })
       document.body.appendChild(tipDiv)
     }
@@ -137,11 +137,11 @@ function TreemapChart({
         d3.select(this).select('rect').attr('opacity', 1)
         tipDiv.textContent = ''
         const nameDiv = document.createElement('div')
-        Object.assign(nameDiv.style, { fontWeight: '700', fontSize: '16px', marginBottom: '6px' })
+        Object.assign(nameDiv.style, { fontWeight: '700', fontSize: '12px', marginBottom: '2px', color: '#6b7280' })
         nameDiv.textContent = d.data.name
         tipDiv.appendChild(nameDiv)
         const valDiv = document.createElement('div')
-        Object.assign(valDiv.style, { borderTop: '1px solid #e5e7eb', paddingTop: '6px', fontWeight: '600', fontSize: '16px' })
+        Object.assign(valDiv.style, { fontWeight: '700', fontSize: '13px' })
         valDiv.textContent = formatValue(d.data.value)
         tipDiv.appendChild(valDiv)
         tipDiv.style.display = 'block'
